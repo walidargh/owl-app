@@ -59,7 +59,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] authentication
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
-
+- build out CRUD API, Flux loop, and components for:
+  - [ ] `UserProfile`
+  - [ ] `UserProfileEditForm`
 ### Phase 2: Business Model, API, and basic APIUtil (1.5 days)
 
 **Objective:** Business can be created, updated, and destroyed through
@@ -100,13 +102,12 @@ the API.
 
 **Objective:** Users will be able to review businesses and rate them (out of 5 stars).
 
-- [ ] create `Review` and `Rating` model
+- [ ] create `Review` model
 - [ ] build out API, Flux, loop, and components for:
   - [ ] Review and Rating CRUD
   - [ ] `ReviewsIndex`
   - [ ] `ReviewIndexItem`
   - [ ] `ReviewForm`
-  - [ ] `RatingForm`
 - [ ] Calculate average rating and number of reviews
 
 
@@ -120,27 +121,24 @@ the API.
 - Implement live search feature with clickable links
 - [ ] CSS Styling for Search Bar
 
-### Phase 7: Upload Photos (0.5 days)
+### Phase 7: Upload Photos (1 days)
 
 **Objective:** Users can be upload photos for each business.
 
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
-
+- [ ] build out API, Flux loop, and components, this will include:
+  - [ ] `PhotosIndex`
+  - [ ] `PhotoIndexItem`
+  - [ ] `PhotoUploadForm`
+- [ ] CSS styling
 ### Phase 8: Google Maps API (0.5 days)
 
-**objective:** Enable complex styling of notes.
+**objective:** Integrate Google Maps to visually display business locations.
 
 - [ ] Integrate `react-quill` (based on Quill.js).
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.
 
-### Phase 9: Categories (1 day)
+### Phase 9: Categories (0.5 day)
 
 **objective:** Allow users to tag businesses based on category.
 
@@ -154,10 +152,10 @@ the API.
 ### Bonus Features (TBD)
 - [ ] Filter by open now, category, price, distance
 - [ ] Filter by distance
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Infinite Scroll for results
+- [ ] User ability to check-in
+- [ ] Suggested businesses based on users prior check-ins
+- [ ] Social Media Integration (Instagram, Facebook, Twitter)
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
