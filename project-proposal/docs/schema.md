@@ -9,7 +9,6 @@ name        | string    | not null
 address     | text      | not null
 hours       | string    | not null
 price       | string    | not null
-pictures    |           |
 
 ## photos
 column name | data type | details
@@ -39,7 +38,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+business_id | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
 
 ## users
