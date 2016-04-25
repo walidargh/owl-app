@@ -1,4 +1,4 @@
-# Woof
+# Owl
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -6,7 +6,7 @@
 
 ## Minimum Viable Product
 
-Woof is a web application inspired by Yelp that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+Owl is a web application inspired by Yelp that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [ ] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
@@ -20,7 +20,7 @@ Woof is a web application inspired by Yelp that will be built using Ruby on Rail
 
 ## Product Goals and Priorities
 
-Woof will allow users to do the following:
+Owl will allow users to do the following:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
