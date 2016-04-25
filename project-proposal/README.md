@@ -104,11 +104,11 @@ the API.
 
 - [ ] create `Review` model
 - [ ] build out API, Flux, loop, and components for:
-  - [ ] Review and Rating CRUD
+  - [ ] review and rating CRUD
   - [ ] `ReviewsIndex`
   - [ ] `ReviewIndexItem`
   - [ ] `ReviewForm`
-- [ ] Calculate average rating and number of reviews
+- [ ] calculate average rating and number of reviews
 
 
 ### Phase 6: Search (0.5 days)
@@ -117,14 +117,14 @@ the API.
 
 - [ ] build out API, Flux loop, and components, this will include:
   - [ ] REGEX for matching query string to Business
-  - [ ] Flux structure
-- Implement live search feature with clickable links
-- [ ] CSS Styling for Search Bar
+  - [ ] flux structure
+- implement live search feature with clickable links
+- [ ] CSS styling for search bar
 
 ### Phase 7: Upload Photos (1 days)
 
 **Objective:** Users can be upload photos for each business.
-
+- [ ] create `Photos` model
 - [ ] build out API, Flux loop, and components, this will include:
   - [ ] `PhotosIndex`
   - [ ] `PhotoIndexItem`
@@ -133,16 +133,15 @@ the API.
 ### Phase 8: Google Maps API (0.5 days)
 
 **objective:** Integrate Google Maps to visually display business locations.
-
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- [ ] set up API Key
+- [ ] build out React components
+- [ ] CSS styling
 
 ### Phase 9: Categories (0.5 day)
 
 **objective:** Allow users to tag businesses based on category.
 
-- [ ] create `Category` model and join table
+- [ ] create `Tag` model and join table
 - build out API, Flux loop, and components for:
   - [ ] fetching categories for businesses
   - [ ] selecting categories to businesses
