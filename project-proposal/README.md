@@ -11,8 +11,7 @@ Woof is a web application inspired by Yelp that will be built using Ruby on Rail
 - [ ] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
-- [ ] The minimally necessary features for an Yelp-inspired site: ability to add a business to the site, comment on and rate a business.
-<!-- - [ ] Google Maps Integration to show business locations -->
+- [ ] The minimally necessary features for an Yelp-inspired site: ability to add a business to the site, review and rate a business.
 - [ ] Allows for searching by business name
 - [ ] Hosting on Heroku
 - [ ] CSS styling that is satisfactorily visually appealing
@@ -29,7 +28,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Create an account (MVP)
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Add a business  (MVP)
-- [ ] Rate and comment on a business (MVP)
+- [ ] Rate and review a business (MVP)
 - [ ] Search by business name (MVP)
   - [ ] Search by business type, price range, distance from current location (expected feature, but not MVP)
 - [ ] Use integrated Google Maps to locate businesses (expected feature, but not MVP)
@@ -37,20 +36,14 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ## Design Docs
 * [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
 * [DB schema][schema]
 
 [views]: ./docs/views.md
-[components]: ./docs/components.md
-[flux-cycles]: ./docs/flux-cycles.md
-[api-endpoints]: ./docs/api-endpoints.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Users (0.5 days)
+### Phase 1: Backend setup and Users (1 days)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -62,6 +55,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - build out CRUD API, Flux loop, and components for:
   - [ ] `UserProfile`
   - [ ] `UserProfileEditForm`
+
 ### Phase 2: Business Model, API, and basic APIUtil (1.5 days)
 
 **Objective:** Business can be created, updated, and destroyed through
@@ -77,11 +71,11 @@ the API.
 
 ### Phase 3: Flux Architecture and Router (1.5 days)
 
-**Objective:** Business can be created, updated, destroyed, rated and commented on
+**Objective:** Business can be created, updated, destroyed, rated and reviewed
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each business component, building out the flux loop as needed.
+- [ ] implement each business component, building out the flux loop as needed.
   - [ ] `BusinessesIndex`
   - [ ] `BusinessIndexItem`
   - [ ] `BusinessForm`
@@ -96,7 +90,6 @@ the API.
 - [ ] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
-
 
 ### Phase 5: Reviews and Ratings (2 days)
 
@@ -137,16 +130,16 @@ the API.
 - [ ] build out React components
 - [ ] CSS styling
 
-### Phase 9: Categories (0.5 day)
+### Phase 9: Tags/Categories (0.5 day)
 
-**objective:** Allow users to tag businesses based on category.
+**objective:** Allow users to tag businesses based on tag/category.
 
 - [ ] create `Tag` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching categories for businesses
-  - [ ] selecting categories to businesses
-  - [ ] searching by category
-- [ ] Style new elements
+  - [ ] fetching tags for businesses
+  - [ ] selecting tags for businesses
+  - [ ] searching by tag
+- [ ] CSS styling
 
 ### Bonus Features (TBD)
 - [ ] Filter by open now, category, price, distance
@@ -156,8 +149,8 @@ the API.
 - [ ] Suggested businesses based on users prior check-ins
 - [ ] Social Media Integration (Instagram, Facebook, Twitter)
 
-[phase-one]: ./docs/phases/phase1.md
+<!-- [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+[phase-five]: ./docs/phases/phase5.md -->
