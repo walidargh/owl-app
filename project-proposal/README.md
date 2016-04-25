@@ -1,4 +1,4 @@
-# FresherNote
+# Woof
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -6,29 +6,34 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+Woof is a web application inspired by Yelp that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [ ] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
-- [ ] The minimally necessary features for an Evernote-inspired site: note creation and saving, note editing, and notes organized into notebooks
+- [ ] The minimally necessary features for an Yelp-inspired site: ability to add a business to the site, comment on and rate a business.
+<!-- - [ ] Google Maps Integration to show business locations -->
+- [ ] Allows for searching by business name
 - [ ] Hosting on Heroku
 - [ ] CSS styling that is satisfactorily visually appealing
-- [ ] A production README, replacing this README (**NB**: check out the [sample production README](https://github.com/appacademy/sample-project-proposal/blob/master/docs/production_readme.md) -- you'll write this later)
+- [ ] Allow users to upload photos
+- [ ] A production README, replacing this README
 
 ## Product Goals and Priorities
 
-FresherNote will allow users to do the following:
+Woof will allow users to do the following:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [ ] Create an account (MVP)
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Create, read, edit, and delete notes (MVP)
-- [ ] Organize notes within Notebooks (MVP)
-- [ ] Tag notes with multiple tags (expected feature, but not MVP)
-- [ ] Apply complex styling to notes while editing (expected feature, but not MVP)
+- [ ] Add a business  (MVP)
+- [ ] Rate and comment on a business (MVP)
+- [ ] Search by business name (MVP)
+  - [ ] Search by business type, price range, distance from current location (expected feature, but not MVP)
+- [ ] Use integrated Google Maps to locate businesses (expected feature, but not MVP)
+- [ ] Upload photos (MVP)
 
 ## Design Docs
 * [View Wireframes][views]
@@ -45,7 +50,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (0.5 days)
+### Phase 1: Backend setup and Users (0.5 days)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -55,59 +60,69 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Business Model, API, and basic APIUtil (1.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** Business can be created, updated, and destroyed through
 the API.
 
-- [ ] create `Note` model
+- [ ] create `Business` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
+- [ ] CRUD API for Business (`BusinessController`)
+- [ ] jBuilder views for businesses
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
-user interface.
+**Objective:** Business can be created, updated, destroyed, rated and commented on
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- implement each business component, building out the flux loop as needed.
+  - [ ] `BusinessesIndex`
+  - [ ] `BusinessIndexItem`
+  - [ ] `BusinessForm`
+- [ ] set up Stores
+- [ ] set up Server/Client Actions
+
 
 ### Phase 4: Start Styling (0.5 days)
 
-**Objective:** Existing pages (including singup/signin) will look good.
+**Objective:** Existing pages (including signup/signin) will look good.
 
 - [ ] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Notebooks (1 day)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+### Phase 5: Reviews and Ratings (2 days)
 
-- [ ] create `Notebook` model
-- build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
-- Use CSS to style new views
+**Objective:** Users will be able to review businesses and rate them (out of 5 stars).
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
+- [ ] create `Review` and `Rating` model
+- [ ] build out API, Flux, loop, and components for:
+  - [ ] Review and Rating CRUD
+  - [ ] `ReviewsIndex`
+  - [ ] `ReviewIndexItem`
+  - [ ] `ReviewForm`
+  - [ ] `RatingForm`
+- [ ] Calculate average rating and number of reviews
 
-### Phase 6: Tags (1.5 days)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+### Phase 6: Search (0.5 days)
+
+**Objective:** Users can search for businesses by name (full name and closest match).
+
+- [ ] build out API, Flux loop, and components, this will include:
+  - [ ] REGEX for matching query string to Business
+  - [ ] Flux structure
+- Implement live search feature with clickable links
+- [ ] CSS Styling for Search Bar
+
+### Phase 7: Upload Photos (0.5 days)
+
+**Objective:** Users can be upload photos for each business.
 
 - [ ] create `Tag` model and join table
 - build out API, Flux loop, and components for:
@@ -117,7 +132,7 @@ which has its own `Index` view.
   - [ ] searching notebooks by tag
 - [ ] Style new elements
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
+### Phase 8: Google Maps API (0.5 days)
 
 **objective:** Enable complex styling of notes.
 
@@ -125,16 +140,20 @@ which has its own `Index` view.
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.
 
-### Phase 8: Styling Cleanup and Seeding (1 day)
+### Phase 9: Categories (1 day)
 
-**objective:** Make the site feel more cohesive and awesome.
+**objective:** Allow users to tag businesses based on category.
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [ ] create `Category` model and join table
+- build out API, Flux loop, and components for:
+  - [ ] fetching categories for businesses
+  - [ ] selecting categories to businesses
+  - [ ] searching by category
+- [ ] Style new elements
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
+- [ ] Filter by open now, category, price, distance
+- [ ] Filter by distance
 - [ ] Pagination / infinite scroll for Notes Index
 - [ ] Set reminders on notes
 - [ ] Changelogs for Notes
