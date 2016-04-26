@@ -4,7 +4,7 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
+user_id   | integer   | not null, foreign key (references users), indexed
 name        | string    | not null
 address     | text      | not null
 hours       | string    | not null
@@ -15,7 +15,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 url         | string    | not null
-author_id   | integer   | not null, foreign key (references users), indexed
+user_id   | integer   | not null, foreign key (references users), indexed
 business_id | integer   | not null, foreign key (references businesses), indexed
 
 ## reviews
@@ -37,8 +37,7 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-business_id | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+business_id | integer   | not null, foreign key (references businesses), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
 
 ## users
