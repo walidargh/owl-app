@@ -6,8 +6,8 @@
 ## New Session
 ![new-session]
 
-## ReviewsIndex / ReviewIndexItem / ReviewForm
-![reviews]
+## BusinessDetailView/ ReviewsIndex / ReviewIndexItem / ReviewForm
+![business-detail]
 
 ## BusinessesIndex / BusinessIndexItem
 ![businesses]
@@ -17,6 +17,6 @@
 
 [new-user]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
-[reviews]: ./wireframes/reviews_index.png
-[businesses]: ./wireframes/business_index.png
-[business-form]: ./wireframes/business_form.png
+[business-detail]: ./wireframes/BusinessDetail.png
+[businesses]: ./wireframes/BusinessIndexWithItem.png
+[business-form]: ./wireframes/NewBusinessForm.png
