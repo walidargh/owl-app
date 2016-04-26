@@ -10,7 +10,9 @@
 
 - `GET /users/new`
 - `POST /users`
-- `PATCH /users`
+- `GET /users/:id`
+- `PATCH /users/:id`
+- `DELETE /users/:id`
 
 ### Session
 
