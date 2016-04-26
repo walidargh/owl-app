@@ -35,20 +35,19 @@ var UserApiUtil = {
 	create: function (user) {
 		$.ajax({
 			url: '/api/user',
-			type: 'POST'
+			type: 'POST',
 			user: user,
 			success: UserActions.receiveCurrentUser,
 			error: UserActions.handleError
 		});
 	},
 
-	destroy: function (userId) {
+	destroy: function (user) {
 		$.ajax({
-			url: '/api/user/' + userId,
+			url: '/api/user/' + user.id,
 			type: 'DELETE',
-			success: //,
-			error: //
-
+			success: UserActions.removeCurrentUser,
+			error: UserActions.handleError
 		});
 	}
 };
