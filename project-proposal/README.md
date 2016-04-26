@@ -36,9 +36,15 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ## Design Docs
 * [View Wireframes][views]
+* [React Components][components]
+* [Flux Cycles][flux-cycles]
+* [API endpoints][api-endpoints]
 * [DB schema][schema]
 
-[views]: ./docs/views.md
+[views]: ./docs/wireframes
+[components]: ./docs/components.md
+[flux-cycles]: ./docs/flux-cycles.md
+[api-endpoints]: ./docs/api-endpoints.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline

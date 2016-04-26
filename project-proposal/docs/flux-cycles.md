@@ -59,8 +59,6 @@ what you'll need to do.
 
 * `BusinessIndex` component listens to `Business` store.
 
-
-
 ## Review Cycles
 
 ### Reviews API Request Actions

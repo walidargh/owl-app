@@ -26,7 +26,7 @@
 
 - `GET /api/reviews`
 - `POST /api/reviews`
-- `GET /api/revies/:id`
+- `GET /api/reviews/:id`
 - `PATCH /api/reviews/:id`
 - `DELETE /api/reviews/:id`
 
