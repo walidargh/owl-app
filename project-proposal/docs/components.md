@@ -6,7 +6,8 @@
     * `UserProfileEditForm`
   * `BusinessesIndex`
     * `BusinessIndexItem`
-      * `BusinessForm`
-  * `ReviewsIndex`
-    * `ReviewIndexItem`
+    * `BusinessForm`
+  * `BusinessDetail`      
+    * `ReviewsIndex`
+      * `ReviewIndexItem`
       * `ReviewForm`
