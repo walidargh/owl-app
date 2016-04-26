@@ -12,7 +12,7 @@
 ## BusinessesIndex / BusinessIndexItem
 ![businesses]
 
-## Businessorm
+## BusinessForm
 ![business-form]
 
 [new-user]: ./wireframes/new_user.png
