@@ -6,7 +6,7 @@
 ## New Session
 ![new-session]
 
-## ReviewsIndex / RevviewIndexItem / ReviewForm
+## ReviewsIndex / ReviewIndexItem / ReviewForm
 ![reviews]
 
 ## BusinessesIndex / BusinessIndexItem
