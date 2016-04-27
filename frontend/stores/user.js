@@ -40,7 +40,7 @@ UserStore.currentUser = function () {
 
 UserStore.errors = function () {
 	return _authErrors;
-}
+};
 
 module.exports = UserStore;
 

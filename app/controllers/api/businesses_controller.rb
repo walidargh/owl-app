@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
 	def index
-		@business = Business.all
+		@businesses = Business.all
 	end
 
 	def create

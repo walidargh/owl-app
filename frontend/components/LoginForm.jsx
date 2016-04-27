@@ -31,7 +31,8 @@ var LoginForm = React.createClass({
 
 	form: function () {
 		this.state.currentUser ? this.setState({form: "Sign Up"}) : this.setState({form: "Log In"})
-		console.log('setting state')		return (
+		console.log('setting state')
+		return (
 			<form onSubmit={this.handleSubmit} >
 				<h2>{this.state.form}</h2>
 				<section>
@@ -50,7 +51,7 @@ var LoginForm = React.createClass({
 					<input type="submit" value="Submit" />
 				</section>
 			</form>
-		)
+		);
 	},
 
 	render: function () {

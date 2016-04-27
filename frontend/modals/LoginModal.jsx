@@ -7,7 +7,6 @@ Modal.setAppElement(document.body);
 var LoginModal = React.createClass({
 
 	getInitialState: function () {
-		console.log('is open')
 		return ({modalOpen: true});
 	},
 
@@ -16,21 +15,21 @@ var LoginModal = React.createClass({
 	},
 
 	closeModal: function () {
-		this.setState({modalOpen: false})
+		this.setState({modalOpen: false});
 	},
 
 	openModal: function () {
-		this.setState({ modalOpen: true})
+		this.setState({ modalOpen: true});
 	},
 
 	render: function () {
-		<div>
+		return(<div>
 			<Modal isOpen={this.state.modalOpen} onRequestClose={this.closeModal}>
 				<div>..content</div>
 				<LoginForm />
 			</Modal>
 		</div>
-	}
+	)}
 
 });
 

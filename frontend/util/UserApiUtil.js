@@ -8,7 +8,6 @@ var UserApiUtil = {
 			success: UserActions.receiveCurrentUser,
 			error: UserActions.handleError,
 		});
-		// TODO: change resources to resource
 	},
 
 	signin: function (user) {

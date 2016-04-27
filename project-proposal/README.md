@@ -58,7 +58,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] authentication
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
-- build out CRUD API, Flux loop, and components for:
+- [ ] build out CRUD API, Flux loop, and components for:
   - [ ] `UserProfile`
   - [ ] `UserProfileEditForm`
 
@@ -67,9 +67,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Business can be created, updated, and destroyed through
 the API.
 
-- [ ] create `Business` model
+- [X] create `Business` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for Business (`BusinessController`)
+- [X] CRUD API for Business (`BusinessController`)
 - [ ] jBuilder views for businesses
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
