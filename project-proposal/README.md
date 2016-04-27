@@ -8,7 +8,7 @@
 
 Owl is a web application inspired by Yelp that will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] New account creation, login, and guest/demo login
+- [ ] New account creation, signin, and guest/demo signin
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for an Yelp-inspired site: ability to add a business to the site, review and rate a business.

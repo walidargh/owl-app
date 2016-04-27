@@ -20,7 +20,7 @@ UserStore.__onDispatch = function (payload) {
 	}
 };
 
-UserStore.login = function(user) {
+UserStore.signin = function(user) {
 	_currentUser = user;
 	_authErrors = null;
 };
@@ -37,6 +37,12 @@ UserStore.setErrors = function (errors) {
 UserStore.currentUser = function () {
 	return _currentUser;
 };
+
+UserStore.errors = function () {
+	return _authErrors;
+}
+
+module.exports = UserStore;
 
 // TODO: Figure out how to properly return currentUser (i.e. use jquery extend)
 // TODO: FIgure out how error messages come in and how they are formatted (i.e. [].slice)

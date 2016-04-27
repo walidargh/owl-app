@@ -1,12 +1,17 @@
+require 'byebug'
+
 class Api::UsersController < ApplicationController
 	#ensure signed in for show, edit, update, destroy, maybe index?
 	def create
-		@user = User.create!(user_params)
-		if @user
+		puts user_params
+
+		@user = User.new(user_params)
+
+		if @user.save
 			login_user(@user)
 			render "api/users/show"
 		else
-			@errors = @users.errors.full_messages
+			@errors = @user.errors.full_messages
 			render "api/shared/error", status: 422
 		end
 	end

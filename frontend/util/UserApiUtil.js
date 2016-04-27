@@ -1,4 +1,3 @@
-var ServerActions = require('../actions/ServerActions');
 var UserActions = require('../actions/UserActions');
 
 var UserApiUtil = {
@@ -12,7 +11,7 @@ var UserApiUtil = {
 		// TODO: change resources to resource
 	},
 
-	login: function (user) {
+	signin: function (user) {
 		$.ajax({
 			url: '/api/session',
 			type: 'POST',
@@ -32,11 +31,12 @@ var UserApiUtil = {
 		});
 	},
 
-	create: function (user) {
+	create: function (userData) {
+		console.log({user: userData})
 		$.ajax({
 			url: '/api/user',
 			type: 'POST',
-			user: user,
+			data: {user: userData},
 			success: UserActions.receiveCurrentUser,
 			error: UserActions.handleError
 		});
@@ -44,7 +44,7 @@ var UserApiUtil = {
 
 	destroy: function (user) {
 		$.ajax({
-			url: '/api/user'
+			url: '/api/user',
 			// TODO: do I need to include user.id?
 			type: 'DELETE',
 			success: UserActions.removeCurrentUser,

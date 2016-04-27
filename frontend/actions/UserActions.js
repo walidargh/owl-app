@@ -1,4 +1,4 @@
-var UserApiUtil = require('../util/ApiUtil.js');
+var UserApiUtil = require('../util/UserApiUtil.js');
 var AppDispatcher = require('../dispatcher/dispatcher');
 var UserConstants = require('../constants/UserConstants');
 
@@ -15,11 +15,12 @@ var UserActions = {
 		UserApiUtil.logout();
 	},
 
-	guestLogin: function () {
+	guestlogin: function () {
 
 	},
 
 	create: function (userData) {
+		console.log(userData);
 		UserApiUtil.create(userData);
 	},
 
@@ -29,7 +30,7 @@ var UserActions = {
 
 	receiveCurrentUser: function(user) {
 		AppDispatcher.dispatch({
-			actionType: UserConstants.LOGIN,
+			actionType: UserConstants.login,
 			user: user
 		});
 	},
@@ -46,7 +47,7 @@ var UserActions = {
 			actionType: UserConstants.LOGOUT
 		});
 	}
-	
+
 };
 
 module.exports = UserActions;
