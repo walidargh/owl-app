@@ -16,15 +16,8 @@ var LoginForm = React.createClass({
 		UserActions.create({user_name: this.state.username, password: this.state.password});
 	},
 
-	// handleSubmit: function (event) {
-	// 	event.preventDefault();	
-	// 	console.log(this.state);
-	// 	user = {this.state.username}
-	// },
-
 	render: function () {
 		return (
-
 			<div id="login-form">
 
 				<form onSubmit={this.handleSubmit} >
@@ -45,7 +38,7 @@ var LoginForm = React.createClass({
 					</section>
 
 					<section>
-						<button value="Sign In" />
+						<input type="submit" value="Submit" />
 					</section>
 
 				</form>		
