@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Api::UsersController < ApplicationController
 	#ensure signed in for show, edit, update, destroy, maybe index?
 	def create
