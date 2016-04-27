@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
 	#ensure signed in for show, edit, update, destroy, maybe index?
 	def create
 		@user = User.new(user_params)
-		if @user.saves
+		if @user.save
 			login_user(@user)
 			render "api/users/show"
 		else

@@ -11,7 +11,7 @@ var LoginModal = require('./modals/LoginModal');
 var UserActions = require('./actions/UserActions');
 var UserStore = require('./stores/user');
 
-UserActions.fetchCurrentUser()
+UserActions.fetchCurrentUser();
 
 // var App = React.createClass({
 //   render: function(){
@@ -42,7 +42,7 @@ var customStyles = {
 var App = React.createClass({
 
   getInitialState: function() {
-    return { modalIsOpen: false };
+    return { modalIsOpen: false, formType: "Log In" };
   },
 
   openModal: function() {
@@ -56,13 +56,26 @@ var App = React.createClass({
 
   logButton: function () {
     if (UserStore.currentUser) {
-      return (<button onClick={this.logOut}>Sign Out</button>);
+      return (<button onClick={this.logout}>Sign Out</button>);
     } else {
-      return (<button onClick={this.logIn}>Log In</button>);
-    }
+        return (
+          <div> 
+            <button onClick={this.login}>Log In</button>
+            <button onClick={this.signup}>Sign Up</button>
+          </div>
+        );
+      }
   },
 
+  login: function () {
+    this.setState({formType: "Log In"});
+    this.openModal();
+  },
 
+  signup: function() {
+    this.setState({formType: "Sign Up"});
+    this.openModal();    
+  },
 
   closeModal: function() {
     this.setState({modalIsOpen: false});
@@ -78,10 +91,8 @@ var App = React.createClass({
           // onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles} >
-
-          <h2 ref="subtitle"></h2>
           <button onClick={this.closeModal}>close</button>
-          <LoginForm />
+          <LoginForm formType={this.state.formType} />
         </Modal>
       </div>
     );
