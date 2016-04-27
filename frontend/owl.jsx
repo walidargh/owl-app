@@ -6,6 +6,7 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 var LoginForm = require('./components/LoginForm')
+var LoginModal = require('./modals/LoginModal');
 
 var App = React.createClass({
   render: function(){

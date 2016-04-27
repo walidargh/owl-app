@@ -1,17 +1,37 @@
 var React = require('react');
-var Modal = require('react-modal')
+var Modal = require('react-modal');
+var LoginForm = require('../components/LoginForm')
 
 Modal.setAppElement(document.body);
 
-getInitialState: function () {
-	return ({modalOpen: false});
-},
+var LoginModal = React.createClass({
 
-handleClick: function () {
-	this.setState({modalOpen: true});
-},
+	getInitialState: function () {
+		console.log('is open')
+		return ({modalOpen: true});
+	},
 
+	handleClick: function () {
+		this.setState({modalOpen: true});
+	},
 
-render: function () {
-	<Modal isOpen={this.state.modalOpen} >
-}
+	closeModal: function () {
+		this.setState({modalOpen: false})
+	},
+
+	openModal: function () {
+		this.setState({ modalOpen: true})
+	},
+
+	render: function () {
+		<div>
+			<Modal isOpen={this.state.modalOpen} onRequestClose={this.closeModal}>
+				<div>..content</div>
+				<LoginForm />
+			</Modal>
+		</div>
+	}
+
+});
+
+module.exports = LoginModal;

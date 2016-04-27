@@ -35,5 +35,11 @@
     "react-modal": "^1.2.1",
     "react-router": "^2.3.0",
     "webpack": "^1.13.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-plugin-import": "^1.6.0",
+    "eslint-plugin-jsx-a11y": "^1.0.3",
+    "eslint-plugin-react": "^5.0.1"
   }
 }

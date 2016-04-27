@@ -1,8 +1,6 @@
 class Api::UsersController < ApplicationController
 	#ensure signed in for show, edit, update, destroy, maybe index?
 	def create
-		puts user_params
-
 		@user = User.new(user_params)
 
 		if @user.save
