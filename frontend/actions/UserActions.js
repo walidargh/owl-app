@@ -20,7 +20,6 @@ var UserActions = {
 	},
 
 	create: function (userData) {
-		console.log(userData);
 		UserApiUtil.create(userData);
 	},
 

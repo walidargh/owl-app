@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
 	def show
 		if current_user
 			@user = current_user
-			render "api/shared/error"
+			render "api/users/show"
 		else
 			@errors = nil
 			render "api/shared/error", status: 404
@@ -17,9 +17,10 @@ class Api::SessionsController < ApplicationController
 			)
 		if @user
 			login_user(@user)
+			render "api/users/show"
 		else
 			@errors = ['invalid username or password']
-			render "api/shared/error", status: 404
+			render "api/shared/error", status: 401
 		end
 	end
 

@@ -5,7 +5,7 @@ var ApiUtil = {
 		$.ajax({
 			url: '/api/businesses',
 			type: 'GET',
-			success: ServerActions.receiveAll(businesses),
+			success: ServerActions.receiveAll,
 			error: ServerActions.handleError,
 		});
 		// TODO: create handleError and receiveBusinesses
@@ -14,13 +14,13 @@ var ApiUtil = {
 			$.ajax({
 			url: '/api/businesses',
 			type: 'GET',
-			data: {business: data}
-			success: ServerActions.receiveSingleBusiness
+			data: {business: data},
+			success: ServerActions.receiveSingleBusiness,
 			// make sure receiveSingleBusiness takes a business as an argument
 			error: ServerActions.handleError
-		})
+		});
 	}
 
-}
+};
 
 module.exports = ApiUtil;

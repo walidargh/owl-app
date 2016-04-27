@@ -31,7 +31,6 @@ var UserApiUtil = {
 	},
 
 	create: function (userData) {
-		console.log({user: userData})
 		$.ajax({
 			url: '/api/user',
 			type: 'POST',

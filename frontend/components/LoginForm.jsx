@@ -8,13 +8,21 @@ var LoginForm = React.createClass({
 	mixins: [LinkedStateMixin, CurrentUserState],
 
 	getInitialState: function () {
-		return {form: "Log In"};
+		return {form: "Log In", user_name: "", password: ""};
 	},
 
 	handleSubmit: function (event) {
 		event.preventDefault();
 		var potentialUser = {user_name: this.state.username, password: this.state.password};
 		UserActions.create({user_name: this.state.username, password: this.state.password});
+	},
+
+	handleUsername: function (event) {
+		this.setState({username: event.target.value});
+	},
+
+	handlePassword: function (event) {
+		this.setState({password: event.target.value});
 	},
 
 	logout: function () {
@@ -30,20 +38,21 @@ var LoginForm = React.createClass({
 	},
 
 	form: function () {
-		this.state.currentUser ? this.setState({form: "Sign Up"}) : this.setState({form: "Log In"})
-		console.log('setting state')
+		if(this.state.CurrentUser) {
+			return;
+		}
 		return (
 			<form onSubmit={this.handleSubmit} >
 				<h2>{this.state.form}</h2>
 				<section>
-					<label>Username <br/>
-						<input type="text" valueLink={this.linkState("username")} />
+					<label>Username<br/>
+						<input type="text" onChange={this.handleUsername} value={this.state.username} />
 					</label>
 
 					<br/><br/>
 
-					<label>Password <br/>
-						<input type="password" valueLink={this.linkState("password")} />
+					<label>Password<br/>
+						<input type="text" onChange={this.handlePassword} value={this.state.password} />
 					</label>
 				</section>
 
@@ -57,7 +66,7 @@ var LoginForm = React.createClass({
 	render: function () {
 		return (
 			<div id="log-form">
-				{this.form}
+				{this.form()}
 			</div>
 		);
 	}

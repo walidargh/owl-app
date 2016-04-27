@@ -1,8 +1,19 @@
 var React = require('react');
 var Modal = require('react-modal');
-var LoginForm = require('../components/LoginForm')
+var LoginForm = require('../components/LoginForm');
 
 Modal.setAppElement(document.body);
+
+var customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 var LoginModal = React.createClass({
 
@@ -23,13 +34,19 @@ var LoginModal = React.createClass({
 	},
 
 	render: function () {
-		return(<div>
-			<Modal isOpen={this.state.modalOpen} onRequestClose={this.closeModal}>
-				<div>..content</div>
-				<LoginForm />
-			</Modal>
-		</div>
-	)}
+		console.log("I am in the modal render");
+		console.log("The modal is open:" +  this.state.modalOpen);
+		return(
+			<div>
+				<Modal 
+					isOpen={this.state.modalOpen} 
+					style={customStyles}
+				>
+					<div>I am the modal</div>
+					<LoginForm />
+				</Modal>
+			</div>
+	);}
 
 });
 
