@@ -1,6 +1,13 @@
 class Api::SessionsController < ApplicationController
-	def new
 
+	def show
+		if current_user
+			@user = current_user
+			render "api/shared/error"
+		else
+			@errors = nil
+			render "api/shared/error", status: 404
+		end
 	end
 
 	def create
@@ -11,12 +18,20 @@ class Api::SessionsController < ApplicationController
 		if @user
 			login_user(@user)
 		else
-			#render new and display message
+			@errors = ['invalid username or password']
+			render "api/shared/error", status: 404
+		end
 	end
 
 	def destroy
-		current_user.reset_session_token! if current_user
-		session[:session_token] = nil
-		#redirect to log in page
+		@user = current_user
+		if @user
+			logout
+			render "api/users/show"
+		else
+			@errors = ['no one logged in']
+			render "api/shared/error", status: 404
+		end
 	end
+
 end

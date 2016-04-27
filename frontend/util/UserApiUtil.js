@@ -44,13 +44,13 @@ var UserApiUtil = {
 
 	destroy: function (user) {
 		$.ajax({
-			url: '/api/user/' + user.id,
+			url: '/api/user'
+			// TODO: do I need to include user.id?
 			type: 'DELETE',
 			success: UserActions.removeCurrentUser,
 			error: UserActions.handleError
 		});
 	}
 };
-
 
 module.exports = UserApiUtil;
