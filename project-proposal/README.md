@@ -57,7 +57,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] create `User` model
 - [X] authentication
 - [X] user signup/signin pages
-- [X] blank landing page after signin
+- [ ] blank landing page after signin
 - [ ] build out CRUD API, Flux loop, and components for:
   - [ ] `UserProfile`
   - [ ] `UserProfileEditForm` (expected feature, but part of MVP)
@@ -81,10 +81,10 @@ the API.
 
 <!-- - [ ] setup the flux loop with skeleton files -->
 - [X] setup React Router
-- [ ] implement each business component, building out the flux loop as needed.
+- [X] implement each business component, building out the flux loop as needed.
   - [X] `BusinessesIndex`
   - [X] `BusinessIndexItem`
-  - [ ] `BusinessForm`
+  - [X] `BusinessForm`
 - [X] set up Stores
 - [X] set up Server/Client Actions
 

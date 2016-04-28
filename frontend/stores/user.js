@@ -50,3 +50,4 @@ module.exports = UserStore;
 window.UserStore = UserStore;
 // TODO: Figure out how to properly return currentUser (i.e. use jquery extend)
 // TODO: FIgure out how error messages come in and how they are formatted (i.e. [].slice)
+// TODO: Remove auth errors from here and move them to their own store, add a form errors component to my forms

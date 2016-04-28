@@ -45,19 +45,30 @@ var BusinessForm = React.createClass({
 	},
 
 	render: function () {
-		console.log("About to render the business form in BusinessForm.jsx");
 		return(
 			<div>
 				<label>Business Name
-					<input type="text" onChange={this.handleName} value={this.state.name}/>
+					<input 
+						type="text" 
+						onChange={this.handleName} 
+						value={this.state.name}
+					/>
 				</label>
 
 				<label>Address
-					<input type="text" onChange={this.handleAddress} value={this.state.address}/>
+					<input 
+						type="text" 
+						onChange={this.handleAddress} 
+						value={this.state.address}
+					/>
 				</label>
 
 				<label>Hours
-					<input type="text" onChange={this.handleHours} value={this.state.hours}/>
+					<input 
+						type="text" 
+						onChange={this.handleHours} 
+						value={this.state.hours}
+					/>
 				</label>
 
 				<button onClick={this.handleSubmit}>Add Business</button>

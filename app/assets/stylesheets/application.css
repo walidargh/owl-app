@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+ body {
+ 	background-color: #2d2d2d;
+ }
+ input {
+ 	border-radius: 10px;
+ }
+
+ .business-index-item {
+ 	list-style: none;
+ 	border: 1px solid #fafcf1;
+ 	font-family: 'Roboto';
+ 	padding: 5px;
+ 	margin: 5px;
+ 	background-color: #e9fcf4;
+ }
+
+ .business-index-title {
+ 	font-size: 16px;
+ }
+
+ .business-index-attr {
+ 	font-size: 12px;
+ }
+
+.newBusiness {
+	
+}
+
+ @font-face {
+ 	font-family:'ParryHotter';
+ 	src: local('ParryHotter');
+ }
+
+

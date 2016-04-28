@@ -55,8 +55,14 @@ var BusinessIndex = React.createClass({
 		// Build a button that will render the create new Business form
 		return (
 			<div>
-				<button onClick={this.openModal}>New Business</button>
+				<button 
+					className="newBusiness" 
+					onClick={this.openModal}>
+					New Business
+				</button>
+
 				{businesses}
+				
 				<Modal 
 					isOpen={this.state.modalIsOpen} 
 					onRequestClose={this.closeModal}>

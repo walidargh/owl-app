@@ -9,7 +9,6 @@ var LoginForm = React.createClass({
 	},
 
 	handleSubmit: function (event) {
-		console.log('about to submit')
 		event.preventDefault();
 		var potentialUser = {
 			user_name: this.state.username, password: this.state.password
@@ -34,6 +33,7 @@ var LoginForm = React.createClass({
 			<form onSubmit={this.handleSubmit} >
 				<h2>{this.props.formType}</h2>
 				<section>
+
 					<label>Username<br/>
 						<input type="text" 
 							onChange={this.handleUsername} 
@@ -44,10 +44,12 @@ var LoginForm = React.createClass({
 					<br/><br/>
 
 					<label>Password<br/>
+						<input type="password" 
 							onChange={this.handlePassword} 
 							value={this.state.password || ""} 
 						/>
 					</label>
+
 				</section>
 
 				<section>
