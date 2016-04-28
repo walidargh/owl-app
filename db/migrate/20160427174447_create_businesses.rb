@@ -10,6 +10,6 @@ class CreateBusinesses < ActiveRecord::Migration
     	t.timestamps
     end
 
-    add_index :businesses, :user_name
+    add_index :businesses, :user_id
   end
 end

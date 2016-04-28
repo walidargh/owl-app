@@ -1,4 +1,4 @@
-var ApiUtil = require('../util/api_util');
+var ApiUtil = require('../util/ApiUtil');
 
 var ClientActions = {
 	fetchBusinesses: ApiUtil.fetchBusinesses,

@@ -56,11 +56,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] create new project
 - [X] create `User` model
 - [X] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [X] user signup/signin pages
+- [X] blank landing page after signin
 - [ ] build out CRUD API, Flux loop, and components for:
   - [ ] `UserProfile`
-  - [ ] `UserProfileEditForm`
+  - [ ] `UserProfileEditForm` (expected feature, but part of MVP)
 
 ### Phase 2: Business Model, API, and basic APIUtil (1.5 days)
 
@@ -68,28 +68,28 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 the API.
 
 - [X] create `Business` model
-- [ ] seed the database with a small amount of test data
+- [X] seed the database with a small amount of test data
 - [X] CRUD API for Business (`BusinessController`)
-- [ ] jBuilder views for businesses
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [X] jBuilder views for businesses
+- [X] setup Webpack & Flux scaffold
+- [X] setup `APIUtil` to interact with the API
+- [X] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1.5 days)
 
 **Objective:** Business can be created, updated, destroyed, rated and reviewed
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+<!-- - [ ] setup the flux loop with skeleton files -->
+- [X] setup React Router
 - [ ] implement each business component, building out the flux loop as needed.
-  - [ ] `BusinessesIndex`
-  - [ ] `BusinessIndexItem`
+  - [X] `BusinessesIndex`
+  - [X] `BusinessIndexItem`
   - [ ] `BusinessForm`
-- [ ] set up Stores
-- [ ] set up Server/Client Actions
+- [X] set up Stores
+- [X] set up Server/Client Actions
 
 
-### Phase 4: Start Styling (0.5 days)
+### Phase 4: Start Styling (1 days)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 

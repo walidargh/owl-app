@@ -11,6 +11,7 @@ var LoginModal = require('./modals/LoginModal');
 var UserActions = require('./actions/UserActions');
 var UserStore = require('./stores/user');
 var BusinessIndex = require('./components/BusinessIndex');
+var BusinessDetail = require('./components/BusinessDetail');
 
 UserActions.fetchCurrentUser();
 
@@ -51,6 +52,10 @@ var App = React.createClass({
     this.setState({modalIsOpen: true});
   },
 
+  closeModal: function() {
+    this.setState({modalIsOpen: false});
+  },
+
   // afterOpenModal: function() {
   //   // references are now sync'd and can be accessed.
   //   this.refs.subtitle.style.color = '#f00';
@@ -86,10 +91,6 @@ var App = React.createClass({
       }
   },
 
-  closeModal: function() {
-    this.setState({modalIsOpen: false});
-  },
-
   render: function() {
     return (
       <div>
@@ -112,15 +113,15 @@ var App = React.createClass({
 var appRouter = (
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
-			<Route path="user/" component={LoginModal} />
-      <IndexRoute component={BusinessIndex} />
-      <Route path="businesses/" component={BusinessIndex} />
+      <Route path="businesses" component={BusinessIndex} />
+      <Route path="businesses/:businessId" component={BusinessDetail} />
 		</Route>
 	</Router>
 );
 
 document.addEventListener("DOMContentLoaded", function () {
 	var root = document.getElementById('root');
+  console.log('rendering');
   Modal.setAppElement(document.body);
 	ReactDOM.render(appRouter, root );
 });
