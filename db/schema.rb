@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 20160427174447) do
     t.string   "name",       null: false
     t.string   "address",    null: false
     t.string   "hours",      null: false
-    t.string   "price",      null: false
+    t.integer  "price",      null: false
+    t.integer  "rating",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

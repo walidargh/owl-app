@@ -56,13 +56,14 @@ var BusinessIndex = React.createClass({
 		return (
 			<div>
 				<button 
-					className="newBusiness" 
+					className="new-business" 
 					onClick={this.openModal}>
 					New Business
 				</button>
+				<div className="business-index">
+					{businesses}
+				</div>
 
-				{businesses}
-				
 				<Modal 
 					isOpen={this.state.modalIsOpen} 
 					onRequestClose={this.closeModal}>

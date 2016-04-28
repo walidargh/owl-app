@@ -10,12 +10,12 @@ var BusinessIndexItem = React.createClass({
 		// this item will have a pic, stars, title, brief blurb,
 		// maybe neighborhood
 		return (
-						<ul className="business-index-item">
-							<li className="business-index-title">{business.name}</li>
-							<li className="business-index-attr">{business.hours}</li>
-							<li className="business-index-attr">{business.price}</li>
-							<li className="business-index-attr">{business.address}</li>
-						</ul>
+			<ul className="business-index-item">
+				<li className="business-index-title">{business.name}</li>
+				<li className="business-index-hours">{business.hours}</li>
+				<li className="business-index-price">{business.price}</li>
+				<li className="business-index-address">{business.address}</li>
+			</ul>
 						);
 	}
 });

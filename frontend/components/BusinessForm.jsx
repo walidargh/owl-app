@@ -8,7 +8,7 @@ var BusinessForm = React.createClass({
 		// var currentUser = UserStore.currentUser();
 		return ({
 			name: "", address: "", 
-			hours: "", price: "$"});
+			hours: "", price: });
 	},
 
 	componentDidMount: function () {
@@ -47,19 +47,16 @@ var BusinessForm = React.createClass({
 	render: function () {
 		return(
 			<div>
+			
 				<label>Business Name
 					<input 
-						type="text" 
-						onChange={this.handleName} 
-						value={this.state.name}
+						type="text" onChange={this.handleName} value={this.state.name}
 					/>
 				</label>
 
 				<label>Address
 					<input 
-						type="text" 
-						onChange={this.handleAddress} 
-						value={this.state.address}
+						type="text" onChange={this.handleAddress} value={this.state.address}
 					/>
 				</label>
 
@@ -68,6 +65,12 @@ var BusinessForm = React.createClass({
 						type="text" 
 						onChange={this.handleHours} 
 						value={this.state.hours}
+					/>
+				</label>
+
+				<label>Price
+					<input 
+					type="text" onChange={this.handlePrice} value={this.state.hours} 
 					/>
 				</label>
 
