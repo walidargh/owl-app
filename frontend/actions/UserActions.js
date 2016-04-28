@@ -5,7 +5,6 @@ var UserConstants = require('../constants/UserConstants');
 var UserActions = {
 
 	fetchCurrentUser: function () {
-		console.log('about to fetchCurrentUser from UserActions');
 		UserApiUtil.fetchCurrentUser();
 	},
 
@@ -22,7 +21,6 @@ var UserActions = {
 	},
 
 	create: function (userData) {
-		console.log('creating in UserActions');
 		UserApiUtil.create(userData);
 	},
 

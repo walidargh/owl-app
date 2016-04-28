@@ -4,9 +4,11 @@ class Api::BusinessesController < ApplicationController
 	end
 
 	def create
-		@business = Business.new(business_params)
+		full_params = business_params
+		full_params[:user_id] = current_user.id
+		@business = Business.new(full_params)
 		if @business.save
-			render "api/business/show"
+			render json: @business
 		else
 			@errors = @business.errors.full_messages
 			render "api/shared/error", status: 422

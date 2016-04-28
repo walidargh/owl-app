@@ -39,10 +39,8 @@ var App = React.createClass({
   _onChange: function () {
     this.setState({modalIsOpen: false});
     if (UserStore.currentUser()) {
-      console.log('something is changing and the current user exists')
       this.setState({formType: "Log Out"});
     } else {
-      console.log('something is changing and the current user does not exists')
       this.setState({formType: "Log In"});
     }
 
@@ -62,19 +60,16 @@ var App = React.createClass({
   // },
 
   loginForm: function () {
-    console.log('I clicked the log in button')
     this.setState({formType: "Log In"});
     this.openModal();
   },
 
   signupForm: function() {
-    console.log('I clicked the sign up button')
     this.setState({formType: "Sign Up"});
     this.openModal();    
   },
 
   logout: function () {
-    console.log("I clicked the log out button")
     UserActions.logout();
   },
 
@@ -114,14 +109,13 @@ var appRouter = (
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
       <Route path="businesses" component={BusinessIndex} />
-      <Route path="businesses/:businessId" component={BusinessDetail} />
 		</Route>
 	</Router>
 );
 
 document.addEventListener("DOMContentLoaded", function () {
 	var root = document.getElementById('root');
-  console.log('rendering');
   Modal.setAppElement(document.body);
 	ReactDOM.render(appRouter, root );
 });
+

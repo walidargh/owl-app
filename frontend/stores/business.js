@@ -21,6 +21,11 @@ BusinessStore.resetBusinesses = function (businesses) {
 	this.__emitChange();
 };
 
+BusinessStore.addBusiness = function (business) {
+	_businesses[business.id] = business;
+	this.__emitChange();
+};
+
 BusinessStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case BusinessConstants.BUSINESSES_RECEIVED:
@@ -28,7 +33,7 @@ BusinessStore.__onDispatch = function (payload) {
 		break;
 
 		case BusinessConstants.BUSINESS_RECEIVED:
-			BusinessStore.addBusiness();
+			BusinessStore.addBusiness(payload.business);
 		break;
 	}
 };

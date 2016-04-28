@@ -9,7 +9,6 @@ var _currentUser, _authErrors;
 UserStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case "LOGIN":
-			console.log('About to log into the store from dispatch');
 			UserStore.login(payload.user);
 		break;
 		case "LOGOUT":
@@ -22,7 +21,6 @@ UserStore.__onDispatch = function (payload) {
 };
 
 UserStore.login = function(user) {
-	console.log('About to log into the store from user store login');
 	_currentUser = user;
 	_authErrors = null;
 	UserStore.__emitChange();
@@ -49,5 +47,6 @@ UserStore.errors = function () {
 
 module.exports = UserStore;
 
+window.UserStore = UserStore;
 // TODO: Figure out how to properly return currentUser (i.e. use jquery extend)
 // TODO: FIgure out how error messages come in and how they are formatted (i.e. [].slice)

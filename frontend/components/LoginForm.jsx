@@ -44,7 +44,6 @@ var LoginForm = React.createClass({
 					<br/><br/>
 
 					<label>Password<br/>
-						<input type="password" 
 							onChange={this.handlePassword} 
 							value={this.state.password || ""} 
 						/>
@@ -59,7 +58,6 @@ var LoginForm = React.createClass({
 	},
 
 	render: function () {
-		'I am about to render'
 		return (
 			<div id="log-form">
 				{this.form()}

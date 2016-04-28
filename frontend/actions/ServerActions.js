@@ -1,7 +1,7 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var BusinessConstants = require('../constants/BusinessConstants');
 // TODO build business constants
-var ApiActions = {
+var ServerActions = {
 	receiveAll: function(businesses) {
 		AppDispatcher.dispatch({
 			actionType: BusinessConstants.BUSINESSES_RECEIVED, 
@@ -16,4 +16,4 @@ var ApiActions = {
 	}
 };
 
-module.exports = ApiActions;
+module.exports = ServerActions;

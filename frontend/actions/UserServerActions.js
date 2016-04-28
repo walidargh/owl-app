@@ -3,7 +3,6 @@ var UserConstants = require('../constants/UserConstants');
 
 var UserServerActions = {
 	receiveCurrentUser: function(user) {
-		console.log('we are about to receive the current user in UserServerActions');
 		AppDispatcher.dispatch({
 			actionType: UserConstants.LOGIN,
 			user: user

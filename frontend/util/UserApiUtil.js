@@ -2,7 +2,6 @@ var UserServerActions = require('../actions/UserServerActions');
 
 var UserApiUtil = {
 	fetchCurrentUser: function () {
-		console.log('We are about to fetchCurrentUser in UserApiUtil');
 		$.ajax({
 			url: '/api/session',
 			type: 'GET',
@@ -32,7 +31,6 @@ var UserApiUtil = {
 	},
 
 	create: function (userData) {
-		console.log('creating in UserApiUtil');
 		$.ajax({
 			url: '/api/user',
 			type: 'POST',

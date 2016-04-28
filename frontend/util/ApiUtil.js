@@ -13,7 +13,7 @@ var ApiUtil = {
 	createBusiness: function (data) {
 			$.ajax({
 			url: '/api/businesses',
-			type: 'GET',
+			type: 'POST',
 			data: {business: data},
 			success: ServerActions.receiveSingleBusiness,
 			// make sure receiveSingleBusiness takes a business as an argument
