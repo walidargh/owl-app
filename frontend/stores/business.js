@@ -1,6 +1,6 @@
 var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
-var BusinessConstants = require('../constants/BusinessConstants')
+var BusinessConstants = require('../constants/BusinessConstants');
 
 var BusinessStore = new Store(AppDispatcher);
 var _businesses, _authErrors;

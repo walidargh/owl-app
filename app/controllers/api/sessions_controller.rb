@@ -1,3 +1,4 @@
+require 'byebug'
 class Api::SessionsController < ApplicationController
 
 	def show
@@ -12,8 +13,8 @@ class Api::SessionsController < ApplicationController
 
 	def create
 		@user = User.find_by_credentials(
-			user_params[:user_name],
-			user_params[:password]
+			params[:user][:user_name],
+			params[:user][:password]
 			)
 		if @user
 			login_user(@user)

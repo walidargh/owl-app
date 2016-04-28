@@ -9,6 +9,7 @@ var _currentUser, _authErrors;
 UserStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case "LOGIN":
+			console.log('About to log into the store from dispatch');
 			UserStore.login(payload.user);
 		break;
 		case "LOGOUT":
@@ -20,18 +21,22 @@ UserStore.__onDispatch = function (payload) {
 	}
 };
 
-UserStore.signin = function(user) {
+UserStore.login = function(user) {
+	console.log('About to log into the store from user store login');
 	_currentUser = user;
 	_authErrors = null;
+	UserStore.__emitChange();
 };
 
 UserStore.logout = function () {
 	_currentUser = null;
 	_authErrors = null;
+	UserStore.__emitChange();
 };
 
 UserStore.setErrors = function (errors) {
 	_authErrors = errors;
+	UserStore.__emitChange();
 };
 
 UserStore.currentUser = function () {

@@ -3,12 +3,14 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var UserConstants = require('../constants/UserConstants');
 
 var UserActions = {
+
 	fetchCurrentUser: function () {
+		console.log('about to fetchCurrentUser from UserActions');
 		UserApiUtil.fetchCurrentUser();
 	},
 
 	login: function (user) {
-		UserApiUtil.login(user);
+		UserApiUtil.signin(user);
 	},
 
 	logout: function () {
@@ -20,31 +22,12 @@ var UserActions = {
 	},
 
 	create: function (userData) {
+		console.log('creating in UserActions');
 		UserApiUtil.create(userData);
 	},
 
 	destroy: function (user) {
 		UserApiUtil.destroy(user);
-	},
-
-	receiveCurrentUser: function(user) {
-		AppDispatcher.dispatch({
-			actionType: UserConstants.login,
-			user: user
-		});
-	},
-
-	handleError: function (error) {
-		AppDispatcher.dispatch({
-			actionType: UserConstants.ERROR,
-			errors: error.responseJSON.errors
-		});
-	},
-
-	removeCurrentUser: function () {
-		AppDispatcher.dispatch({
-			actionType: UserConstants.LOGOUT
-		});
 	}
 
 };

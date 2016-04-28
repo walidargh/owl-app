@@ -1,12 +1,13 @@
-var UserActions = require('../actions/UserActions');
+var UserServerActions = require('../actions/UserServerActions');
 
 var UserApiUtil = {
 	fetchCurrentUser: function () {
+		console.log('We are about to fetchCurrentUser in UserApiUtil');
 		$.ajax({
 			url: '/api/session',
 			type: 'GET',
-			success: UserActions.receiveCurrentUser,
-			error: UserActions.handleError,
+			success: UserServerActions.receiveCurrentUser,
+			error: UserServerActions.handleError,
 		});
 	},
 
@@ -15,8 +16,8 @@ var UserApiUtil = {
 			url: '/api/session',
 			type: 'POST',
 			data: {user: user},
-			success: UserActions.receiveCurrentUser,
-			error: UserActions.handleError
+			success: UserServerActions.receiveCurrentUser,
+			error: UserServerActions.handleError
 
 		});
 	},
@@ -25,18 +26,23 @@ var UserApiUtil = {
 		$.ajax({
 			url: '/api/session',
 			type: 'DELETE',
-			success: UserActions.removeCurrentUser,
-			error: UserActions.handleError
+			success: UserServerActions.removeCurrentUser,
+			error: UserServerActions.handleError
 		});
 	},
 
 	create: function (userData) {
+		console.log('creating in UserApiUtil');
 		$.ajax({
 			url: '/api/user',
 			type: 'POST',
 			data: {user: userData},
-			success: UserActions.receiveCurrentUser,
-			error: UserActions.handleError
+			success: function (user) {
+				console.log('we have been successful');
+				UserServerActions.receiveCurrentUser(user);
+			},
+			// ,
+			error: UserServerActions.handleError
 		});
 	},
 
@@ -45,8 +51,8 @@ var UserApiUtil = {
 			url: '/api/user',
 			// TODO: do I need to include user.id?
 			type: 'DELETE',
-			success: UserActions.removeCurrentUser,
-			error: UserActions.handleError
+			success: UserServerActions.removeCurrentUser,
+			error: UserServerActions.handleError
 		});
 	}
 };

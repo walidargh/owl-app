@@ -1,3 +1,4 @@
+require 'byebug'
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -10,6 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   def login_user(user)
+    puts "logging in"
+    puts "user"
+    @current_user = user
     session[:session_token] = user.reset_session_token!
   end
 
@@ -18,8 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-    session[:session_token] = nil
+    puts "logging out"
+    puts current_user
     current_user.reset_session_token!
+    session[:session_token] = nil
     @current_user = nil
   end
 

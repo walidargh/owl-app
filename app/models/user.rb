@@ -1,3 +1,5 @@
+require 'byebug'
+
 class User < ActiveRecord::Base
 
   attr_reader :password
@@ -14,7 +16,7 @@ class User < ActiveRecord::Base
 
 	def self.find_by_credentials(user_name, password)
 		user = User.find_by_user_name(user_name)
-		return nil if @user.nil?
+		return nil if user.nil?
 		user.is_password?(password) ? user : nil
 	end
 

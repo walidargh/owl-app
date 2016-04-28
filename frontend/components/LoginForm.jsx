@@ -1,25 +1,24 @@
 var React = require('react');
 var UserActions = require('../actions/UserActions');
-var CurrentUserState = require('../mixins/CurrentUserState');
-var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var UserStore = require('../stores/user');
 
 var LoginForm = React.createClass({
-	mixins: [LinkedStateMixin, CurrentUserState],
-
 	getInitialState: function () {
 		console.log(this.props);
 		return {user_name: "", password: ""};
 	},
 
 	handleSubmit: function (event) {
+		console.log('about to submit')
 		event.preventDefault();
 		var potentialUser = {
 			user_name: this.state.username, password: this.state.password
 		};
-		UserActions.create({
-			user_name: this.state.username, password: this.state.password
-		});
+		if (this.props.formType === "Sign Up") {
+			UserActions.create(potentialUser);
+		} else {
+				UserActions.login(potentialUser);
+			}
 	},
 
 	handleUsername: function (event) {
@@ -30,22 +29,7 @@ var LoginForm = React.createClass({
 		this.setState({password: event.target.value});
 	},
 
-	logout: function () {
-
-	},
-
-	login: function () {
-
-	},
-
-	errors: function () {
-
-	},
-
 	form: function () {
-		if(this.state.CurrentUser) {
-			return;
-		}
 		return (
 			<form onSubmit={this.handleSubmit} >
 				<h2>{this.props.formType}</h2>
@@ -62,7 +46,7 @@ var LoginForm = React.createClass({
 					<label>Password<br/>
 						<input type="password" 
 							onChange={this.handlePassword} 
-							value={this.state.password} 
+							value={this.state.password || ""} 
 						/>
 					</label>
 				</section>
@@ -75,6 +59,7 @@ var LoginForm = React.createClass({
 	},
 
 	render: function () {
+		'I am about to render'
 		return (
 			<div id="log-form">
 				{this.form()}
