@@ -2,13 +2,14 @@ var React = require('react');
 var UserStore = require('../stores/user');
 var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
+var RatingForm = require('./RatingForm');
 
 var BusinessForm = React.createClass({
 	getInitialState: function () {
 		// var currentUser = UserStore.currentUser();
 		return ({
 			name: "", address: "", 
-			hours: "", price: });
+			hours: "", price: "", rating: ""});
 	},
 
 	componentDidMount: function () {
@@ -47,7 +48,7 @@ var BusinessForm = React.createClass({
 	render: function () {
 		return(
 			<div>
-			
+
 				<label>Business Name
 					<input 
 						type="text" onChange={this.handleName} value={this.state.name}
@@ -68,11 +69,26 @@ var BusinessForm = React.createClass({
 					/>
 				</label>
 
-				<label>Price
+				<label>
 					<input 
-					type="text" onChange={this.handlePrice} value={this.state.hours} 
+					type="radio" onChange={this.handlePrice} value={1} 
+					/>
+
+				</label>				
+
+				<label>
+					<input 
+					type="radio" onChange={this.handlePrice} value={2} 
 					/>
 				</label>
+
+				<label>
+					<input 
+					type="radio" onChange={this.handlePrice} value={3} 
+					/>
+				</label>
+
+				<RatingForm />
 
 				<button onClick={this.handleSubmit}>Add Business</button>
 			</div>
@@ -84,3 +100,5 @@ var BusinessForm = React.createClass({
 });
 
 module.exports = BusinessForm;
+
+// User HP currency as price ratings, spin coin on hover
