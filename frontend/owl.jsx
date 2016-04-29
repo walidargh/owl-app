@@ -75,12 +75,12 @@ var App = React.createClass({
 
   logButton: function () {
     if (this.state.formType === "Log Out") {
-      return (<button onClick={this.logout}>Sign Out</button>);
+      return (<button className="log-out-button" onClick={this.logout}>Sign Out</button>);
     } else {
         return (
-          <div> 
-            <button onClick={this.loginForm}>Log In</button>
-            <button onClick={this.signupForm}>Sign Up</button>
+          <div className="not-loggedin"> 
+            <button className="log-in-button" onClick={this.loginForm}>Log In</button>
+            <button className="sign-up-button" onClick={this.signupForm}>Sign Up</button>
           </div>
         );
       }
@@ -88,7 +88,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <header>
         {this.logButton()}
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -99,7 +99,7 @@ var App = React.createClass({
           <LoginForm formType={this.state.formType} />
         </Modal>
         {this.props.children}
-      </div>
+      </header>
     );
   }
 });

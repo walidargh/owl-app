@@ -14,6 +14,7 @@ var BusinessIndex = React.createClass({
 
 	componentDidMount: function () {
 		BusinessStore.addListener(this._onChange);
+		UserStore.addListener(this._onChange);
 		ClientActions.fetchBusinesses();
 		Modal.setAppElement(document.body);
 	},
@@ -54,7 +55,7 @@ var BusinessIndex = React.createClass({
 		});
 		// Build a button that will render the create new Business form
 		return (
-			<div>
+			<div className="businesses">
 				<button 
 					className="new-business" 
 					onClick={this.openModal}>

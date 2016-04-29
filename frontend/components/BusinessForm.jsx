@@ -2,14 +2,13 @@ var React = require('react');
 var UserStore = require('../stores/user');
 var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
-var RatingForm = require('./RatingForm');
 
 var BusinessForm = React.createClass({
 	getInitialState: function () {
 		// var currentUser = UserStore.currentUser();
 		return ({
 			name: "", address: "", 
-			hours: "", price: "", rating: ""});
+			hours: "", price: 1});
 	},
 
 	componentDidMount: function () {
@@ -30,7 +29,11 @@ var BusinessForm = React.createClass({
 	},
 
 	handleHours: function (event) {
-		this.setState({hours: event.target.value});
+		this.setState({hours: parseInt(event.target.value)});
+	},
+
+	handlePrice: function (event) {
+		this.setState({price: parseInt(event.tartge.value)});
 	},
 
 	handleSubmit: function (event) {
@@ -87,8 +90,6 @@ var BusinessForm = React.createClass({
 					type="radio" onChange={this.handlePrice} value={3} 
 					/>
 				</label>
-
-				<RatingForm />
 
 				<button onClick={this.handleSubmit}>Add Business</button>
 			</div>

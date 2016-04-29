@@ -6,6 +6,7 @@ class Api::BusinessesController < ApplicationController
 	def create
 		full_params = business_params
 		full_params[:user_id] = current_user.id
+		full_params[:price] = full_params[:price].to_i 
 		@business = Business.new(full_params)
 		if @business.save
 			render json: @business

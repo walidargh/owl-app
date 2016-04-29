@@ -14,13 +14,35 @@
  *= require_self
  */
 body {
- 	background-color: #333;
  	font-family: 'Roboto';
  }
+
+header {
+ 	display: flex;
+ 	justify-content: flex-start;
+ 	position: fixed;
+ 	align-items: center;
+ 	background-color: #333;
+ 	height: 50px;
+ 	width: 100%;
+}
+
 input {
  	border-radius: 10px;
- }
+}
 
+.businesses {
+	position: relative;
+	top: 40px;
+}
+
+.business-index {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+	background-color: #fff;
+}
 
 .business-index-item {
  	list-style: none;
@@ -30,32 +52,35 @@ input {
  	background-color: #e9fcf4;
  	text-shadow: rgba(0,0,0,.15)
 
- }
+}
 
 .business-index-title {
- 	font-size: 16px;
- }
+ 	font-size: 18px;
+ 	font-weight: 700;
+ 	padding: 0 4px 0 4px;
+}
 
 .business-index-hours {
  	font-size: 14px;
- }
+ 	color: darkgrey;
+ 	padding: 0 4px 0 4px;
+}
 
 .business-index-price {
  	font-size: 14px;
- } 
+ 	padding: 0 4px 0 4px;
+} 
 
 .business-index-address {
  	font-size: 14px;
- 	font-weight: 700px;
- }
+ 	font-weight: 700;
+ 	padding: 0 4px 0 4px;
+}
 
-.business-index {
+.not-loggedin {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 50%;
-	margin: auto;
-	background-color: #fff;
+	flex-direction: row;
+	justify-content: flex-start;
 }
 
 button {
@@ -63,89 +88,17 @@ button {
 	font-size: 14px;
 	color: white;
 	text-transform: uppercase;
-	border-radius: 50%;
 	padding: 5px;
 	margin: 5px;
 	background-color: rgba(0, 0, 0, 0.2);
-	border-color: white;
-	border-style: none;
+	border: 2px solid white;
 }
 
- @font-face {
- 	font-family:'ParryHotter';
- 	src: local('ParryHotter');
- }
 
- form .stars {
-  background: url("stars.png") repeat-x 0 0;
-  width: 150px;
-  margin: 0 auto;
-}
- 
-form .stars input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-form .stars input[type="radio"].star-5:checked ~ span {
-  width: 100%;
-}
-form .stars input[type="radio"].star-4:checked ~ span {
-  width: 80%;
-}
-form .stars input[type="radio"].star-3:checked ~ span {
-  width: 60%;
-}
-form .stars input[type="radio"].star-2:checked ~ span {
-  width: 40%;
-}
-form .stars input[type="radio"].star-1:checked ~ span {
-  width: 20%;
-}
-form .stars label {
-  display: block;
-  width: 30px;
-  height: 30px;
-  margin: 0!important;
-  padding: 0!important;
-  text-indent: -999em;
-  float: left;
-  position: relative;
-  z-index: 10;
-  background: transparent!important;
-  cursor: pointer;
-}
-form .stars label:hover ~ span {
-  background-position: 0 -30px;
-}
-form .stars label.star-5:hover ~ span {
-  width: 100% !important;
-}
-form .stars label.star-4:hover ~ span {
-  width: 80% !important;
-}
-form .stars label.star-3:hover ~ span {
-  width: 60% !important;
-}
-form .stars label.star-2:hover ~ span {
-  width: 40% !important;
-}
-form .stars label.star-1:hover ~ span {
-  width: 20% !important;
-}
-form .stars span {
-  display: block;
-  width: 0;
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 30px;
-  background: url("stars.png") repeat-x 0 -60px;
-  -webkit-transition: -webkit-width 0.5s;
-  -moz-transition: -moz-width 0.5s;
-  -ms-transition: -ms-width 0.5s;
-  -o-transition: -o-width 0.5s;
-  transition: width 0.5s;
+@font-face {
+
+ 	font-family: 'Lumos';
+ 	src: local('Lumos');
 }
 
 

@@ -6,7 +6,6 @@ class CreateBusinesses < ActiveRecord::Migration
     	t.string :address, null: false 
     	t.string :hours, null: false
     	t.integer :price, null: false
-        t.integer :rating, null: false
         
     	t.timestamps
     end

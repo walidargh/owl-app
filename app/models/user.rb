@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	after_initialize :ensure_session_token
 
 	has_many :businesses
+	has_many :reviews
 
 	def self.generate_session_token
 		SecureRandom::urlsafe_base64(16)

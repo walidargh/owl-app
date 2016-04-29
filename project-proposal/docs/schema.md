@@ -8,7 +8,7 @@ user_id     | integer   | not null, foreign key (references users), indexed
 name        | string    | not null
 address     | text      | not null
 hours       | string    | not null
-price       | string    | not null
+price       | integer   | not null
 
 ## photos
 column name | data type | details
@@ -24,7 +24,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 content     | text      | not null
 stars       | integer   | not null
-author_id   | integer   | not null, foreign key (references users), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
 business_id | integer   | not null, foreign key (references businesses), indexed
 
 ## tags
