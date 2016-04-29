@@ -1,8 +1,10 @@
 var React = require('react');
+var hashHistory = require('react-router').hashHistory;
+
 
 var BusinessIndexItem = React.createClass({
 	showDetail: function () {
-		this.context.router.push('/businesses/' + this.props.business.id);
+		hashHistory.push('/businesses/' + this.props.business.id);
 	}, 
 
  	render: function () {

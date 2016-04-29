@@ -6,13 +6,22 @@ class Api::BusinessesController < ApplicationController
 	def create
 		full_params = business_params
 		full_params[:user_id] = current_user.id
-		full_params[:price] = full_params[:price].to_i 
 		@business = Business.new(full_params)
 		if @business.save
 			render json: @business
 		else
 			@errors = @business.errors.full_messages
 			render "api/shared/error", status: 422
+		end
+	end
+
+	def show 
+		@business = Business.find(params[:id])
+		if @business
+			
+		else
+			@errors = @business.errors.full_messages
+			render "api/shared/error", status: 404
 		end
 	end
 

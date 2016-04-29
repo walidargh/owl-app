@@ -11,13 +11,14 @@ var ApiUtil = {
 		// TODO: create handleError and receiveBusinesses
 	},
 	fetchSingleBusiness: function (id) {
+		console.log('fetchSingleBusiness')
 		$.ajax({
 			url: '/api/businesses/' + id,
 			type: 'GET',
 			success: ServerActions.receiveSingleBusiness,
 			error: ServerActions.handleError
 	});
-}
+},
 	createBusiness: function (data) {
 			$.ajax({
 			url: '/api/businesses',
