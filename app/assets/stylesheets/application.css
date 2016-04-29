@@ -32,15 +32,16 @@ input {
 }
 
 .businesses {
-	position: relative;
-	top: 40px;
+	position: absolute;
+	top: 100px;
+	width: 50%;
+	margin: auto;
 }
 
 .business-index {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 50%;
 	background-color: #fff;
 }
 
