@@ -57,7 +57,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] create `User` model
 - [X] authentication
 - [X] user signup/signin pages
-- [ ] blank landing page after signin
+- [X] blank landing page after signin
 - [ ] build out CRUD API, Flux loop, and components for:
   - [ ] `UserProfile`
   - [ ] `UserProfileEditForm` (expected feature, but part of MVP)
@@ -94,14 +94,14 @@ the API.
 **Objective:** Existing pages (including signup/signin) will look good.
 
 - [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [X] position elements on the page
+- [X] add basic colors & styles
 
 ### Phase 5: Reviews and Ratings (2 days)
 
 **Objective:** Users will be able to review businesses and rate them (out of 5 stars).
 
-- [ ] create `Review` model
+- [X] create `Review` model
 - [ ] build out API, Flux, loop, and components for:
   - [ ] review and rating CRUD
   - [ ] `ReviewsIndex`
