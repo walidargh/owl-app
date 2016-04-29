@@ -19,7 +19,7 @@ var BusinessDetail = React.createClass({
 
 	componentWillReceiveProps: function (newProps) {
 		console.log('component will receive props')
-		ClientActions.fetchSingleBusiness(parseInt(newProps.params.id));
+		ClientActions.fetchSingleBusiness(parseInt(newProps.params.businessId));
 	},	
 
 	componentDidMount: function () { 
@@ -38,7 +38,6 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
-		debugger
 		return (
 			<div>
 				<section className='business-detail-feature-bar'>
@@ -62,7 +61,7 @@ var BusinessDetail = React.createClass({
 				</section>
 
 				<section className="reviews container">
-				
+
 				</section> 
 			</div>
 		);
