@@ -45,7 +45,6 @@ var BusinessIndex = React.createClass({
 
 	render: function () {
 		var self = this;
-		console.log(businesses);
 		var businesses = Object.keys(this.state.businesses).map(function (id) {
 			return (
 				<BusinessIndexItem 

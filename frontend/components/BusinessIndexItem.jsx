@@ -1,7 +1,11 @@
 var React = require('react');
 
 var BusinessIndexItem = React.createClass({
-	render: function () {
+	showDetail: function () {
+		this.context.router.push('/businesses/' + this.props.business.id);
+	}, 
+
+ 	render: function () {
 		var business = this.props.business;
 		// create link to on business name that 
 		// will open the business detail by passing 
@@ -10,7 +14,7 @@ var BusinessIndexItem = React.createClass({
 		// this item will have a pic, stars, title, brief blurb,
 		// maybe neighborhood
 		return (
-			<ul className="business-index-item">
+			<ul className="business-index-item" onClick={this.showDetail}>
 				<li className="business-index-title">{business.name}</li>
 				<li className="business-index-hours">{business.hours}</li>
 				<li className="business-index-price">{business.price}</li>

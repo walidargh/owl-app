@@ -11,20 +11,9 @@ var LoginModal = require('./modals/LoginModal');
 var UserActions = require('./actions/UserActions');
 var UserStore = require('./stores/user');
 var BusinessIndex = require('./components/BusinessIndex');
-var BusinessDetail = require('./components/BusinessDetail');
+
 
 UserActions.fetchCurrentUser();
-
-var customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
 
 var App = React.createClass({
 
@@ -94,7 +83,7 @@ var App = React.createClass({
           isOpen={this.state.modalIsOpen}
           // onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          style={customStyles} >
+          >
           <button onClick={this.closeModal}>close</button>
           <LoginForm formType={this.state.formType} />
         </Modal>
@@ -109,6 +98,7 @@ var appRouter = (
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
       <Route path="businesses" component={BusinessIndex} />
+      <Route path="businesses/:businessId" component={BusinessIndex} />
 		</Route>
 	</Router>
 );

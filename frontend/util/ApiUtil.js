@@ -10,13 +10,20 @@ var ApiUtil = {
 		});
 		// TODO: create handleError and receiveBusinesses
 	},
+	fetchSingleBusiness: function (id) {
+		$.ajax({
+			url: '/api/businesses/' + id,
+			type: 'GET',
+			success: ServerActions.receiveSingleBusiness,
+			error: ServerActions.handleError
+	});
+}
 	createBusiness: function (data) {
 			$.ajax({
 			url: '/api/businesses',
 			type: 'POST',
 			data: {business: data},
 			success: ServerActions.receiveSingleBusiness,
-			// make sure receiveSingleBusiness takes a business as an argument
 			error: ServerActions.handleError
 		});
 	}

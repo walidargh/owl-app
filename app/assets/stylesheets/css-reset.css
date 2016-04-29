@@ -5,9 +5,11 @@ fieldset, label, input, textarea,
 span, article, footer, time, small {
 	padding: 0;
 	margin: 0;
+	border: 0;
 }
 
 ul {
+	list-style: none;
 
 }
 

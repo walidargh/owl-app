@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var BusinessConstants = require('../constants/BusinessConstants');
-// TODO build business constants
+
 var ServerActions = {
 	receiveAll: function(businesses) {
 		AppDispatcher.dispatch({
