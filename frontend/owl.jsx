@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
+var Router = ReactRouter.Router;
 var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 var Modal = require('react-modal');
@@ -12,8 +12,6 @@ var BusinessStore = require('./stores/business');
 var App = require('./components/App');
 var BusinessIndex = require('./components/BusinessIndex');
 var BusinessDetail = require('./components/BusinessDetail');
-
-UserActions.fetchCurrentUser();
 
 
 var appRouter = (
@@ -31,4 +29,4 @@ document.addEventListener("DOMContentLoaded", function () {
 	ReactDOM.render(appRouter, root );
 });
 
-//local story
+//local store

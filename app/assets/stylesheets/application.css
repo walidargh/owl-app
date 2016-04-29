@@ -29,13 +29,14 @@ header {
 
 input {
  	margin: 10px;
+ 	border: 1px solid #333;
 }
 
 .businesses {
-	position: absolute;
-	top: 100px;
+	position: relative;
+	top: 400px;
 	width: 50%;
-	margin: auto;
+	margin: 20px auto;
 }
 
 .business-index {
@@ -83,6 +84,13 @@ input {
 	justify-content: flex-start;
 }
 
+.business-detail-feature-bar {
+	position: absolute;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	margin: 10px;
+	top: 50px;
+}
+
 button {
 	font-family: 'Roboto';
 	font-size: 14px;
@@ -93,18 +101,6 @@ button {
 	background-color: rgba(0, 0, 0, 0.2);
 	border: 2px solid white;
 }
-
-Modal {
-	top: 50%;
-	left: 50%;
-	right: 'auto';
-	bottom: 'auto';
-	marginRight: '-50%';
-	transform: 'translate(-50%, -50%)'
-	color: white;
-	background-color:#333 ;
-}
-
 
 @font-face {
 

@@ -7,7 +7,7 @@ var ClientActions = require('../actions/ClientActions');
 var BusinessDetail = React.createClass({
 
 	getInitialState: function () {
-		console.log('initial state')
+		console.log('initial state');
 		return {business: ""};
 	},
 
@@ -44,19 +44,19 @@ var BusinessDetail = React.createClass({
 
 					<span className="business-detail-name">
 						{this.state.business.name}
-					</span>
+					</span><br/>
 
 					<span className="business-detail-address">
 						{this.state.business.address}
-					</span>
+					</span><br/>
 
 					<span className="business-detail-hours">
 						{this.state.business.hours}
-					</span>
+					</span><br/>
 
 					<span className="business-detail-price">
 						{this.state.business.price}
-					</span>
+					</span><br/>
 
 				</section>
 

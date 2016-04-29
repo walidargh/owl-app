@@ -5,12 +5,14 @@ var UserActions = require('../actions/UserActions');
 var UserStore = require('../stores/user');
 var BusinessStore = require('../stores/business');
 var BusinessIndex = require('./BusinessIndex');
+var hashHistory = require('react-router').hashHistory;
 
 
 var App = React.createClass({
 
   getInitialState: function() {
-    return { modalIsOpen: false, formType: "Log In" };
+    var formType =  (UserStore.currentUser()) ? "Log Out" : "Log In";
+    return { modalIsOpen: false, formType: formType};
   },
 
   componentWillMount: function () {
@@ -58,6 +60,10 @@ var App = React.createClass({
     UserActions.logout();
   },
 
+  showBusiness: function () {
+    hashHistory.push('/businesses/');
+  },
+
   logButton: function () {
     if (this.state.formType === "Log Out") {
       return (<button className="log-out-button" onClick={this.logout}>Sign Out</button>);
@@ -83,6 +89,7 @@ var App = React.createClass({
           <button onClick={this.closeModal}>close</button>
           <LoginForm formType={this.state.formType} />
         </Modal>
+        <button onClick={this.showBusiness}>View Businesses</button>
         {this.props.children}
       </header>
     );

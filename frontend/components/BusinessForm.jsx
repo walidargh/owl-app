@@ -8,7 +8,7 @@ var BusinessForm = React.createClass({
 		// var currentUser = UserStore.currentUser();
 		return ({
 			name: "", address: "", 
-			hours: "", price: 1});
+			hours: 1, price: ""});
 	},
 
 	componentDidMount: function () {

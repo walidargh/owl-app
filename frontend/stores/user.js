@@ -2,8 +2,9 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
 
 var UserStore = new Store(AppDispatcher);
-
-var _currentUser, _authErrors;
+var myStorage = localStorage;
+var _currentUser = JSON.parse(myStorage.getItem("currentUser"));
+var _authErrors;
 // still need to work these out in the backend
 
 UserStore.__onDispatch = function (payload) {
@@ -23,12 +24,14 @@ UserStore.__onDispatch = function (payload) {
 UserStore.login = function(user) {
 	_currentUser = user;
 	_authErrors = null;
+	myStorage.setItem("currentUser", JSON.stringify(user));
 	UserStore.__emitChange();
 };
 
 UserStore.logout = function () {
 	_currentUser = null;
 	_authErrors = null;
+	myStorage.removeItem("currentUser");
 	UserStore.__emitChange();
 };
 
@@ -38,7 +41,11 @@ UserStore.setErrors = function (errors) {
 };
 
 UserStore.currentUser = function () {
-	return _currentUser;
+	if (myStorage.getItem("currentUser") === "false") {
+		return null;
+	} else {
+			return _currentUser;
+		}
 };
 
 UserStore.errors = function () {

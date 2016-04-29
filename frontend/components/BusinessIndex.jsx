@@ -64,7 +64,7 @@ var BusinessIndex = React.createClass({
 					{businesses}
 				</div>
 
-				<Modal 
+				<Modal
 					isOpen={this.state.modalIsOpen} 
 					onRequestClose={this.closeModal}>
 					{this.form()}
