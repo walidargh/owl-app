@@ -29,10 +29,11 @@ var ApiUtil = {
 		});
 	},
 	createReview: function (data) {
+		debugger
 		$.ajax({
-			url: 'api/businesses/' + data.businessId,
+			url: 'api/reviews',
 			type: 'POST',
-			date: {review: data},
+			data: {review: data},
 			success: ServerActions.receiveSingleReview,
 			error: ServerActions.handleError
 		});

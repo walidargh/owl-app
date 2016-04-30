@@ -14,6 +14,13 @@ var ServerActions = {
 			actionType: BusinessConstants.BUSINESS_RECEIVED,
 			business: business
 		});
+	},
+
+	receiveSingleReview: function (review) {
+		AppDispatcher.dispatch({
+			actionType: BusinessConstants.REVIEW_RECEIVED,
+			review: review	
+		});
 	}
 };
 

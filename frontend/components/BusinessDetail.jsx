@@ -31,14 +31,14 @@ var BusinessDetail = React.createClass({
 	},
 
 	_onChange: function () {
-		this.setState(this.getStatefromStore);
+		this.setState(this.getStatefromStore());
 	},
 
 	reviewForm: function () {
 		if (this.state.business === "") {
 			return ;
 		} else {
-			return <ReviewIndex reviews={this.state.business.reviews}/>;
+			return <ReviewIndex reviews={this.state.business.reviews} businessId={this.state.business.id}/>;
 		}
 	},
 

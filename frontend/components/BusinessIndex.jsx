@@ -13,6 +13,7 @@ var BusinessIndex = React.createClass({
 	},
 
 	componentWillMount: function () {
+		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
 

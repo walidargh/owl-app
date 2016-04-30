@@ -9,7 +9,7 @@ var ReviewIndex = React.createClass({
 		});
 		return (
 			<div>
-				<ReviewForm />
+				<ReviewForm  businessId={this.props.businessId}/>
 				{reviews}
 			</div>
 

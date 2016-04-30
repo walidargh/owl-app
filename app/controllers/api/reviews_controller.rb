@@ -1,3 +1,4 @@
+require 'byebug'
 class Api::ReviewsController < ApplicationController
 	def index
 		@reviews = Reviews.find_by({business_id: review_params[:business_id]})
@@ -6,7 +7,7 @@ class Api::ReviewsController < ApplicationController
 	def create
 		full_params = review_params
 		full_params[:user_id] = current_user.id
-		@review = Review.new(review_params)
+		@review = Review.new(full_params)
 		if @review.save
 			render json: @review
 		else
@@ -17,7 +18,7 @@ class Api::ReviewsController < ApplicationController
 
 	private
 	def review_params
-		params.require(:reviews).permit(:body, :rating, :business_id)
+		params.require(:review).permit(:body, :rating, :business_id)
 	end
 
 end

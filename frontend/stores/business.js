@@ -26,6 +26,12 @@ BusinessStore.addBusiness = function (business) {
 	this.__emitChange();
 };
 
+BusinessStore.addReview = function (review) {
+	_businesses[review.business_id].reviews.push(review);
+	debugger
+	this.__emitChange();
+};
+
 BusinessStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case BusinessConstants.BUSINESSES_RECEIVED:
@@ -34,6 +40,10 @@ BusinessStore.__onDispatch = function (payload) {
 
 		case BusinessConstants.BUSINESS_RECEIVED:
 			BusinessStore.addBusiness(payload.business);
+		break;
+
+		case BusinessConstants.REVIEW_RECEIVED:
+			BusinessStore.addReview(payload.review);
 		break;
 	}
 };

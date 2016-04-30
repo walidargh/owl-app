@@ -3,23 +3,22 @@ var ClientActions = require('../actions/ClientActions');
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
-		return {body: ""};
+		return {body: "", rating: 5};
 	},
 
-	handleChange: function () {
-
+	handleChange: function (event) {
+		this.setState({body: event.target.value});
 	},
 
 	handleSubmit: function () {
-		debugger
-		var review = {body: this.state.body, rating: this.state.rating};
+		var review = {body: this.state.body, rating: this.state.rating, business_id: this.props.businessId};
 		ClientActions.createReview(review);
 	},
 
 	render: function () {
 		return (
 			<form className="review-form" onSubmit={this.handleSubmit}>
-				<input type="textbox" value={this.state.body} />
+				<input type="textbox" onChange={this.handleChange} value={this.state.body} />
 			</form>
 		);
 	}
