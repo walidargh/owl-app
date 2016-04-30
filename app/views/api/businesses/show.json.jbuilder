@@ -3,10 +3,10 @@ json.name @business.name
 json.address @business.address
 json.hours @business.hours
 json.price @business.price
-json.reviews do 
+json.reviews do
  json.array! @business.reviews do |review|
 		json.id review.id
-		json.name review.content
-		json.address review.rating
+		json.body review.body
+		json.rating review.rating
 	end
 end

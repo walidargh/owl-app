@@ -22,8 +22,8 @@ business_id | integer   | not null, foreign key (references businesses), indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-content     | text      | not null
-stars       | integer   | not null
+body        | text      | not null
+rating      | integer   | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 business_id | integer   | not null, foreign key (references businesses), indexed
 

@@ -23,7 +23,7 @@ var BusinessIndexItem = React.createClass({
 				<li className="business-index-address">{business.address}</li>
 				<li className="business-index-image"></li>
 			</ul>
-						);
+		);
 	}
 });
 

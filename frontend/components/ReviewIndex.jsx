@@ -1,13 +1,19 @@
 var React = require('react');
 var BusinessStore = require('../stores/business');
+var ReviewForm = require('./ReviewForm');
 
 var ReviewIndex = React.createClass({
 	render: function () {
-		debugger
 		var reviews = this.props.reviews.map(function(review) {
-			return <li>review.content</li>;
+			return <li>{review.body}</li>;
 		});
-		return (<div>{reviews}</div>);
+		return (
+			<div>
+				<ReviewForm />
+				{reviews}
+			</div>
+
+		);
 	}
 
 });

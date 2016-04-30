@@ -12,7 +12,7 @@ var BusinessIndex = React.createClass({
 		return ( {businesses: [], modalIsOpen: false} );
 	},
 
-	componentDidMount: function () {
+	componentWillMount: function () {
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
 
