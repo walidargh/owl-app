@@ -6,7 +6,6 @@ class Api::ReviewsController < ApplicationController
 	def create
 		full_params = review_params
 		full_params[:user_id] = current_user.id
-		full_params[:stars] = full_params[:stars].to_i
 		@review = Review.new(review_params)
 		if @review.save
 			render json: @review
@@ -18,7 +17,7 @@ class Api::ReviewsController < ApplicationController
 
 	private
 	def review_params
-		params.require(:reviews).permit(:content, :stars)
+		params.require(:reviews).permit(:content, :rating, :business_id)
 	end
 	
 end

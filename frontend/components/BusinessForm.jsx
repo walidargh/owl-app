@@ -8,7 +8,7 @@ var BusinessForm = React.createClass({
 		// var currentUser = UserStore.currentUser();
 		return ({
 			name: "", address: "", 
-			hours: 1, price: ""});
+			hours: "", price: ""});
 	},
 
 	componentDidMount: function () {
@@ -29,11 +29,11 @@ var BusinessForm = React.createClass({
 	},
 
 	handleHours: function (event) {
-		this.setState({hours: parseInt(event.target.value)});
+		this.setState({hours: event.target.value});
 	},
 
 	handlePrice: function (event) {
-		this.setState({price: parseInt(event.tartge.value)});
+		this.setState({price: parseInt(event.target.value)});
 	},
 
 	handleSubmit: function (event) {

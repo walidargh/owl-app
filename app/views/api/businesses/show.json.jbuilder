@@ -7,6 +7,6 @@ json.reviews do
  json.array! @business.reviews do |review|
 		json.id review.id
 		json.name review.content
-		json.address review.address
+		json.address review.rating
 	end
 end

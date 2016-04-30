@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 20160429071847) do
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.text     "content",     null: false
-    t.integer  "stars",       null: false
     t.integer  "user_id",     null: false
     t.integer  "business_id", null: false
+    t.text     "content",     null: false
+    t.integer  "rating",      null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

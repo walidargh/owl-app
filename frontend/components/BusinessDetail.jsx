@@ -1,13 +1,12 @@
 var React = require('react');
 var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
-
+var ReviewIndex = require('./ReviewIndex');
 
 
 var BusinessDetail = React.createClass({
 
 	getInitialState: function () {
-		console.log('initial state');
 		return {business: ""};
 	},
 
@@ -18,14 +17,12 @@ var BusinessDetail = React.createClass({
 	},
 
 	componentWillReceiveProps: function (newProps) {
-		console.log('component will receive props')
 		ClientActions.fetchSingleBusiness(parseInt(newProps.params.businessId));
 	},	
 
 	componentDidMount: function () { 
-		// this.setState({business: business});
-		console.log('component did mount')
-		ClientActions.fetchSingleBusiness(parseInt(this.props.params.businessId));
+		var businessId = parseInt(this.props.params.businessId);
+		ClientActions.fetchSingleBusiness(businessId);
 		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
 
@@ -37,7 +34,15 @@ var BusinessDetail = React.createClass({
 		this.setState(this.getStatefromStore);
 	},
 
-	render: function () {
+	reviewForm: function () {
+		if (this.state.business === "") {
+			return ;
+		} else {
+			return <ReviewIndex reviews={this.state.business.reviews}/>;
+		}
+	},
+
+	render: function () { 
 		return (
 			<div>
 				<section className='business-detail-feature-bar'>
@@ -59,9 +64,9 @@ var BusinessDetail = React.createClass({
 					</span><br/>
 
 				</section>
-
+					{this.reviewForm()}
 				<section className="reviews container">
-
+					
 				</section> 
 			</div>
 		);

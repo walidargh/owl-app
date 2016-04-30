@@ -15,4 +15,7 @@ Business.create(user_id: 1, name: "Eeylops Owl Emporium", address: "Diagon Alley
 Business.create(user_id: 1, name: "Weasleys' Wizard Wheezes", address: "Diagon Alley", hours: "11:00 AM - 5:00 PM" , price: 1 )
 Business.create(user_id: 2, name: "Flourish and Blotts", address: "Diagon Alley", hours: "8:00 AM - 8:00 PM" , price: 2 )
 
-
+Review.create(user_id: 1, content: "This place is awesome 10/10 would recommend", rating: 5, business_id: 1)
+Review.create(user_id: 2, content: "This place is terrible 1/10 would recommend", rating: 1, business_id: 1)
+Review.create(user_id: 2, content: "Got my first wand here!", rating: 5, business_id: 1)
+Review.create(user_id: 1, content: "They were all out of elder wands", rating: 1, business_id: 1)

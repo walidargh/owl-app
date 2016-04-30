@@ -79,19 +79,24 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <header>
-        {this.logButton()}
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          // onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          >
-          <button onClick={this.closeModal}>close</button>
-          <LoginForm formType={this.state.formType} />
-        </Modal>
-        <button onClick={this.showBusiness}>View Businesses</button>
-        {this.props.children}
-      </header>
+      <div className="app">
+        <div className="nav-bar">
+          {this.logButton()}
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            // onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            >
+            <button onClick={this.closeModal}>close</button>
+            <LoginForm formType={this.state.formType} />
+          </Modal>
+          <button onClick={this.showBusiness}>View Businesses</button>
+        </div>
+
+        <div className="content-body">
+          {this.props.children}
+        </div>
+      </div>
     );
   }
 });

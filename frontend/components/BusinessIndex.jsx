@@ -15,6 +15,8 @@ var BusinessIndex = React.createClass({
 	componentDidMount: function () {
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
+
+		// TODO build component to handle rendering 
 		ClientActions.fetchBusinesses();
 		Modal.setAppElement(document.body);
 	},

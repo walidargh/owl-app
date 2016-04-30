@@ -155,6 +155,8 @@ the API.
 - [ ] Suggested businesses based on users prior check-ins
 - [ ] Social Media Integration (Instagram, Facebook, Twitter)
 
+<!-- coupon modal -->
+
 <!-- [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
