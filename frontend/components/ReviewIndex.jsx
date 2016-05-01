@@ -1,15 +1,15 @@
 var React = require('react');
 var BusinessStore = require('../stores/business');
-var ReviewForm = require('./ReviewForm');
+var FormConstants = require('../constants/FormConstants');
+var FormModal = require('../modals/FormModal');
 
 var ReviewIndex = React.createClass({
 	getInitialState: function () {
 		return {modalIsOpen: false};
 	},
 
-	componentWillMount: function () {
-		
-	},
+	// componentWillMount: function () {
+	// },
 
 	render: function () {
 		var reviews = this.props.reviews.map(function(review) {
@@ -17,7 +17,11 @@ var ReviewIndex = React.createClass({
 		});
 		return (
 			<div>
-				<ReviewForm  businessId={this.props.businessId}/>
+				<FormModal  
+					businessId={this.props.businessId}
+					modalFormType={FormConstants.REVIEWFORM}
+					modalIsOpen={this.state.modalIsOpen}
+				/>
 				{reviews}
 			</div>
 

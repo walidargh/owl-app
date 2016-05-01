@@ -49,7 +49,7 @@ var formModal = React.createClass({
 				break;
 
 				case FormConstants.REVIEWFORM:
-					form = <ReviewForm />;
+					form = <ReviewForm businessId={this.props.businessId}/>;
 				break;
 			}
 			return form;
@@ -60,7 +60,6 @@ var formModal = React.createClass({
  	},
 
  	render: function () {
-
  		return (
  			<Modal
 				isOpen={this.state.modalIsOpen} 
