@@ -72,22 +72,22 @@ var BusinessForm = React.createClass({
 					/>
 				</label>
 
-				<label>
+				<label>$
 					<input 
-					type="radio" onChange={this.handlePrice} value={1} 
+					type="radio" onChange={this.handlePrice} value={1} name="price"
 					/>
 
 				</label>				
 
-				<label>
+				<label>$$
 					<input 
-					type="radio" onChange={this.handlePrice} value={2} 
+					type="radio" onChange={this.handlePrice} value={2} name="price"
 					/>
 				</label>
 
-				<label>
+				<label>$$$
 					<input 
-					type="radio" onChange={this.handlePrice} value={3} 
+					type="radio" onChange={this.handlePrice} value={3} name="price"
 					/>
 				</label>
 

@@ -57,6 +57,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] create `User` model
 - [X] authentication
 - [X] user signup/signin pages
+- [ ] demo user
 - [X] blank landing page after signin
 - [ ] build out CRUD API, Flux loop, and components for:
   - [ ] `UserProfile`
@@ -102,11 +103,11 @@ the API.
 **Objective:** Users will be able to review businesses and rate them (out of 5 stars).
 
 - [X] create `Review` model
-- [ ] build out API, Flux, loop, and components for:
-  - [ ] review and rating CRUD
-  - [ ] `ReviewsIndex`
-  - [ ] `ReviewIndexItem`
-  - [ ] `ReviewForm`
+- [X] build out API, Flux, loop, and components for:
+  - [X] review and rating CRUD
+  - [X] `ReviewsIndex`
+  - [X] `ReviewIndexItem`
+  - [X] `ReviewForm`
 - [ ] calculate average rating and number of reviews
 
 
