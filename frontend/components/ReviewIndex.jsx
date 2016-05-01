@@ -8,6 +8,10 @@ var ReviewIndex = React.createClass({
 		return {modalIsOpen: false};
 	},
 
+	openModal: function () {
+		this.setState({modalIsOpen: true});
+	},
+
 	// componentWillMount: function () {
 	// },
 
@@ -16,7 +20,13 @@ var ReviewIndex = React.createClass({
 			return <li>{review.body}</li>;
 		});
 		return (
-			<div>
+			<div className="reviews">
+				<button 
+					className="new-review" 
+					onClick={this.openModal}>
+					Write A Review
+				</button>
+
 				<FormModal  
 					businessId={this.props.businessId}
 					modalFormType={FormConstants.REVIEWFORM}
