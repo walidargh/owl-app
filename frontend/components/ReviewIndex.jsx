@@ -3,6 +3,14 @@ var BusinessStore = require('../stores/business');
 var ReviewForm = require('./ReviewForm');
 
 var ReviewIndex = React.createClass({
+	getInitialState: function () {
+		return {modalIsOpen: false};
+	},
+
+	componentWillMount: function () {
+		
+	},
+
 	render: function () {
 		var reviews = this.props.reviews.map(function(review) {
 			return <li>{review.body}</li>;

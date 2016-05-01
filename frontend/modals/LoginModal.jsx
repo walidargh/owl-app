@@ -18,7 +18,7 @@ var customStyles = {
 var LoginModal = React.createClass({
 
 	getInitialState: function () {
-		return ({modalOpen: true});
+		return ({modalOpen: false});
 	},
 
 	handleClick: function () {

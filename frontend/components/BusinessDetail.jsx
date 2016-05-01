@@ -38,7 +38,12 @@ var BusinessDetail = React.createClass({
 		if (this.state.business === "") {
 			return ;
 		} else {
-			return <ReviewIndex reviews={this.state.business.reviews} businessId={this.state.business.id}/>;
+			return (
+				<ReviewIndex 
+					reviews={this.state.business.reviews} 
+					businessId={this.state.business.id}
+				/>
+			);
 		}
 	},
 

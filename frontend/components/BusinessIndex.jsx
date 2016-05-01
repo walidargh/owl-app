@@ -5,7 +5,10 @@ var ClientActions = require('../actions/ClientActions');
 var BusinessIndexItem = require('./BusinessIndexItem');
 var BusinessForm = require('./BusinessForm');
 var LoginForm = require('./LoginForm');
-var Modal = require('react-modal');
+// var Modal = require('react-modal');
+var FormConstants = require('../constants/FormConstants');
+var FormModal = require('../modals/FormModal');
+
 
 var BusinessIndex = React.createClass({
 	getInitialState: function () {
@@ -13,18 +16,16 @@ var BusinessIndex = React.createClass({
 	},
 
 	componentWillMount: function () {
-		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
-
 		// TODO build component to handle rendering 
 		ClientActions.fetchBusinesses();
-		Modal.setAppElement(document.body);
+		// Modal.setAppElement(document.body);
 	},
 
 	_onChange: function () {
 		this.setState({businesses: BusinessStore.all()});
-		this.closeModal();
+		// this.closeModal();
 		//TODO: Should I close modal on business store update? what if I have multiple users? 
 	},
 
@@ -32,19 +33,19 @@ var BusinessIndex = React.createClass({
 		this.setState({modalIsOpen: true});
 	},
 
-	closeModal: function () {
-		this.setState({modalIsOpen: false});
-	},
+	// closeModal: function () {
+	// 	this.setState({modalIsOpen: false});
+	// },
 
- 	form: function () {
- 		if (UserStore.currentUser()) {
- 			console.log('here is the business form');
- 			return (<BusinessForm />);
- 		} else {
- 			console.log('sorry please log in to see the business form');
- 				return (<LoginForm formType="Log In"/>);
- 			}
- 	},
+ // 	form: function () {
+ // 		if (UserStore.currentUser()) {
+ // 			console.log('here is the business form');
+ // 			return (<BusinessForm />);
+ // 		} else {
+ // 			console.log('sorry please log in to see the business form');
+ // 				return (<LoginForm formType="Log In"/>);
+ // 			}
+ // 	},
 
 	render: function () {
 		var self = this;
@@ -58,23 +59,32 @@ var BusinessIndex = React.createClass({
 		// Build a button that will render the create new Business form
 		return (
 			<div className="businesses">
+
 				<button 
 					className="new-business" 
 					onClick={this.openModal}>
 					New Business
 				</button>
+
 				<div className="business-index">
 					{businesses}
 				</div>
 
-				<Modal
-					isOpen={this.state.modalIsOpen} 
-					onRequestClose={this.closeModal}>
-					{this.form()}
-				</Modal>
+				<FormModal 
+					modalFormType={FormConstants.BUSINESSFORM} 
+					modalIsOpen={this.state.modalIsOpen} 
+				/>
 			</div>
 		);
 	}
 });
 
 module.exports = BusinessIndex;
+
+
+
+				// <Modal
+				// 	isOpen={this.state.modalIsOpen} 
+				// 	onRequestClose={this.closeModal}>
+				// 	{this.form()}
+				// </Modal>
