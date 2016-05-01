@@ -6,6 +6,8 @@ var UserStore = require('../stores/user');
 var BusinessStore = require('../stores/business');
 var BusinessIndex = require('./BusinessIndex');
 var hashHistory = require('react-router').hashHistory;
+var FormModal = require('../modals/FormModal');
+var FormConstants = require('../constants/FormConstants');
 
 
 var App = React.createClass({
@@ -19,12 +21,11 @@ var App = React.createClass({
     this.userListener = UserStore.addListener(this._onChange);
   },
 
-  componentWillUnmount: function () {
-    this.userListener.remove();
-  },
+  // componentWillUnmount: function () {
+  //   this.userListener.remove();
+  // },
 
   _onChange: function () {
-    this.setState({modalIsOpen: false});
     if (UserStore.currentUser()) {
       this.setState({formType: "Log Out"});
     } else {
@@ -33,13 +34,13 @@ var App = React.createClass({
 
   },
 
-  openModal: function() {
+  openModal: function () {
     this.setState({modalIsOpen: true});
   },
 
-  closeModal: function() {
-    this.setState({modalIsOpen: false});
-  },
+  // closeModal: function () {
+  //   this.setState({modalIsOpen: false});
+  // },
 
   // afterOpenModal: function() {
   //   // references are now sync'd and can be accessed.
@@ -48,11 +49,13 @@ var App = React.createClass({
 
   loginForm: function () {
     this.setState({formType: "Log In"});
+    this.state.formType = "Sign Up";
     this.openModal();
   },
 
   signupForm: function() {
     this.setState({formType: "Sign Up"});
+    // this.setState called asynchronously and did not update is there 
     this.openModal();    
   },
 
@@ -82,14 +85,11 @@ var App = React.createClass({
       <div className="app">
         <div className="nav-bar">
           {this.logButton()}
-          <Modal
-            isOpen={this.state.modalIsOpen}
-            // onAfterOpen={this.afterOpenModal}
-            onRequestClose={this.closeModal}
-            >
-            <button onClick={this.closeModal}>close</button>
-            <LoginForm formType={this.state.formType} />
-          </Modal>
+          <FormModal 
+            modalIsOpen={this.state.modalIsOpen} 
+            modalFormType={FormConstants.LOGINFORM} 
+            formType={this.state.formType}
+          />
           <button onClick={this.showBusiness}>View Businesses</button>
         </div>
 
@@ -102,3 +102,12 @@ var App = React.createClass({
 });
 
 module.exports = App;
+
+          // <Modal
+          //   isOpen={this.state.modalIsOpen}
+          //   // onAfterOpen={this.afterOpenModal}
+          //   onRequestClose={this.closeModal}
+          //   >
+          //   <button onClick={this.closeModal}>close</button>
+          //   <LoginForm formType={this.state.formType} />
+          // </Modal>

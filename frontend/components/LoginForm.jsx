@@ -4,7 +4,6 @@ var UserStore = require('../stores/user');
 
 var LoginForm = React.createClass({
 	getInitialState: function () {
-		console.log(this.props);
 		return {user_name: "", password: ""};
 	},
 
@@ -61,7 +60,7 @@ var LoginForm = React.createClass({
 
 	render: function () {
 		return (
-			<div id="log-form">
+			<div className="log-form">
 				{this.form()}
 			</div>
 		);

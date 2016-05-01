@@ -41,7 +41,7 @@ var formModal = React.createClass({
 			var form;
 			switch(this.props.modalFormType) {
 				case FormConstants.LOGINFORM:
-					form = <LoginForm />;
+					form = <LoginForm formType={this.props.formType}/>;
 				break;
 
 				case FormConstants.BUSINESSFORM:
@@ -55,7 +55,7 @@ var formModal = React.createClass({
 			return form;
 		} else {
 			console.log('sorry please log in to see the business form');
-				return (<LoginForm formType="Log In"/>);
+				return (<LoginForm formType={this.props.formType}/>);
 			}
  	},
 
