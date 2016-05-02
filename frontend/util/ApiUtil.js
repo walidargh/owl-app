@@ -31,11 +31,15 @@ var ApiUtil = {
 
 	searchBusinesses: function (query) {
 		$.ajax({
-			url: '/api/businesses'
-		})
-	}
+			url: '/api/businesses/search',
+			type: 'GET',
+			data: {query: query},
+			success: ServerActions.receiveMatches,
+			error: ServerActions.handleError
+		});
+	},
+
 	createReview: function (data) {
-		debugger
 		$.ajax({
 			url: 'api/reviews',
 			type: 'POST',
