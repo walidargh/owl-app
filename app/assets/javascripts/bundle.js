@@ -35210,6 +35210,7 @@
 	var BusinessStore = __webpack_require__(271);
 	var ClientActions = __webpack_require__(276);
 	var ReviewIndex = __webpack_require__(285);
+	var PhotoIndex = __webpack_require__(287);
 	
 	var BusinessDetail = React.createClass({
 		displayName: 'BusinessDetail',
@@ -35290,7 +35291,8 @@
 					'section',
 					{ className: 'reviews-container' },
 					this.reviewForm()
-				)
+				),
+				React.createElement(PhotoIndex, { businessId: this.state.business.id })
 			);
 		}
 	});
@@ -35368,14 +35370,14 @@
 			return { matches: [], query: "" };
 		},
 	
-		// componentDidMount: function () {
-		// 	this.businessListener = BusinessStore.addListener(this._onChange);
-		// },
+		componentDidMount: function () {
+			this.businessListener = BusinessStore.addListener(this._onChange);
+		},
 	
-		// _onChange: function () {
-		// 	var matches = BusinessStore.all();
-		// 	this.setState({matches: matches});
-		// },
+		_onChange: function () {
+			var matches = BusinessStore.all();
+			this.setState({ matches: matches });
+		},
 	
 		updateQuery: function (event) {
 			var query = event.target.value;
@@ -35419,6 +35421,61 @@
 	});
 	
 	module.exports = Search;
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var BusinessStore = __webpack_require__(271);
+	var ClientActions = __webpack_require__(276);
+	var PhotoIndex = React.createClass({
+		displayName: 'PhotoIndex',
+	
+		getInitialState: function () {
+			return { photos: [], modalIsOpen: false };
+		},
+	
+		// componentWillMount: function () {
+		// 	this.businessListener.BusinessStore.addListener(this._onChange);
+		// 	ClientActions.fetchPhotos();
+		// },
+	
+		// _onChange: function () {
+		// 	var businesses = BusinessStore.all();
+		// },
+		uploadPhoto: function (event) {
+			event.preventDefault();
+			var self = this;
+			debugger;
+			cloudinary.openUploadWidget(window.CLOUDINARY_OPTIONS, function (error, photos) {
+				if (error === null) {
+					var photo = { url: photos[0].url, business_id: self.props.businessId };
+					ClientActions.uploadPhoto(photo);
+				}
+			});
+		},
+	
+		render: function () {
+			debugger;
+			var photos = this.state.photos.map(function (photo) {
+				return React.createElement('img', { src: photo.url });
+			});
+			return React.createElement(
+				'div',
+				null,
+				photos,
+				React.createElement(
+					'button',
+					{ onClick: this.uploadPhoto },
+					'Upload Image'
+				)
+			);
+		}
+	
+	});
+	
+	module.exports = PhotoIndex;
 
 /***/ }
 /******/ ]);

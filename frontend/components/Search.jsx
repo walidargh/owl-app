@@ -9,14 +9,14 @@ var Search = React.createClass({
 		return ({matches: [], query: ""});
 	},
 
-	// componentDidMount: function () {
-	// 	this.businessListener = BusinessStore.addListener(this._onChange);
-	// },
+	componentDidMount: function () {
+		this.businessListener = BusinessStore.addListener(this._onChange);
+	},
 
-	// _onChange: function () {
-	// 	var matches = BusinessStore.all();
-	// 	this.setState({matches: matches});
-	// },
+	_onChange: function () {
+		var matches = BusinessStore.all();
+		this.setState({matches: matches});
+	},
 
 	updateQuery: function (event) {
 		var query = event.target.value;

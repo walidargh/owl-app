@@ -1,3 +1,4 @@
+require 'byebug'
 class Api::PhotosController < ApplicationController
 	def index
 		@photos = Photo.find_by({business_id: photo_params[:business_id]})
@@ -7,6 +8,7 @@ class Api::PhotosController < ApplicationController
 		full_params = photo_params
 		full_params[:user_id] = current_user.id
 		@photo = Photo.new(full_params)
+		byebug
 		if @photo.save
 			render json: @photo
 		else 

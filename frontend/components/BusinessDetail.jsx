@@ -2,6 +2,7 @@ var React = require('react');
 var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
 var ReviewIndex = require('./ReviewIndex');
+var PhotoIndex = require('./PhotoIndex');
 
 
 var BusinessDetail = React.createClass({
@@ -73,6 +74,8 @@ var BusinessDetail = React.createClass({
 				<section className="reviews-container">
 					{this.reviewForm()}
 				</section> 
+
+				<PhotoIndex businessId={this.state.business.id}/>
 			</div>
 		);
 	}
