@@ -3,7 +3,7 @@ var ClientActions = require('../actions/ClientActions');
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
-		return {body: "", rating: };
+		return {body: "", rating: 2};
 	},
 
 	handleBody: function (event) {
