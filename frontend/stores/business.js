@@ -1,6 +1,4 @@
 var Store = require('flux/utils').Store;
-
-var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
 var BusinessConstants = require('../constants/BusinessConstants');
 
