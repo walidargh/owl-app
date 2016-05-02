@@ -117,27 +117,27 @@ the API.
 
 - [X] build out API, Flux loop, and components, this will include:
   - [X] REGEX for matching query string to Business
-  - [X] flux structure
+  - [ ] flux structure
 - [X} implement live search feature with clickable links
 - [ ] CSS styling for search bar
 
 ### Phase 7: Upload Photos (1 days)
 
 **Objective:** Users can be upload photos for each business.
-- [ ] create `Photos` model
+- [X] create `Photos` model
 - [ ] build out API, Flux loop, and components, this will include:
   - [ ] `PhotosIndex`
   - [ ] `PhotoIndexItem`
   - [ ] `PhotoUploadForm`
 - [ ] CSS styling
-### Phase 8: Google Maps API (0.5 days)
+### Phase 8: Google Maps API (1 days)
 
 **objective:** Integrate Google Maps to visually display business locations.
 - [ ] set up API Key
 - [ ] build out React components
 - [ ] CSS styling
 
-### Phase 9: Tags/Categories (0.5 day)
+### Phase 9: Tags/Categories (1 day)
 
 **objective:** Allow users to tag businesses based on tag/category.
 
