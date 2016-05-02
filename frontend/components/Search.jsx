@@ -20,7 +20,6 @@ var Search = React.createClass({
 
 	updateQuery: function (event) {
 		var query = event.target.value;
-		debugger
 		this.setState({query: query}, this.searchBusiness);
 	},
 
@@ -29,7 +28,7 @@ var Search = React.createClass({
 	},
 
 	showBusiness: function () {
-		hashHistory.push('/businesses/')
+		hashHistory.push('/businesses/');
 	},
 
 	render: function () {

@@ -14,6 +14,10 @@ BusinessStore.all = function () {
 BusinessStore.find = function (id) {
 	return Object.assign({}, _businesses[id]);
 };
+
+BusinessStore.currentBusiness = function () {
+	return Object.assign({}, _currentBusiness);
+};
  
 BusinessStore.resetBusinesses = function (businesses) {
 	_businesses = {};
@@ -23,9 +27,6 @@ BusinessStore.resetBusinesses = function (businesses) {
 	this.__emitChange();
 };
 
-BusinessStore.currentBusiness = function () {
-	return Object.assign({}, _currentBusiness);
-};
 
 BusinessStore.addBusiness = function (business) {
 	_currentBusiness = business;
@@ -38,7 +39,8 @@ BusinessStore.addReview = function (review) {
 };
 
 BusinessStore.addPhoto = function (photo) {
-	_businesses[photo.business_id].photos.push(photo);
+	_currentBusiness.photos.push(photo);
+	this.__emitChange();
 };
 
 
@@ -54,6 +56,10 @@ BusinessStore.__onDispatch = function (payload) {
 
 		case BusinessConstants.REVIEW_RECEIVED:
 			BusinessStore.addReview(payload.review);
+		break;
+
+		case BusinessConstants.PHOTO_RECIEVED:
+			BusinessStore.addPhoto(payload.photo);
 		break;
 	}
 };

@@ -51,18 +51,20 @@ var App = React.createClass({
   },
 
   showBusiness: function () {
-    debugger
     hashHistory.push('/businesses/');
   },
 
   updateQuery: function () {
-    debugger
     this.showBusiness();
   },
 
   logButton: function () {
     if (this.state.formType === "Log Out") {
-      return (<button className="log-out-button" onClick={this.logout}>Sign Out</button>);
+      return (
+        <button className="log-out-button" onClick={this.logout}>
+          Sign Out
+        </button>
+      );
     } else {
         return (
           <div className="not-loggedin"> 
@@ -79,7 +81,6 @@ var App = React.createClass({
   },
 
   render: function() {
-    debugger
     return (
       <div className="app">
         <div className="nav-bar">

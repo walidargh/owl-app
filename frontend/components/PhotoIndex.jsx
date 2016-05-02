@@ -6,14 +6,14 @@ var PhotoIndex = React.createClass({
 		return ({photos: [], modalIsOpen: false});
 	},
 
-	// componentWillMount: function () {
-	// 	this.businessListener.BusinessStore.addListener(this._onChange);
-	// 	ClientActions.fetchPhotos();
-	// },
+	componentWillMount: function () {
+		this.businessListener = BusinessStore.addListener(this._onChange);
+	},
 
-	// _onChange: function () {
-	// 	var businesses = BusinessStore.all();
-	// },
+	_onChange: function () {
+		var photos = BusinessStore.currentBusiness().photos;
+		this.setState({photos: photos});
+	},
 	uploadPhoto: function (event) {
 		event.preventDefault();
 		var self = this;

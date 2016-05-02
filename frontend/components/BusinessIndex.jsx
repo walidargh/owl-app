@@ -32,7 +32,7 @@ var BusinessIndex = React.createClass({
 	},
 
 	componentWillUnmount: function () {
-		this.businessListener.remove()
+		this.businessListener.remove();
 	},
 
 	openModal: function () {
