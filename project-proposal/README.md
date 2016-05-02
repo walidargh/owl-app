@@ -80,7 +80,6 @@ the API.
 
 **Objective:** Business can be created, updated, destroyed, rated and reviewed
 
-<!-- - [ ] setup the flux loop with skeleton files -->
 - [X] setup React Router
 - [X] implement each business component, building out the flux loop as needed.
   - [X] `BusinessesIndex`
@@ -108,6 +107,7 @@ the API.
   - [X] `ReviewsIndex`
   - [X] `ReviewIndexItem`
   - [X] `ReviewForm`
+  - [ ] `RatingForm`
 - [ ] calculate average rating and number of reviews
 
 
