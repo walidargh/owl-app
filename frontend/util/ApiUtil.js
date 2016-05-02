@@ -46,6 +46,16 @@ var ApiUtil = {
 			success: ServerActions.receiveSingleReview,
 			error: ServerActions.handleError
 		});
+	},
+
+	uploadPhoto: function (data) {
+		$.ajax({
+			url: 'api/photos',
+			type: 'POST',
+			data: {photo: data},
+			success: ServerActions.receiveSinglePhoto,
+			error: ServerActions.handleError
+		});
 	}
 
 };

@@ -5,7 +5,8 @@ var ClientActions = {
 	fetchSingleBusiness: ApiUtil.fetchSingleBusiness,
 	fetchMatches: ApiUtil.fetchMatches,
 	createBusiness: ApiUtil.createBusiness,
-	createReview: ApiUtil.createReview
+	createReview: ApiUtil.createReview,
+	uploadPhoto: ApiUtil.uploadPhoto
 };
 
 module.exports = ClientActions;

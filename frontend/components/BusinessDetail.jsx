@@ -52,19 +52,19 @@ var BusinessDetail = React.createClass({
 			<div>
 				<section className='business-detail-feature-bar'>
 
-					<span className="business-detail-name">
+					<span className="business-index-title">
 						{this.state.business.name}
 					</span><br/>
 
-					<span className="business-detail-address">
+					<span className="business-index-address">
 						{this.state.business.address}
 					</span><br/>
 
-					<span className="business-detail-hours">
+					<span className="business-index-hours">
 						{this.state.business.hours}
 					</span><br/>
 
-					<span className="business-detail-price">
+					<span className="business-index-price">
 						{this.state.business.price}
 					</span><br/>
 

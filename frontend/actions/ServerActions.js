@@ -30,6 +30,13 @@ var ServerActions = {
 		});
 	},
 
+	receiveSinglePhoto: function (photo) {
+		AppDispatcher.dispatch({
+			actionType: BusinessConstants.PHOTO_RECIEVED,
+			photo: photo
+		});
+	}
+
 };
 
 module.exports = ServerActions;

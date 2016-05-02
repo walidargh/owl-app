@@ -38,7 +38,7 @@ body {
 }
 
 .search-bar {
-	position: absolute;
+	position: relative;
 }
 
 input {
@@ -106,10 +106,9 @@ input {
 
 .reviews {
 	display: inline-block;
-	position: absolute;
+	position: relative;
 	margin: 10px;
-	border: 1px solid black;
-	top: 50px;
+	top: 100px;
 }
 
 .reviews-container {
@@ -126,6 +125,15 @@ button {
 	margin: 5px;
 	background-color: rgba(0, 0, 0, 0.2);
 	border: 2px solid white;
+}
+
+.reviews-container li {
+	position: relative;
+	display: inline-block;
+	margin: 5px;
+	padding: 5px;
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 @font-face {

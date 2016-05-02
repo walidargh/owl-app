@@ -11,18 +11,17 @@ BusinessStore.all = function () {
 	return Object.assign({}, _businesses);
 };
 
-BusinessStore.matches = function (matches) {
-	return Object.assign({}, _matches);
-};
+// BusinessStore.matches = function (matches) {
+// 	return Object.assign({}, _matches);
+// };
 
-BusinessStore.resetMatches= function (matches) {
-	_matches = {};
-	debugger
-	matches.forEach(function (match) {
-		 _matches[match.id] = match;
-	});
-	this.__emitChange();
-};
+// BusinessStore.resetMatches= function (matches) {
+// 	_matches = {};
+// 	matches.forEach(function (match) {
+// 		 _matches[match.id] = match;
+// 	});
+// 	this.__emitChange();
+// };
 
 BusinessStore.find = function (id) {
 	return Object.assign({}, _businesses[id]);
@@ -46,6 +45,11 @@ BusinessStore.addReview = function (review) {
 	this.__emitChange();
 };
 
+BusinessStore.addPhoto = function (photo) {
+	_businesses[photo.business_id].photos.push(photo);
+};
+
+
 BusinessStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case BusinessConstants.BUSINESSES_RECEIVED:
@@ -60,9 +64,9 @@ BusinessStore.__onDispatch = function (payload) {
 			BusinessStore.addReview(payload.review);
 		break;
 
-		case BusinessConstants.MATCHES_RECEIVED:
-			BusinessStore.resetMatches(payload.matches);
-		break;
+		// case BusinessConstants.MATCHES_RECEIVED:
+		// 	BusinessStore.resetMatches(payload.matches);
+		// break;
 	}
 };
 

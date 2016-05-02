@@ -6,6 +6,7 @@ namespace :api, defaults: {format: :json} do
   	get "search", on: :collection
   end
   resources :reviews, only: [:index, :create, :show]
+  resources :photos, only: [:index, :create]
   resource :user, only: [:create, :show, :update, :delete]
   resource :session, only: [:create, :destroy, :show]
   # TODO: Include edit, delete in methods?

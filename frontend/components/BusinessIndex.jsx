@@ -19,13 +19,13 @@ var BusinessIndex = React.createClass({
 	},
 
 	_onChange: function () {
-		var businesses;
-		if (BusinessStore.matches() === {}) {
-			businesses = BusinessStore.all();
-		} else {
-				businesses = BusinessStore.matches();
-			}
-		debugger
+		// var businesses;
+		// if (BusinessStore.matches() === {}) {
+		// 	businesses = BusinessStore.all();
+		// } else {
+		// 		businesses = BusinessStore.matches();
+		// 	}
+		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
 	},
 

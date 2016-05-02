@@ -3,7 +3,7 @@ var ClientActions = require('../actions/ClientActions');
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
-		return {body: "", rating: ""};
+		return {body: "", rating: 2};
 	},
 
 	handleBody: function (event) {
@@ -29,11 +29,13 @@ var ReviewForm = React.createClass({
 	render: function () {
 		return (
 			<form className="review-form" onSubmit={this.handleSubmit}>
+				<label>Write a Review</label>
 				<input 
 					type="textbox" 
 					onChange={this.handleBody} 
 					value={this.state.body} 
 				/>
+				<input type="submit" value="Submit" onClick={this.handleSubmit}/>
 			</form>
 		);
 	}
