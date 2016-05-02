@@ -98,7 +98,19 @@ input {
 	position: absolute;
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	margin: 10px;
+}
+
+.reviews {
+	display: inline-block;
+	position: absolute;
+	margin: 10px;
+	border: 1px solid black;
 	top: 50px;
+}
+
+.reviews-container {
+	position: absolute;
+	margin: 10px;
 }
 
 button {

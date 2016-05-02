@@ -8,6 +8,7 @@ var BusinessIndex = require('./BusinessIndex');
 var hashHistory = require('react-router').hashHistory;
 var FormModal = require('../modals/FormModal');
 var FormConstants = require('../constants/FormConstants');
+var Search = require('./Search');
 
 
 var App = React.createClass({
@@ -76,6 +77,8 @@ var App = React.createClass({
       <div className="app">
         <div className="nav-bar">
           {this.logButton()}
+          <Search />
+          <button onClick={this.showBusiness}>Search</button>
           <FormModal 
             modalIsOpen={this.state.modalIsOpen} 
             modalFormType={FormConstants.LOGINFORM} 

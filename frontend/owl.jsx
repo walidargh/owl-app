@@ -12,6 +12,7 @@ var BusinessStore = require('./stores/business');
 var App = require('./components/App');
 var BusinessIndex = require('./components/BusinessIndex');
 var BusinessDetail = require('./components/BusinessDetail');
+var Search = require('./components/Search');
 
 
 var appRouter = (

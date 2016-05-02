@@ -5,7 +5,7 @@ var ApiUtil = {
 		$.ajax({
 			url: '/api/businesses',
 			type: 'GET',
-			success: ServerActions.receiveAll,
+			success: ServerActions.receiveBusinesses,
 			error: ServerActions.handleError,
 		});
 		// TODO: create handleError and receiveBusinesses
@@ -29,12 +29,14 @@ var ApiUtil = {
 		});
 	},
 
-	searchBusinesses: function (query) {
+	fetchMatches: function (query) {
+		debugger
+		console.log('searching for:' + query);
 		$.ajax({
 			url: '/api/businesses/search',
 			type: 'GET',
 			data: {query: query},
-			success: ServerActions.receiveMatches,
+			success: ServerActions.receiveBusinesses,
 			error: ServerActions.handleError
 		});
 	},

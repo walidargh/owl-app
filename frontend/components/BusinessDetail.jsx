@@ -69,23 +69,10 @@ var BusinessDetail = React.createClass({
 					</span><br/>
 
 				</section>
-					{this.reviewForm()}
-				<section className="reviews container">
-					
-				</section> 
-				<div class="stars">
-  <input type="radio" id="rate-5" name="rating-1"/>
-  <label for="rate-5"></label>
-  <input type="radio" id="rate-4" name="rating-1"/>
-  <label for="rate-4"></label>
-  <input type="radio" id="rate-3" name="rating-1"/>
-  <label for="rate-3"></label>
-  <input type="radio" id="rate-2" name="rating-1"/>
-  <label for="rate-2"></label>
-  <input type="radio" id="rate-1" name="rating-1"/>
-  <label for="rate-1"></label>
-</div>	
 
+				<section className="reviews-container">
+					{this.reviewForm()}
+				</section> 
 			</div>
 		);
 	}

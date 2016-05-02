@@ -3,7 +3,7 @@ var ApiUtil = require('../util/ApiUtil');
 var ClientActions = {
 	fetchBusinesses: ApiUtil.fetchBusinesses,
 	fetchSingleBusiness: ApiUtil.fetchSingleBusiness,
-	searchBusinesses: ApiUtil.searchBusinesses,
+	fetchMatches: ApiUtil.fetchMatches,
 	createBusiness: ApiUtil.createBusiness,
 	createReview: ApiUtil.createReview
 };

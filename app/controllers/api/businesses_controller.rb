@@ -1,3 +1,4 @@
+require 'byebug'
 class Api::BusinessesController < ApplicationController
 	def index
 		@businesses = Business.all
@@ -27,11 +28,11 @@ class Api::BusinessesController < ApplicationController
 
 	def search
 		if params[:query].present?
-			 @users = Business.where("name ~ ?", params[:query])
+			 @businesses = Business.where("name ~ ?", params[:query])
 		else
-			@user = User.none
+			@businesses = Business.none
 		end
-		
+		puts @businesses
     respond_to do |format|
       format.html { render :search }
       format.json { render :search }
