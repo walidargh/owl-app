@@ -4,9 +4,11 @@ var BusinessConstants = require('../constants/BusinessConstants');
 
 var BusinessStore = new Store(AppDispatcher);
 var _businesses = {};
+var _currentBusiness = {};
 var _authErrors = {};
 
 BusinessStore.all = function () {
+	debugger
 	return Object.assign({}, _businesses);
 };
 
@@ -22,15 +24,24 @@ BusinessStore.resetBusinesses = function (businesses) {
 	this.__emitChange();
 };
 
+BusinessStore.currentBusiness = function () {
+	return Object.assign({}, _currentBusiness);
+};
+
 BusinessStore.addBusiness = function (business) {
-	_businesses[business.id] = business;
+	_currentBusiness = business;
 	this.__emitChange();
 };
 
 BusinessStore.addReview = function (review) {
-	_businesses[review.business_id].reviews.push(review);
+	_currentBusiness[review.business_id].reviews.push(review);
 	this.__emitChange();
 };
+
+BusinessStore.addPhoto = function (photo) {
+	_businesses[photo.business_id].photos.push(photo);
+};
+
 
 BusinessStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
@@ -45,6 +56,10 @@ BusinessStore.__onDispatch = function (payload) {
 		case BusinessConstants.REVIEW_RECEIVED:
 			BusinessStore.addReview(payload.review);
 		break;
+
+		// case BusinessConstants.MATCHES_RECEIVED:
+		// 	BusinessStore.resetMatches(payload.matches);
+		// break;
 	}
 };
 

@@ -1,5 +1,6 @@
 var React = require('react');
 var hashHistory = require('react-router').hashHistory;
+var ClientActions = require('../actions/ClientActions');
 
 
 var BusinessIndexItem = React.createClass({

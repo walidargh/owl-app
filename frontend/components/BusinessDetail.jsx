@@ -11,8 +11,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	getStatefromStore: function () {
-		var businessId = parseInt(this.props.params.businessId);
-		var business = BusinessStore.find(businessId);
+		var business = BusinessStore.currentBusiness();
 		return {business: business};
 	},
 
@@ -47,7 +46,7 @@ var BusinessDetail = React.createClass({
 		}
 	},
 
-	render: function () { 
+	render: function () {
 		return (
 			<div>
 				<section className='business-detail-feature-bar'>
