@@ -1,3 +1,4 @@
+
 var React = require('react');
 var UserActions = require('../actions/UserActions');
 var UserStore = require('../stores/user');
@@ -34,16 +35,16 @@ var LoginForm = React.createClass({
 
 				<section>
 					<label>Username<br/>
-						<input type="text" 
-							onChange={this.handleUsername} 
-							value={this.state.username || ""} 
+						<input type="text"
+							onChange={this.handleUsername}
+							value={this.state.username || ""}
 						/>
 					</label>
 
 					<label>Password<br/>
-						<input type="password" 
-							onChange={this.handlePassword} 
-							value={this.state.password || ""} 
+						<input type="password"
+							onChange={this.handlePassword}
+							value={this.state.password || ""}
 						/>
 					</label>
 				</section>

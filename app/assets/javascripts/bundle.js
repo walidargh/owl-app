@@ -34574,6 +34574,7 @@
 /* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
+	
 	var React = __webpack_require__(1);
 	var UserActions = __webpack_require__(245);
 	var UserStore = __webpack_require__(253);
@@ -34942,8 +34943,8 @@
 	
 	Modal.setAppElement(document.body);
 	
-	var formModal = React.createClass({
-		displayName: 'formModal',
+	var FormModal = React.createClass({
+		displayName: 'FormModal',
 	
 		getInitialState: function () {
 			return { modalIsOpen: false };
@@ -35003,7 +35004,7 @@
 		}
 	});
 	
-	module.exports = formModal;
+	module.exports = FormModal;
 
 /***/ },
 /* 282 */

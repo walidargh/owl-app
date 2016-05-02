@@ -49719,3 +49719,19 @@ Processing by Api::BusinessesController#index as JSON
   [1m[35mBusiness Load (1.2ms)[0m  SELECT "businesses".* FROM "businesses"
   Rendered api/businesses/index.json.jbuilder (40.7ms)
 Completed 200 OK in 86ms (Views: 39.8ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/businesses/1" for ::1 at 2016-05-02 07:52:25 -0700
+Processing by Api::BusinessesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mBusiness Load (0.5ms)[0m  [1mSELECT  "businesses".* FROM "businesses" WHERE "businesses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = $1  [["business_id", 1]]
+  Rendered api/businesses/show.json.jbuilder (62.0ms)
+Completed 200 OK in 153ms (Views: 60.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/businesses" for ::1 at 2016-05-02 07:52:29 -0700
+Processing by Api::BusinessesController#index as JSON
+  [1m[36mBusiness Load (1.7ms)[0m  [1mSELECT "businesses".* FROM "businesses"[0m
+  Rendered api/businesses/index.json.jbuilder (4.0ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 1.7ms)

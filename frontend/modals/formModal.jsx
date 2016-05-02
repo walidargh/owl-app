@@ -9,7 +9,7 @@ var ReviewForm = require('../components/ReviewForm');
 
 Modal.setAppElement(document.body);
 
-var formModal = React.createClass({
+var FormModal = React.createClass({
 	getInitialState: function () {
 		return ({modalIsOpen: false});
 	},
@@ -60,7 +60,7 @@ var formModal = React.createClass({
  	render: function () {
  		return (
  			<Modal
-				isOpen={this.state.modalIsOpen} 
+				isOpen={this.state.modalIsOpen}
 				onRequestClose={this.closeModal}>
 				{this.form()}
 			</Modal>
@@ -68,4 +68,4 @@ var formModal = React.createClass({
  	}
 });
 
-module.exports = formModal;
+module.exports = FormModal;
