@@ -26,7 +26,7 @@ var Search = React.createClass({
 	},
 
 	searchBusiness: function () {
-		ClientActions.fetchMatches(this.state.query);
+		ClientActions.fetchBusinesses(this.state.query);
 	},
 
 	// matchBusinesses: function () {

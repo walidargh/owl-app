@@ -54,7 +54,7 @@
 	var Modal = __webpack_require__(229);
 	var UserActions = __webpack_require__(249);
 	var UserStore = __webpack_require__(257);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var App = __webpack_require__(277);
 	var BusinessIndex = __webpack_require__(279);
 	var BusinessDetail = __webpack_require__(289);
@@ -34396,83 +34396,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 275 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Store = __webpack_require__(258).Store;
-	var AppDispatcher = __webpack_require__(252);
-	var BusinessConstants = __webpack_require__(276);
-	
-	var BusinessStore = new Store(AppDispatcher);
-	var _businesses = {};
-	var _matches = {};
-	var _authErrors = {};
-	
-	BusinessStore.all = function () {
-		return Object.assign({}, _businesses);
-	};
-	
-	// BusinessStore.matches = function (matches) {
-	// 	return Object.assign({}, _matches);
-	// };
-	
-	// BusinessStore.resetMatches= function (matches) {
-	// 	_matches = {};
-	// 	matches.forEach(function (match) {
-	// 		 _matches[match.id] = match;
-	// 	});
-	// 	this.__emitChange();
-	// };
-	
-	BusinessStore.find = function (id) {
-		return Object.assign({}, _businesses[id]);
-	};
-	
-	BusinessStore.resetBusinesses = function (businesses) {
-		_businesses = {};
-		businesses.forEach(function (business) {
-			_businesses[business.id] = business;
-		});
-		this.__emitChange();
-	};
-	
-	BusinessStore.addBusiness = function (business) {
-		_businesses[business.id] = business;
-		this.__emitChange();
-	};
-	
-	BusinessStore.addReview = function (review) {
-		_businesses[review.business_id].reviews.push(review);
-		this.__emitChange();
-	};
-	
-	BusinessStore.addPhoto = function (photo) {
-		_businesses[photo.business_id].photos.push(photo);
-	};
-	
-	BusinessStore.__onDispatch = function (payload) {
-		switch (payload.actionType) {
-			case BusinessConstants.BUSINESSES_RECEIVED:
-				BusinessStore.resetBusinesses(payload.businesses);
-				break;
-	
-			case BusinessConstants.BUSINESS_RECEIVED:
-				BusinessStore.addBusiness(payload.business);
-				break;
-	
-			case BusinessConstants.REVIEW_RECEIVED:
-				BusinessStore.addReview(payload.review);
-				break;
-	
-			// case BusinessConstants.MATCHES_RECEIVED:
-			// 	BusinessStore.resetMatches(payload.matches);
-			// break;
-		}
-	};
-	
-	module.exports = BusinessStore;
-
-/***/ },
+/* 275 */,
 /* 276 */
 /***/ function(module, exports) {
 
@@ -34496,7 +34420,7 @@
 	var LoginForm = __webpack_require__(278);
 	var UserActions = __webpack_require__(249);
 	var UserStore = __webpack_require__(257);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var BusinessIndex = __webpack_require__(279);
 	var hashHistory = __webpack_require__(168).hashHistory;
 	var FormModal = __webpack_require__(285);
@@ -34699,7 +34623,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var UserStore = __webpack_require__(257);
 	var ClientActions = __webpack_require__(280);
 	var BusinessIndexItem = __webpack_require__(283);
@@ -34906,6 +34830,7 @@
 
 	var React = __webpack_require__(1);
 	var hashHistory = __webpack_require__(168).hashHistory;
+	var ClientActions = __webpack_require__(280);
 	
 	var BusinessIndexItem = React.createClass({
 		displayName: 'BusinessIndexItem',
@@ -34971,7 +34896,7 @@
 	var React = __webpack_require__(1);
 	var Modal = __webpack_require__(229);
 	var UserStore = __webpack_require__(257);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var FormConstants = __webpack_require__(284);
 	var LoginForm = __webpack_require__(278);
 	var BusinessForm = __webpack_require__(286);
@@ -35048,7 +34973,7 @@
 
 	var React = __webpack_require__(1);
 	var UserStore = __webpack_require__(257);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var ClientActions = __webpack_require__(280);
 	
 	var BusinessForm = React.createClass({
@@ -35244,7 +35169,7 @@
 
 	var React = __webpack_require__(1);
 	var ClientActions = __webpack_require__(280);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var hashHistory = __webpack_require__(168).hashHistory;
 	
 	var Search = React.createClass({
@@ -35271,7 +35196,7 @@
 		},
 	
 		searchBusiness: function () {
-			ClientActions.fetchMatches(this.state.query);
+			ClientActions.fetchBusinesses(this.state.query);
 		},
 	
 		// matchBusinesses: function () {
@@ -35311,7 +35236,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var ClientActions = __webpack_require__(280);
 	var ReviewIndex = __webpack_require__(290);
 	var PhotoIndex = __webpack_require__(291);
@@ -35325,8 +35250,7 @@
 		},
 	
 		getStatefromStore: function () {
-			var businessId = parseInt(this.props.params.businessId);
-			var business = BusinessStore.find(businessId);
+			var business = BusinessStore.currentBusiness();
 			return { business: business };
 		},
 	
@@ -35408,7 +35332,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var FormConstants = __webpack_require__(284);
 	var FormModal = __webpack_require__(285);
 	
@@ -35463,7 +35387,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var BusinessStore = __webpack_require__(275);
+	var BusinessStore = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../stores/business\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var ClientActions = __webpack_require__(280);
 	var PhotoIndex = React.createClass({
 		displayName: 'PhotoIndex',
