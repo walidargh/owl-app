@@ -1,0 +1,45 @@
+{
+  "name": "owl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "node": "4.4.2",
+    "npm": "2.15.0"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walidargh/OwlApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walidargh/OwlApp/issues"
+  },
+  "homepage": "https://github.com/walidargh/OwlApp#readme",
+  "description": "",
+  "dependencies": {
+    "babel-core": "^6.7.7",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "flux": "^2.1.1",
+    "react": "^15.0.1",
+    "react-addons-linked-state-mixin": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-modal": "^1.2.1",
+    "react-router": "^2.3.0",
+    "webpack": "^1.13.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-plugin-import": "^1.6.0",
+    "eslint-plugin-jsx-a11y": "^1.0.3",
+    "eslint-plugin-react": "^5.0.1"
+  }
+}
