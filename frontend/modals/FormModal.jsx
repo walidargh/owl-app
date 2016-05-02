@@ -53,7 +53,7 @@ var FormModal = React.createClass({
 			}
 			return form;
 		} else {
-				return (<LoginForm formType={this.props.formType}/>);
+				return (<LoginForm formType={"Log In"}/>);
 			}
  	},
 

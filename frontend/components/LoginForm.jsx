@@ -29,6 +29,7 @@ var LoginForm = React.createClass({
 	},
 
 	form: function () {
+		debugger
 		return (
 			<form onSubmit={this.handleSubmit} >
 				<h2>{this.props.formType}</h2>
@@ -56,6 +57,7 @@ var LoginForm = React.createClass({
 	},
 
 	render: function () {
+		debugger
 		return (
 			<div className="log-form">
 				{this.form()}
