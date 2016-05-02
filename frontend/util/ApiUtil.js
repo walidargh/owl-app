@@ -33,7 +33,7 @@ var ApiUtil = {
 			url: '/api/businesses/search',
 			type: 'GET',
 			data: {query: query},
-			success: ServerActions.receiveBusinesses,
+			success: ServerActions.receiveMatches,
 			error: ServerActions.handleError
 		});
 	},

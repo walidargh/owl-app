@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
 	has_many :businesses
 	has_many :reviews
+	has_many :photos
 
 	def self.generate_session_token
 		SecureRandom::urlsafe_base64(16)

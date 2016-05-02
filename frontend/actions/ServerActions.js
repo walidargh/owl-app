@@ -8,10 +8,18 @@ var ServerActions = {
 			businesses: businesses
 		});
 	},
+
 	receiveSingleBusiness: function (business) {
 		AppDispatcher.dispatch({
 			actionType: BusinessConstants.BUSINESS_RECEIVED,
 			business: business
+		});
+	},
+
+	receiveMatches: function (matches) {
+		AppDispatcher.dispatch({
+			actionType: BusinessConstants.MATCHES_RECEIVED,
+			business: matches
 		});
 	},
 

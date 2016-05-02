@@ -15,7 +15,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 url         | string    | not null
-user_id   | integer   | not null, foreign key (references users), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
 business_id | integer   | not null, foreign key (references businesses), indexed
 
 ## reviews

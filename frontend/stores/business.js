@@ -4,10 +4,24 @@ var BusinessConstants = require('../constants/BusinessConstants');
 
 var BusinessStore = new Store(AppDispatcher);
 var _businesses = {};
+var _matches = {};
 var _authErrors = {};
 
 BusinessStore.all = function () {
 	return Object.assign({}, _businesses);
+};
+
+BusinessStore.matches = function (matches) {
+	return Object.assign({}, _matches);
+};
+
+BusinessStore.resetMatches= function (matches) {
+	_matches = {};
+	debugger
+	matches.forEach(function (match) {
+		 _matches[match.id] = match;
+	});
+	this.__emitChange();
 };
 
 BusinessStore.find = function (id) {
@@ -44,6 +58,10 @@ BusinessStore.__onDispatch = function (payload) {
 
 		case BusinessConstants.REVIEW_RECEIVED:
 			BusinessStore.addReview(payload.review);
+		break;
+
+		case BusinessConstants.MATCHES_RECEIVED:
+			BusinessStore.resetMatches(payload.matches);
 		break;
 	}
 };

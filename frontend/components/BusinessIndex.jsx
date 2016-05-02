@@ -19,7 +19,14 @@ var BusinessIndex = React.createClass({
 	},
 
 	_onChange: function () {
-		this.setState({businesses: BusinessStore.all()});
+		var businesses;
+		if (BusinessStore.matches() === {}) {
+			businesses = BusinessStore.all();
+		} else {
+				businesses = BusinessStore.matches();
+			}
+		debugger
+		this.setState({businesses: businesses});
 	},
 
 	openModal: function () {

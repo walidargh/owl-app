@@ -37,6 +37,10 @@ body {
  	z-index: 1000;
 }
 
+.search-bar {
+	position: absolute;
+}
+
 input {
  	margin: 10px;
  	border: 1px solid #333;

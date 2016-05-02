@@ -77,7 +77,7 @@ var App = React.createClass({
       <div className="app">
         <div className="nav-bar">
           {this.logButton()}
-          <Search />
+          <Search className="search-bar"/>
           <button onClick={this.showBusiness}>Search</button>
           <FormModal 
             modalIsOpen={this.state.modalIsOpen} 
