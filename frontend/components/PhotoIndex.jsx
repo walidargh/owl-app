@@ -17,6 +17,10 @@ var PhotoIndex = React.createClass({
 		this.setState({modalIsOpen: true});
 	},
 
+	closeModal: function () {
+		this.setState({modalIsOpen: false});
+	},
+
 	componentWillMount: function () {
 		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
@@ -35,6 +39,7 @@ var PhotoIndex = React.createClass({
 					if (error === null) {
 						var photo = {url: photos[0].url, business_id: self.props.businessId};
 						ClientActions.uploadPhoto(photo);
+						self.closeModal();
 					}
 				});
 		} else {
