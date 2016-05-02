@@ -27,7 +27,6 @@ BusinessStore.resetBusinesses = function (businesses) {
 	this.__emitChange();
 };
 
-
 BusinessStore.addBusiness = function (business) {
 	_currentBusiness = business;
 	this.__emitChange();
@@ -42,7 +41,6 @@ BusinessStore.addPhoto = function (photo) {
 	_currentBusiness.photos.push(photo);
 	this.__emitChange();
 };
-
 
 BusinessStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {

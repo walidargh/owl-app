@@ -52,6 +52,7 @@ var App = React.createClass({
   },
 
   showBusiness: function () {
+    ClientActions.fetchBusinesses();
     hashHistory.push('/businesses/');
   },
 
