@@ -6,20 +6,24 @@ var FormConstants = require('../constants/FormConstants');
 var LoginForm = require('../components/LoginForm');
 var BusinessForm = require('../components/BusinessForm');
 var ReviewForm = require('../components/ReviewForm');
+var PhotoForm = require('../components/PhotoForm');
 
 Modal.setAppElement(document.body);
 
 var FormModal = React.createClass({
 	getInitialState: function () {
-		return ({modalIsOpen: false});
+		debugger
+		return ({modalIsOpen: false, useModal: true});
 	},
 
 	componentWillMount: function () {
+		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
 	},
 
 	componentWillReceiveProps: function (newProps) {
+		debugger
 		this.setState({modalIsOpen : newProps.modalIsOpen});
 	},
 
@@ -50,6 +54,10 @@ var FormModal = React.createClass({
 				case FormConstants.REVIEWFORM:
 					form = <ReviewForm businessId={this.props.businessId}/>;
 				break;
+
+				case FormConstants.PHOTOFORM:
+					form = <PhotoForm businessId={this.props.businessId}/>;
+				break;
 			}
 			return form;
 		} else {
@@ -57,13 +65,23 @@ var FormModal = React.createClass({
 			}
  	},
 
- 	render: function () {
- 		return (
- 			<Modal
+ 	modal: function () {
+ 		var form = this.form();
+ 		if (this.props.modalFormType === FormConstants.PHOTOFORM && UserStore.currentUser()) {
+ 			return form
+ 		} else {
+ 			 <Modal
 				isOpen={this.state.modalIsOpen}
 				onRequestClose={this.closeModal}>
-				{this.form()}
+				{form}
 			</Modal>
+ 		}
+ 	}
+
+ 	render: function () {
+ 		debugger
+ 		return (
+ 			{this.modal()}
 		);
  	}
 });

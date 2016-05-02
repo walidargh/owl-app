@@ -1,4 +1,3 @@
-require 'byebug'
 class Api::BusinessesController < ApplicationController
 	def index
 		@businesses = Business.all
@@ -31,7 +30,7 @@ class Api::BusinessesController < ApplicationController
 			 @businesses = Business.where("lower(name) ~ ?", params[:query].downcase)
 			 render :index
 		else
-			@businesses = Business.none
+			@businesses = Business.all
 			render :index
 		end
 		# puts @businesses

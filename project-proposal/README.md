@@ -117,7 +117,7 @@ the API.
 
 - [X] build out API, Flux loop, and components, this will include:
   - [X] REGEX for matching query string to Business
-  - [ ] flux structure
+  - [X] flux structure
 - [X} implement live search feature with clickable links
 - [ ] CSS styling for search bar
 
@@ -125,10 +125,10 @@ the API.
 
 **Objective:** Users can be upload photos for each business.
 - [X] create `Photos` model
-- [ ] build out API, Flux loop, and components, this will include:
-  - [ ] `PhotosIndex`
+- [X] build out API, Flux loop, and components, this will include:
+  - [X] `PhotosIndex`
   - [ ] `PhotoIndexItem`
-  - [ ] `PhotoUploadForm`
+  - [X] `PhotoUploadForm`
 - [ ] CSS styling
 ### Phase 8: Google Maps API (1 days)
 

@@ -9,6 +9,7 @@ var hashHistory = require('react-router').hashHistory;
 var FormModal = require('../modals/FormModal');
 var FormConstants = require('../constants/FormConstants');
 var Search = require('./Search');
+var ClientActions = require('../actions/ClientActions');
 
 
 var App = React.createClass({

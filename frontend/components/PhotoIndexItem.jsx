@@ -1,10 +1,10 @@
 var React = require('react');
 
 var PhotoIndexItem = React.createClass({
-
 	render: function() {
+	var photo = this.props.photo;
 		return (
-			<div />
+			<img src={photo.url} />
 		);
 	}
 
