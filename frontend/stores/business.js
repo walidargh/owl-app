@@ -34,7 +34,7 @@ BusinessStore.addBusiness = function (business) {
 };
 
 BusinessStore.addReview = function (review) {
-	_currentBusiness[review.business_id].reviews.push(review);
+	_currentBusiness.reviews.push(review);
 	this.__emitChange();
 };
 

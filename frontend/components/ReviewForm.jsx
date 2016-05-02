@@ -14,7 +14,8 @@ var ReviewForm = React.createClass({
 		this.setState({rating: event.target.value});
 	},
 
-	handleSubmit: function () {
+	handleSubmit: function (event) {
+		event.preventDefault();
 		var review = {body: this.state.body, 
 									rating: this.state.rating, 
 									business_id: this.props.businessId};

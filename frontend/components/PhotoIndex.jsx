@@ -47,7 +47,7 @@ var PhotoIndex = React.createClass({
 
 		} 
 	},
-
+// 
 	render: function() {
 		var photos = this.state.photos.map(function (photo) {
 			return <PhotoIndexItem photo={photo}/>;

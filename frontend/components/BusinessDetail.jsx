@@ -31,6 +31,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	_onChange: function () {
+		debugger
 		this.setState(this.getStatefromStore());
 	},
 
@@ -48,6 +49,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
+		debugger
 		return (
 			<div>
 				<section className='business-detail-feature-bar'>
