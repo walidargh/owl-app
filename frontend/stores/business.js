@@ -7,6 +7,7 @@ var _businesses = {};
 var _authErrors = {};
 
 BusinessStore.all = function () {
+	debugger
 	return Object.assign({}, _businesses);
 };
 
@@ -15,6 +16,8 @@ BusinessStore.find = function (id) {
 };
  
 BusinessStore.resetBusinesses = function (businesses) {
+	debugger
+	_businesses = {};
 	businesses.forEach(function (business) {
 		 _businesses[business.id] = business;
 	});
@@ -28,13 +31,13 @@ BusinessStore.addBusiness = function (business) {
 
 BusinessStore.addReview = function (review) {
 	_businesses[review.business_id].reviews.push(review);
-	debugger
 	this.__emitChange();
 };
 
 BusinessStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case BusinessConstants.BUSINESSES_RECEIVED:
+			debugger
 			BusinessStore.resetBusinesses(payload.businesses);
 		break;
 

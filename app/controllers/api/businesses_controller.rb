@@ -29,14 +29,16 @@ class Api::BusinessesController < ApplicationController
 	def search
 		if params[:query].present?
 			 @businesses = Business.where("name ~ ?", params[:query])
+			 render :index
 		else
 			@businesses = Business.none
+			render :index
 		end
-		puts @businesses
-    respond_to do |format|
-      format.html { render :search }
-      format.json { render :search }
-    end
+		# puts @businesses
+  #   respond_to do |format|
+  #     format.html { render :search }
+  #     format.json { render :search }
+    # end
 
 	end
 

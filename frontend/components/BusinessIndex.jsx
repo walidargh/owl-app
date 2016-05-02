@@ -19,6 +19,7 @@ var BusinessIndex = React.createClass({
 	},
 
 	_onChange: function () {
+		debugger
 		this.setState({businesses: BusinessStore.all()});
 	},
 

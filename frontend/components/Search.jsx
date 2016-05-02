@@ -15,32 +15,17 @@ var Search = React.createClass({
 	_onChange: function () {
 		var matches = BusinessStore.all();
 		this.setState({matches: matches});
-		debugger
 	},
 
 	updateQuery: function (event) {
 		var query = event.target.value;
-		this.setState({query: query});
-		debugger
-		this.searchBusiness();
+		this.setState({query: query}, this.searchBusiness);
+		// this.searchBusiness();
 	},
 
 	searchBusiness: function () {
-		debugger
 		ClientActions.fetchMatches(this.state.query);
 	},
-
-	// updateBusinessIndex: function {
-	// 	hashHistory.push("businesses/search");
-	// },
-
-	// updateMatches: function () {
-
-	// }
-
-	// componentWillMount: function () {
-	// 	ClientActions.r
-	// }
 
 	render: function () {
 		return (
