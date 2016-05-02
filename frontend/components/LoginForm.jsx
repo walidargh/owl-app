@@ -31,8 +31,8 @@ var LoginForm = React.createClass({
 		return (
 			<form onSubmit={this.handleSubmit} >
 				<h2>{this.props.formType}</h2>
-				<section>
 
+				<section>
 					<label>Username<br/>
 						<input type="text" 
 							onChange={this.handleUsername} 
@@ -40,20 +40,16 @@ var LoginForm = React.createClass({
 						/>
 					</label>
 
-					<br/><br/>
-
 					<label>Password<br/>
 						<input type="password" 
 							onChange={this.handlePassword} 
 							value={this.state.password || ""} 
 						/>
 					</label>
-
 				</section>
 
-				<section>
-					<button>{this.props.formType}</button>
-				</section>
+				<button>{this.props.formType}</button>
+
 			</form>
 		);
 	},

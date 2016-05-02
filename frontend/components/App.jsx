@@ -21,31 +21,17 @@ var App = React.createClass({
     this.userListener = UserStore.addListener(this._onChange);
   },
 
-  // componentWillUnmount: function () {
-  //   this.userListener.remove();
-  // },
-
   _onChange: function () {
     if (UserStore.currentUser()) {
       this.setState({formType: "Log Out"});
     } else {
       this.setState({formType: "Log In"});
     }
-
   },
 
   openModal: function () {
     this.setState({modalIsOpen: true});
   },
-
-  // closeModal: function () {
-  //   this.setState({modalIsOpen: false});
-  // },
-
-  // afterOpenModal: function() {
-  //   // references are now sync'd and can be accessed.
-  //   this.refs.subtitle.style.color = '#f00';
-  // },
 
   loginForm: function () {
     this.setState({formType: "Log In"});
@@ -73,8 +59,13 @@ var App = React.createClass({
     } else {
         return (
           <div className="not-loggedin"> 
-            <button className="log-in-button" onClick={this.loginForm}>Log In</button>
-            <button className="sign-up-button" onClick={this.signupForm}>Sign Up</button>
+            <button className="log-in-button" onClick={this.loginForm}>
+              Log In
+            </button>
+
+            <button className="sign-up-button" onClick={this.signupForm}>
+              Sign Up
+            </button>
           </div>
         );
       }
@@ -102,12 +93,3 @@ var App = React.createClass({
 });
 
 module.exports = App;
-
-          // <Modal
-          //   isOpen={this.state.modalIsOpen}
-          //   // onAfterOpen={this.afterOpenModal}
-          //   onRequestClose={this.closeModal}
-          //   >
-          //   <button onClick={this.closeModal}>close</button>
-          //   <LoginForm formType={this.state.formType} />
-          // </Modal>

@@ -28,6 +28,12 @@ var ApiUtil = {
 			error: ServerActions.handleError
 		});
 	},
+
+	searchBusinesses: function (query) {
+		$.ajax({
+			url: '/api/businesses'
+		})
+	}
 	createReview: function (data) {
 		debugger
 		$.ajax({

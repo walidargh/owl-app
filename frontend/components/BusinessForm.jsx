@@ -48,48 +48,64 @@ var BusinessForm = React.createClass({
 		ClientActions.createBusiness(business);
 	},
 
+	priceForm: function () {
+
+	},
+
 	render: function () {
 		return(
 			<div>
+				<input 
+					type="text" 
+					onChange={this.handleName} 
+					value={this.state.name} 
+					id="business-name"
+				/>
+				<label for="business-name">Business Name</label>
 
-				<label>Business Name
-					<input 
-						type="text" onChange={this.handleName} value={this.state.name}
-					/>
-				</label>
+				<input 
+					type="text" 
+					onChange={this.handleAddress} 
+					value={this.state.address} 
+					id="address"
+				/>
+				<label for="hours">Address</label>
+				
+				<input 
+					type="text" 
+					onChange={this.handleHours} 
+					value={this.state.hours} 
+					id="hours"
+				/>
+				<label for="hours">Hours</label>
 
-				<label>Address
-					<input 
-						type="text" onChange={this.handleAddress} value={this.state.address}
-					/>
-				</label>
+				<input 
+					type="radio" 
+					onChange={this.handlePrice} 
+					value={1} 
+					name="price" 
+					id="price=1"
+				/>
+				<label for="price=1">$</label>				
 
-				<label>Hours
-					<input 
-						type="text" 
-						onChange={this.handleHours} 
-						value={this.state.hours}
-					/>
-				</label>
+				<input 
+					type="radio" 
+					onChange={this.handlePrice} 
+					value={2} 
+					name="price" 
+					id="price-2" 
+				/>
+				<label for="price-2">$$</label>
 
-				<label>$
-					<input 
-					type="radio" onChange={this.handlePrice} value={1} name="price"
-					/>
-
-				</label>				
-
-				<label>$$
-					<input 
-					type="radio" onChange={this.handlePrice} value={2} name="price"
-					/>
-				</label>
-
-				<label>$$$
-					<input 
-					type="radio" onChange={this.handlePrice} value={3} name="price"
-					/>
-				</label>
+			
+				<input 
+					type="radio" 
+					onChange={this.handlePrice} 
+					value={3} 
+					name="price" 
+					id="price-3"
+				/>
+				<label for="price-3">$$$</label>
 
 				<button onClick={this.handleSubmit}>Add Business</button>
 			</div>
