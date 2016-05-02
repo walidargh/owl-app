@@ -115,10 +115,10 @@ the API.
 
 **Objective:** Users can search for businesses by name (full name and closest match).
 
-- [ ] build out API, Flux loop, and components, this will include:
-  - [ ] REGEX for matching query string to Business
-  - [ ] flux structure
-- implement live search feature with clickable links
+- [X] build out API, Flux loop, and components, this will include:
+  - [X] REGEX for matching query string to Business
+  - [X] flux structure
+- [X} implement live search feature with clickable links
 - [ ] CSS styling for search bar
 
 ### Phase 7: Upload Photos (1 days)

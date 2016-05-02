@@ -34,7 +34,6 @@ var ReviewForm = React.createClass({
 					onChange={this.handleBody} 
 					value={this.state.body} 
 				/>
-				{this.ratingForm()}
 			</form>
 		);
 	}
