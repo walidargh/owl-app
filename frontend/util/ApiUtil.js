@@ -11,7 +11,6 @@ var ApiUtil = {
 		// TODO: create handleError and receiveBusinesses
 	},
 	fetchSingleBusiness: function (id) {
-		console.log('fetchSingleBusiness');
 		$.ajax({
 			url: '/api/businesses/' + id,
 			type: 'GET',
@@ -30,8 +29,6 @@ var ApiUtil = {
 	},
 
 	fetchMatches: function (query) {
-		debugger
-		console.log('searching for:' + query);
 		$.ajax({
 			url: '/api/businesses/search',
 			type: 'GET',

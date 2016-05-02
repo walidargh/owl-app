@@ -1,6 +1,7 @@
 var React = require('react');
 var ClientActions = require('../actions/ClientActions');
 var BusinessStore = require('../stores/business');
+var hashHistory = require('react-router').hashHistory;
 
 
 var Search = React.createClass({
