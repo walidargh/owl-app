@@ -106,14 +106,18 @@ input {
 
 .reviews {
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	margin: 10px;
 	top: 100px;
 }
 
 .reviews-container {
-	position: absolute;
+	position: relative;
 	margin: 10px;
+}
+
+.photo-index {
+	position: relative;
 }
 
 button {

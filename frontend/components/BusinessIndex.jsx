@@ -15,7 +15,9 @@ var BusinessIndex = React.createClass({
 	componentWillMount: function () {
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		//TODO build component to handle rendering 
-		ClientActions.fetchBusinesses();
+		// ClientActions.fetchBusinesses();
+		var businesses = BusinessStore.all();
+		this.setState({businesses: businesses});
 	},
 
 	_onChange: function () {
@@ -27,6 +29,10 @@ var BusinessIndex = React.createClass({
 		// 	}
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
+	},
+
+	componentWillUnmount: function () {
+		this.businessListener.remove()
 	},
 
 	openModal: function () {

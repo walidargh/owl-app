@@ -17,10 +17,9 @@ var PhotoIndex = React.createClass({
 	uploadPhoto: function (event) {
 		event.preventDefault();
 		var self = this;
-		debugger
 		cloudinary.openUploadWidget(
 			window.CLOUDINARY_OPTIONS, 
-			function (error, photos) {
+			function (error, photos ) {
 				if (error === null) {
 					var photo = {url: photos[0].url, business_id: self.props.businessId};
 					ClientActions.uploadPhoto(photo);
@@ -29,12 +28,11 @@ var PhotoIndex = React.createClass({
 	},
 
 	render: function() {
-		debugger
 		var photos = this.state.photos.map(function (photo) {
 			return <img src={photo.url} />;
 		});
 		return (
-			<div>
+			<div className="photo-index">
 				{photos}
 				<button onClick={this.uploadPhoto}>Upload Image</button>
 			</div>

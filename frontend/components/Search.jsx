@@ -20,6 +20,7 @@ var Search = React.createClass({
 
 	updateQuery: function (event) {
 		var query = event.target.value;
+		debugger
 		this.setState({query: query}, this.searchBusiness);
 	},
 
@@ -27,10 +28,15 @@ var Search = React.createClass({
 		ClientActions.fetchMatches(this.state.query);
 	},
 
+	showBusiness: function () {
+		hashHistory.push('/businesses/')
+	},
+
 	render: function () {
 		return (
 			<ul className="search-bar">
-				<input type="text" value={this.state.query} onChange={this.updateQuery}/> 
+				<input type="text" value={this.state.query} onChange={this.updateQuery}/>
+				<button onClick={this.showBusiness}>Search</button> 
 			</ul>
 		);
 	}

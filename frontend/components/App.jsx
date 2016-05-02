@@ -51,7 +51,13 @@ var App = React.createClass({
   },
 
   showBusiness: function () {
+    debugger
     hashHistory.push('/businesses/');
+  },
+
+  updateQuery: function () {
+    debugger
+    this.showBusiness();
   },
 
   logButton: function () {
@@ -73,6 +79,7 @@ var App = React.createClass({
   },
 
   render: function() {
+    debugger
     return (
       <div className="app">
         <div className="nav-bar">
@@ -84,7 +91,6 @@ var App = React.createClass({
           />
           <button onClick={this.showBusiness}>View Businesses</button>
           <Search className="search-bar"/>
-          <button onClick={this.showBusiness}>Search</button>
         </div>
 
         <div className="content-body">

@@ -10,7 +10,6 @@ var _currentBusiness = {};
 var _authErrors = {};
 
 BusinessStore.all = function () {
-	debugger
 	return Object.assign({}, _businesses);
 };
 
