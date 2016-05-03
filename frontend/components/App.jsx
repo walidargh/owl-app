@@ -11,15 +11,16 @@ var FormConstants = require('../constants/FormConstants');
 var Search = require('./Search');
 var ClientActions = require('../actions/ClientActions');
 
-
 var App = React.createClass({
+
 
   getInitialState: function() {
     var formType =  (UserStore.currentUser()) ? "Log Out" : "Log In";
-    return { modalIsOpen: false, formType: formType};
+    return { modalIsOpen: false, formType: formType, modalFormType:"" };
   },
 
   componentWillMount: function () {
+    this.businessListener = BusinessStore.addListener(this._onChange);
     this.userListener = UserStore.addListener(this._onChange);
   },
 
@@ -29,20 +30,23 @@ var App = React.createClass({
     } else {
       this.setState({formType: "Log In"});
     }
+    this.closeModal();
   },
 
   openModal: function () {
-    debugger
     this.setState({modalIsOpen: true});
   },
 
   closeModal: function () {
-    debugger
     this.setState({modalIsOpen: false});
+    this.setState({modalFormType: ""});
+  },
+
+  setModalForm: function (modalFormType) {
+    this.setState({modalFormType: modalFormType});
   },
 
   loginForm: function () {
-    debugger
     this.setState({formType: "Log In"});
     this.openModal();
   },
@@ -89,7 +93,6 @@ var App = React.createClass({
   },
 
   render: function() {
-    debugger
     return (
       <div className="app">
         <div className="nav-bar">
@@ -100,17 +103,116 @@ var App = React.createClass({
 
         <FormModal 
           modalIsOpen={this.state.modalIsOpen} 
-          modalFormType={FormConstants.LOGINFORM} 
+          modalFormType={this.state.modalFormType} 
           formType={this.state.formType}
+          closeModal={this.closeModal}
         />
-        
+
         <div className="content-body">
-          {this.props.children}
+          {this.props.children && React.cloneElement(this.props.children, {
+            closeModal: this.closeModal, openModal: this.openModal, setModalForm: this.setModalForm
+          })}
         </div>
       </div>
     );
   }
 });
+
+// getInitialState: function () {
+//     var formType =  (UserStore.currentUser()) ? "Log Out" : "Log In";
+//   return ({modalIsOpen: false, formType: formType})
+// },
+
+// componentDidMount: function () {
+//   UserStore.addListener(this._onChange)
+// },
+
+// _onChange: function () {
+//   if (UserStore.currentUser()) {
+//     this.setState({formType: "Log Out"});
+//   } else {
+//     this.setState({formType: "Log In"});
+//   }
+// },
+
+// openModal: function () {
+//   this.setState({modalIsOpen: true})
+// },
+
+// closeModal: function () {
+//   this.setState({modalIsOpen: false})
+// },
+
+// loginForm: function () {
+//   this.setState({formType: "Log In"})
+//   this.openModal()
+// },
+
+// signupForm: function () {
+//   this.setState({formType: "Sign Up"})
+//   this.openModal()
+// },
+
+// logout: function () {
+//   UserActions.logout();
+// },
+
+// logButton: function () {
+//   if (this.state.formType === "Log Out") {
+//     return (
+//       <button className="log-out-button" onClick={this.logout}>
+//         Sign Out
+//       </button>
+//     );
+//   } else {
+//       return (
+//         <div className="not-loggedin"> 
+//           <button className="log-in-button" onClick={this.loginForm}>
+//             Log In
+//           </button>
+
+//           <button className="sign-up-button" onClick={this.signupForm}>
+//             Sign Up
+//           </button>
+//         </div>
+//       );
+//     }
+// },
+
+// showBusiness: function () {
+//   ClientActions.fetchBusinesses();
+//   hashHistory.push('/businesses/');
+// },
+
+// updateQuery: function () {
+//   this.showBusiness();
+// },
+
+// render: function () {
+//   return (
+//     <div className="app">
+
+//       <div className="nav-bar">
+//         <Search />
+//         {this.logButton()}
+//       </div>
+
+//       <div className="modal-wrapper">
+
+//         modalIsOpen={this.state.modalIsOpen} 
+//         modalFormType={FormConstants.LOGINFORM} 
+//         formType={this.state.formType}
+//       </div>
+
+//       <div className="content-body">
+//         {this.props.children && React.cloneElement(this.props.children, {
+//           closeModal: this.closeModal, openModal: this.openModal, setFormType: this.setFormType 
+//         })}
+//       </div>
+//     </div>
+//   )
+// }
+
 
 module.exports = App;
 

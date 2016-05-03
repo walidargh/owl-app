@@ -6,7 +6,7 @@ var FormModal = require('../modals/FormModal');
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
-		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: true};
+		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: false};
 	},
 
 	openModal: function () {

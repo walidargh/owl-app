@@ -12,13 +12,13 @@ var BusinessDetail = React.createClass({
 		return {business: "", modalIsOpen: false};
 	},
 
-	openModal: function () {
-		this.setState({modalIsOpen: true});
-	},
+	// openModal: function () {
+	// 	this.setState({modalIsOpen: true});
+	// },
 
-	closeModal: function () {
-		this.setState({modalIsOpen: false});
-	},
+	// closeModal: function () {
+	// 	this.setState({modalIsOpen: false});
+	// },
 
 	getStatefromStore: function () {
 		var business = BusinessStore.currentBusiness();
@@ -26,6 +26,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	componentWillReceiveProps: function (newProps) {
+		debugger
 		ClientActions.fetchSingleBusiness(parseInt(newProps.params.businessId));
 	},	
 

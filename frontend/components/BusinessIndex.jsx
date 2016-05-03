@@ -5,7 +5,9 @@ var ClientActions = require('../actions/ClientActions');
 var BusinessIndexItem = require('./BusinessIndexItem');
 var FormConstants = require('../constants/FormConstants');
 var FormModal = require('../modals/FormModal');
-
+var BusinessForm = require('./BusinessForm');
+var LoginForm = require('./LoginForm');
+var Modal = require('react-modal');
 
 var BusinessIndex = React.createClass({
 	getInitialState: function () {
@@ -14,13 +16,13 @@ var BusinessIndex = React.createClass({
 
 	componentWillMount: function () {
 		this.businessListener = BusinessStore.addListener(this._onChange);
-		//TODO build component to handle rendering 
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
 	},
 
 	_onChange: function () {
 		var businesses = BusinessStore.all();
+		this.setState({modalIsOpen: false});
 		this.setState({businesses: businesses});
 	},
 
@@ -29,13 +31,17 @@ var BusinessIndex = React.createClass({
 	},
 
 	openModal: function () {
-		debugger
 		this.setState({modalIsOpen: true});
+	},
+
+	handleClick: function (event) {
+		debugger
+		event.preventDefault();
+		this.openModal();
 	},
 
 	render: function () {
 		var self = this;
-
 		var businesses = Object.keys(this.state.businesses).map(function (id) {
 			return (
 				<BusinessIndexItem 
@@ -43,12 +49,20 @@ var BusinessIndex = React.createClass({
 				/>
 			);
 		});
+
+		var form = UserStore.currentUser() ? <BusinessForm /> : <LoginForm />
 		return (
 			<div className="businesses">
+				<Modal
+					isOpen={this.state.modalIsOpen}
+					onRequestClose={this.closeModal}
+				> 
+					{form}
+				</Modal>
 
 				<button 
 					className="new-business" 
-					onClick={this.openModal}>
+					onClick={this.handleClick}>
 					New Business
 				</button>
 
@@ -56,14 +70,14 @@ var BusinessIndex = React.createClass({
 					{businesses}
 				</div>
 
-				<FormModal 
-					modalFormType={FormConstants.BUSINESSFORM}
-					formType={"Log In"} 
-					modalIsOpen={this.state.modalIsOpen} 
-				/>
 			</div>
 		);
 	}
 });
 
 module.exports = BusinessIndex;
+				// <FormModal 
+				// 	modalFormType={FormConstants.BUSINESSFORM}
+				// 	formType={"Log In"} 
+				// 	modalIsOpen={this.state.modalIsOpen} 
+				// />

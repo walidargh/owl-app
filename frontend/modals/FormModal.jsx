@@ -14,28 +14,27 @@ var FormModal = React.createClass({
 		return ({modalIsOpen: false});
 	},
 
-	componentWillMount: function () {
-		this.businessListener = BusinessStore.addListener(this._onChange);
-		this.userListener = UserStore.addListener(this._onChange);
-	},
+	// componentWillMount: function () {
+	// 	this.businessListener = BusinessStore.addListener(this._onChange);
+	// 	this.userListener = UserStore.addListener(this._onChange);
+	// },
 
 	componentWillReceiveProps: function (newProps) {
-		debugger
 		this.setState({modalIsOpen : newProps.modalIsOpen});
 	},
 
-	_onChange: function () {
-		debugger
-		this.closeModal();
-	},
+	// _onChange: function () {
+	// 	debugger
+	// 	this.props.closeModal();
+	// },
 
-	openModal: function () {
-		this.setState({modalIsOpen: true});
-	},
+	// openModal: function () {
+	// 	this.setState({modalIsOpen: true});
+	// },
 
-	closeModal: function () {
-		this.setState({modalIsOpen: false});
-	},
+	// closeModal: function () {
+	// 	this.setState({modalIsOpen: false});
+	// },
 
  	form: function () {
 		if (UserStore.currentUser()) {
@@ -52,7 +51,6 @@ var FormModal = React.createClass({
  	},
 
  	render: function () {
- 		debugger
  		return (
  			<Modal
 				isOpen={this.state.modalIsOpen}
