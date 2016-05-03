@@ -11,19 +11,18 @@ Modal.setAppElement(document.body);
 
 var FormModal = React.createClass({
 	getInitialState: function () {
+		debugger
 		return ({modalIsOpen: false});
 	},
 
 	componentWillMount: function () {
+		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
 	},
 
-	componentWillReceiveProps: function (newProps) {
-		this.setState({modalIsOpen : newProps.modalIsOpen});
-	},
-
 	_onChange: function () {
+		debugger
 		this.closeModal();
 	},
 
@@ -39,10 +38,6 @@ var FormModal = React.createClass({
 		if (UserStore.currentUser()) {
 			var form;
 			switch(this.props.modalFormType) {
-				case FormConstants.LOGINFORM:
-					form = <LoginForm formType={this.props.formType}/>;
-				break;
-
 				case FormConstants.BUSINESSFORM:
 					form = <BusinessForm />;
 				break;
@@ -58,6 +53,7 @@ var FormModal = React.createClass({
  	},
 
  	render: function () {
+ 		debugger
  		return (
  			<Modal
 				isOpen={this.state.modalIsOpen}

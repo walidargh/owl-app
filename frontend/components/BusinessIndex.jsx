@@ -15,19 +15,11 @@ var BusinessIndex = React.createClass({
 	componentWillMount: function () {
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		//TODO build component to handle rendering 
-		// ClientActions.fetchBusinesses();
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
 	},
 
 	_onChange: function () {
-		// var businesses;
-		// if (BusinessStore.matches() === {}) {
-		// 	businesses = BusinessStore.all();
-		// } else {
-		// 		businesses = BusinessStore.matches();
-		// 	}
-		
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
 	},
@@ -37,6 +29,7 @@ var BusinessIndex = React.createClass({
 	},
 
 	openModal: function () {
+		debugger
 		this.setState({modalIsOpen: true});
 	},
 
@@ -50,7 +43,6 @@ var BusinessIndex = React.createClass({
 				/>
 			);
 		});
-
 		return (
 			<div className="businesses">
 
@@ -68,7 +60,6 @@ var BusinessIndex = React.createClass({
 					modalFormType={FormConstants.BUSINESSFORM}
 					formType={"Log In"} 
 					modalIsOpen={this.state.modalIsOpen} 
-
 				/>
 			</div>
 		);

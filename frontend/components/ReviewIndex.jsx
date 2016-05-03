@@ -13,9 +13,6 @@ var ReviewIndex = React.createClass({
 		this.setState({modalIsOpen: true});
 	},
 
-	// componentWillMount: function () {
-	// },
-
 	render: function () {
 		
 		var reviews = this.props.reviews.map(function(review) {
@@ -27,7 +24,6 @@ var ReviewIndex = React.createClass({
 					businessId={this.props.businessId}
 					openModal={this.props.openModal}
 					closeModal={this.props.closeModal}
-					hello="hello"
 					/>
 				{reviews}
 			</div>

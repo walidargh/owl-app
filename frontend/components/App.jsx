@@ -32,12 +32,18 @@ var App = React.createClass({
   },
 
   openModal: function () {
+    debugger
     this.setState({modalIsOpen: true});
   },
 
+  closeModal: function () {
+    debugger
+    this.setState({modalIsOpen: false});
+  },
+
   loginForm: function () {
+    debugger
     this.setState({formType: "Log In"});
-    this.state.formType = "Sign Up";
     this.openModal();
   },
 
@@ -83,6 +89,7 @@ var App = React.createClass({
   },
 
   render: function() {
+    debugger
     return (
       <div className="app">
         <div className="nav-bar">
@@ -93,7 +100,7 @@ var App = React.createClass({
             formType={this.state.formType}
           />
           <button onClick={this.showBusiness}>View Businesses</button>
-          <Search className="search-bar"/>
+          <Search/>
         </div>
 
         <div className="content-body">

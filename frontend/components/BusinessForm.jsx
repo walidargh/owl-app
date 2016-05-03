@@ -55,30 +55,32 @@ var BusinessForm = React.createClass({
 	render: function () {
 		return(
 			<form onSubmit={this.handleSubmit}>
+			
+				<label for="business-name">Business Name</label>
 				<input 
 					type="text" 
 					onChange={this.handleName} 
 					value={this.state.name} 
 					id="business-name"
 				/>
-				<label for="business-name">Business Name</label>
 
+				<label for="hours">Address</label>
 				<input 
 					type="text" 
 					onChange={this.handleAddress} 
 					value={this.state.address} 
 					id="address"
 				/>
-				<label for="hours">Address</label>
 				
+				<label for="hours">Hours</label>
 				<input 
 					type="text" 
 					onChange={this.handleHours} 
 					value={this.state.hours} 
 					id="hours"
 				/>
-				<label for="hours">Hours</label>
 
+				<label for="price=1">$</label>				
 				<input 
 					type="radio" 
 					onChange={this.handlePrice} 
@@ -86,8 +88,8 @@ var BusinessForm = React.createClass({
 					name="price" 
 					id="price=1"
 				/>
-				<label for="price=1">$</label>				
 
+				<label for="price-2">$$</label>
 				<input 
 					type="radio" 
 					onChange={this.handlePrice} 
@@ -95,9 +97,9 @@ var BusinessForm = React.createClass({
 					name="price" 
 					id="price-2" 
 				/>
-				<label for="price-2">$$</label>
 
 			
+				<label for="price-3">$$$</label>
 				<input 
 					type="radio" 
 					onChange={this.handlePrice} 
@@ -105,7 +107,6 @@ var BusinessForm = React.createClass({
 					name="price" 
 					id="price-3"
 				/>
-				<label for="price-3">$$$</label>
 
 				<button onClick={this.handleSubmit}>Add Business</button>
 			</form>

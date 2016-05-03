@@ -16,12 +16,6 @@ var BusinessIndexItem = React.createClass({
 		} else {
 			photo = <div></div>;
 		}
-		// create link to on business name that 
-		// will open the business detail by passing 
-		// it a prop with the business id
-		// the class will be used to stylize the css
-		// this item will have a pic, stars, title, brief blurb,
-		// maybe neighborhood
 		return (
 			<ul className="business-index-item" onClick={this.showDetail}>
 				<li className="business-index-title">{business.name}</li>

@@ -20,7 +20,6 @@ var BusinessDetail = React.createClass({
 		this.setState({modalIsOpen: false});
 	},
 
-
 	getStatefromStore: function () {
 		var business = BusinessStore.currentBusiness();
 		return {business: business};
