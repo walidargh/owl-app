@@ -94,15 +94,16 @@ var App = React.createClass({
       <div className="app">
         <div className="nav-bar">
           {this.logButton()}
-          <FormModal 
-            modalIsOpen={this.state.modalIsOpen} 
-            modalFormType={FormConstants.LOGINFORM} 
-            formType={this.state.formType}
-          />
           <button onClick={this.showBusiness}>View Businesses</button>
           <Search/>
         </div>
 
+        <FormModal 
+          modalIsOpen={this.state.modalIsOpen} 
+          modalFormType={FormConstants.LOGINFORM} 
+          formType={this.state.formType}
+        />
+        
         <div className="content-body">
           {this.props.children}
         </div>

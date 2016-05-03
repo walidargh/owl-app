@@ -11,14 +11,17 @@ Modal.setAppElement(document.body);
 
 var FormModal = React.createClass({
 	getInitialState: function () {
-		debugger
 		return ({modalIsOpen: false});
 	},
 
 	componentWillMount: function () {
-		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
+	},
+
+	componentWillReceiveProps: function (newProps) {
+		debugger
+		this.setState({modalIsOpen : newProps.modalIsOpen});
 	},
 
 	_onChange: function () {
@@ -41,10 +44,6 @@ var FormModal = React.createClass({
 				case FormConstants.BUSINESSFORM:
 					form = <BusinessForm />;
 				break;
-
-				// case FormConstants.REVIEWFORM:
-				// 	form = <ReviewForm businessId={this.props.businessId}/>;
-				// break;
 			}
 			return form;
 		} else {

@@ -12,18 +12,20 @@ var BusinessIndexItem = React.createClass({
 		var business = this.props.business;
 		var photo
 		if (business.featured) {
-			photo = <li className="business-index-image"><img src={business.featured.url} /></li>
+			photo = <img src={business.featured.url} />
 		} else {
 			photo = <div></div>;
 		}
 		return (
-			<ul className="business-index-item" onClick={this.showDetail}>
-				<li className="business-index-title">{business.name}</li>
-				<li className="business-index-hours">{business.hours}</li>
-				<li className="business-index-price">{business.price}</li>
-				<li className="business-index-address">{business.address}</li>
-				{photo}
-			</ul>
+			<div className="business-index-item" onClick={this.showDetail}>
+				<ul className="business-index-text" onClick={this.showDetail}>
+					<li className="business-index-title">{business.name}</li>
+					<li className="business-index-hours">{business.hours}</li>
+					<li className="business-index-price">{business.price}</li>
+					<li className="business-index-address">{business.address}</li>
+				</ul>
+				<div className="business-index-image">{photo}</div>
+			</div>
 		);
 	}
 });
