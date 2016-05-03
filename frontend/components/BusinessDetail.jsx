@@ -42,6 +42,7 @@ var BusinessDetail = React.createClass({
 				<ReviewIndex 
 					reviews={this.state.business.reviews} 
 					businessId={this.state.business.id}
+					businessName={this.state.business.name}
 				/>
 			);
 		}

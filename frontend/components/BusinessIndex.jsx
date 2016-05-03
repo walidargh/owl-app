@@ -64,8 +64,10 @@ var BusinessIndex = React.createClass({
 				</div>
 
 				<FormModal 
-					modalFormType={FormConstants.BUSINESSFORM} 
+					modalFormType={FormConstants.BUSINESSFORM}
+					formType={"Log In"} 
 					modalIsOpen={this.state.modalIsOpen} 
+
 				/>
 			</div>
 		);

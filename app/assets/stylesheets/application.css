@@ -124,9 +124,14 @@ input {
 	height: 100%
 }
 
-.business-index-image img {
+img {
 	height: 50%;
 }
+
+.photo-index-item {
+	height: 50%;
+}
+
 button {
 	font-family: 'Roboto';
 	font-size: 14px;

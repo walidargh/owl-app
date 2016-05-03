@@ -59,6 +59,7 @@ var PhotoIndex = React.createClass({
 				<FormModal 
 					modalFormType={FormConstants.LOGINFORM} 
 					modalIsOpen={this.state.modalIsOpen}
+					formType={"Log In"}
 				/>
 			</div>
 		);

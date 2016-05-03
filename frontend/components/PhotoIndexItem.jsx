@@ -4,7 +4,9 @@ var PhotoIndexItem = React.createClass({
 	render: function() {
 	var photo = this.props.photo;
 		return (
-			<img src={photo.url} />
+			<div className="photo-index-item">
+				<img  src={photo.url} />
+			</div>
 		);
 	}
 

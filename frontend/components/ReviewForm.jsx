@@ -26,9 +26,10 @@ var ReviewForm = React.createClass({
 	},
 
 	render: function () {
+		debugger
 		return (
 			<form className="review-form" onSubmit={this.handleSubmit}>
-				<label>Write a Review</label>
+				<label>Write a Review for {this.props.businessName}</label>
 				<input 
 					type="textbox" 
 					onChange={this.handleBody} 

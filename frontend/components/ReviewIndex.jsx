@@ -31,6 +31,7 @@ var ReviewIndex = React.createClass({
 					businessId={this.props.businessId}
 					modalFormType={FormConstants.REVIEWFORM}
 					modalIsOpen={this.state.modalIsOpen}
+					formType={"Log In"}
 				/>
 				{reviews}
 			</div>
