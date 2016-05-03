@@ -54,7 +54,7 @@ var BusinessForm = React.createClass({
 
 	render: function () {
 		return(
-			<div>
+			<form onSubmit={this.handleSubmit}>
 				<input 
 					type="text" 
 					onChange={this.handleName} 
@@ -108,7 +108,7 @@ var BusinessForm = React.createClass({
 				<label for="price-3">$$$</label>
 
 				<button onClick={this.handleSubmit}>Add Business</button>
-			</div>
+			</form>
 
 
 			);

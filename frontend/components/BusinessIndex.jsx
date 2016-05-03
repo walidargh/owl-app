@@ -27,6 +27,7 @@ var BusinessIndex = React.createClass({
 		// } else {
 		// 		businesses = BusinessStore.matches();
 		// 	}
+		
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
 	},

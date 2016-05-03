@@ -29,6 +29,7 @@ BusinessStore.resetBusinesses = function (businesses) {
 
 BusinessStore.addBusiness = function (business) {
 	_currentBusiness = business;
+	_businesses[business.id] = business;
 	this.__emitChange();
 };
 
@@ -59,6 +60,8 @@ BusinessStore.__onDispatch = function (payload) {
 		case BusinessConstants.PHOTO_RECIEVED:
 			BusinessStore.addPhoto(payload.photo);
 		break;
+
+		// case BusinessConstants.SINGLE_BUSINESS_RECEIVED
 	}
 };
 

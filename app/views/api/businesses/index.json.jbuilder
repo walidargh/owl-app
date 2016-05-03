@@ -5,7 +5,9 @@ json.array! @businesses do |business|
 	json.hours business.hours
 	json.price business.price
 	json.featured do 
-		json.id business.photos.first.id
-		json.url business.photos.first.url
+		if business.photos.first
+			json.id business.photos.first.id
+			json.url business.photos.first.url
+		end
 	end
 end

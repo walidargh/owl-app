@@ -10,7 +10,7 @@ json.reviews do
 		json.rating review.rating
 	end
 end
-json.photos do
+json.photos do 
 	json.array! @business.photos do |photo|
 		json.id photo.id
 		json.url photo.url

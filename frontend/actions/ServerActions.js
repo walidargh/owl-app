@@ -10,6 +10,7 @@ var ServerActions = {
 	},
 
 	receiveSingleBusiness: function (business) {
+		console.log('receiving single business')
 		AppDispatcher.dispatch({
 			actionType: BusinessConstants.BUSINESS_RECEIVED,
 			business: business
