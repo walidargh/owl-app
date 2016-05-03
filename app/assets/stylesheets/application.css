@@ -120,6 +120,13 @@ input {
 	position: relative;
 }
 
+.business-index-image {
+	height: 100%
+}
+
+.business-index-image img {
+	height: 50%;
+}
 button {
 	font-family: 'Roboto';
 	font-size: 14px;

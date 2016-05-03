@@ -8,7 +8,6 @@
 User.create(user_name: "theboywholived", password: "hedwig")
 User.create(user_name: "thedarklord", password: "nagini")
 
-
 Business.create(user_id: 1, name: "Ollivanders", address: "Diagon Alley", hours: "8:00 AM - 8:00 PM" , price: 2 )
 Business.create(user_id: 2, name: "Quality Quidditch Supplies", address: "Diagon Alley", hours: "9:00 AM - 6:00 PM" , price: 3 )
 Business.create(user_id: 1, name: "Eeylops Owl Emporium", address: "Diagon Alley", hours: "8:00 PM - 4:00 AM" , price: 3 )
@@ -19,3 +18,10 @@ Review.create(user_id: 1, body: "This place is awesome 10/10 would recommend", r
 Review.create(user_id: 2, body: "This place is terrible 1/10 would recommend", rating: 1, business_id: 1)
 Review.create(user_id: 2, body: "Got my first wand here!", rating: 5, business_id: 1)
 Review.create(user_id: 1, body: "They were all out of elder wands", rating: 1, business_id: 1)
+
+Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Ollivanders_bjc4xk.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462229152/Quality-Quidditch-Supplies_jrynhc.jpg")
+Photo.create(user_id: 1, business_id: 3, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Eeylops_sx9xpg.jpg")
+Photo.create(user_id: 1, business_id: 4, url: "http://res.cloudinary.com/howler/image/upload/v1462229153/Weasleys_sjnnsp.jpg")
+Photo.create(user_id: 1, business_id: 5, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/FlourishBlotts_ztk7qi.jpg")
+
