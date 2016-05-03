@@ -47,9 +47,9 @@ var FormModal = React.createClass({
 					form = <BusinessForm />;
 				break;
 
-				case FormConstants.REVIEWFORM:
-					form = <ReviewForm businessId={this.props.businessId}/>;
-				break;
+				// case FormConstants.REVIEWFORM:
+				// 	form = <ReviewForm businessId={this.props.businessId}/>;
+				// break;
 			}
 			return form;
 		} else {

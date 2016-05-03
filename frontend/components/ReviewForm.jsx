@@ -1,9 +1,28 @@
 var React = require('react');
 var ClientActions = require('../actions/ClientActions');
+var UserStore = require('../stores/user');
+var FormConstants = require('../constants/FormConstants');
+var FormModal = require('../modals/FormModal');
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
-		return {body: "", rating: 2};
+		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: true};
+	},
+
+	openModal: function () {
+		this.setState({modalIsOpen: true});
+	},
+
+	closeModal: function () {
+		this.setState({modalIsOpen: false});
+	},
+
+	openForm: function () {
+		this.setState({formIsOpen: true});
+	},
+
+	closeForm: function (callback) {
+		this.setState({formIsOpen: false, body: ""}, callback);
 	},
 
 	handleBody: function (event) {
@@ -20,15 +39,16 @@ var ReviewForm = React.createClass({
 									rating: this.state.rating, 
 									business_id: this.props.businessId};
 		ClientActions.createReview(review);
+		this.closeForm();
 	},
 
 	ratingForm: function () {
 	},
 
-	render: function () {
-		debugger
-		return (
-			<form className="review-form" onSubmit={this.handleSubmit}>
+	reviewForm: function () {
+		if (this.state.formIsOpen) {
+			return (
+				<form className="review-form" onSubmit={this.handleSubmit}>
 				<label>Write a Review for {this.props.businessName}</label>
 				<input 
 					type="textbox" 
@@ -37,6 +57,24 @@ var ReviewForm = React.createClass({
 				/>
 				<input type="submit" value="Submit" onClick={this.handleSubmit}/>
 			</form>
+			);
+		} 
+	},
+
+	identifyForm: function () {
+		if (UserStore.currentUser()) {
+			this.openForm();
+		} else {
+			this.props.openModal();
+		}
+	},
+
+	render: function () {
+		return (
+			<div>
+				<button onClick={this.identifyForm}>Write A Review</button>
+				{this.reviewForm()}
+			</div>
 		);
 	}
 });

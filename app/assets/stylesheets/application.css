@@ -126,6 +126,7 @@ input {
 
 img {
 	height: 50%;
+	position: absolute;
 }
 
 .photo-index-item {

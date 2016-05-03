@@ -3,13 +3,23 @@ var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
 var ReviewIndex = require('./ReviewIndex');
 var PhotoIndex = require('./PhotoIndex');
-
+var FormConstants = require('../constants/FormConstants');
+var FormModal = require('../modals/FormModal');
 
 var BusinessDetail = React.createClass({
 
 	getInitialState: function () {
-		return {business: ""};
+		return {business: "", modalIsOpen: false};
 	},
+
+	openModal: function () {
+		this.setState({modalIsOpen: true});
+	},
+
+	closeModal: function () {
+		this.setState({modalIsOpen: false});
+	},
+
 
 	getStatefromStore: function () {
 		var business = BusinessStore.currentBusiness();
@@ -38,17 +48,20 @@ var BusinessDetail = React.createClass({
 		if (this.state.business === "") {
 			return ;
 		} else {
+			debugger
 			return (
 				<ReviewIndex 
 					reviews={this.state.business.reviews} 
 					businessId={this.state.business.id}
-					businessName={this.state.business.name}
+					openModal={this.openModal}
+					closeModal={this.closeModal}
 				/>
 			);
 		}
 	},
 
 	render: function () {
+		debugger
 		return (
 			<div>
 				<section className='business-detail-feature-bar'>
@@ -71,11 +84,19 @@ var BusinessDetail = React.createClass({
 
 				</section>
 
-				<section className="reviews-container">
-					{this.reviewForm()}
-				</section> 
+				{this.reviewForm()}
 
-				<PhotoIndex businessId={this.state.business.id}/>
+				<PhotoIndex 
+					businessId={this.state.business.id}
+					openModal={this.openModal}
+					closeModal={this.closeModal}
+				/>
+
+				<FormModal 
+					modalFormType={FormConstants.LOGINFORM} 
+					modalIsOpen={this.state.modalIsOpen}
+					formType={"Log In"}
+				/>
 			</div>
 		);
 	}

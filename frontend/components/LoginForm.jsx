@@ -56,7 +56,6 @@ var LoginForm = React.createClass({
 	},
 
 	render: function () {
-		debugger
 		return (
 			<div className="log-form">
 				{this.form()}
