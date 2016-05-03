@@ -11,7 +11,6 @@ var PhotoForm = React.createClass({
 	},
 
 	uploadPhoto: function (event) {
-		debugger
 		event.preventDefault();
 		var self = this;
 		if (UserStore.currentUser()) {
@@ -19,13 +18,12 @@ var PhotoForm = React.createClass({
 				window.CLOUDINARY_OPTIONS, 
 				function (error, photos ) {
 					if (error === null) {
-						var photo = {url: photos[0].url, business_id: self.props.businessId};
+						var photo = {url: photos[0].url, business_id: self.props.businessId}
 						ClientActions.uploadPhoto(photo);
 						self.props.closeModal();
 					}
 				});
 		} else {
-			debugger
 			self.props.openModal();
 			}
 	}, 
