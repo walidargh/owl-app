@@ -5,9 +5,7 @@ var ClientActions = require('../actions/ClientActions');
 var BusinessIndexItem = require('./BusinessIndexItem');
 var FormConstants = require('../constants/FormConstants');
 var FormModal = require('../modals/FormModal');
-var BusinessForm = require('./BusinessForm');
-var LoginForm = require('./LoginForm');
-var Modal = require('react-modal');
+
 
 var BusinessIndex = React.createClass({
 	getInitialState: function () {
@@ -22,7 +20,6 @@ var BusinessIndex = React.createClass({
 
 	_onChange: function () {
 		var businesses = BusinessStore.all();
-		this.setState({modalIsOpen: false});
 		this.setState({businesses: businesses});
 	},
 
@@ -30,14 +27,15 @@ var BusinessIndex = React.createClass({
 		this.businessListener.remove();
 	},
 
-	openModal: function () {
-		this.setState({modalIsOpen: true});
-	},
+	// openModal: function () {
+	// 	this.setState({modalIsOpen: true});
+	// },
 
 	handleClick: function (event) {
 		debugger
 		event.preventDefault();
-		this.openModal();
+		this.props.setModalForm("BUSINESSFORM");
+		this.props.openModal();
 	},
 
 	render: function () {
@@ -49,16 +47,8 @@ var BusinessIndex = React.createClass({
 				/>
 			);
 		});
-
-		var form = UserStore.currentUser() ? <BusinessForm /> : <LoginForm />
 		return (
 			<div className="businesses">
-				<Modal
-					isOpen={this.state.modalIsOpen}
-					onRequestClose={this.closeModal}
-				> 
-					{form}
-				</Modal>
 
 				<button 
 					className="new-business" 
