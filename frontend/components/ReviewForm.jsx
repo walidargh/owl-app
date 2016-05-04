@@ -16,6 +16,7 @@ var ReviewForm = React.createClass({
 	_onChange: function () {
 		this.closeModal();
 		this.closeForm();
+		document.getElementByClassName("review-button").style.display = "block";
 	},
 
 	openModal: function () {
@@ -59,9 +60,10 @@ var ReviewForm = React.createClass({
 			return (
 				<form className="review-form" onSubmit={this.handleSubmit}>
 					<label>Write a Review{this.props.businessName}</label>
-					<input 
+					<textarea
 						className="review-form-body"
-						type="textbox" 
+						row={5}
+						column={20} 
 						onChange={this.handleBody} 
 						value={this.state.body} 
 					/>
@@ -73,7 +75,11 @@ var ReviewForm = React.createClass({
 
 	identifyForm: function () {
 		if (UserStore.currentUser()) {
+			debugger
 			this.openForm();
+			debugger
+			document.getElementsByClassName("review-button")[0].style.display = "none";
+			debugger
 		} else {
 			this.openModal();
 		}
@@ -81,8 +87,8 @@ var ReviewForm = React.createClass({
 
 	render: function () {
 		return (
-			<div className="review-button">
-				<button onClick={this.identifyForm}>Write A Review</button>
+			<div className="review-form-and-button">
+				<button className="review-button" onClick={this.identifyForm}>Write A Review</button>
 				{this.reviewForm()}
 				<Modal
 					isOpen={this.state.modalIsOpen}

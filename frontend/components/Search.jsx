@@ -13,13 +13,16 @@ var Search = React.createClass({
 		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
 
+	componentWillUnmount: function () {
+		this.businessListener.remove();
+	},
+
 	_onChange: function () {
 		var matches = BusinessStore.all();
 		this.setState({matches: matches});
 	},
 
 	updateQuery: function (event) {
-		debugger
 		var query = event.target.value;
 		if (this.props.location.pathname === "/businesses/") {
 			this.setState({query: query}, this.searchBusiness);

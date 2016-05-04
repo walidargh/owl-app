@@ -64,10 +64,6 @@ var App = React.createClass({
     hashHistory.push('/businesses/');
   },
 
-  // updateQuery: function () {
-  //   this.showBusiness();
-  // },
-
   logButton: function () {
     if (this.state.formType === "Log Out") {
       return (
