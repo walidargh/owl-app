@@ -14,13 +14,14 @@
  *= require_self
  */
 body {
- 	font-family: 'Roboto';
+ 	font-family: 'hogwartswizard';
  }
 
 .content-body {
 	position: absolute;
+	display: flex;
 	justify-content: center;
-	font-family: 'Roboto';
+	font-family: 'hogwartswizard';
 	margin: 40px;
 	width: 50%;
 }
@@ -61,11 +62,30 @@ input {
 }
 
 .business-index-item {
+	display: flex;
  	border: 1px solid rgba(0, 0, 0, 0.05);
+ 	align-items: center;
  	padding: 5px;
  	margin: 2px;
  	background-color: #e9fcf4;
  	text-shadow: rgba(0,0,0,.15)
+}
+
+.business-index-text {
+
+}
+
+.business-index-image {
+	display: flex;
+	align-items: center;
+	width: 150px;
+	margin: 3px;
+}
+
+.business-index-image img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 3px;
 }
 
 .business-index-title {
@@ -97,6 +117,13 @@ input {
 	justify-content: flex-start;
 }
 
+.business-detail {
+	top: 40px;
+	margin: 20px;
+	overflow: auto;
+	width: 100%;
+}
+
 .business-detail-feature-bar {
 	position: relative;
 	border: 1px solid rgba(0, 0, 0, 0.05);
@@ -105,34 +132,41 @@ input {
 }
 
 .reviews {
-	display: inline-block;
-	position: absolute;
+	display: flex;
+	flex-direction: column;
 	margin: 10px;
 	top: 100px;
 }
 
-.reviews-container {
-	position: relative;
+.photos {
+	display: flex;
+	flex-direction: column;
 	margin: 10px;
+	top: 100px;
 }
 
 .photo-index {
-	position: relative;
-}
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	overflow-x:scroll;
+	background-color: #fff;
 
-.business-index-image {
-	height: 100%
-}
-
-img {
-	height: 50%;
-	position: relative;
 }
 
 .photo-index-item {
-	height: 50%;
-}
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 150px;
+	margin: 3px;
 
+}
+.photo-index-item img{
+	max-height: 100%;
+	width: auto;
+	border-radius: 3px;
+}
 button {
 	font-family: 'Roboto';
 	font-size: 14px;
@@ -144,19 +178,17 @@ button {
 	border: 2px solid white;
 }
 
-.reviews-container li {
-	position: relative;
-	display: inline-block;
-	margin: 5px;
-	padding: 5px;
-	width: 100%;
-	border: 1px solid rgba(0, 0, 0, 0.02);
-}
 
 @font-face {
-
- 	font-family: 'Lumos';
- 	src: local('Lumos');
+    font-family: 'hogwartswizardregular';
+    src: font-url('/assets/hogwartswizard-webfont.eot');
+    src: font-url('/assets/hogwartswizard-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('/assets/hogwartswizard-webfont.woff2') format('woff2'),
+         font-url('/assets/hogwartswizard-webfont.woff') format('woff'),
+         font-url('/assets/hogwartswizard-webfont.ttf') format('truetype'),
+         font-url('/assets/hogwartswizard-webfont.svg#hogwartswizardregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 

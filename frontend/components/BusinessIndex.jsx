@@ -20,15 +20,16 @@ var BusinessIndex = React.createClass({
 		this.setState({businesses: businesses});
 	},
 
+	componentWillUnmount: function () {
+		this.businessListener.remove();
+		this.userListener.remove();
+	},
+
 	_onChange: function () {
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
 		this.closeModal();
 	},
-
-	// componentWillUnmount: function () {
-	// 	this.businessListener.remove();
-	// },
 
 	openModal: function () {
 		this.setState({modalIsOpen: true});
@@ -46,7 +47,6 @@ var BusinessIndex = React.createClass({
 
 	render: function () {
 		var self = this;
-		debugger
 		var businesses = Object.keys(this.state.businesses).map(function (id) {
 			return (
 				<BusinessIndexItem 

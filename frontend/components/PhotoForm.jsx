@@ -27,6 +27,7 @@ var PhotoForm = React.createClass({
 	},
 
 	uploadPhoto: function (event) {
+		debugger
 		event.preventDefault();
 		var self = this;
 		if (UserStore.currentUser()) {
@@ -45,7 +46,7 @@ var PhotoForm = React.createClass({
 
 	render: function() {
 		return (
-			<div>
+			<div className="photo-but">
 				<button onClick={this.uploadPhoto}>Upload Photo</button>
 				<Modal
 					isOpen={this.state.modalIsOpen}

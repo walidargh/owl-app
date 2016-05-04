@@ -41,8 +41,6 @@ var BusinessDetail = React.createClass({
 				<ReviewIndex 
 					reviews={this.state.business.reviews} 
 					businessId={this.state.business.id}
-					openModal={this.openModal}
-					closeModal={this.closeModal}
 				/>
 			);
 		}
@@ -50,10 +48,11 @@ var BusinessDetail = React.createClass({
 
 	photoForm: function () {
 		if (this.state.business !== "") {
+			debugger
 				return (
 					<PhotoIndex 
 						photos={this.state.business.photos}
-						businessId={this.state.businessId}
+						businessId={this.state.business.id}
 					/>
 				);
 		} else {
@@ -63,31 +62,30 @@ var BusinessDetail = React.createClass({
 
 	render: function () {
 		return (
-			<div>
-				<section className='business-detail-feature-bar'>
+			<div className="business-detail">
+				<ul className='business-detail-feature-bar'>
 
-					<span className="business-index-title">
+					<li className="business-index-title">
 						{this.state.business.name}
-					</span><br/>
+					</li><br/>
 
-					<span className="business-index-address">
+					<li className="business-index-address">
 						{this.state.business.address}
-					</span><br/>
+					</li><br/>
 
-					<span className="business-index-hours">
+					<li className="business-index-hours">
 						{this.state.business.hours}
-					</span><br/>
+					</li><br/>
 
-					<span className="business-index-price">
+					<li className="business-index-price">
 						{this.state.business.price}
-					</span><br/>
+					</li><br/>
 
-				</section>
-
-				{this.reviewForm()}
+				</ul>
 
 				{this.photoForm()}
 
+				{this.reviewForm()}
 
 			</div>
 		);

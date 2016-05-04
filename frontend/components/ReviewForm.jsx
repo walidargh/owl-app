@@ -9,6 +9,15 @@ var ReviewForm = React.createClass({
 		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: false};
 	},
 
+	componentWillMount: function () {
+		this.userListener = UserStore.addListener(this._onChange);
+	},
+
+	_onChange: function () {
+		this.closeModal();
+		this.closeForm();
+	},
+
 	openModal: function () {
 		this.setState({modalIsOpen: true});
 	},
@@ -62,10 +71,12 @@ var ReviewForm = React.createClass({
 	},
 
 	identifyForm: function () {
+		debugger
 		if (UserStore.currentUser()) {
 			this.openForm();
 		} else {
-			this.props.openModal();
+			debugger
+			this.openModal();
 		}
 	},
 
@@ -74,7 +85,7 @@ var ReviewForm = React.createClass({
 			<div>
 				<button onClick={this.identifyForm}>Write A Review</button>
 				{this.reviewForm()}
-				<Modal>
+				<Modal
 					isOpen={this.state.modalIsOpen}
 					onRequestClose={this.closeModal}>
 					<LoginForm formType="Log In"/>
