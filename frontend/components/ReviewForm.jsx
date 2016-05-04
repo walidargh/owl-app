@@ -16,11 +16,8 @@ var ReviewForm = React.createClass({
 	},
 
 	_onChange: function () {
-		debugger
 		this.closeModal();
 		this.closeForm();
-		debugger
-		document.getElementsByClassName("review-button")[0].style.display = "block";
 	},
 
 	openModal: function () {
@@ -54,6 +51,7 @@ var ReviewForm = React.createClass({
 									business_id: this.props.businessId};
 		ClientActions.createReview(review);
 		this.closeForm();
+		document.getElementsByClassName("review-button")[0].style.display = "block";
 	},
 
 	ratingForm: function () {
@@ -79,11 +77,8 @@ var ReviewForm = React.createClass({
 
 	identifyForm: function () {
 		if (UserStore.currentUser()) {
-			debugger
-			this.openForm();
-			debugger
 			document.getElementsByClassName("review-button")[0].style.display = "none";
-			debugger
+			this.openForm();
 		} else {
 			this.openModal();
 		}
