@@ -64,9 +64,9 @@ var App = React.createClass({
     hashHistory.push('/businesses/');
   },
 
-  updateQuery: function () {
-    this.showBusiness();
-  },
+  // updateQuery: function () {
+  //   this.showBusiness();
+  // },
 
   logButton: function () {
     if (this.state.formType === "Log Out") {
@@ -96,7 +96,7 @@ var App = React.createClass({
         <div className="nav-bar">
           {this.logButton()}
           <button onClick={this.showBusiness}>View Businesses</button>
-          <Search/>
+          <Search location={this.props.location}/>
         </div>
 
         <Modal 

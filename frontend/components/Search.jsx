@@ -21,14 +21,21 @@ var Search = React.createClass({
 	updateQuery: function (event) {
 		debugger
 		var query = event.target.value;
-		this.setState({query: query}, this.searchBusiness);
+		if (this.props.location.pathname === "/businesses/") {
+			this.setState({query: query}, this.searchBusiness);
+		} else {
+			this.setState({query: query});
+		}
 	},
 
 	searchBusiness: function () {
 		ClientActions.fetchMatches(this.state.query);
 	},
 
-	showBusiness: function () {
+	showBusiness: function (event) {
+		event
+		debugger
+		this.setState({query: query}, this.searchBusiness);
 		hashHistory.push('/businesses/');
 	},
 
