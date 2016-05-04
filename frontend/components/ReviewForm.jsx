@@ -1,6 +1,7 @@
 var React = require('react');
 var ClientActions = require('../actions/ClientActions');
 var UserStore = require('../stores/user');
+var BusinessStore = require('../stores/business');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 
@@ -11,12 +12,15 @@ var ReviewForm = React.createClass({
 
 	componentWillMount: function () {
 		this.userListener = UserStore.addListener(this._onChange);
+		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
 
 	_onChange: function () {
+		debugger
 		this.closeModal();
 		this.closeForm();
-		document.getElementByClassName("review-button").style.display = "block";
+		debugger
+		document.getElementsByClassName("review-button")[0].style.display = "block";
 	},
 
 	openModal: function () {
