@@ -29,10 +29,12 @@ var ReviewForm = React.createClass({
 	},
 
 	openForm: function () {
+		document.getElementsByClassName("review-button")[0].style.display = "none";
 		this.setState({formIsOpen: true});
 	},
 
 	closeForm: function (callback) {
+		document.getElementsByClassName("review-button")[0].style.display = "block";
 		this.setState({formIsOpen: false, body: ""}, callback);
 	},
 
@@ -50,8 +52,6 @@ var ReviewForm = React.createClass({
 									rating: this.state.rating, 
 									business_id: this.props.businessId};
 		ClientActions.createReview(review);
-		this.closeForm();
-		document.getElementsByClassName("review-button")[0].style.display = "block";
 	},
 
 	ratingForm: function () {
@@ -77,7 +77,6 @@ var ReviewForm = React.createClass({
 
 	identifyForm: function () {
 		if (UserStore.currentUser()) {
-			document.getElementsByClassName("review-button")[0].style.display = "none";
 			this.openForm();
 		} else {
 			this.openModal();
