@@ -14,6 +14,14 @@ var PhotoForm = React.createClass({
 		this.userListener = UserStore.addListener(this._onChange);
 	},
 
+	openModal: function () {
+		this.setState({modalIsOpen: true});
+	},
+
+	closeModal: function () {
+		this.setState({modalIsOpen: false});
+	},
+
 	_onChange: function () {
 		this.closeModal();
 	},

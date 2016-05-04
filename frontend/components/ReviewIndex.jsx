@@ -1,8 +1,6 @@
 var React = require('react');
 var BusinessStore = require('../stores/business');
 var ReviewForm = require('../components/ReviewForm');
-var FormConstants = require('../constants/FormConstants');
-var FormModal = require('../modals/FormModal');
 
 var ReviewIndex = React.createClass({
 	getInitialState: function () {

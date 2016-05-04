@@ -2,8 +2,6 @@ var React = require('react');
 var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
 var UserStore = require('../stores/user');
-var FormConstants = require('../constants/FormConstants');
-var FormModal = require('../modals/FormModal');
 var PhotoIndexItem = require('./PhotoIndexItem');
 var PhotoForm = require('./PhotoForm');
 

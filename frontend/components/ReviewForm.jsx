@@ -1,8 +1,6 @@
 var React = require('react');
 var ClientActions = require('../actions/ClientActions');
 var UserStore = require('../stores/user');
-var FormConstants = require('../constants/FormConstants');
-var FormModal = require('../modals/FormModal');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 

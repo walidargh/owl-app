@@ -5,19 +5,9 @@ var ClientActions = require('../actions/ClientActions');
 
 var BusinessForm = React.createClass({
 	getInitialState: function () {
-		// var currentUser = UserStore.currentUser();
 		return ({
 			name: "", address: "", 
 			hours: "", price: ""});
-	},
-
-	componentDidMount: function () {
-		// UserStore.addListener(this._onChange);
-	},
-
-	_onChange: function () {
-		// var currentUser = UserStore.currentUser();
-		// this.setState({user_id: currentUser.id});
 	},
 
 	handleName: function (event) {

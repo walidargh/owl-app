@@ -3,8 +3,6 @@ var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
 var ReviewIndex = require('./ReviewIndex');
 var PhotoIndex = require('./PhotoIndex');
-var FormConstants = require('../constants/FormConstants');
-var FormModal = require('../modals/FormModal');
 
 var BusinessDetail = React.createClass({
 
