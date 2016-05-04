@@ -14,6 +14,9 @@ var BusinessIndex = require('./components/BusinessIndex');
 var BusinessDetail = require('./components/BusinessDetail');
 var Search = require('./components/Search');
 
+if (UserStore.currentUser()) {
+	UserActions.fetchCurrentUser();
+}
 
 var appRouter = (
 	<Router history={hashHistory}>
@@ -24,7 +27,7 @@ var appRouter = (
 	</Router>
 );
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", {
 	var root = document.getElementById('root');
   Modal.setAppElement(document.body);
 	ReactDOM.render(appRouter, root );

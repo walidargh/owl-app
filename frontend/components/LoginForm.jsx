@@ -34,13 +34,14 @@ var LoginForm = React.createClass({
 				<h2>{this.props.formType}</h2>
 
 				<section>
+					<br/>
 					<label>Username<br/>
 						<input type="text"
 							onChange={this.handleUsername}
 							value={this.state.username || ""}
 						/>
 					</label>
-
+					<br/>
 					<label>Password<br/>
 						<input type="password"
 							onChange={this.handlePassword}

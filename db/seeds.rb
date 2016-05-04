@@ -22,15 +22,28 @@ Business.create(user_id: 2, name: "Three Broomsticks", address: "Hogsmeade", hou
 Business.create(user_id: 1, name: "The Hog's Head", address: "Hogsmeade", hours: "8:00 AM - 5:00 AM" , price: 1 )
 Business.create(user_id: 2, name: "Honeydukes", address: "Hogsmeade", hours: "8:00 AM - 8:00 PM" , price: 2 )
 
+
+# Ollivanders Review
 Review.create(user_id: 1, body: "This place is awesome 10/10 would recommend", rating: 5, business_id: 1)
 Review.create(user_id: 2, body: "This place is terrible 1/10 would recommend", rating: 1, business_id: 1)
 Review.create(user_id: 2, body: "Got my first wand here!", rating: 5, business_id: 1)
 Review.create(user_id: 1, body: "They were all out of elder wands", rating: 1, business_id: 1)
 
 Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Ollivanders_bjc4xk.jpg")
+	Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384550/props-wand-boxes-in-ollivanders-shops-with-cast-and-crew-member-names-details_pytp3n.jpg")
+	Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384550/Wands_display_at_Ollivander_s_Shop_lfsizm.jpg")
+	Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384552/propwand_ko1hqv.jpg")
+
+
 Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462229152/Quality-Quidditch-Supplies_jrynhc.jpg")
+
+
 Photo.create(user_id: 2, business_id: 3, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Eeylops_sx9xpg.jpg")
+
+
 Photo.create(user_id: 1, business_id: 4, url: "http://res.cloudinary.com/howler/image/upload/v1462229153/Weasleys_sjnnsp.jpg")
+
+
 Photo.create(user_id: 2, business_id: 5, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/FlourishBlotts_ztk7qi.jpg")
 
 Photo.create(user_id: 1, business_id: 6, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/florean-fortescues-ice-cream-parlor_vjjz6q.jpg")
@@ -39,5 +52,5 @@ Photo.create(user_id: 1, business_id: 8, url: "http://res.cloudinary.com/howler/
 
 Photo.create(user_id: 2, business_id: 9, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/three-broom-sticks_oth7z7.jpg")
 Photo.create(user_id: 1, business_id: 10, url: "http://res.cloudinary.com/howler/image/upload/v1462383030/hogshead_za7ttq.jpg")
-Photo.create(user_id: 2, business_id: 11, url: "http://res.cloudinary.com/howler/image/upload/v1462383030/hogshead_za7ttq.jpg")
+Photo.create(user_id: 2, business_id: 11, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/Honeydukes_uhzxmb.jpg")
 
