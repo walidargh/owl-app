@@ -28,15 +28,14 @@ var Search = React.createClass({
 		}
 	},
 
-	searchBusiness: function () {
+	searchBusiness: function (callback) {
 		ClientActions.fetchMatches(this.state.query);
+		callback.call();
 	},
 
-	showBusiness: function (event) {
-		event
-		debugger
-		this.setState({query: query}, this.searchBusiness);
-		hashHistory.push('/businesses/');
+	showBusiness: function () {
+		this.searchBusiness(hashHistory.push('/businesses/'));
+		
 	},
 
 	render: function () {
