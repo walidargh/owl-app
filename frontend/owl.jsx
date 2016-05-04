@@ -14,9 +14,9 @@ var BusinessIndex = require('./components/BusinessIndex');
 var BusinessDetail = require('./components/BusinessDetail');
 var Search = require('./components/Search');
 
-if (UserStore.currentUser()) {
-	UserActions.fetchCurrentUser();
-}
+// if (UserStore.currentUser()) {
+// 	UserActions.fetchCurrentUser();
+// }
 
 var appRouter = (
 	<Router history={hashHistory}>
