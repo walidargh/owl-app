@@ -6,7 +6,6 @@ var ReviewForm = require('../components/ReviewForm');
 var ReviewIndexItem = React.createClass({
 
 	render: function() {
-		debugger
 		var review = this.props.review;
 		var username = review.username ? review.username : UserStore.currentUser().user_name;
 		return (
