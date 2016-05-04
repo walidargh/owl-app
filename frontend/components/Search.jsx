@@ -10,6 +10,8 @@ var Search = React.createClass({
 	},
 
 	componentDidMount: function () {
+		this.state.query = "";
+		this.searchBusiness();
 		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
 
@@ -33,7 +35,7 @@ var Search = React.createClass({
 
 	searchBusiness: function (callback) {
 		ClientActions.fetchMatches(this.state.query);
-		callback.call();
+		if (callback) {callback.call();}
 	},
 
 	showBusiness: function () {

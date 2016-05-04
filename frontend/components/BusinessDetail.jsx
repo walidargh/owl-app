@@ -60,6 +60,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
+
 		return (
 			<div className="business-detail">
 				<ul className='business-detail-feature-bar'>

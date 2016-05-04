@@ -14,6 +14,7 @@ var BusinessIndex = React.createClass({
 	},
 
 	componentWillMount: function () {
+		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 		this.userListener = UserStore.addListener(this._onChange);
 		var businesses = BusinessStore.all();
@@ -23,6 +24,10 @@ var BusinessIndex = React.createClass({
 	componentWillUnmount: function () {
 		this.businessListener.remove();
 		this.userListener.remove();
+	},
+
+	componentWillReceiveProps: function (newProps) {
+		debugger
 	},
 
 	_onChange: function () {
