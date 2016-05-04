@@ -18,6 +18,7 @@ var BusinessIndexItem = React.createClass({
 		} else {
 			photo = <div></div>;
 		}
+		var price = Array(business.price + 1).join("$");
 		return (
 			<div className="business-index-item" onClick={this.showDetail}>
 				<div className="business-index-image">{photo}</div>
@@ -25,7 +26,7 @@ var BusinessIndexItem = React.createClass({
 				<ul className="business-index-text" onClick={this.showDetail}>
 					<li className="business-index-title">{business.name}</li>
 					<li className="business-index-hours">{business.hours}</li>
-					<li className="business-index-price">{business.price}</li>
+					<li className="business-index-price">{price}</li>
 					<li className="business-index-address">{business.address}</li>
 				</ul>
 			</div>

@@ -19,6 +19,7 @@ var Search = React.createClass({
 	},
 
 	updateQuery: function (event) {
+		debugger
 		var query = event.target.value;
 		this.setState({query: query}, this.searchBusiness);
 	},
@@ -42,3 +43,5 @@ var Search = React.createClass({
 });
 
 module.exports = Search;
+
+window.history = hashHistory;
