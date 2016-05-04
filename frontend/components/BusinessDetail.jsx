@@ -12,21 +12,12 @@ var BusinessDetail = React.createClass({
 		return {business: "", modalIsOpen: false};
 	},
 
-	// openModal: function () {
-	// 	this.setState({modalIsOpen: true});
-	// },
-
-	// closeModal: function () {
-	// 	this.setState({modalIsOpen: false});
-	// },
-
 	getStatefromStore: function () {
 		var business = BusinessStore.currentBusiness();
 		return {business: business};
 	},
 
 	componentWillReceiveProps: function (newProps) {
-		debugger
 		ClientActions.fetchSingleBusiness(parseInt(newProps.params.businessId));
 	},	
 
@@ -48,7 +39,6 @@ var BusinessDetail = React.createClass({
 		if (this.state.business === "") {
 			return ;
 		} else {
-			debugger
 			return (
 				<ReviewIndex 
 					reviews={this.state.business.reviews} 
@@ -61,7 +51,6 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
-		debugger
 		return (
 			<div>
 				<section className='business-detail-feature-bar'>
