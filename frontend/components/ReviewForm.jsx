@@ -15,6 +15,11 @@ var ReviewForm = React.createClass({
 		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
 
+	componentWillUnmount: function () {
+		this.userListener.remove();
+		this.businessListener.remove();
+	},
+
 	_onChange: function () {
 		this.closeModal();
 		this.closeForm();
