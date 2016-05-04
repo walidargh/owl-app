@@ -3,6 +3,8 @@ var ClientActions = require('../actions/ClientActions');
 var UserStore = require('../stores/user');
 var FormConstants = require('../constants/FormConstants');
 var FormModal = require('../modals/FormModal');
+var Modal = require('react-modal');
+var LoginForm = require('./LoginForm');
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
@@ -74,6 +76,11 @@ var ReviewForm = React.createClass({
 			<div>
 				<button onClick={this.identifyForm}>Write A Review</button>
 				{this.reviewForm()}
+				<Modal>
+					isOpen={this.state.modalIsOpen}
+					onRequestClose={this.closeModal}>
+					<LoginForm formType="Log In"/>
+				</Modal>
 			</div>
 		);
 	}

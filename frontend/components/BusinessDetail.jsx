@@ -88,15 +88,9 @@ var BusinessDetail = React.createClass({
 
 				<PhotoIndex 
 					businessId={this.state.business.id}
-					openModal={this.openModal}
-					closeModal={this.closeModal}
 				/>
 
-				<FormModal 
-					modalFormType={FormConstants.LOGINFORM} 
-					modalIsOpen={this.state.modalIsOpen}
-					formType={"Log In"}
-				/>
+
 			</div>
 		);
 	}

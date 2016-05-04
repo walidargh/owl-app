@@ -6,8 +6,6 @@ var UserStore = require('../stores/user');
 var BusinessStore = require('../stores/business');
 var BusinessIndex = require('./BusinessIndex');
 var hashHistory = require('react-router').hashHistory;
-var FormModal = require('../modals/FormModal');
-var FormConstants = require('../constants/FormConstants');
 var Search = require('./Search');
 var ClientActions = require('../actions/ClientActions');
 
@@ -101,17 +99,16 @@ var App = React.createClass({
           <Search/>
         </div>
 
-        <FormModal 
-          modalIsOpen={this.state.modalIsOpen} 
-          modalFormType={this.state.modalFormType} 
-          formType={this.state.formType}
-          closeModal={this.closeModal}
-        />
+        <Modal 
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}>
+
+          <LoginForm formType={this.state.formType} />
+
+        </Modal>
 
         <div className="content-body">
-          {this.props.children && React.cloneElement(this.props.children, {
-            closeModal: this.closeModal, openModal: this.openModal, setModalForm: this.setModalForm
-          })}
+          {this.props.children}
         </div>
       </div>
     );

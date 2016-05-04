@@ -3,8 +3,9 @@ var BusinessStore = require('../stores/business');
 var UserStore = require('../stores/user');
 var ClientActions = require('../actions/ClientActions');
 var BusinessIndexItem = require('./BusinessIndexItem');
-var FormConstants = require('../constants/FormConstants');
-var FormModal = require('../modals/FormModal');
+var Modal = require('react-modal');
+var LoginForm = require('./LoginForm');
+var BusinessForm = require('./BusinessForm');
 
 
 var BusinessIndex = React.createClass({
@@ -14,6 +15,7 @@ var BusinessIndex = React.createClass({
 
 	componentWillMount: function () {
 		this.businessListener = BusinessStore.addListener(this._onChange);
+		this.userListener = UserStore.addListener(this._onChange);
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
 	},
@@ -21,22 +23,27 @@ var BusinessIndex = React.createClass({
 	_onChange: function () {
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
+		this.closeModal();
 	},
 
 	componentWillUnmount: function () {
 		this.businessListener.remove();
 	},
 
-	// openModal: function () {
-	// 	this.setState({modalIsOpen: true});
-	// },
+	openModal: function () {
+		this.setState({modalIsOpen: true});
+	},
+
+	closeModal: function () {
+		this.setState({modalIsOpen: false});
+	},
 
 	handleClick: function (event) {
 		debugger
 		event.preventDefault();
-		this.props.setModalForm("BUSINESSFORM");
-		this.props.openModal();
+		this.openModal();
 	},
+
 
 	render: function () {
 		var self = this;
@@ -47,6 +54,8 @@ var BusinessIndex = React.createClass({
 				/>
 			);
 		});
+
+		var form = UserStore.currentUser() ? <BusinessForm /> : <LoginForm formType="Log In"/>;
 		return (
 			<div className="businesses">
 
@@ -55,6 +64,12 @@ var BusinessIndex = React.createClass({
 					onClick={this.handleClick}>
 					New Business
 				</button>
+
+				<Modal
+					isOpen={this.state.modalIsOpen}
+					onRequestClose={this.closeModal}>
+					{form}
+				</Modal>
 
 				<div className="business-index">
 					{businesses}
