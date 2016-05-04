@@ -19,7 +19,6 @@ var ApiUtil = {
 		});
 	},
 	createBusiness: function (data) {
-		console.log('creating business')
 		$.ajax({
 			url: '/api/businesses',
 			type: 'POST',

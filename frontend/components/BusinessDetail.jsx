@@ -11,7 +11,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	getStatefromStore: function () {
-		var business = BusinessStore.currentBusiness();
+		var business = BusinessStore.find(this.props.routeParams.businessId);
 		return {business: business};
 	},
 
@@ -48,6 +48,19 @@ var BusinessDetail = React.createClass({
 		}
 	},
 
+	photoForm: function () {
+		if (this.state.business !== "") {
+				return (
+					<PhotoIndex 
+						photos={this.state.business.photos}
+						businessId={this.state.businessId}
+					/>
+				);
+		} else {
+				return <div></div>;
+			}
+	},
+
 	render: function () {
 		return (
 			<div>
@@ -73,9 +86,7 @@ var BusinessDetail = React.createClass({
 
 				{this.reviewForm()}
 
-				<PhotoIndex 
-					businessId={this.state.business.id}
-				/>
+				{this.photoForm()}
 
 
 			</div>

@@ -8,7 +8,9 @@ var PhotoForm = require('./PhotoForm');
 
 var PhotoIndex = React.createClass({
 	getInitialState: function () {
-		return ({photos: [], modalIsOpen: false});
+	debugger
+		var photos = this.props.photos;
+		return ({photos: photos, modalIsOpen: false});
 	},
 
 	componentWillMount: function () {
@@ -16,7 +18,7 @@ var PhotoIndex = React.createClass({
 	},
 
 	_onChange: function () {
-		var photos = BusinessStore.currentBusiness().photos;
+		var photos = BusinessStore.find(this.props.businessId).photos;
 		this.setState({photos: photos});
 	},
 
