@@ -48,7 +48,6 @@ var BusinessDetail = React.createClass({
 
 	photoForm: function () {
 		if (this.state.business !== "") {
-			debugger
 				return (
 					<PhotoIndex 
 						photos={this.state.business.photos}
@@ -67,19 +66,19 @@ var BusinessDetail = React.createClass({
 
 					<li className="business-index-title">
 						{this.state.business.name}
-					</li><br/>
+					</li>
 
 					<li className="business-index-address">
 						{this.state.business.address}
-					</li><br/>
+					</li>
 
 					<li className="business-index-hours">
 						{this.state.business.hours}
-					</li><br/>
+					</li>
 
 					<li className="business-index-price">
 						{this.state.business.price}
-					</li><br/>
+					</li>
 
 				</ul>
 

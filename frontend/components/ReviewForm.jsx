@@ -58,12 +58,13 @@ var ReviewForm = React.createClass({
 		if (this.state.formIsOpen) {
 			return (
 				<form className="review-form" onSubmit={this.handleSubmit}>
-				<label>Write a Review for {this.props.businessName}</label>
-				<input 
-					type="textbox" 
-					onChange={this.handleBody} 
-					value={this.state.body} 
-				/>
+					<label>Write a Review{this.props.businessName}</label>
+					<input 
+						className="review-form-body"
+						type="textbox" 
+						onChange={this.handleBody} 
+						value={this.state.body} 
+					/>
 				<input type="submit" value="Submit" onClick={this.handleSubmit}/>
 			</form>
 			);
@@ -71,18 +72,16 @@ var ReviewForm = React.createClass({
 	},
 
 	identifyForm: function () {
-		debugger
 		if (UserStore.currentUser()) {
 			this.openForm();
 		} else {
-			debugger
 			this.openModal();
 		}
 	},
 
 	render: function () {
 		return (
-			<div>
+			<div className="review-button">
 				<button onClick={this.identifyForm}>Write A Review</button>
 				{this.reviewForm()}
 				<Modal

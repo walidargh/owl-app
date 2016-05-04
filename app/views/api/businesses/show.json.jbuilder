@@ -9,6 +9,7 @@ json.reviews do
 		json.business_id review.business_id
 		json.body review.body
 		json.rating review.rating
+		json.username review.user.user_name
 	end
 end
 json.photos do 

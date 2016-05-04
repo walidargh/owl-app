@@ -1,20 +1,13 @@
 var React = require('react');
 var BusinessStore = require('../stores/business');
-var ReviewForm = require('../components/ReviewForm');
+var ReviewForm = require('./ReviewForm');
+var ReviewIndexItem = require('./ReviewIndexItem');
 
 var ReviewIndex = React.createClass({
-	// getInitialState: function () {
-	// 	return {modalIsOpen: false};
-	// },
-
-	// openModal: function () {
-	// 	this.setState({modalIsOpen: true});
-	// },
-
 	render: function () {
 		
 		var reviews = this.props.reviews.map(function(review) {
-			return <li key={review.id}>{review.body}</li>;
+			return <ReviewIndexItem key={review.id} review={review}/>;
 		});
 		return (
 			<div className="reviews">
