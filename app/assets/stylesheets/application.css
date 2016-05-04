@@ -207,14 +207,4 @@ button {
 }
 
 
-@font-face {
-	font-family:"HogwartsWizard";
-	src:url( font-path("HogwartsWizard.eot?") format("eot"),
-			url( font-path("HogwartsWizard.woff") format("woff"),
-			url( font-path("HogwartsWizard.ttf") format("truetype"),
-			url( font-path("HogwartsWizard.svg#HogwartsWizard") format("svg");
-font-weight:normal;font-style:normal;}
-
-}
-
 
