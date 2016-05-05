@@ -36,10 +36,8 @@ var UserApiUtil = {
 			type: 'POST',
 			data: {user: userData},
 			success: function (user) {
-				console.log('we have been successful');
 				UserServerActions.receiveCurrentUser(user);
 			},
-			// ,
 			error: UserServerActions.handleError
 		});
 	},

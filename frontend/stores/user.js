@@ -4,7 +4,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var UserStore = new Store(AppDispatcher);
 var myStorage = localStorage;
 var _currentUser =  JSON.parse(myStorage.getItem("currentUser"));
-var _authErrors;
+var _authErrors = [];
 
 UserStore.currentUser = function () {
 	if (myStorage.getItem("currentUser") === "false") {
@@ -15,25 +15,27 @@ UserStore.currentUser = function () {
 };
 
 UserStore.errors = function () {
+	debugger
 	return _authErrors;
 };
 
 var login = function(user) {
 	_currentUser = user;
-	_authErrors = null;
+	_authErrors = [];
 	myStorage.setItem("currentUser", JSON.stringify(user));
 	UserStore.__emitChange();
 };
 
 var logout = function () {
 	_currentUser = null;
-	_authErrors = null;
+	_authErrors = [];
 	myStorage.removeItem("currentUser");
 	UserStore.__emitChange();
 };
 
-var setErrors = function (errors) {
-	_authErrors = errors;
+var setErrors = function (error) {
+	debugger
+	_authErrors = error;
 	UserStore.__emitChange();
 };
 
@@ -47,7 +49,7 @@ UserStore.__onDispatch = function (payload) {
 			logout();
 		break;
 		case "ERROR":
-			setErrors(payload.errors);
+			setErrors(payload.error);
 		break;
 	}
 };

@@ -1,6 +1,7 @@
 var React = require('react');
 var ClientActions = require('../actions/ClientActions');
 var UserStore = require('../stores/user');
+var BusinessStore = require('../stores/business');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 
@@ -35,6 +36,10 @@ var PhotoForm = React.createClass({
 	},
 
 	_onChange: function () {
+		if (UserStore.errors().length !== 0 &&
+				BusinessStore.errors().length !== 0) {
+      this.closeModal();
+    }
 		this.closeModal();
 	},
 

@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
 			@user = current_user
 			render "api/users/show"
 		else
-			@errors = nil
+			@errors = ['No Current User']
 			render json: @errors, status: 404
 		end
 	end

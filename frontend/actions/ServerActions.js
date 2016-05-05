@@ -35,7 +35,15 @@ var ServerActions = {
 			actionType: BusinessConstants.PHOTO_RECIEVED,
 			photo: photo
 		});
-	}
+	},
+
+	handleError: function (error) {
+		debugger
+		AppDispatcher.dispatch({
+			actionType: BusinessConstants.ERROR,
+			errors: error
+		});
+	},
 
 };
 

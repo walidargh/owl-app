@@ -39,7 +39,10 @@ var BusinessIndex = React.createClass({
 	_onChange: function () {
 		var businesses = BusinessStore.all();
 		this.setState({businesses: businesses});
-		this.closeModal();
+		if (UserStore.errors().length !== 0 &&
+				BusinessStore.errors().length !== 0) {
+      this.closeModal();
+    }
 	},
 
 	openModal: function () {

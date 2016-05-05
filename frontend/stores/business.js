@@ -5,7 +5,7 @@ var BusinessConstants = require('../constants/BusinessConstants');
 var BusinessStore = new Store(AppDispatcher);
 var _businesses = {};
 // var _currentBusiness = {};
-var _authErrors = {};
+var _errors = [];
 
 BusinessStore.all = function () {
 	return Object.assign({}, _businesses);
@@ -15,52 +15,64 @@ BusinessStore.find = function (id) {
 	return Object.assign({}, _businesses[id]);
 };
 
+BusinessStore.errors = function () {
+	debugger
+	return _errors;
+};
 // BusinessStore.currentBusiness = function () {
 // 	return Object.assign({}, _currentBusiness);
 // };
  
-BusinessStore.resetBusinesses = function (businesses) {
+var resetBusinesses = function (businesses) {
 	_businesses = {};
 	businesses.forEach(function (business) {
 		 _businesses[business.id] = business;
 	});
-	this.__emitChange();
+	BusinessStore.__emitChange();
 };
 
-BusinessStore.addBusiness = function (business) {
+var addBusiness = function (business) {
 	// _currentBusiness = business;
 	_businesses[business.id] = business;
-	this.__emitChange();
+	BusinessStore.__emitChange();
 };
 
-BusinessStore.addReview = function (review) {
-	debugger
+var addReview = function (review) {
 	_businesses[review.business_id].reviews.push(review);
-	this.__emitChange();
+	BusinessStore.__emitChange();
 };
 
-BusinessStore.addPhoto = function (photo) {
+var addPhoto = function (photo) {
 	// _currentBusiness.photos.push(photo);
 	_businesses[photo.business_id].photos.push(photo);
-	this.__emitChange();
+	BusinessStore.__emitChange();
+};
+
+var setErrors = function (error) {
+	_errors = error;
+	BusinessStore.__emitChange();
 };
 
 BusinessStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case BusinessConstants.BUSINESSES_RECEIVED:
-			BusinessStore.resetBusinesses(payload.businesses);
+			resetBusinesses(payload.businesses);
 		break;
 
 		case BusinessConstants.BUSINESS_RECEIVED:
-			BusinessStore.addBusiness(payload.business);
+			addBusiness(payload.business);
 		break;
 
 		case BusinessConstants.REVIEW_RECEIVED:
-			BusinessStore.addReview(payload.review);
+			addReview(payload.review);
 		break;
 
 		case BusinessConstants.PHOTO_RECIEVED:
-			BusinessStore.addPhoto(payload.photo);
+			addPhoto(payload.photo);
+		break;
+
+		case BusinessConstants.ERROR:
+			setErrors(payload.errors);
 		break;
 	}
 };
