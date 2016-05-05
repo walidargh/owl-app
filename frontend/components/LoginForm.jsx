@@ -5,11 +5,15 @@ var UserStore = require('../stores/user');
 
 var LoginForm = React.createClass({
 	getInitialState: function () {
-		return {user_name: "", password: ""};
+		return {username: "", password: ""};
 	},
 
 	handleSubmit: function (event) {
-		event.preventDefault();
+		debugger
+		if (event) {
+			event.preventDefault();
+		}
+
 		var potentialUser = {
 			user_name: this.state.username, password: this.state.password
 		};
@@ -28,9 +32,18 @@ var LoginForm = React.createClass({
 		this.setState({password: event.target.value});
 	},
 
+	demoUser: function () {
+		debugger
+		var username='padfoot';
+		var password='sirius';
+		this.setState({username: username, password: password});
+		this.handleSubmit();
+		
+	},
+
 	form: function () {
 		return (
-			<form onSubmit={this.handleSubmit} >
+			<form>
 				<h2>{this.props.formType}</h2>
 
 				<section>
@@ -38,19 +51,21 @@ var LoginForm = React.createClass({
 					<label>Username<br/>
 						<input type="text"
 							onChange={this.handleUsername}
-							value={this.state.username || ""}
+							value={this.state.username}
 						/>
 					</label>
 					<br/>
 					<label>Password<br/>
 						<input type="password"
 							onChange={this.handlePassword}
-							value={this.state.password || ""}
+							value={this.state.password}
 						/>
 					</label>
 				</section>
 
 				<button>{this.props.formType}</button>
+
+				<button onClick={this.demoUser}>Guest Login</button>
 
 			</form>
 		);

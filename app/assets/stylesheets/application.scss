@@ -21,17 +21,34 @@
 		font-url("HogwartsWizard.woff") format("woff"), 
 		font-url("HogwartsWizard.ttf") format("truetype"), 
 		font-url("HogwartsWizard.svg#HogwartsWizard") format("svg");
-	font-weight:normal;
-	font-style:normal;
+	font-weight: normal;
+	font-style: normal;
 }
+
+/*@font-face {
+    font-family: 'HogwartsWizard';
+    src: font-url('harrp____2-webfont.eot');
+    src: font-url('harrp____2-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('harrp____2-webfont.woff2') format('woff2'),
+         font-url('harrp____2-webfont.woff') format('woff'),
+         font-url('harrp____2-webfont.ttf') format('truetype'),
+         font-url('harrp____2-webfont.svg#harry_potterregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}*/
 
 body {
  	font-family: 'HogwartsWizard';
  	overflow-x: hidden; 
-
+ 	background: url("http://res.cloudinary.com/howler/image/upload/v1462405523/default_background_jiasdl.jpg") no-repeat center center fixed;;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
  }
 
 .content-body {
+
 	position: absolute;
 	display: flex;
 	justify-content: center;
@@ -77,7 +94,7 @@ input {
 	overflow: auto;
 	width: 50%;
 	font-family: 'HogwartsWizard';
-	font-size: 20px;
+	background-color:rgba(255,0,0,0.5);
 }
 
 .business-index {
@@ -85,6 +102,7 @@ input {
 	flex-direction: column;
 	align-items: center;
 	background-color: #fff;
+	background-color:rgba(255,0,0,0.5);
 }
 
 .business-index-item {
@@ -124,25 +142,23 @@ input {
 }
 
 .business-index-title {
- 	font-size: 18px;
- 	font-weight: 700;
+ 	font-size: 22px;
  	padding: 0 4px 0 4px;
 }
 
 .business-index-hours {
- 	font-size: 14px;
+ 	font-size: 16px;
  	color: darkgrey;
  	padding: 0 4px 0 4px;
 }
 
 .business-index-price {
- 	font-size: 14px;
+ 	font-size: 16px;
  	padding: 0 4px 0 4px;
 } 
 
 .business-index-address {
- 	font-size: 14px;
- 	font-weight: 700;
+ 	font-size: 16px;
  	padding: 0 4px 0 4px;
 }
 
@@ -224,14 +240,14 @@ input {
 .review-index-item {
 	display: flex;
 	flex-direction: column;
-	font-weight: 400;
 	margin: 2px;
 	border: 1px solid #F8F9F9;
 }
 
 .review-username {
-	font-weight: 700;
+	font-weight: bold;
 	padding: 5px 0;
+
 }
 
 .review-form-and-button {
