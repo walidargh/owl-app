@@ -34,7 +34,7 @@ Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/
 Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384552/propwand_ko1hqv.jpg")
 
 
-Photo.create(user_id: 1, business_id: 2, url: "hhttp://res.cloudinary.com/howler/image/upload/v1462412058/Quality-Quidditch-Supplies-19_nyxxag.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quality-Quidditch-Supplies-19_nyxxag.jpg")
 Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quidditch4_j5trjl.jpg")
 Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412057/Nimbushandle_eamztd.jpg")
 Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quidditch4_j5trjl.jpg")
