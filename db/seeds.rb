@@ -33,10 +33,17 @@ Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/
 Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384552/propwand_ko1hqv.jpg")
 
 
-Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462229152/Quality-Quidditch-Supplies_jrynhc.jpg")
-
+Photo.create(user_id: 1, business_id: 2, url: "hhttp://res.cloudinary.com/howler/image/upload/v1462412058/Quality-Quidditch-Supplies-19_nyxxag.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quidditch4_j5trjl.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412057/Nimbushandle_eamztd.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quidditch4_j5trjl.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/shop-quidditch_700_zpsdb4e80dc_xcbm2e.jpg")
 
 Photo.create(user_id: 2, business_id: 3, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Eeylops_sx9xpg.jpg")
+Photo.create(user_id: 2, business_id: 3, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Eeylops_sx9xpg.jpg")
+Photo.create(user_id: 2, business_id: 3, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Eeylops_sx9xpg.jpg")
+Photo.create(user_id: 2, business_id: 3, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Eeylops_sx9xpg.jpg")
+
 
 
 Photo.create(user_id: 1, business_id: 4, url: "http://res.cloudinary.com/howler/image/upload/v1462229153/Weasleys_sjnnsp.jpg")

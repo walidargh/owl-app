@@ -5,6 +5,17 @@ var BusinessStore = require('../stores/business');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 
+var customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 var ReviewForm = React.createClass({
 	getInitialState: function () {
 		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: false};
@@ -95,7 +106,8 @@ var ReviewForm = React.createClass({
 				{this.reviewForm()}
 				<Modal
 					isOpen={this.state.modalIsOpen}
-					onRequestClose={this.closeModal}>
+					onRequestClose={this.closeModal}
+					style={customStyles}>
 					<LoginForm formType="Log In"/>
 				</Modal>
 			</div>

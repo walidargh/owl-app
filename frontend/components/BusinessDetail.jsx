@@ -65,21 +65,21 @@ var BusinessDetail = React.createClass({
 		if (this.state.business !== "") {
 			featureImage = business.featured ? business.featured.url : business.photos[0].url;
 		}
-		return { backgroundImage: 'url(' + featureImage + ')' };
+		// return { backgroundImage: 'url(' + featureImage + ')' };
+		return featureImage;
 	},
 
 	render: function () {
-		// var business = this.state.business;
-		// var featureImage = business.featured ? business.featured : business.photos[0]
-		// featureImage = featureImage ? featureImage :
-		debugger
 		return (
 			<div className="business-detail">
-				<div 
-					className='business-detail-feature-bar'
-					style={this.featureImage()}
-				>
-					<div className='business-detail-feature-text'>
+
+				<div className="business-detail-feature-bar">
+
+					<div className="business-detail-image">
+						<img src={this.featureImage()} />
+					</div>
+
+					<div className="business-detail-feature-text">
 						<li className="business-detail-title">
 							{this.state.business.name}
 						</li>
@@ -96,10 +96,10 @@ var BusinessDetail = React.createClass({
 							{this.state.business.price}
 						</li>
 					</div>
+
 				</div>
 
 				{this.photoForm()}
-
 				{this.reviewForm()}
 
 			</div>

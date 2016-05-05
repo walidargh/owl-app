@@ -9,8 +9,19 @@ var hashHistory = require('react-router').hashHistory;
 var Search = require('./Search');
 var ClientActions = require('../actions/ClientActions');
 
-var App = React.createClass({
 
+var customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+var App = React.createClass({
 
   getInitialState: function() {
     var formType =  (UserStore.currentUser()) ? "Log Out" : "Log In";
@@ -97,7 +108,9 @@ var App = React.createClass({
 
         <Modal 
           isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}>
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          >
 
           <LoginForm formType={this.state.formType} />
 

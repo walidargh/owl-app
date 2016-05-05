@@ -7,6 +7,16 @@ var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 var BusinessForm = require('./BusinessForm');
 
+var customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 var BusinessIndex = React.createClass({
 	getInitialState: function () {
@@ -67,7 +77,9 @@ var BusinessIndex = React.createClass({
 
 				<Modal
 					isOpen={this.state.modalIsOpen}
-					onRequestClose={this.closeModal}>
+					onRequestClose={this.closeModal}
+					style={customStyles}
+					>
 					{form}
 				</Modal>
 

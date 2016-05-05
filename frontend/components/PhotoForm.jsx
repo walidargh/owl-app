@@ -4,6 +4,17 @@ var UserStore = require('../stores/user');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 
+var customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 
 var PhotoForm = React.createClass({
 	getInitialState: function () {
@@ -49,7 +60,9 @@ var PhotoForm = React.createClass({
 				<button onClick={this.uploadPhoto}>Upload Photo</button>
 				<Modal
 					isOpen={this.state.modalIsOpen}
-					onRequestClose={this.closeModal}>
+					onRequestClose={this.closeModal}
+					style={customStyles}
+					>
 					<LoginForm formType="Log In"/>
 				</Modal>
 			</div>
