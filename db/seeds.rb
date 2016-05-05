@@ -47,7 +47,7 @@ Photo.create(user_id: 2, business_id: 3, url: "http://res.cloudinary.com/howler/
 
 
 
-Photo.create(user_id: 1, business_id: 4, url: "http://res.cloudinary.com/howler/image/upload/v1462229153/Weasleys_sjnnsp.jpg")
+Photo.create(user_id: 1, business_id: 4, url: "http://res.cloudinary.com/howler/image/upload/v1462467905/Exterior_of_Weasleys_Wizards_Wheezes_shop_im7bgy.jpg")
 
 
 Photo.create(user_id: 2, business_id: 5, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/FlourishBlotts_ztk7qi.jpg")

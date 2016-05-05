@@ -5,6 +5,8 @@ var BusinessStore = require('../stores/business');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 
+
+
 var customStyles = {
   content : {
     top                   : '50%',
@@ -81,10 +83,12 @@ var ReviewForm = React.createClass({
 		ClientActions.createReview(review);
 	},
 
-	starRating: function (event) {
-		// this.setState({rating: parseInt(event.target.innerHTML)});
-		this.setState({rating: event.target.value});
-	},
+	// ratingForm: function (event) {
+	// 	// this.setState({rating: parseInt(event.target.innerHTML)});
+	// 	// this.setState({rating: event.target.value});
+	// 	debugger
+	// 	return <ReactStar.Klass stars={5} onChange={this.handleRating} value={this.state.rating}/>;
+	// },
 
 	reviewButton: function () {
 		if (this.state.buttonIsShown) {
@@ -94,24 +98,6 @@ var ReviewForm = React.createClass({
 				</button>
 				);
 		}
-	},
-
-	ratingForm: function () {
-	 return (
-		<span className="starRating" onClick={this.starRating}>
-		  <input id="rating5" type="radio" className="rating" value="5" />
-		  <label htmlFor="rating5">5</label>
-		  <input id="rating4" type="radio" className="rating" value="4" />
-		  <label htmlFor="rating4">4</label>
-		  <input id="rating3" type="radio" className="rating" value="3" />
-		  <label htmlFor="rating3">3</label>
-		  <input id="rating2" type="radio" className="rating" value="2" />
-		  <label htmlFor="rating2">2</label>
-		  <input id="rating1" type="radio" className="rating" value="1" />
-		  <label htmlFor="rating1">1</label>
-		</span>
-
-		);
 	},
 
 	reviewForm: function () {
@@ -145,7 +131,6 @@ var ReviewForm = React.createClass({
 			<div className="review-form-and-button">
 				{this.reviewButton()}
 				{this.reviewForm()}
-				{this.ratingForm()}
 				<Modal
 					isOpen={this.state.modalIsOpen}
 					onRequestClose={this.closeModal}
@@ -159,6 +144,7 @@ var ReviewForm = React.createClass({
 
 module.exports = ReviewForm;
 
+				// {this.ratingForm()}
 
 		// <span className="starRating" onClick={this.starRating}>
 		//   <input id="rating5" type="radio" className="rating" value="5" />

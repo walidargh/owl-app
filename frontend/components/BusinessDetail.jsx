@@ -49,11 +49,13 @@ var BusinessDetail = React.createClass({
 
 	photoForm: function () {
 		if (this.state.business !== "") {
+				this.price = Array(this.state.business.price + 1).join("$");
 				return (
 					<PhotoIndex 
 						photos={this.state.business.photos}
 						businessId={this.state.business.id}
 					/>
+
 				);
 		} else {
 				return <div></div>;
@@ -63,8 +65,11 @@ var BusinessDetail = React.createClass({
 	featureImage: function () {
 		var business = this.state.business;
 		var featureImage = "http://res.cloudinary.com/howler/image/upload/v1462405523/default_background_jiasdl.jpg";
-		if (this.state.business !== "") {
-			featureImage = business.featured ? business.featured.url : business.photos[0].url;
+		debugger
+		if (business !== "") {
+			if (business.featured || business.photos.length > 0) {
+				featureImage = business.featured ? business.featured.url : business.photos[0].url;
+			}
 		}
 		// return { backgroundImage: 'url(' + featureImage + ')' };
 		return featureImage;
@@ -94,7 +99,7 @@ var BusinessDetail = React.createClass({
 						</li>
 
 						<li className="business-detail-price">
-							{this.state.business.price}
+							{this.price}
 						</li>
 					</div>
 

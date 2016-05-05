@@ -102,9 +102,9 @@ var App = React.createClass({
     return (
       <div className="app">
         <div className="nav-bar">
-          {this.logButton()}
           <button onClick={this.showBusiness}>View Businesses</button>
           <Search location={this.props.location}/>
+          {this.logButton()}
         </div>
 
         <Modal 
