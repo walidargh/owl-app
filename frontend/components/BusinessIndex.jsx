@@ -14,6 +14,7 @@ var customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
+    borderRadius          : '10px',
     transform             : 'translate(-50%, -50%)'
   }
 };
@@ -70,7 +71,7 @@ var BusinessIndex = React.createClass({
 			<div className="businesses">
 
 				<button 
-					className="new-business" 
+					className="new-business-button" 
 					onClick={this.handleClick}>
 					New Business
 				</button>

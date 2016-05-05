@@ -10,7 +10,9 @@ var customStyles = {
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
+    outline								: '#ccc',
     marginRight           : '-50%',
+    borderRadius          : '10px',
     transform             : 'translate(-50%, -50%)'
   }
 };
