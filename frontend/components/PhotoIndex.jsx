@@ -26,9 +26,11 @@ var PhotoIndex = React.createClass({
 	},
 
 	render: function() {
-		var photos = this.state.photos.map(function (photo) {
-			return <PhotoIndexItem key={photo.id} photo={photo}/>;
-		});
+		if (this.state.photos) {
+			var photos = this.state.photos.map(function (photo) {
+				return <PhotoIndexItem key={photo.id} photo={photo}/>;
+			});
+		}
 		return (
 			<div className="photos">
 				<div className="photo-index">

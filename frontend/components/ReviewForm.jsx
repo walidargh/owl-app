@@ -19,7 +19,9 @@ var customStyles = {
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
-		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: false, buttonIsShown: true};
+		return ({
+			body: "", rating: 2, formIsOpen: false, modalIsOpen: false, buttonIsShown: true
+		});
 	},
 
 	componentWillMount: function () {
@@ -54,13 +56,11 @@ var ReviewForm = React.createClass({
 	},
 
 	openForm: function () {
-		// document.getElementsByClassName("review-button")[0].style.display = "none";
 		this.hideButton();
 		this.setState({formIsOpen: true});
 	},
 
 	closeForm: function (callback) {
-		// document.getElementsByClassName("review-button")[0].style.display = "block";
 		this.showButton();
 		this.setState({formIsOpen: false, body: ""}, callback);
 	},
@@ -88,19 +88,28 @@ var ReviewForm = React.createClass({
 
 	reviewButton: function () {
 		if (this.state.buttonIsShown) {
-			return <button className="review-button" onClick={this.identifyForm}>Write A Review</button>
+			return (
+				<button className="review-button" onClick={this.identifyForm}>
+					Write A Review
+				</button>
+				);
 		}
 	},
 
 	ratingForm: function () {
 	 return (
-	 	<div className="starRating" onClick={this.starRating}>
+		<span className="starRating" onClick={this.starRating}>
 		  <input id="rating5" type="radio" className="rating" value="5" />
+		  <label htmlFor="rating5">5</label>
 		  <input id="rating4" type="radio" className="rating" value="4" />
+		  <label htmlFor="rating4">4</label>
 		  <input id="rating3" type="radio" className="rating" value="3" />
+		  <label htmlFor="rating3">3</label>
 		  <input id="rating2" type="radio" className="rating" value="2" />
+		  <label htmlFor="rating2">2</label>
 		  <input id="rating1" type="radio" className="rating" value="1" />
-		</div>
+		  <label htmlFor="rating1">1</label>
+		</span>
 
 		);
 	},
@@ -136,6 +145,7 @@ var ReviewForm = React.createClass({
 			<div className="review-form-and-button">
 				{this.reviewButton()}
 				{this.reviewForm()}
+				{this.ratingForm()}
 				<Modal
 					isOpen={this.state.modalIsOpen}
 					onRequestClose={this.closeModal}

@@ -5,10 +5,11 @@ var ReviewIndexItem = require('./ReviewIndexItem');
 
 var ReviewIndex = React.createClass({
 	render: function () {
-		
-		var reviews = this.props.reviews.map(function(review) {
-			return <ReviewIndexItem key={review.id} review={review}/>;
-		});
+		if (this.props.reviews) {
+			var reviews = this.props.reviews.map(function(review) {
+				return <ReviewIndexItem key={review.id} review={review}/>;
+			});
+		}
 		return (
 			<div className="reviews">
 				<ReviewForm 

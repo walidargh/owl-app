@@ -20,10 +20,8 @@ var BusinessDetail = React.createClass({
 	},	
 
 	componentDidMount: function () { 
-		debugger
 		var businessId = parseInt(this.props.params.businessId);
 		ClientActions.fetchSingleBusiness(businessId);
-		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
 
@@ -73,7 +71,6 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
-		debugger
 		return (
 			<div className="business-detail">
 

@@ -17,7 +17,6 @@ var customStyles = {
   }
 };
 
-
 var PhotoForm = React.createClass({
 	getInitialState: function () {
 		return ({modalIsOpen: false});
@@ -47,7 +46,7 @@ var PhotoForm = React.createClass({
 				window.CLOUDINARY_OPTIONS, 
 				function (error, photos ) {
 					if (error === null) {
-						var photo = {url: photos[0].url, business_id: self.props.businessId}
+						var photo = {url: photos[0].url, business_id: self.props.businessId};
 						ClientActions.uploadPhoto(photo);
 					}
 				});
