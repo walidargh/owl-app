@@ -11,7 +11,7 @@ class Api::PhotosController < ApplicationController
 			render json: @photo
 		else 
 			@errors = @photo.errors.full_messages
-			render "api/shared/errors", status: 422
+			render json: @errors, status: 422
 		end
 	end
 

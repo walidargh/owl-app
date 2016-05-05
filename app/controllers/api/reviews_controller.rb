@@ -11,7 +11,7 @@ class Api::ReviewsController < ApplicationController
 			render json: @review
 		else
 			@errors = @review.errors.full_messages
-			render "api/shared/errors", status: 422
+			render json: @errors, status: 422
 		end
 	end
 

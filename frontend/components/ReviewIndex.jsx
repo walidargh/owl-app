@@ -16,7 +16,9 @@ var ReviewIndex = React.createClass({
 					businessId={this.props.businessId}
 					businessName={this.props.businessName}
 					/>
-				{reviews}
+				<div className="review-index">
+					{reviews}
+				</div>
 			</div>
 
 		);

@@ -4,7 +4,7 @@ var UserStore = require('../stores/user');
 var BusinessStore = require('../stores/business');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
-
+var StarRating = require('react-star-rating');
 
 
 var customStyles = {
@@ -83,12 +83,16 @@ var ReviewForm = React.createClass({
 		ClientActions.createReview(review);
 	},
 
-	// ratingForm: function (event) {
-	// 	// this.setState({rating: parseInt(event.target.innerHTML)});
-	// 	// this.setState({rating: event.target.value});
-	// 	debugger
-	// 	return <ReactStar.Klass stars={5} onChange={this.handleRating} value={this.state.rating}/>;
-	// },
+	ratingForm: function (event) {
+		// this.setState({rating: parseInt(event.target.innerHTML)});
+		// this.setState({rating: event.target.value});
+return (
+        <form action="/api" method="POST">
+          <StarRating name="airbnb-rating" caption="Rate your stay!" ratingAmount={5} />
+          <button type="submit" className="btn btn-submit">Submit Rating</button>
+        </form>
+			);
+	},
 
 	reviewButton: function () {
 		if (this.state.buttonIsShown) {
@@ -107,13 +111,13 @@ var ReviewForm = React.createClass({
 					<label>Write a Review for {this.props.businessName}</label>
 					<textarea
 						className="review-form-body"
-						row={5}
+						row={10}
 						column={20} 
 						onChange={this.handleBody} 
 						value={this.state.body} 
 					/>
-				<input type="submit" value="Submit" onClick={this.handleSubmit}/>
-			</form>
+					<button onClick={this.handleSubmit}>Submit</button>
+				</form>
 			);
 		} 
 	},

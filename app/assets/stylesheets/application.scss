@@ -108,18 +108,18 @@ input {
  	border: 1px solid rgba(0, 0, 0, 0.05);
  	align-items: center;
  	padding: 5px;
- 	margin: 2px;
+ 	margin: 1px;
  	width: 95%;
  	height: 90%;
- 	color: white;
- 	background-color: #554747;
+ 	color: black;
+ 	background-color: white;
 /* 	background: url("http://vignette3.wikia.nocookie.net/harrypotter/images/c/c8/Parchment_bg.jpg/revision/latest?cb=20091120152245");
 */ 	text-shadow: rgba(0,0,0,.15);
- 	border-radius: 10px;
+ 	border-radius: 5px;
 }
 
 .business-index-item:hover {
-  transform: scale(1.03);
+	transform: scale(1.03);
   -webkit-transition: all 0.2s;
 }
 .business-index-text {
@@ -197,8 +197,7 @@ input {
 }
 
 .business-detail-img img:hover {
-  transform: scale(1.03);
-  -webkit-transition: all 0.2s;
+
 }
 
 .business-detail-image img {
@@ -217,7 +216,7 @@ input {
 	flex-direction: column;
 	position: absolute;
 	top: 0px;
-	padding: 0 20px;
+	padding: 20px;
 	z-index: 3;
 }
 
@@ -240,21 +239,27 @@ input {
 .reviews {
 	display: flex;
 	flex-direction: column;
-	margin: 0 10px;
+	align-items: center;
 	top: 100px;
 }
 
 .review-index {
-	font-family: 'Times New Roman'
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
 }
 
 .review-index-item {
 	display: flex;
 	flex-direction: column;
-	margin: 2px;
-	border: 1px solid #F8F9F9;
-	background: url("http://res.cloudinary.com/howler/image/upload/v1462470060/parchment_nhcima.jpg");
-	border-radius: 5px
+	margin: 1px;
+	padding: 2px;
+	/*border: 1px solid #F8F9F9;*/
+	background-color: #333;
+	/*background: url("http://res.cloudinary.com/howler/image/upload/v1462470060/parchment_nhcima.jpg");*/
+	border-radius: 3px;
+	width: 100%;
 }
 
 .review-username {
@@ -264,6 +269,10 @@ input {
 
 .review-form {
 	display: flex;
+	align-items: baseline;
+	flex-direction: column;
+	height: 200px;
+	width: 100%;
 }
 
 .review-form textarea {
@@ -273,11 +282,18 @@ input {
 
 .review-form-and-button {
 	display:flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
+/*.review-button {
+
+}*/
 .review-form-body {
 	border: 1px solid black;
 }
+
 .photos {
 	display: flex;
 	flex-direction: column;
@@ -307,6 +323,9 @@ input {
 	border-radius: 5px;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
 /*.starRating:not(old){
   display        : inline-block;
   width          : 7.5em;
@@ -356,11 +375,13 @@ button {
 	background-color: rgba(0, 0, 0, 0.2);
 	border: 2px solid white;
 	border-radius: 5px;
+	cursor: pointer; 
 }
 
 button:hover {
-  transform: scale(1.05);
-  -webkit-transition: all 0.2s;
+	transform: scale(1.03);
+  -webkit-transition: all 0.3s;
 }
+
 
 

@@ -11,7 +11,7 @@ class Api::BusinessesController < ApplicationController
 			render json: @business
 		else
 			@errors = @business.errors.full_messages
-			render "api/shared/error", status: 422
+			render json: @errors, status: 422
 		end
 	end
 
@@ -21,7 +21,7 @@ class Api::BusinessesController < ApplicationController
 			
 		else
 			@errors = @business.errors.full_messages
-			render "api/shared/error", status: 404
+			render json: @errors, status: 404
 		end
 	end
 
