@@ -19,9 +19,11 @@ var BusinessDetail = React.createClass({
 		ClientActions.fetchSingleBusiness(parseInt(newProps.params.businessId));
 	},	
 
-	componentWillMount: function () { 
+	componentDidMount: function () { 
+		debugger
 		var businessId = parseInt(this.props.params.businessId);
 		ClientActions.fetchSingleBusiness(businessId);
+		debugger
 		this.businessListener = BusinessStore.addListener(this._onChange);
 	},
 
@@ -41,6 +43,7 @@ var BusinessDetail = React.createClass({
 				<ReviewIndex 
 					reviews={this.state.business.reviews} 
 					businessId={this.state.business.id}
+					businessName={this.state.business.name}
 				/>
 			);
 		}
@@ -61,7 +64,7 @@ var BusinessDetail = React.createClass({
 
 	featureImage: function () {
 		var business = this.state.business;
-		var featureImage = "http://res.cloudinary.com/howler/image/upload/v1462405523/default_background_jiasdl.jpg ";
+		var featureImage = "http://res.cloudinary.com/howler/image/upload/v1462405523/default_background_jiasdl.jpg";
 		if (this.state.business !== "") {
 			featureImage = business.featured ? business.featured.url : business.photos[0].url;
 		}
@@ -70,6 +73,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
+		debugger
 		return (
 			<div className="business-detail">
 

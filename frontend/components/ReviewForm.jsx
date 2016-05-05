@@ -19,7 +19,7 @@ var customStyles = {
 
 var ReviewForm = React.createClass({
 	getInitialState: function () {
-		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: false};
+		return {body: "", rating: 2, formIsOpen: false, modalIsOpen: false, buttonIsShown: true};
 	},
 
 	componentWillMount: function () {
@@ -37,6 +37,14 @@ var ReviewForm = React.createClass({
 		this.closeForm();
 	},
 
+	showButton: function () {
+		this.setState({buttonIsShown: true});
+	},
+
+	hideButton: function () {
+		this.setState({buttonIsShown: false});
+	},
+
 	openModal: function () {
 		this.setState({modalIsOpen: true});
 	},
@@ -46,12 +54,14 @@ var ReviewForm = React.createClass({
 	},
 
 	openForm: function () {
-		document.getElementsByClassName("review-button")[0].style.display = "none";
+		// document.getElementsByClassName("review-button")[0].style.display = "none";
+		this.hideButton();
 		this.setState({formIsOpen: true});
 	},
 
 	closeForm: function (callback) {
-		document.getElementsByClassName("review-button")[0].style.display = "block";
+		// document.getElementsByClassName("review-button")[0].style.display = "block";
+		this.showButton();
 		this.setState({formIsOpen: false, body: ""}, callback);
 	},
 
@@ -71,14 +81,35 @@ var ReviewForm = React.createClass({
 		ClientActions.createReview(review);
 	},
 
+	starRating: function (event) {
+		// this.setState({rating: parseInt(event.target.innerHTML)});
+		this.setState({rating: event.target.value});
+	},
+
+	reviewButton: function () {
+		if (this.state.buttonIsShown) {
+			return <button className="review-button" onClick={this.identifyForm}>Write A Review</button>
+		}
+	},
+
 	ratingForm: function () {
+	 return (
+	 	<div className="starRating" onClick={this.starRating}>
+		  <input id="rating5" type="radio" className="rating" value="5" />
+		  <input id="rating4" type="radio" className="rating" value="4" />
+		  <input id="rating3" type="radio" className="rating" value="3" />
+		  <input id="rating2" type="radio" className="rating" value="2" />
+		  <input id="rating1" type="radio" className="rating" value="1" />
+		</div>
+
+		);
 	},
 
 	reviewForm: function () {
 		if (this.state.formIsOpen) {
 			return (
 				<form className="review-form" onSubmit={this.handleSubmit}>
-					<label>Write a Review{this.props.businessName}</label>
+					<label>Write a Review for {this.props.businessName}</label>
 					<textarea
 						className="review-form-body"
 						row={5}
@@ -103,7 +134,7 @@ var ReviewForm = React.createClass({
 	render: function () {
 		return (
 			<div className="review-form-and-button">
-				<button className="review-button" onClick={this.identifyForm}>Write A Review</button>
+				{this.reviewButton()}
 				{this.reviewForm()}
 				<Modal
 					isOpen={this.state.modalIsOpen}
@@ -117,3 +148,17 @@ var ReviewForm = React.createClass({
 });
 
 module.exports = ReviewForm;
+
+
+		// <span className="starRating" onClick={this.starRating}>
+		//   <input id="rating5" type="radio" className="rating" value="5" />
+		//   <label htmlFor="rating5">5</label>
+		//   <input id="rating4" type="radio" className="rating" value="4" />
+		//   <label htmlFor="rating4">4</label>
+		//   <input id="rating3" type="radio" className="rating" value="3" />
+		//   <label htmlFor="rating3">3</label>
+		//   <input id="rating2" type="radio" className="rating" value="2" />
+		//   <label htmlFor="rating2">2</label>
+		//   <input id="rating1" type="radio" className="rating" value="1" />
+		//   <label htmlFor="rating1">1</label>
+		// </span>
