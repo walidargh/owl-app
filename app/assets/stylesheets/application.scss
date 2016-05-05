@@ -27,6 +27,7 @@
 
 body {
  	font-family: 'HogwartsWizard';
+ 	overflow-x:hidd; 
 
  }
 
@@ -148,16 +149,50 @@ input {
 }
 
 .business-detail {
+	display: flex;
+	flex-direction: column;
 	top: 40px;
 	margin: 20px;
 	width: 50%;
 }
 
 .business-detail-feature-bar {
-	position: relative;
+	display: flex;
+	align-items: flex-end;
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	margin: 10px;
 	width: 100%;
+	height: 300px;
+	-webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.business-detail-feature-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.business-detail-title {
+	font-size: 50px;
+	color: white;
+}
+
+.business-detail-address {
+	font-size: 30px;
+	color: white;
+}
+
+.business-detail-hours {
+	font-size: 30px;
+	color: white;
+}
+
+.business-detail-price {
+	font-size: 30px;
+	color: white;
 }
 
 .reviews {

@@ -19,7 +19,7 @@ var BusinessDetail = React.createClass({
 		ClientActions.fetchSingleBusiness(parseInt(newProps.params.businessId));
 	},	
 
-	componentDidMount: function () { 
+	componentWillMount: function () { 
 		var businessId = parseInt(this.props.params.businessId);
 		ClientActions.fetchSingleBusiness(businessId);
 		this.businessListener = BusinessStore.addListener(this._onChange);
@@ -59,29 +59,44 @@ var BusinessDetail = React.createClass({
 			}
 	},
 
-	render: function () {
+	featureImage: function () {
+		var business = this.state.business;
+		var featureImage = "http://res.cloudinary.com/howler/image/upload/v1462405523/default_background_jiasdl.jpg ";
+		if (this.state.business !== "") {
+			featureImage = business.featured ? business.featured.url : business.photos[0].url;
+		}
+		return { backgroundImage: 'url(' + featureImage + ')' };
+	},
 
+	render: function () {
+		// var business = this.state.business;
+		// var featureImage = business.featured ? business.featured : business.photos[0]
+		// featureImage = featureImage ? featureImage :
+		debugger
 		return (
 			<div className="business-detail">
-				<ul className='business-detail-feature-bar'>
+				<div 
+					className='business-detail-feature-bar'
+					style={this.featureImage()}
+				>
+					<div className='business-detail-feature-text'>
+						<li className="business-detail-title">
+							{this.state.business.name}
+						</li>
 
-					<li className="business-index-title">
-						{this.state.business.name}
-					</li>
+						<li className="business-detail-address">
+							{this.state.business.address}
+						</li>
 
-					<li className="business-index-address">
-						{this.state.business.address}
-					</li>
+						<li className="business-detail-hours">
+							{this.state.business.hours}
+						</li>
 
-					<li className="business-index-hours">
-						{this.state.business.hours}
-					</li>
-
-					<li className="business-index-price">
-						{this.state.business.price}
-					</li>
-
-				</ul>
+						<li className="business-detail-price">
+							{this.state.business.price}
+						</li>
+					</div>
+				</div>
 
 				{this.photoForm()}
 

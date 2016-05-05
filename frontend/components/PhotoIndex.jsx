@@ -36,8 +36,6 @@ var PhotoIndex = React.createClass({
 				</div>
 				<PhotoForm 
 					businessId={this.props.businessId} 
-					openModal={this.props.openModal}
-					closeModal={this.props.closeModal}
 				/>
 			</div>
 		);
