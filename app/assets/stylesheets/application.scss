@@ -91,7 +91,7 @@ input {
 .businesses {
 	top: 40px;
 	margin: 20px;
-	overflow: auto;
+	overflow: hidden;
 	width: 50%;
 	font-family: 'HogwartsWizard';
 	background-color:rgba(255,0,0,0.5);
@@ -111,17 +111,15 @@ input {
  	align-items: center;
  	padding: 5px;
  	margin: 2px;
- 	width: 75%;
+ 	width: 93%;
+ 	height: 90%;
  	background-color: #F8F9F9;
- 	text-shadow: rgba(0,0,0,.15)
+ 	text-shadow: rgba(0,0,0,.15);
+ 	border-radius: 10px;
 }
 
 .business-index-item:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-  transition: all 0.2s;
+  transform: scale(1.05);
   -webkit-transition: all 0.2s;
 }
 .business-index-text {
@@ -234,7 +232,7 @@ input {
 }
 
 .review-index {
-
+	font-family: 'Times New Roman'
 }
 
 .review-index-item {
@@ -247,7 +245,6 @@ input {
 .review-username {
 	font-weight: bold;
 	padding: 5px 0;
-
 }
 
 .review-form-and-button {
@@ -270,7 +267,6 @@ input {
 	justify-content: center;
 	overflow-x:scroll;
 	background-color: #fff;
-
 }
 
 .photo-index-item {
@@ -279,13 +275,14 @@ input {
 	justify-content: center;
 	height: 150px;
 	margin: 3px;
-
 }
+
 .photo-index-item img{
 	max-height: 100%;
 	width: auto;
 	border-radius: 5px;
 }
+
 button {
 	font-family: 'HogwartsWizard';
 	font-size: 14px;
@@ -299,5 +296,9 @@ button {
 	border-radius: 5px;
 }
 
+button:hover {
+  transform: scale(1.05);
+  -webkit-transition: all 0.2s;
+}
 
 

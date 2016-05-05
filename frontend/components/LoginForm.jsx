@@ -9,7 +9,6 @@ var LoginForm = React.createClass({
 	},
 
 	handleSubmit: function (event) {
-		debugger
 		if (event) {
 			event.preventDefault();
 		}
@@ -63,7 +62,7 @@ var LoginForm = React.createClass({
 					</label>
 				</section>
 
-				<button>{this.props.formType}</button>
+				<button onClick={this.handleSubmit}>{this.props.formType}</button>
 
 				<button onClick={this.demoUser}>Guest Login</button>
 
