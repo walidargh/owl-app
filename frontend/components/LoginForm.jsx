@@ -38,7 +38,6 @@ var LoginForm = React.createClass({
 		this.setState({username: username, password: password});
 		var guestUser = 
 			{user_name: this.state.username, password: this.state.password};
-			debugger
 		UserActions.login(guestUser);
 
 	},

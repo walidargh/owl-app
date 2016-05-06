@@ -30,18 +30,19 @@ Business.create(user_id: 1, name: "The Hog's Head", address: "Hogsmeade", hours:
 Business.create(user_id: 2, name: "Honeydukes", address: "Hogsmeade", hours: "8:00 AM - 8:00 PM" , price: 2 )
 #### 3 Hogs Head
 
+Business.create(user_id: 2, name: "Wands by Gregorovitch", address: "Carkitt Market", hours: "8:00 AM - 8:00 PM" , price: 2 )
+
 
 Review.create(user_id: 1, body: "This place is awesome 10/10 would recommend", rating: 5, business_id: 1)
 Review.create(user_id: 2, body: "This place is terrible 1/10 would recommend", rating: 1, business_id: 1)
 Review.create(user_id: 1, body: "Got my first wand here!", rating: 5, business_id: 1)
 Review.create(user_id: 2, body: "They were all out of elder wands", rating: 1, business_id: 1)
 
-
+Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462574055/wandboxes_webq2z.png")
 Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Ollivanders_bjc4xk.jpg")
 Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384550/props-wand-boxes-in-ollivanders-shops-with-cast-and-crew-member-names-details_pytp3n.jpg")
 Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384550/Wands_display_at_Ollivander_s_Shop_lfsizm.jpg")
 Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384552/propwand_ko1hqv.jpg")
-Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462571180/wands-display_isgg8s.jpg")
 
 
 Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quality-Quidditch-Supplies-19_nyxxag.jpg")
@@ -81,6 +82,10 @@ Photo.create(user_id: 1, business_id: 14, url: "http://res.cloudinary.com/howler
 
 Photo.create(user_id: 2, business_id: 15, url: "http://res.cloudinary.com/howler/image/upload/v1462565973/honeydukescool_lkg4fp.jpg")
 Photo.create(user_id: 2, business_id: 15, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/Honeydukes_uhzxmb.jpg")
+
+Photo.create(user_id: 2, business_id: 16, url: "http://res.cloudinary.com/howler/image/upload/v1462573723/wandsbygreg_udah8t.jpg")
+
+
 
 
 

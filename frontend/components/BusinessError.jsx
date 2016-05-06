@@ -21,7 +21,7 @@ var BusinessError = React.createClass({
 
 	render: function() {
 		var errors = this.state.errors.map(function (error) {
-			return (<li className="error-item">{error}</li>);
+			return (<li className="business-error-item">{error}</li>);
 		});
 		return (
 			<div className="business-error-banner">

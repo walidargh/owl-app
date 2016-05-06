@@ -9,9 +9,10 @@ var Home = React.createClass({
 
 	render: function() {
 		return (
-			<div className="splashText">
+			<div className="splash">
 
-				<h1>Welcome to Howler!</h1>
+				<h1 className={"welcome-text"}>Welcome to Howler!</h1>
+				<h2>Find the best shops and restaurants the Wizarding World has to Offer</h2>
 				<button className="welcome-button" 
 								onClick={this.welcomeHandler}>
 					Get to Exploring, its a hoot!
