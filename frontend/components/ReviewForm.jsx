@@ -5,6 +5,7 @@ var BusinessStore = require('../stores/business');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 var StarRating = require('react-star-rating');
+var RatingForm = require('./RatingForm');
 
 
 var customStyles = {
@@ -87,15 +88,19 @@ var ReviewForm = React.createClass({
 		ClientActions.createReview(review);
 	},
 
-	ratingForm: function (event) {
-		// this.setState({rating: parseInt(event.target.innerHTML)});
-		// this.setState({rating: event.target.value});
-return (
-        <form action="/api" method="POST">
-          <StarRating name="airbnb-rating" caption="Rate your stay!" ratingAmount={5} />
-          <button type="submit" className="btn btn-submit">Submit Rating</button>
-        </form>
-			);
+// 	ratingForm: function (event) {
+// 		// this.setState({rating: parseInt(event.target.innerHTML)});
+// 		// this.setState({rating: event.target.value});
+// return (
+//         <form action="/api" method="POST">
+//           <StarRating name="airbnb-rating" caption="Rate your stay!" ratingAmount={5} />
+//           <button type="submit" className="btn btn-submit">Submit Rating</button>
+//         </form>
+// 			);
+// 	},
+
+	ratingForm: function () {
+		return <RatingForm />;
 	},
 
 	reviewButton: function () {
@@ -139,6 +144,7 @@ return (
 			<div className="review-form-and-button">
 				{this.reviewButton()}
 				{this.reviewForm()}
+				{this.ratingForm()}
 				<Modal
 					isOpen={this.state.modalIsOpen}
 					onRequestClose={this.closeModal}

@@ -249,7 +249,7 @@ input {
 	font-size: 30px;
 }
 
-.reviews {
+.s {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -336,6 +336,11 @@ input {
 	border-radius: 5px;
 }
 
+.rating-form {
+	display: flex;
+	border: 1px black;
+}
+
 ::-webkit-scrollbar { 
     display: none; 
 }
@@ -376,6 +381,18 @@ input {
 .starRating:not(:hover) > :checked ~ label:before{
   opacity : 1;
 }*/
+
+.empty-star {
+	height: 10px;
+	width: 10px;
+	background-color: grey
+}
+
+.full-star {
+	height: 10px;
+	width: 10px;
+	background-color: green
+}
 
 button {
 	font-family: 'HogwartsWizard';
