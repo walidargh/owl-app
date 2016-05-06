@@ -61,10 +61,13 @@ var LoginForm = React.createClass({
 						/>
 					</label>
 				</section>
+				<div className="button-wrapper">
+					<button onClick={this.handleSubmit}>{this.props.formType}</button>
+				</div>
 
-				<button onClick={this.handleSubmit}>{this.props.formType}</button>
-
-				<button onClick={this.demoUser}>Guest Login</button>
+				<div className="button-wrapper">
+					<button onClick={this.demoUser}>Guest Login</button>
+				</div>
 
 			</form>
 		);

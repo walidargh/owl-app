@@ -62,8 +62,13 @@ var PhotoForm = React.createClass({
 
 	render: function() {
 		return (
+
 			<div className="photo-button">
-				<button onClick={this.uploadPhoto}>Upload Photo</button>
+
+				<div className="button-wrapper">
+					<button onClick={this.uploadPhoto}>Upload Photo</button>
+				</div>
+
 				<Modal
 					isOpen={this.state.modalIsOpen}
 					onRequestClose={this.closeModal}
@@ -71,6 +76,7 @@ var PhotoForm = React.createClass({
 					>
 					<LoginForm formType="Log In"/>
 				</Modal>
+				
 			</div>
 		);
 	}

@@ -21,7 +21,7 @@ var Star = require('./Star');
 
 var RatingForm = React.createClass({
   getInitialState: function(){
-      return {rating: 5, hoverAt: null};
+      return {rating: 0, hoverAt: null};
     },
     handleMouseOver: function(idx, evt){
       this.state.hoverAt = idx + 1;

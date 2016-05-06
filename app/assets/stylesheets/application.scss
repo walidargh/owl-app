@@ -50,8 +50,9 @@ body {
  .wrapper {
  	height: 100%;
  	width: 100%;
- 	opacity: 0.3;
+ 	opacity: 0.7;
  	position: fixed;
+ 	-webkit-filter: grayscale(60%);
  }
 
  .wrapper img {
@@ -83,6 +84,8 @@ body {
 }
 
 .search {
+	display: flex;
+	align-items: center;
 	width: 50%;
 
 }
@@ -382,7 +385,7 @@ input {
   opacity : 1;
 }*/
 
-.empty-star {
+/*.empty-star {
 	height: 10px;
 	width: 10px;
 	background-color: grey
@@ -392,22 +395,29 @@ input {
 	height: 10px;
 	width: 10px;
 	background-color: green
-}
+}*/
 
 button {
 	font-family: 'HogwartsWizard';
-	font-size: 14px;
+	font-size: 16px;
 	color: white;
 	text-transform: uppercase;
 	padding: 5px;
 	margin: 5px;
-	height: 31px;
-	background-color: rgba(0, 0, 0, 0.2);
+/*	height: 31px;*/
+	background-color: rgba(0, 0, 0, 0.63);
 	border: 2px solid white;
 	border-radius: 5px;
 	cursor: pointer; 
 }
 
+/*.button-wrapper:hover{
+	width: 100%;
+	height: 100%;
+	transform: scale(1.03);
+  -webkit-transition: all 0.3s;
+
+}*/
 button:hover {
 	transform: scale(1.03);
   -webkit-transition: all 0.3s;

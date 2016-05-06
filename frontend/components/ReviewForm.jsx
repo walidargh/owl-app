@@ -100,19 +100,23 @@ var ReviewForm = React.createClass({
 // 			);
 // 	},
 
-	ratingForm: function () {
-		debugger
-		var self = this;
-		return <RatingForm handleRating={self.handleRating} />;
-	},
 
 	reviewButton: function () {
 		if (this.state.buttonIsShown) {
 			return (
-				<button className="review-button" onClick={this.identifyForm}>
-					Write A Review
-				</button>
+				<div className="button-wrapper">
+					<button className="review-button" onClick={this.identifyForm}>
+						Write A Review
+					</button>
+				</div>
 				);
+		}
+	},
+
+	ratingForm: function () {
+		if (this.state.formIsOpen) {
+			var self = this;
+			return <RatingForm handleRating={self.handleRating} />;
 		}
 	},
 
@@ -121,6 +125,7 @@ var ReviewForm = React.createClass({
 			return (
 				<form className="review-form" onSubmit={this.handleSubmit}>
 					<label>Write a Review for {this.props.businessName}</label>
+					{this.ratingForm()}
 					<textarea
 						className="review-form-body"
 						row={10}
@@ -128,7 +133,10 @@ var ReviewForm = React.createClass({
 						onChange={this.handleBody} 
 						value={this.state.body} 
 					/>
-					<button onClick={this.handleSubmit}>Submit</button>
+					<div className="button-wrapper">
+						<button onClick={this.handleSubmit}>Submit</button>
+					</div>
+
 				</form>
 			);
 		} 
@@ -148,7 +156,6 @@ var ReviewForm = React.createClass({
 			<div className="review-form-and-button">
 				{this.reviewButton()}
 				{this.reviewForm()}
-				{this.ratingForm()}
 				<Modal
 					isOpen={this.state.modalIsOpen}
 					onRequestClose={this.closeModal}

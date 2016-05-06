@@ -97,8 +97,11 @@ var BusinessForm = React.createClass({
 					name="price" 
 					id="price-3"
 				/>
+				
+				<div className="button-wrapper">
+					<button onClick={this.handleSubmit}>Add Business</button>
+				</div>
 
-				<button onClick={this.handleSubmit}>Add Business</button>
 			</form>
 
 

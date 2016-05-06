@@ -82,20 +82,30 @@ var App = React.createClass({
   logButton: function () {
     if (this.state.formType === "Log Out") {
       return (
-        <button className="log-out-button" onClick={this.logout}>
-          Sign Out
-        </button>
+
+        <div className="button-wrapper">
+          <button className="log-out-button" onClick={this.logout}>
+            Sign Out
+          </button>
+        </div>
+
       );
     } else {
         return (
           <div className="not-loggedin"> 
-            <button className="log-in-button" onClick={this.loginForm}>
-              Log In
-            </button>
 
-            <button className="sign-up-button" onClick={this.signupForm}>
-              Sign Up
-            </button>
+            <div className="button-wrapper">
+              <button className="log-in-button" onClick={this.loginForm}>
+                Log In
+              </button>
+            </div>
+
+            <div className="button-wrapper">
+              <button className="sign-up-button" onClick={this.signupForm}>
+                Sign Up
+              </button>
+            </div>
+
           </div>
         );
       }
@@ -105,7 +115,11 @@ var App = React.createClass({
     return (
       <div className="app">
         <div className="nav-bar">
-          <button onClick={this.showBusiness}>View Businesses</button>
+
+          <div className="button-wrapper">
+            <button onClick={this.showBusiness}>View Businesses</button>
+          </div>
+          
           <Search location={this.props.location}/>
           <BusinessError />
           {this.logButton()}

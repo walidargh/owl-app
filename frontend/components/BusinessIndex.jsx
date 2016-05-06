@@ -72,12 +72,13 @@ var BusinessIndex = React.createClass({
 		var form = UserStore.currentUser() ? <BusinessForm /> : <LoginForm formType="Log In"/>;
 		return (
 			<div className="businesses">
-
-				<button 
-					className="new-business-button" 
-					onClick={this.handleClick}>
-					New Business
-				</button>
+				<div className="button-wrapper">
+					<button 
+						className="new-business-button" 
+						onClick={this.handleClick}>
+						New Business
+					</button>
+				</div>
 
 				<Modal
 					isOpen={this.state.modalIsOpen}

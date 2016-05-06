@@ -47,7 +47,9 @@ var Search = React.createClass({
 		return (
 			<div className="search">
 				<input className="search-bar" type="text" value={this.state.query} onChange={this.updateQuery}/>
-				<button onClick={this.showBusiness}>Search</button> 
+				<div className="button-wrapper">
+					<button onClick={this.showBusiness}>Search</button> 
+				</div>
 			</div>
 		);
 	}
