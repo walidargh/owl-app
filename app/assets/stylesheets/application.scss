@@ -114,15 +114,19 @@ body {
 .search {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	position: relative;
 	font-size: 20px;
 	width: 50%;
+	padding: 0;
+	margin: 0;
 
 }
 .search-bar {
-	position: relative;
 	padding: 3px;
-	width: 67%;
+	width: 50%;
 }
+
 
 .search-button {
 	margin: 0;
