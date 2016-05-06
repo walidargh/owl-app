@@ -12,13 +12,12 @@ var ReviewIndexItem = React.createClass({
 		}
 
 		for (var i = 0; i < (5 - this.props.review.rating); i++) {
-			stars.push(<i className="icon-star-empty"></i>);
+			stars.push(<i className="fa fa-star-o" aria-hidden="true"></i>);
 		}
     return (<div>{stars}</div>);
 	},
 
 	render: function() {
-		debugger
 		var review = this.props.review;
 		var username = review.username ? review.username : UserStore.currentUser().user_name;
 		return (
