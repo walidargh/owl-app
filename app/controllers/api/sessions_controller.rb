@@ -5,12 +5,13 @@ class Api::SessionsController < ApplicationController
 			@user = current_user
 			render "api/users/show"
 		else
-			@errors = ['No Current User']
+			@errors = {}
 			render json: @errors, status: 404
 		end
 	end
 
 	def create
+		debugger
 		@user = User.find_by_credentials(
 			params[:user][:user_name],
 			params[:user][:password]

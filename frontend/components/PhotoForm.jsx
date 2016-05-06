@@ -36,8 +36,8 @@ var PhotoForm = React.createClass({
 	},
 
 	_onChange: function () {
-		if (UserStore.errors().length !== 0 &&
-				BusinessStore.errors().length !== 0) {
+		if (UserStore.errors().length === 0 &&
+				BusinessStore.errors().length === 0) {
       this.closeModal();
     }
 		this.closeModal();

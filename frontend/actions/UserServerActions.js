@@ -10,7 +10,6 @@ var UserServerActions = {
 	},
 
 	handleError: function (error) {
-		debugger
 		AppDispatcher.dispatch({
 			actionType: UserConstants.ERROR,
 			error: error.responseJSON

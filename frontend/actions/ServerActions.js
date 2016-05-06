@@ -38,10 +38,9 @@ var ServerActions = {
 	},
 
 	handleError: function (error) {
-		debugger
 		AppDispatcher.dispatch({
 			actionType: BusinessConstants.ERROR,
-			errors: error
+			errors: error.responseJSON
 		});
 	},
 

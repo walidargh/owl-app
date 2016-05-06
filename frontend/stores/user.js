@@ -1,5 +1,6 @@
 var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
+var UserConstants = require('../constants/UserConstants')
 
 var UserStore = new Store(AppDispatcher);
 var myStorage = localStorage;
@@ -15,7 +16,6 @@ UserStore.currentUser = function () {
 };
 
 UserStore.errors = function () {
-	debugger
 	return _authErrors;
 };
 
@@ -34,7 +34,6 @@ var logout = function () {
 };
 
 var setErrors = function (error) {
-	debugger
 	_authErrors = error;
 	UserStore.__emitChange();
 };
@@ -42,13 +41,13 @@ var setErrors = function (error) {
 
 UserStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
-		case "LOGIN":
+		case UserConstants.LOGIN:
 			login(payload.user);
 		break;
-		case "LOGOUT":
+		case UserConstants.LOGOUt:
 			logout();
 		break;
-		case "ERROR":
+		case UserConstants.ERROR:
 			setErrors(payload.error);
 		break;
 	}

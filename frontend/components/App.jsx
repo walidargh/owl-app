@@ -40,7 +40,7 @@ var App = React.createClass({
     } else {
       this.setState({formType: "Log In"});
     }
-    if (UserStore.errors().length !== 0) {
+    if (UserStore.errors().length === 0) {
       this.closeModal();
     }
   },

@@ -1,5 +1,5 @@
 var UserConstants = {
-	ERROR: "ERROR",
+	ERROR: "AUTH_ERROR",
 	LOGIN: "LOGIN",
 	LOGOUT: "LOGOUT",
 };

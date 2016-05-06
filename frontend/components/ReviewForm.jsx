@@ -37,10 +37,10 @@ var ReviewForm = React.createClass({
 	},
 
 	_onChange: function () {
-		if (UserStore.errors().length !== 0) {
+		if (UserStore.errors().length === 0) {
       this.closeModal();
     } 
-    if (BusinessStore.errors().length !== 0) {
+    if (BusinessStore.errors().length === 0) {
 			this.closeForm();
 		}
 	},
