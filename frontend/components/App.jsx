@@ -8,9 +8,10 @@ var BusinessIndex = require('./BusinessIndex');
 var hashHistory = require('react-router').hashHistory;
 var Search = require('./Search');
 var ClientActions = require('../actions/ClientActions');
-
+var BusinessError = require('../components/BusinessError');
 
 var customStyles = {
+
   content : {
     top                   : '50%',
     left                  : '50%',
@@ -70,7 +71,6 @@ var App = React.createClass({
   },
 
   logout: function () {
-    debugger
     UserActions.logout();
   },
 
@@ -107,6 +107,7 @@ var App = React.createClass({
         <div className="nav-bar">
           <button onClick={this.showBusiness}>View Businesses</button>
           <Search location={this.props.location}/>
+          <BusinessError />
           {this.logButton()}
         </div>
 

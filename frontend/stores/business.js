@@ -28,23 +28,27 @@ var resetBusinesses = function (businesses) {
 	businesses.forEach(function (business) {
 		 _businesses[business.id] = business;
 	});
+	_errors = [];
 	BusinessStore.__emitChange();
 };
 
 var addBusiness = function (business) {
 	// _currentBusiness = business;
 	_businesses[business.id] = business;
+	_errors = [];
 	BusinessStore.__emitChange();
 };
 
 var addReview = function (review) {
 	_businesses[review.business_id].reviews.push(review);
+	_errors = [];
 	BusinessStore.__emitChange();
 };
 
 var addPhoto = function (photo) {
 	// _currentBusiness.photos.push(photo);
 	_businesses[photo.business_id].photos.push(photo);
+	_errors = [];
 	BusinessStore.__emitChange();
 };
 
