@@ -13,12 +13,14 @@ var App = require('./components/App');
 var BusinessIndex = require('./components/BusinessIndex');
 var BusinessDetail = require('./components/BusinessDetail');
 var Search = require('./components/Search');
+var Home = require('./components/Home');
 
 UserActions.fetchCurrentUser();
 
 var appRouter = (
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
+			<IndexRoute component={Home} />
       <Route path="businesses" component={BusinessIndex} />
       <Route path="businesses/:businessId" component={BusinessDetail} />
 		</Route>

@@ -36,8 +36,11 @@ var LoginForm = React.createClass({
 		var username='padfoot';
 		var password='sirius';
 		this.setState({username: username, password: password});
-		this.handleSubmit();
-		
+		var guestUser = 
+			{user_name: this.state.username, password: this.state.password};
+			debugger
+		UserActions.login(guestUser);
+
 	},
 
 	form: function () {

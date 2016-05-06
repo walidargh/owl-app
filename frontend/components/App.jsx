@@ -35,6 +35,10 @@ var App = React.createClass({
     this.userListener = UserStore.addListener(this._onChange);
   },
 
+  componentWillUnmount: function () {
+    this.businessListener.remove();
+    this.userListener.remove();
+  },
   _onChange: function () {
     if (UserStore.currentUser()) {
       this.setState({formType: "Log Out"});

@@ -23,7 +23,7 @@ var customStyles = {
 var ReviewForm = React.createClass({
 	getInitialState: function () {
 		return ({
-			body: "", rating: 2, formIsOpen: false, modalIsOpen: false, buttonIsShown: true
+			body: "", rating: 0, formIsOpen: false, modalIsOpen: false, buttonIsShown: true
 		});
 	},
 

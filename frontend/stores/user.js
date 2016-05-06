@@ -15,14 +15,14 @@ UserStore.errors = function () {
 	return _authErrors;
 };
 
-var login = function(user) {
+var receiveCurrentUser = function(user) {
 	_currentUser = user;
 	_authErrors = [];
 	myStorage.setItem("currentUser", JSON.stringify(user));
 	UserStore.__emitChange();
 };
 
-var logout = function () {
+var removeCurrentUser = function () {
 	_currentUser = null;
 	_authErrors = [];
 	myStorage.removeItem("currentUser");
@@ -31,17 +31,17 @@ var logout = function () {
 
 var setErrors = function (error) {
 	_authErrors = error;
-	UserStore.__emitChange();
+	removeCurrentUser();
 };
 
 
 UserStore.__onDispatch = function (payload) {
 	switch(payload.actionType) {
 		case UserConstants.LOGIN:
-			login(payload.user);
+			receiveCurrentUser(payload.user);
 		break;
 		case UserConstants.LOGOUT:
-			logout();
+			removeCurrentUser();
 		break;
 		case UserConstants.ERROR:
 			setErrors(payload.error);

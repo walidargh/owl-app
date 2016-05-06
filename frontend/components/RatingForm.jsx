@@ -44,9 +44,9 @@ var RatingForm = React.createClass({
           var selected = (i < rating);
           stars.push(
             <Star key={i} selected={selected}
-                onMouseOver={this.handleMouseOver.bind(this, i)}
-                  onMouseOut={this.handleMouseOut.bind(this, i)}
-                  onClick={this.handleClick.bind(this, i)}
+              onMouseOver={this.handleMouseOver.bind(this, i)}
+              onMouseOut={this.handleMouseOut.bind(this, i)}
+              onClick={this.handleClick.bind(this, i)}
             />);
         }
       return (<div>{stars}</div>);
