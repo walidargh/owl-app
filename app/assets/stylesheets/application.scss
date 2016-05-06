@@ -98,6 +98,7 @@ body {
 .search {
 	display: flex;
 	align-items: center;
+	font-size: 20px;
 	width: 50%;
 
 }
@@ -106,12 +107,17 @@ body {
 	width: 67%;
 }
 
+.search-button {
+	margin: 0;
+}
+
 input {
  	margin: 10px;
  	padding: 2px;
  	border: 1px solid #333;
  	border-radius: 3px;
  	height: 25px;
+ 	font-size: 18px;
  	font-family: 'HogwartsWizard';
 }
 
@@ -238,7 +244,7 @@ input {
 	height: 100%;
 	border-radius: 5px;
 	/*-webkit-filter: blur(1px);*/
-	-webkit-filter: brightness(60%);
+	-webkit-filter: brightness(75%);
 	opacity: 1;
 }
 .business-detail-feature-text {
@@ -278,6 +284,7 @@ input {
 	flex-direction: column;
 	align-items: center;
 	width: 67%;
+	color: black;
 }
 
 .review-index-item {
@@ -286,11 +293,11 @@ input {
 	margin: 3px;
 	padding: 3px;
 	/*border: 1px solid #F8F9F9;*/
-	background-color: #333;
+	background-color: white;
 	/*background: url("http://res.cloudinary.com/howler/image/upload/v1462470060/parchment_nhcima.jpg");*/
 	border-radius: 3px;
 	width: 100%;
-	box-shadow: 5px 5px 5px #2F2F2F
+	box-shadow: 5px 5px 5px #6C6C6C
 }
 
 .fa-star::before {
@@ -352,6 +359,7 @@ input {
 	justify-content: center;
 	overflow-x:scroll;
 	background-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 5px 5px 5px #6C6C6C
 }
 
 .photo-index-item {
@@ -428,11 +436,11 @@ input {
 
 button {
 	font-family: 'HogwartsWizard';
-	font-size: 16px;
+	font-size: 20px;
 	color: white;
-	text-transform: uppercase;
-	padding: 5px;
-	margin: 5px;
+/*	text-transform: uppercase;
+*/	padding: 5px;
+	margin: 10px;
 /*	height: 31px;*/
 	background-color: rgba(0, 0, 0, 0.63);
 	border: 2px solid white;

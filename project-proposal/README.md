@@ -127,7 +127,7 @@ the API.
 - [X] create `Photos` model
 - [X] build out API, Flux loop, and components, this will include:
   - [X] `PhotosIndex`
-  - [ ] `PhotoIndexItem`
+  - [X] `PhotoIndexItem`
   - [X] `PhotoUploadForm`
 - [ ] CSS styling
 ### Phase 8: Google Maps API (1 days)

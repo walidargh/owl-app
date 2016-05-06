@@ -46,9 +46,14 @@ var Search = React.createClass({
 	render: function () {
 		return (
 			<div className="search">
-				<input className="search-bar" type="text" value={this.state.query} onChange={this.updateQuery}/>
+				<input className="search-bar" 
+								type="text" 
+								value={this.state.query}
+								onChange={this.updateQuery}
+								placeholder="Search by Business Name"
+				/>
 				<div className="button-wrapper">
-					<button onClick={this.showBusiness}>Search</button> 
+					<button className="search-button" onClick={this.showBusiness}>Search</button> 
 				</div>
 			</div>
 		);
