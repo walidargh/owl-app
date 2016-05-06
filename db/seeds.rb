@@ -53,10 +53,23 @@ Photo.create(user_id: 1, business_id: 4, url: "http://res.cloudinary.com/howler/
 Photo.create(user_id: 2, business_id: 5, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/FlourishBlotts_ztk7qi.jpg")
 
 Photo.create(user_id: 1, business_id: 6, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/florean-fortescues-ice-cream-parlor_vjjz6q.jpg")
-Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462383030/gringots_bysg1s.jpg")
+
+Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565388/HP-and-the-Escape-from-Gringotts-lower_m5ltvf.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565096/friendly_goblin_vsgodq.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565096/gringotts-goblin_drt8oc.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565096/harry-key_lil6cv.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565670/dragon_kmqs87.jpg")
+
 Photo.create(user_id: 1, business_id: 8, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/Madam-Malkins-Robes_gx5yoj.jpg")
 
+
 Photo.create(user_id: 2, business_id: 9, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/three-broom-sticks_oth7z7.jpg")
+
 Photo.create(user_id: 1, business_id: 10, url: "http://res.cloudinary.com/howler/image/upload/v1462383030/hogshead_za7ttq.jpg")
+
+Photo.create(user_id: 2, business_id: 11, url: "http://res.cloudinary.com/howler/image/upload/v1462565973/honeydukescool_lkg4fp.jpg")
 Photo.create(user_id: 2, business_id: 11, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/Honeydukes_uhzxmb.jpg")
+
+
+
 

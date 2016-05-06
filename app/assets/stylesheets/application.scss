@@ -39,7 +39,7 @@
 
 body {
  	font-family: 'HogwartsWizard';
- 	font-size: 18px;
+ 	font-size: 20px;
 /* 	overflow-x: hidden; 
  	background: url("http://res.cloudinary.com/howler/image/upload/v1462462665/WWoHP-Diagon-Alley_vz7qlu.jpg") no-repeat center center fixed;;
   -webkit-background-size: cover;
@@ -84,6 +84,17 @@ body {
  	z-index: 1000;
 }
 
+.splashText {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 50%;
+}
+
 .search {
 	display: flex;
 	align-items: center;
@@ -125,13 +136,15 @@ input {
  	border: 1px solid rgba(0, 0, 0, 0.05);
  	align-items: center;
  	padding: 5px;
- 	margin: 3px;
+ 	margin: 3.5px;
  	width: 95%;
  	height: 90%;
  	color: black;
  	background-color: white;
+ 	box-shadow: 5px 5px 5px #515151;
 /* 	background: url("http://vignette3.wikia.nocookie.net/harrypotter/images/c/c8/Parchment_bg.jpg/revision/latest?cb=20091120152245");
-*/ 	text-shadow: rgba(0,0,0,.15);
+*/ 	
+	text-shadow: rgba(0,0,0,.15);
  	border-radius: 5px;
 }
 
@@ -157,23 +170,23 @@ input {
 }
 
 .business-index-title {
- 	font-size: 22px;
+ 	font-size: 28px;
  	padding: 0 4px 0 4px;
 }
 
 .business-index-hours {
- 	font-size: 16px;
+ 	font-size: 20px;
  	color: darkgrey;
  	padding: 0 4px 0 4px;
 }
 
 .business-index-price {
- 	font-size: 16px;
+ 	font-size: 20px;
  	padding: 0 4px 0 4px;
 } 
 
 .business-index-address {
- 	font-size: 16px;
+ 	font-size: 20px;
  	padding: 0 4px;
 }
 
@@ -211,6 +224,7 @@ input {
 .business-detail-image {
 	width: 100%;
 	height: 100%;
+	box-shadow: 15px 10px 20px #3A3A3A;
 }
 
 .business-detail-img img:hover {
@@ -263,19 +277,28 @@ input {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	width: 50%;
+	width: 67%;
 }
 
 .review-index-item {
 	display: flex;
 	flex-direction: column;
-	margin: 1px;
+	margin: 3px;
 	padding: 3px;
 	/*border: 1px solid #F8F9F9;*/
 	background-color: #333;
 	/*background: url("http://res.cloudinary.com/howler/image/upload/v1462470060/parchment_nhcima.jpg");*/
 	border-radius: 3px;
 	width: 100%;
+	box-shadow: 5px 5px 5px #2F2F2F
+}
+
+.fa-star::before {
+	font-size: 20px;
+}
+
+.fa-star-o::before {
+	font-size: 20px;
 }
 
 .review-username {
@@ -298,7 +321,7 @@ input {
 .review-form textarea {
 	height: 100%;
 	width: 100%;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .review-form-and-button {
@@ -313,7 +336,7 @@ input {
 }*/
 .review-form-body {
 	border: 1px solid black;
-	font-size: 16px
+	font-size: 18px
 }
 
 .photos {
@@ -432,6 +455,8 @@ button:hover {
 textarea {
 	resize: none;
 }
+
+
 
 
 
