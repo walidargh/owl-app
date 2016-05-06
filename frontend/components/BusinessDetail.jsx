@@ -67,7 +67,8 @@ var BusinessDetail = React.createClass({
 		var featureImage = "http://res.cloudinary.com/howler/image/upload/v1462405523/default_background_jiasdl.jpg";
 		if (business !== "") {
 			if (business.featured || business.photos.length > 0) {
-				featureImage = business.featured ? business.featured.url : business.photos[0].url;
+				featureImage = business.featured ? 
+					business.featured.url : business.photos[0].url;
 			}
 		}
 		// return { backgroundImage: 'url(' + featureImage + ')' };

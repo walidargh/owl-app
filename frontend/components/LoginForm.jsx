@@ -2,6 +2,7 @@
 var React = require('react');
 var UserActions = require('../actions/UserActions');
 var UserStore = require('../stores/user');
+var AuthErrors = require('./AuthError')
 
 var LoginForm = React.createClass({
 	getInitialState: function () {
