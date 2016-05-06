@@ -20,7 +20,6 @@ var BusinessError = React.createClass({
 	},
 
 	render: function() {
-		debugger
 		var errors = this.state.errors.map(function (error) {
 			return (<li className="error-item">{error}</li>);
 		});

@@ -16,7 +16,6 @@ BusinessStore.find = function (id) {
 };
 
 BusinessStore.errors = function () {
-	debugger
 	return _errors;
 };
 // BusinessStore.currentBusiness = function () {

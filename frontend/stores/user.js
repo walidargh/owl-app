@@ -8,7 +8,6 @@ var _currentUser =  JSON.parse(myStorage.getItem("currentUser"));
 var _authErrors = [];
 
 UserStore.currentUser = function () {
-		debugger
 		return _currentUser;
 };
 
@@ -17,7 +16,6 @@ UserStore.errors = function () {
 };
 
 var login = function(user) {
-	debugger
 	_currentUser = user;
 	_authErrors = [];
 	myStorage.setItem("currentUser", JSON.stringify(user));
@@ -27,7 +25,6 @@ var login = function(user) {
 var logout = function () {
 	_currentUser = null;
 	_authErrors = [];
-	debugger
 	myStorage.removeItem("currentUser");
 	UserStore.__emitChange();
 };
@@ -39,7 +36,6 @@ var setErrors = function (error) {
 
 
 UserStore.__onDispatch = function (payload) {
-	debugger
 	switch(payload.actionType) {
 		case UserConstants.LOGIN:
 			login(payload.user);
