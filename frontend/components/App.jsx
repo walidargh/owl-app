@@ -70,6 +70,7 @@ var App = React.createClass({
   },
 
   logout: function () {
+    debugger
     UserActions.logout();
   },
 

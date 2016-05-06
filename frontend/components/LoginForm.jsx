@@ -2,7 +2,7 @@
 var React = require('react');
 var UserActions = require('../actions/UserActions');
 var UserStore = require('../stores/user');
-var AuthErrors = require('./AuthError')
+var AuthError = require('./AuthError');
 
 var LoginForm = React.createClass({
 	getInitialState: function () {
@@ -33,7 +33,6 @@ var LoginForm = React.createClass({
 	},
 
 	demoUser: function () {
-		debugger
 		var username='padfoot';
 		var password='sirius';
 		this.setState({username: username, password: password});
@@ -45,7 +44,7 @@ var LoginForm = React.createClass({
 		return (
 			<form>
 				<h2>{this.props.formType}</h2>
-
+				<AuthError />
 				<section>
 					<br/>
 					<label>Username<br/>
