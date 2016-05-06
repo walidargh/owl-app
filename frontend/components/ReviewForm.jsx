@@ -76,8 +76,9 @@ var ReviewForm = React.createClass({
 		this.setState({body: event.target.value});
 	},
 
-	handleRating: function (event) {
-		this.setState({rating: event.target.value});
+	handleRating: function (value) {
+		debugger
+		this.setState({rating: value});
 	},
 
 	handleSubmit: function (event) {
@@ -100,7 +101,9 @@ var ReviewForm = React.createClass({
 // 	},
 
 	ratingForm: function () {
-		return <RatingForm />;
+		debugger
+		var self = this;
+		return <RatingForm handleRating={self.handleRating} />;
 	},
 
 	reviewButton: function () {
@@ -140,6 +143,7 @@ var ReviewForm = React.createClass({
 	},
 
 	render: function () {
+		debugger
 		return (
 			<div className="review-form-and-button">
 				{this.reviewButton()}
