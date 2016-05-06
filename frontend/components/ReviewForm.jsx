@@ -77,7 +77,6 @@ var ReviewForm = React.createClass({
 	},
 
 	handleRating: function (value) {
-		debugger
 		this.setState({rating: value});
 	},
 
@@ -128,6 +127,7 @@ var ReviewForm = React.createClass({
 					{this.ratingForm()}
 					<textarea
 						className="review-form-body"
+						placeholder="Tell us about your experience here!"
 						row={10}
 						column={20} 
 						onChange={this.handleBody} 
@@ -151,7 +151,6 @@ var ReviewForm = React.createClass({
 	},
 
 	render: function () {
-		debugger
 		return (
 			<div className="review-form-and-button">
 				{this.reviewButton()}

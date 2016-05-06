@@ -17,7 +17,6 @@ var UserServerActions = {
 	},
 
 	removeCurrentUser: function () {
-		debugger
 		AppDispatcher.dispatch({
 			actionType: UserConstants.LOGOUT
 		});

@@ -13,7 +13,6 @@ var UserActions = {
 	},
 
 	logout: function () {
-		debugger
 		UserApiUtil.logout();
 	},
 

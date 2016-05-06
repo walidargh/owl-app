@@ -32,7 +32,6 @@ var RatingForm = React.createClass({
         this.forceUpdate();
     },
     handleClick: function(idx, evt){
-      debugger
         this.state.rating = idx + 1;
         this.props.handleRating(this.state.rating);
         this.forceUpdate();

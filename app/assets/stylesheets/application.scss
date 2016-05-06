@@ -39,6 +39,7 @@
 
 body {
  	font-family: 'HogwartsWizard';
+ 	font-size: 18px;
 /* 	overflow-x: hidden; 
  	background: url("http://res.cloudinary.com/howler/image/upload/v1462462665/WWoHP-Diagon-Alley_vz7qlu.jpg") no-repeat center center fixed;;
   -webkit-background-size: cover;
@@ -261,6 +262,7 @@ input {
 
 .review-index {
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	width: 50%;
@@ -270,7 +272,7 @@ input {
 	display: flex;
 	flex-direction: column;
 	margin: 1px;
-	padding: 2px;
+	padding: 3px;
 	/*border: 1px solid #F8F9F9;*/
 	background-color: #333;
 	/*background: url("http://res.cloudinary.com/howler/image/upload/v1462470060/parchment_nhcima.jpg");*/
@@ -280,7 +282,11 @@ input {
 
 .review-username {
 	font-weight: bold;
-	padding: 5px 0;
+	padding: 5px 2px;
+}
+
+.review-body {
+	padding: 5px;
 }
 
 .review-form {
@@ -294,6 +300,7 @@ input {
 .review-form textarea {
 	height: 100%;
 	width: 100%;
+	font-size: 16px;
 }
 
 .review-form-and-button {
@@ -308,6 +315,7 @@ input {
 }*/
 .review-form-body {
 	border: 1px solid black;
+	font-size: 16px
 }
 
 .photos {
@@ -421,6 +429,10 @@ button {
 button:hover {
 	transform: scale(1.03);
   -webkit-transition: all 0.3s;
+}
+
+textarea {
+	resize: none;
 }
 
 
