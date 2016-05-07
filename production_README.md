@@ -2,6 +2,8 @@
 
 [Heroku link][heroku]
 
+[heroku]: https://owlhowler.herokuapp.com/
+
 Howler is a Yelp-inspired full stack-web app. The app utilizes Ruby on Rails on the backend, a PostgreSQL database, and the front end is implemented using React.js with a Flux framework
 
 ## Features & Implementation
