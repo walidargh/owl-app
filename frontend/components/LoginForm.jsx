@@ -32,12 +32,13 @@ var LoginForm = React.createClass({
 		this.setState({password: event.target.value});
 	},
 
-	demoUser: function () {
+	demoUser: function (event) {
+		event.preventDefault();
 		var username='padfoot';
 		var password='sirius';
 		this.setState({username: username, password: password});
 		var guestUser = 
-			{user_name: this.state.username, password: this.state.password};
+			{user_name: username, password: password};
 		UserActions.login(guestUser);
 
 	},
