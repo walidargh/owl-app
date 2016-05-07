@@ -1,6 +1,6 @@
 # Howler
 
-Howler Live 
+[Heroku link][heroku]
 
 Howler is a Yelp-inspired full stack-web app. The app utilizes Ruby on Rails on the backend, a PostgreSQL database, and the front end is implemented using React.js with a Flux framework
 
@@ -14,15 +14,15 @@ Howler is a single page app that is run on a single static page. This root page 
 
 Businesses are managed on a single table on the database. They store the businesses creators user_id, its address, hours and its price. Upon a search or request to view businesses an APi request fetches data for businesses using a query string. The data fetched also returns a featured image, which is found through an Active Record association to the Photos table. This information is maintained in the BusinessStore.
 
+[business-detail]: ./project-proposal/production_pics/business-detail.png
+
+![business-detail]
+
 Upon a user click to see business details a fetch is made for a single business' details in addition to its reviews (through an active record association) and photos. This is used to update the BusinessStore. Images are hosted on the site using Cloudinary.
 
 ### Writing Reviews and Making Ratings
 
 Users are able to write reviews for businesses, in addition to rating them using a 5 star scale. This information is used to update the BusinessStore as well as the database, which triggers a rerender and ensures that new reviews and ratings are updated without a refresh. The render will show users a login form if they are not logged in. 
-
-[review-form]: ./production_pics/reviewform.png
-
-![review-form]
 
 ReviewForm Render: 
 ```javascript
