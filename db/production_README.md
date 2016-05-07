@@ -20,10 +20,6 @@ Upon a user click to see business details a fetch is made for a single business'
 
 Users are able to write reviews for businesses, in addition to rating them using a 5 star scale. This information is used to update the BusinessStore as well as the database, which triggers a rerender and ensures that new reviews and ratings are updated without a refresh. The render will show users a login form if they are not logged in. 
 
-[review-form]: ./production_pics/reviewform.png
-
-![review-form]
-
 ReviewForm Render: 
 ```javascript
 	render: function () {
@@ -45,12 +41,8 @@ ReviewForm Render:
 Users are also able to upload images for each businesses using the  Cloudinary upload widget. The URLs for these images are stored in the database as well as the BusinessStore, which ensures that photo uploads update without a refresh.
 
 ### Fuzzy Search
-[search]: ./production_pics/search.png
-
-![search]
 
 Businesses are rendered based on information stored in the BusinessStore. Upon typing a query, an API request is made to fetch businesses matching the passed query string. A listener on the search bar ensures that this update occurs on each keystroke. This data is used to update the business store, which triggers a render to the BusinessIndex which generates new results. 
-
 
 ## Future Directions for the Project
 
