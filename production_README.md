@@ -24,23 +24,24 @@ Upon a user click to see business details a fetch is made for a single business'
 
 Users are able to write reviews for businesses, in addition to rating them using a 5 star scale. This information is used to update the BusinessStore as well as the database, which triggers a rerender and ensures that new reviews and ratings are updated without a refresh. The render will show users a login form if they are not logged in. 
 
-ReviewForm Render: 
+ReviewForm Render:
+
 ```javascript
-	render: function () {
-		return (
-			<div className="review-form-and-button">
-				{this.reviewButton()}
-				{this.reviewForm()}
-				<Modal
-					isOpen={this.state.modalIsOpen}
-					onRequestClose={this.closeModal}
-					style={customStyles}>
-					<LoginForm formType="Log In"/>
-				</Modal>
-			</div>
-		);
-	}
-	```
+render: function () {
+	return (
+		<div className="review-form-and-button">
+			{this.reviewButton()}
+			{this.reviewForm()}
+			<Modal
+				isOpen={this.state.modalIsOpen}
+				onRequestClose={this.closeModal}
+				style={customStyles}>
+				<LoginForm formType="Log In"/>
+			</Modal>
+		</div>
+	);
+}
+```
 
 Users are also able to upload images for each businesses using the  Cloudinary upload widget. The URLs for these images are stored in the database as well as the BusinessStore, which ensures that photo uploads update without a refresh.
 
