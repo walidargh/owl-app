@@ -46,7 +46,7 @@ render: function () {
 Users are also able to upload images for each businesses using the  Cloudinary upload widget. The URLs for these images are stored in the database as well as the BusinessStore, which ensures that photo uploads update without a refresh.
 
 ### Fuzzy Search
-[search]: ./production_pics/search.png
+[search]: ./project-proposal/production_pics/search.png
 
 ![search]
 
