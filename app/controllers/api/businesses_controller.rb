@@ -8,6 +8,9 @@ class Api::BusinessesController < ApplicationController
 		full_params[:user_id] = current_user.id
 		@business = Business.new(full_params)
 		if @business.save
+			full_params[:tag_ids].each do |tag_id|
+				Tagging.create!(business_id: @business.id, tag_id: tag_id)
+			end
 			render json: @business
 		else
 			@errors = @business.errors.full_messages
