@@ -36,7 +36,7 @@ var ServerActions = {
 			photo: photo
 		});
 	},
-
+	
 	handleError: function (error) {
 		AppDispatcher.dispatch({
 			actionType: BusinessConstants.ERROR,
