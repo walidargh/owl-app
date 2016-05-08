@@ -28,8 +28,8 @@ var ReviewForm = React.createClass({
 	},
 
 	componentWillMount: function () {
-		this.userListener = UserStore.addListener(this._onChange);
-		this.businessListener = BusinessStore.addListener(this._onChange);
+		this.userListener = UserStore.addListener(this._onUserChange);
+		this.businessListener = BusinessStore.addListener(this._onBusinessChange);
 	},
 
 	componentWillUnmount: function () {
@@ -37,10 +37,19 @@ var ReviewForm = React.createClass({
 		this.businessListener.remove();
 	},
 
-	_onChange: function () {
+	_onUserChange: function () {
+		debugger
 		if (UserStore.errors().length === 0) {
       this.closeModal();
     } 
+    if (UserStore.currentUser()) {
+    	this.openForm();
+    } else {
+    	this.closeForm();
+    }
+  },
+
+  _onBusinessChange: function () {
     if (BusinessStore.errors().length === 0) {
 			this.closeForm();
 		}
@@ -63,6 +72,7 @@ var ReviewForm = React.createClass({
 	},
 
 	openForm: function () {
+		debugger
 		this.hideButton();
 		this.setState({formIsOpen: true});
 	},
