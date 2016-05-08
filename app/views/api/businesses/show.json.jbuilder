@@ -3,6 +3,14 @@ json.name @business.name
 json.address @business.address
 json.hours @business.hours
 json.price @business.price
+
+json.tags do
+	json.array! @business.tags do |tag|
+		json.id tag.id
+		json.name tag.name
+	end
+end
+
 json.reviews do
  json.array! @business.reviews do |review|
 		json.id review.id
@@ -12,6 +20,7 @@ json.reviews do
 		json.username review.user.user_name
 	end
 end
+
 json.photos do 
 	json.array! @business.photos do |photo|
 		json.id photo.id

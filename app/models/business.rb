@@ -5,7 +5,8 @@ class Business < ActiveRecord::Base
 	belongs_to :user
 	has_many :reviews
 	has_many :photos
-	has_and_belongs_many :tags
+	has_many :taggings, dependent: :destroy, inverse_of: :business
+	has_many :tags, through: :taggings
 
 	def self.rating 
 		Business.joins()
