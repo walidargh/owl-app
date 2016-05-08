@@ -5,6 +5,7 @@ namespace :api, defaults: {format: :json} do
   resources :businesses, only: [:index, :create, :show] do 
   	get "search", on: :collection
   end
+  resources :tags, only: [:index, :create, :show]
   resources :reviews, only: [:index, :create, :show]
   resources :photos, only: [:index, :create]
   resource :user, only: [:create, :show, :update, :delete]

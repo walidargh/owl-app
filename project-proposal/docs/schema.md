@@ -27,18 +27,18 @@ rating      | integer   | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 business_id | integer   | not null, foreign key (references businesses), indexed
 
+<!-- ## tags
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null
+ -->
 ## tags
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
 business_id | integer   | not null, foreign key (references businesses), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
 
 ## users
 column name     | data type | details

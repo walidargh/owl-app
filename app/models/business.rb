@@ -5,6 +5,7 @@ class Business < ActiveRecord::Base
 	belongs_to :user
 	has_many :reviews
 	has_many :photos
+	has_and_belongs_many :tags
 
 	def self.rating 
 		Business.joins()
@@ -13,3 +14,4 @@ class Business < ActiveRecord::Base
 # get ratings using joins with user and reviews/rating, includes, sum average, 	use preload as opposed to included
 # do not group by business id
 end
+
