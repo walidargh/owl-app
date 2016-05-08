@@ -8,14 +8,21 @@ class Api::BusinessesController < ApplicationController
 		full_params[:user_id] = current_user.id
 		@business = Business.new(full_params)
 		if @business.save
-			params[:business][:tag_ids].each do |tag_id|
-				Tagging.create!(business_id: @business.id, tag_id: tag_id.to_i)
+			tag_ids = params[:business][:tag_ids]
+
+			if (tag_ids)
+				tag_ids.each do |tag_id|
+					Tagging.create(business_id: @business.id, tag_id: tag_id.to_i)
+				end
 			end
-			render json: @business
+
+			render :show
 		else
 			@errors = @business.errors.full_messages
 			render json: @errors, status: 422
+
 		end
+
 	end
 
 	def show 
@@ -36,12 +43,6 @@ class Api::BusinessesController < ApplicationController
 			@businesses = Business.all
 			render :index
 		end
-		# puts @businesses
-  #   respond_to do |format|
-  #     format.html { render :search }
-  #     format.json { render :search }
-    # end
-
 	end
 
 	private 

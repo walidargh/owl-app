@@ -18,10 +18,16 @@ var BusinessIndexItem = React.createClass({
 		} else {
 			photo = <div></div>;
 		}
+		
 		var price = Array(business.price + 1).join("$");
-		var tags = business.tags.map(function (tag) {
-			return <li key={tag.id}>{tag.name}</li>;
-		});
+		var tags;
+		if (business.tags.length) {
+			tags = business.tags.map(function (tag) {
+				return <li key={tag.id}>{tag.name}</li>;
+			});
+		} else {
+			tags = <div></div>;
+		}
 		return (
 			<div className="business-index-item" onClick={this.showDetail}>
 				<div className="business-index-image">{photo}</div>

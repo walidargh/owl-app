@@ -38,7 +38,6 @@ var ReviewForm = React.createClass({
 	},
 
 	_onUserChange: function () {
-		debugger
 		if (UserStore.errors().length === 0) {
       this.closeModal();
     } 
@@ -72,7 +71,6 @@ var ReviewForm = React.createClass({
 	},
 
 	openForm: function () {
-		debugger
 		this.hideButton();
 		this.setState({formIsOpen: true});
 	},

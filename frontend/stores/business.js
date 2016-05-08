@@ -33,6 +33,7 @@ var resetBusinesses = function (businesses) {
 
 var addBusiness = function (business) {
 	// _currentBusiness = business;
+	debugger
 	_businesses[business.id] = business;
 	_errors = [];
 	BusinessStore.__emitChange();
@@ -57,6 +58,7 @@ var setErrors = function (error) {
 };
 
 BusinessStore.__onDispatch = function (payload) {
+	debugger
 	switch(payload.actionType) {
 		case BusinessConstants.BUSINESSES_RECEIVED:
 			resetBusinesses(payload.businesses);
