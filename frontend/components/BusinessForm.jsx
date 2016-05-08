@@ -8,7 +8,7 @@ var BusinessForm = React.createClass({
 	getInitialState: function () {
 		return ({
 			name: "", address: "", 
-			hours: "", price: "", tags: []});
+			hours: "", price: "", tag_ids: []});
 	},
 
 	handleName: function (event) {
@@ -28,15 +28,15 @@ var BusinessForm = React.createClass({
 	},
 
 	handleTags: function (event) {
-		var tags = this.state.tags;
+		var tag_ids = this.state.tag_ids;
 		var tagId = parseInt(event.target.value);
-		var index = tags.indexOf(tagId);
+		var index = tag_ids.indexOf(tagId);
 		if (index === -1) {
-			tags.push(tagId);
+			tag_ids.push(tagId);
 		} else {
-			tags.splice(index, 1);
+			tag_ids.splice(index, 1);
 		}
-		this.setState({tags: tags});
+		this.setState({tag_ids: tag_ids});
 	},
 
 	handleSubmit: function (event) {
@@ -47,7 +47,7 @@ var BusinessForm = React.createClass({
 		 address: this.state.address, 
 		 hours: this.state.hours, 
 		 price: this.state.price,
-		 tags: this.state.tags};
+		 tag_ids: this.state.tag_ids};
 
 		ClientActions.createBusiness(business);
 	},

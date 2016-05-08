@@ -8,8 +8,8 @@ class Api::BusinessesController < ApplicationController
 		full_params[:user_id] = current_user.id
 		@business = Business.new(full_params)
 		if @business.save
-			full_params[:tag_ids].each do |tag_id|
-				Tagging.create!(business_id: @business.id, tag_id: tag_id)
+			params[:business][:tag_ids].each do |tag_id|
+				Tagging.create!(business_id: @business.id, tag_id: tag_id.to_i)
 			end
 			render json: @business
 		else
@@ -46,7 +46,7 @@ class Api::BusinessesController < ApplicationController
 
 	private 
 	def business_params
-		params.require(:business).permit(:name, :address, :hours, :price, tag_ids: [])
+		params.require(:business).permit(:name, :address, :hours, :price)
 	end
 
 end

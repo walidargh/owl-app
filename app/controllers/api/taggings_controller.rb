@@ -4,7 +4,7 @@ class Api::TaggingsController < ApplicationController
 	end
 
 	def create
-
+		
 	end
 
 	private
