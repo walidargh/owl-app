@@ -23,6 +23,12 @@ var ServerActions = {
 		});
 	},
 
+	receiveTags: function (tags) {
+		AppDispatcher.dispatch({
+			tags: tags
+		});
+	},
+
 	receiveSingleReview: function (review) {
 		AppDispatcher.dispatch({
 			actionType: BusinessConstants.REVIEW_RECEIVED,

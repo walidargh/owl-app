@@ -8,21 +8,12 @@ var ApiUtil = {
 			success: ServerActions.receiveBusinesses,
 			error: ServerActions.handleError,
 		});
-		// TODO: create handleError and receiveBusinesses
 	},
+	
 	fetchSingleBusiness: function (id) {
 		$.ajax({
 			url: '/api/businesses/' + id,
 			type: 'GET',
-			success: ServerActions.receiveSingleBusiness,
-			error: ServerActions.handleError
-		});
-	},
-	createBusiness: function (data) {
-		$.ajax({
-			url: '/api/businesses',
-			type: 'POST',
-			data: {business: data},
 			success: ServerActions.receiveSingleBusiness,
 			error: ServerActions.handleError
 		});
@@ -34,6 +25,26 @@ var ApiUtil = {
 			type: 'GET',
 			data: {query: query},
 			success: ServerActions.receiveBusinesses,
+			error: ServerActions.handleError
+		});
+	},
+
+	fetchTags: function () {
+		debugger
+		$.ajax({
+			url: 'api/tags',
+			type: 'GET',
+			success: ServerActions.receiveTags,
+			error: ServerActions.handleError
+		});
+	},
+
+	createBusiness: function (data) {
+		$.ajax({
+			url: '/api/businesses',
+			type: 'POST',
+			data: {business: data},
+			success: ServerActions.receiveSingleBusiness,
 			error: ServerActions.handleError
 		});
 	},

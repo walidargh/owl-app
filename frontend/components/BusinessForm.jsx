@@ -2,12 +2,13 @@ var React = require('react');
 var UserStore = require('../stores/user');
 var BusinessStore = require('../stores/business');
 var ClientActions = require('../actions/ClientActions');
+var TagForm = require('./TagForm');
 
 var BusinessForm = React.createClass({
 	getInitialState: function () {
 		return ({
 			name: "", address: "", 
-			hours: "", price: ""});
+			hours: "", price: "", tags: []});
 	},
 
 	handleName: function (event) {
@@ -26,6 +27,10 @@ var BusinessForm = React.createClass({
 		this.setState({price: parseInt(event.target.value)});
 	},
 
+	handleTags: function (event) {
+		this.setState({tags: this.state.tags.push(event.target.value)});
+	},
+
 	handleSubmit: function (event) {
 		event.preventDefault();
 		var business = 
@@ -33,7 +38,8 @@ var BusinessForm = React.createClass({
 		 name: this.state.name, 
 		 address: this.state.address, 
 		 hours: this.state.hours, 
-		 price: this.state.price};
+		 price: this.state.price,
+		 tags: this.state.tags};
 
 		ClientActions.createBusiness(business);
 	},
@@ -97,6 +103,8 @@ var BusinessForm = React.createClass({
 					name="price" 
 					id="price-3"
 				/>
+
+				<TagForm />
 				
 				<div className="button-wrapper">
 					<button onClick={this.handleSubmit}>Add Business</button>
