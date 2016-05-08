@@ -17,18 +17,19 @@ var TagForm = React.createClass({
 	},
 
 	_onChange: function () {
-		debugger
 		this.setState({tags: TagStore.all()});
 	},
 
 	render: function() {
-		var handleTag = this.props.handleTag;
+		var handleTags = this.props.handleTags;
 		var tags = this.state.tags.map(function (tag) {
 			return (
-				<div className="tag-index-item">
-					<label>{tag.name}</label>
-					<input type="checkbox" key={tag.id}/>
-				</div>
+					<label key={tag.id} >
+						<input type="checkbox" 
+								 onChange={handleTags} 
+								 value={tag.id}/>
+						{tag.name}
+					</label>
 				);
 		});
 

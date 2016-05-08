@@ -5,7 +5,6 @@ var TagStore = new Store(AppDispatcher);
 var _tags = [];
 
 TagStore.all = function () {
-	debugger
 	return _tags;
 };
 

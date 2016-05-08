@@ -30,7 +30,6 @@ var ApiUtil = {
 	},
 
 	fetchTags: function () {
-		debugger
 		$.ajax({
 			url: 'api/tags',
 			type: 'GET',

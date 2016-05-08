@@ -28,7 +28,15 @@ var BusinessForm = React.createClass({
 	},
 
 	handleTags: function (event) {
-		this.setState({tags: this.state.tags.push(event.target.value)});
+		var tags = this.state.tags;
+		var tagId = parseInt(event.target.value);
+		var index = tags.indexOf(tagId);
+		if (index === -1) {
+			tags.push(tagId);
+		} else {
+			tags.splice(index, 1);
+		}
+		this.setState({tags: tags});
 	},
 
 	handleSubmit: function (event) {
@@ -104,7 +112,7 @@ var BusinessForm = React.createClass({
 					id="price-3"
 				/>
 
-				<TagForm />
+				<TagForm handleTags={this.handleTags}/>
 				
 				<div className="button-wrapper">
 					<button onClick={this.handleSubmit}>Add Business</button>
