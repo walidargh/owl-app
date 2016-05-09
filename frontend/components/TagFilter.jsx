@@ -39,7 +39,9 @@ var TagFilter = React.createClass({
 		}
 		return (
 			<div className={"tag-filter-index"}>
+				<h2>Filter</h2>
 				{tags}
+				<button onClick={this.props.searchBusiness}>Filter</button>
 			</div>
 		);
 	}
