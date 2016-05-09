@@ -4,7 +4,7 @@ var ClientActions = require('../actions/ClientActions');
 
 var TagFilter = React.createClass({
 	getInitialState: function () {
-		return ({tags: []});
+		return ({tags: [], tagsOpen: false, hoodsOpen: false});
 	},
 
 	componentWillMount: function () {
@@ -20,36 +20,32 @@ var TagFilter = React.createClass({
 		this.setState({tags: TagStore.all()});
 	},
 
+	toggleTags: function () {
+		this.setState({tagsOpen: !this.state.tagsOpen});
+	},
+
+	toggleHoods: function () {
+		this.setState({hoodsOpen: !this.state.hoodsOpen});
+	},
+
 	clearTags: function () {
 		$('input:checkbox').removeAttr('checked');
 		this.props.clearTags();
 	},
 
-	neighborhoodFilter: function () {
-		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley'];
-		var updateHoods = this.props.updateHoods;
-		var neightborhoods;
-		neightborhoods = hoods.map(function (hood) {
-			return (	
-				<label>
-					<input type="checkbox" onChange={updateHoods} value={hood}/>
-					{hood}
-				</label>
-			);
-		});
-		return neightborhoods
-	},
-
-	filterForm: function () {
+	tagFilter: function () {
 		var updateTags = this.props.updateTags;
 		var tags;
+		var checkedTags = this.props.checkedTags;
 		if (this.state.tags.length) {
 			tags = this.state.tags.map(function (tag) {
+				var checked = checkedTags.indexOf(tag.id) === -1 ? false : true;
 				return (
 						<label key={tag.id} >
 							<input type="checkbox" 
-									 onChange={updateTags} 
-									 value={tag.id}
+									   onChange={updateTags} 
+									 	 value={tag.id}
+									 	 checked={checked}
 							/>
 							{tag.name}
 						</label>
@@ -58,12 +54,41 @@ var TagFilter = React.createClass({
 		} else {
 			return <div/>;
 		}
+		return tags;
+	},
+
+	neighborhoodFilter: function () {
+		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley'];
+		var updateHoods = this.props.updateHoods;
+		var neightborhoods;
+		var checkedHoods = this.props.checkedHoods;
+		neightborhoods = hoods.map(function (hood) {
+			var checked = checkedHoods.indexOf(hood) === -1 ? false : true;
+			return (	
+				<label>
+					<input type="checkbox" 
+								 onChange={updateHoods} 
+								 value={hood} 
+								 checed={checked}/>
+					{hood}
+				</label>
+			);
+		});
+		return neightborhoods;
+	},
+
+	filterForm: function () {
+		var tagsFilter = this.state.tagsOpen ? this.tagFilter() : <div />;
+		var neighborhoodFilter = this.state.hoodsOpen  ? this.neighborhoodFilter() : <div />;
+
 		if (this.props.location === "/businesses/") {
 			return (
 				<div className={"tag-filter-index"}>
 					<h2>Filter</h2>
-					{tags}
-					{this.neighborhoodFilter()}
+					<h3 onClick={this.toggleTags}>Categories</h3>
+						{tagsFilter}
+					<h3 onClick={this.toggleHoods}>Neighborhoods</h3>
+					{neighborhoodFilter}
 					<button onClick={this.props.searchBusiness}>Filter</button>
 					<button onClick={this.clearTags}>Clear</button>
 				</div>
