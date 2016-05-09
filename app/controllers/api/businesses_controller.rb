@@ -1,5 +1,6 @@
 class Api::BusinessesController < ApplicationController
 	def index
+		@ratings = Business.rating
 		@businesses = Business.all
 	end
 

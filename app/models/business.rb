@@ -9,7 +9,7 @@ class Business < ActiveRecord::Base
 	has_many :tags, through: :taggings
 
 	def self.rating 
-		Business.joins(:reviews).group(:business_id).average("reviews.rating")
+		Business.joins(:reviews).group(:business_id).average("DISTINCT(reviews.rating)")
 	end
 
 # get ratings using joins with user and reviews/rating, includes, sum average, 	use preload as opposed to included

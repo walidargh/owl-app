@@ -28,6 +28,10 @@ var BusinessIndexItem = React.createClass({
 		} else {
 			tags = <div></div>;
 		}
+		var rating = "N/A";
+		if (business.rating) {
+			rating = business.rating;
+		}
 		return (
 			<div className="business-index-item" onClick={this.showDetail}>
 				<div className="business-index-image">{photo}</div>
@@ -38,6 +42,7 @@ var BusinessIndexItem = React.createClass({
 					<li className="business-index-price">{price}</li>
 					<li className="business-index-address">{business.address}</li>
 					<ul className="business-index-tags">{tags}</ul>
+					<li className="business-index-rating">{rating}</li>
 				</ul>
 				
 			</div>
