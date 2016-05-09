@@ -19,11 +19,11 @@ var ApiUtil = {
 		});
 	},
 
-	fetchMatches: function (query) {
+	fetchMatches: function (data) {
 		$.ajax({
 			url: '/api/businesses/search',
 			type: 'GET',
-			data: {query: query},
+			data: data,
 			success: ServerActions.receiveBusinesses,
 			error: ServerActions.handleError
 		});

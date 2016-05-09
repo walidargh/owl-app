@@ -9,6 +9,7 @@ var hashHistory = require('react-router').hashHistory;
 var Search = require('./Search');
 var ClientActions = require('../actions/ClientActions');
 var BusinessError = require('../components/BusinessError');
+var TagFilter = require('./TagFilter');
 
 var customStyles = {
 
@@ -83,6 +84,18 @@ var App = React.createClass({
     hashHistory.push('/businesses/');
   },
 
+  updateTags: function (event) {
+    var tag_ids = this.state.tag_ids;
+    var tagId = parseInt(event.target.value);
+    var index = tag_ids.indexOf(tagId);
+    if (index === -1) {
+      tag_ids.push(tagId);
+    } else {
+      tag_ids.splice(index, 1);
+    }
+    this.setState({tag_ids: tag_ids});
+  },
+
   logButton: function () {
     if (this.state.formType === "Log Out") {
       return (
@@ -119,12 +132,11 @@ var App = React.createClass({
     return (
       <div className="app">
         <div className="nav-bar">
-
           <div className="button-wrapper">
             <button onClick={this.showBusiness}>View Businesses</button>
           </div>
-          
-          <Search location={this.props.location}/>
+  
+          <Search location={this.props.location} updateTags={this.updateTags}/>
           <BusinessError />
           {this.logButton()}
         </div>
@@ -132,11 +144,8 @@ var App = React.createClass({
         <Modal 
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
-          style={customStyles}
-          >
-
+          style={customStyles}>
           <LoginForm formType={this.state.formType} />
-
         </Modal>
 
         <div className="content-body">

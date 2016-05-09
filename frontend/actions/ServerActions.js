@@ -25,6 +25,7 @@ var ServerActions = {
 
 	receiveTags: function (tags) {
 		AppDispatcher.dispatch({
+			actionType: BusinessConstants.TAGS_RECEIVED,
 			tags: tags
 		});
 	},

@@ -42,6 +42,9 @@ Tag.create(name: "Potions")
 Tag.create(name: "Wands")
 Tag.create(name: "Fashion")
 Tag.create(name: "Sporting Goods")
+Tag.create(name: "School Supplies")
+Tag.create(name: "Restaurants")
+Tag.create(name: "Entertainment")
 
 # Ollivanders Reviews
 Review.create(user_id: 1, body: "This place is awesome 10/10 would recommend", rating: 5, business_id: 1)

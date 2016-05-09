@@ -92,6 +92,19 @@ body {
  	z-index: 1000;
 }
 
+.tag-filter-index {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	box-shadow: 5px 5px 5px #515151;
+	position: fixed;
+	padding: 0 10px 0 0;
+	top: 33%;
+	right: 80%;
+	height: 33%;
+	border-radius: 5px;
+}
+
 .splash {
 	display: flex;
 	flex-direction: column;
@@ -147,7 +160,7 @@ input {
 	top: 40px;
 	margin: 20px;
 	overflow: hidden;
-	width: 67%;
+	width: 50%;
 	font-family: 'HogwartsWizard';
 /*	background-color:rgba(255,0,0,0.5);
 */}
@@ -178,7 +191,7 @@ input {
 
 .business-index-item:hover {
 	transform: scale(1.03);
-  -webkit-transition: all 0.2s;
+  /*-webkit-transition: all 0.2s;*/
 }
 .business-index-text {
 
@@ -479,7 +492,7 @@ button {
 }*/
 button:hover {
 	transform: scale(1.03);
-  -webkit-transition: all 0.3s;
+  /*-webkit-transition: all 0.2s;*/
 }
 
 textarea {

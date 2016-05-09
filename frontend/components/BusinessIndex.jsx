@@ -6,6 +6,7 @@ var BusinessIndexItem = require('./BusinessIndexItem');
 var Modal = require('react-modal');
 var LoginForm = require('./LoginForm');
 var BusinessForm = require('./BusinessForm');
+var TagFilter = require('./TagFilter');
 
 var customStyles = {
   content : {
