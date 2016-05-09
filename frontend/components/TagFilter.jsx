@@ -26,7 +26,7 @@ var TagFilter = React.createClass({
 	},
 
 	neighborhoodFilter: function () {
-		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley', ];
+		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley'];
 		var updateHoods = this.props.updateHoods;
 			hoods.map(function (hood) {
 				return (	
