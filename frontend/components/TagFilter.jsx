@@ -41,7 +41,7 @@ var TagFilter = React.createClass({
 			tags = this.state.tags.map(function (tag) {
 				var checked = checkedTags.indexOf(tag.id) === -1 ? false : true;
 				return (
-						<label key={tag.id} >
+						<label key={tag.id} className="tag">
 							<input type="checkbox" 
 									   onChange={updateTags} 
 									 	 value={tag.id}
@@ -62,14 +62,15 @@ var TagFilter = React.createClass({
 		var updateHoods = this.props.updateHoods;
 		var neightborhoods;
 		var checkedHoods = this.props.checkedHoods;
-		neightborhoods = hoods.map(function (hood) {
+		neightborhoods = hoods.map(function (hood, idx) {
 			var checked = checkedHoods.indexOf(hood) === -1 ? false : true;
 			return (	
-				<label>
+				<label key={idx} className="tag">
 					<input type="checkbox" 
 								 onChange={updateHoods} 
 								 value={hood} 
-								 checed={checked}/>
+								 checed={checked}
+					/>
 					{hood}
 				</label>
 			);
@@ -80,15 +81,20 @@ var TagFilter = React.createClass({
 	filterForm: function () {
 		var tagsFilter = this.state.tagsOpen ? this.tagFilter() : <div />;
 		var neighborhoodFilter = this.state.hoodsOpen  ? this.neighborhoodFilter() : <div />;
+		var moreHood = this.state.hoodsOpen ? '-' : '+';
+		var moreTag = this.state.tagsOpen ? '-' : '+';
+
 
 		if (this.props.location === "/businesses/") {
 			return (
 				<div className={"tag-filter-index"}>
-					<h2>Filter</h2>
-					<h3 onClick={this.toggleTags}>Categories</h3>
-						{tagsFilter}
-					<h3 onClick={this.toggleHoods}>Neighborhoods</h3>
-					{neighborhoodFilter}
+					<div className="filter-index-title">Filter</div>
+					<div className="filters">
+						<div className="filter-name" onClick={this.toggleTags}>Categories {moreTag}</div>
+							{tagsFilter}
+						<div className="filter-name" onClick={this.toggleHoods}>Neighborhoods {moreHood}</div>
+						{neighborhoodFilter}
+					</div>
 					<button onClick={this.props.searchBusiness}>Filter</button>
 					<button onClick={this.clearTags}>Clear</button>
 				</div>

@@ -6,7 +6,7 @@ var TagFilter = require('./TagFilter');
 
 var Search = React.createClass({
 	getInitialState: function () {
-		return ({matches: [], query: "", tag_ids: [], hoods: []});
+		return ({matches: [], query: "", tag_ids: [], hoods: [], price: []});
 	},
 
 	componentDidMount: function () {
