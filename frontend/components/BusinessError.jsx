@@ -23,6 +23,12 @@ var BusinessError = React.createClass({
 		var errors = this.state.errors.map(function (error) {
 			return (<li className="business-error-item">{error}</li>);
 		});
+
+		if (this.state.errors.length) {
+			$('business-error-banner').hide();
+		} else {
+				$('business-error-banner').show();	
+			}
 		return (
 			<div className="business-error-banner">
 				{errors}

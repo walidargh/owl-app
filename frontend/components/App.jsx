@@ -146,10 +146,11 @@ var App = React.createClass({
           </div>
   
           <Search location={this.props.location} updateTags={this.updateTags}/>
-          <BusinessError />
           {this.logButton()}
         </div>
 
+        <BusinessError />
+        
         <Modal 
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
