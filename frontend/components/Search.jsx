@@ -46,8 +46,6 @@ var Search = React.createClass({
 	},
 
 	clearTags: function (event) {
-		event.preventDefault();
-		debugger
 		this.setState({tag_ids: []}, this.searchBusiness);
 	},
 

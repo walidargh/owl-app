@@ -20,6 +20,11 @@ var TagFilter = React.createClass({
 		this.setState({tags: TagStore.all()});
 	},
 
+	clearTags: function () {
+		$('input:checkbox').removeAttr('checked');
+		this.props.clearTags();
+	},
+
 	render: function() {
 		var updateTags = this.props.updateTags;
 		var tags;
@@ -29,7 +34,8 @@ var TagFilter = React.createClass({
 						<label key={tag.id} >
 							<input type="checkbox" 
 									 onChange={updateTags} 
-									 value={tag.id}/>
+									 value={tag.id}
+							/>
 							{tag.name}
 						</label>
 				);
@@ -42,7 +48,7 @@ var TagFilter = React.createClass({
 				<h2>Filter</h2>
 				{tags}
 				<button onClick={this.props.searchBusiness}>Filter</button>
-				<button onClick={this.props.clearTags}>Clear Tags</button>
+				<button onClick={this.clearTags}>Clear Tags</button>
 			</div>
 		);
 	}
