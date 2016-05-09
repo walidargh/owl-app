@@ -45,11 +45,17 @@ var Search = React.createClass({
 		this.setState({tag_ids: tag_ids});
 	},
 
+	clearTags: function (event) {
+		event.preventDefault();
+		debugger
+		this.setState({tag_ids: []}, this.searchBusiness);
+	},
+
 	searchBusiness: function (event, callback) {
 		if (event) {
 			event.preventDefault();
 		}
-		
+
 		var search = {query: this.state.query, tag_ids: this.state.tag_ids};
 		ClientActions.fetchMatches(search);
 		if (callback) {callback.call();}
@@ -64,7 +70,7 @@ var Search = React.createClass({
 	render: function () {
 		return (
 			<div className="search">
-				<TagFilter updateTags={this.updateTags} searchBusiness={this.searchBusiness}/>
+				<TagFilter updateTags={this.updateTags} searchBusiness={this.searchBusiness} clearTags={this.clearTags}/>
 				<input className="search-bar" 
 								type="text" 
 								value={this.state.query}

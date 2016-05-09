@@ -42,6 +42,7 @@ var TagFilter = React.createClass({
 				<h2>Filter</h2>
 				{tags}
 				<button onClick={this.props.searchBusiness}>Filter</button>
+				<button onClick={this.props.clearTags}>Clear Tags</button>
 			</div>
 		);
 	}
