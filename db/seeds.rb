@@ -34,7 +34,7 @@ Business.create(user_id: 1, name: "The Hog's Head", address: "Hogsmeade", hours:
 Business.create(user_id: 2, name: "Honeydukes", address: "Hogsmeade", hours: "8:00 AM - 8:00 PM" , price: 2 )
 #### 3 Hogs Head
 
-Business.create(user_id: 2, name: "Wands by Gregorovitch", address: "Carkitt Market", hours: "8:00 AM - 8:00 PM" , price: 2 )
+Business.create(user_id: 2, name: "Wands by Gregorovitch", address: "Carkitt", hours: "8:00 AM - 8:00 PM" , price: 2 )
 ### 1 Carkitt Market
 
 #Tags

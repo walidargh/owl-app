@@ -28,14 +28,16 @@ var TagFilter = React.createClass({
 	neighborhoodFilter: function () {
 		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley'];
 		var updateHoods = this.props.updateHoods;
-			hoods.map(function (hood) {
-				return (	
-					<label>
-						<input type="checkbox" onChange={updateHoods} value={'hood'}/>
-						{'hood'}
-					</label>
-				);
-			});
+		var neightborhoods;
+		neightborhoods = hoods.map(function (hood) {
+			return (	
+				<label>
+					<input type="checkbox" onChange={updateHoods} value={hood}/>
+					{hood}
+				</label>
+			);
+		});
+		return neightborhoods
 	},
 
 	filterForm: function () {
@@ -61,6 +63,7 @@ var TagFilter = React.createClass({
 				<div className={"tag-filter-index"}>
 					<h2>Filter</h2>
 					{tags}
+					{this.neighborhoodFilter()}
 					<button onClick={this.props.searchBusiness}>Filter</button>
 					<button onClick={this.clearTags}>Clear</button>
 				</div>

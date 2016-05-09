@@ -48,7 +48,7 @@ var Search = React.createClass({
 	updateHoods: function (event) {
 		var hoods = this.state.hoods;
 		var hood = event.target.value;
-		var index = hoods.index(hood);
+		var index = hoods.indexOf(hood);
 		if (index === -1) {
 			hoods.push(hood);
 		} else {
