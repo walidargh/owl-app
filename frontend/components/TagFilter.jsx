@@ -4,7 +4,7 @@ var ClientActions = require('../actions/ClientActions');
 
 var TagFilter = React.createClass({
 	getInitialState: function () {
-		return ({tags: [], tagsOpen: false, hoodsOpen: false});
+		return ({tags: [], tagsOpen: false, hoodsOpen: false, pricesOpen: false});
 	},
 
 	componentWillMount: function () {
@@ -26,6 +26,10 @@ var TagFilter = React.createClass({
 
 	toggleHoods: function () {
 		this.setState({hoodsOpen: !this.state.hoodsOpen});
+	},
+
+	togglePrices: function () {
+		this.setState({pricesOpen: !this.state.pricesOpen});
 	},
 
 	clearTags: function () {
@@ -69,7 +73,7 @@ var TagFilter = React.createClass({
 					<input type="checkbox" 
 								 onChange={updateHoods} 
 								 value={hood} 
-								 checed={checked}
+								 checked={checked}
 					/>
 					{hood}
 				</label>
@@ -78,11 +82,35 @@ var TagFilter = React.createClass({
 		return neightborhoods;
 	},
 
+	priceFilter: function () {
+		var allPrices = [1, 2, 3];
+		debugger
+		var updatePrices = this.props.updatePrices;
+		var prices;
+		var checkedPrices = this.props.checkedPrices;
+		prices = allPrices.map(function (price, idx) {
+			var checked = checkedPrices.indexOf(price) === -1 ? false : true;
+			return (
+				<label key={idx} className="tag">
+					<input type="checkbox"
+								 onChange={updatePrices}
+								 value={price}
+								 checked={checked}
+					/>
+					{price}
+				</label>
+			);
+		});
+		return prices;
+	},
+
 	filterForm: function () {
 		var tagsFilter = this.state.tagsOpen ? this.tagFilter() : <div />;
 		var neighborhoodFilter = this.state.hoodsOpen  ? this.neighborhoodFilter() : <div />;
+		var priceFilter = this.state.pricesOpen ? this.priceFilter() : <div />;
 		var moreHood = this.state.hoodsOpen ? '-' : '+';
 		var moreTag = this.state.tagsOpen ? '-' : '+';
+		var morePrice = this.state.pricesOpen ? '-' : '+';
 
 
 		if (this.props.location === "/businesses/") {
@@ -93,7 +121,9 @@ var TagFilter = React.createClass({
 						<div className="filter-name" onClick={this.toggleTags}>Categories {moreTag}</div>
 							{tagsFilter}
 						<div className="filter-name" onClick={this.toggleHoods}>Neighborhoods {moreHood}</div>
-						{neighborhoodFilter}
+							{neighborhoodFilter}
+						<div className="filter-name" onClick={this.togglePrices}>Price {morePrice}</div>
+							{priceFilter}
 					</div>
 					<button onClick={this.props.searchBusiness}>Filter</button>
 					<button onClick={this.clearTags}>Clear</button>

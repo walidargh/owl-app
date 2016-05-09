@@ -73,6 +73,7 @@ var BusinessIndex = React.createClass({
 		var form = UserStore.currentUser() ? <BusinessForm /> : <LoginForm formType="Log In"/>;
 		return (
 			<div className="businesses">
+				<TagFilter />
 				<div className="button-wrapper">
 					<button 
 						className="new-business-button" 
