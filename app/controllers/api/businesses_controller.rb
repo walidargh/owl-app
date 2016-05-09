@@ -39,26 +39,21 @@ class Api::BusinessesController < ApplicationController
 		hoods = params[:hoods] || ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley']
 		prices = params[:prices] || [1, 2, 3]
 		prices = prices.map(&:to_i)
-		puts params
 		if params[:query].present?
 			if params[:tag_ids].present?
 				tag_ids = params[:tag_ids].map(&:to_i)
 				@businesses = Business.joins(:taggings)
 															.where("taggings.tag_id IN (?) AND businesses.address IN (?) lower(businesses.name) ~ ? AND businesses.price IN (?)", 
 															tag_ids, hoods, params[:query].downcase, prices)
-				puts "query and tags"
 			else
 				 @businesses = Business.where("lower(name) ~ ? AND businesses.address IN (?) AND businesses.price IN (?)", params[:query].downcase, hoods, prices)
-				 puts "just query"
 			end
 			render :index
 		else
 			if params[:tag_ids].present?
 				@businesses = Business.joins(:taggings).where("taggings.tag_id IN (?) AND businesses.address IN (?) AND businesses.price IN (?)", params[:tag_ids], hoods, prices)
-				puts "just tags"
 			else
 				@businesses = Business.joins(:taggings).where("businesses.address IN (?) AND businesses.price IN (?)", hoods, prices)
-				puts "nothing"
 			end
 			render :index
 		end

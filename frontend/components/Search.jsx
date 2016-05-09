@@ -58,7 +58,6 @@ var Search = React.createClass({
 	},
 
 	updatePrices: function (event) {
-		debugger
 		var prices = this.state.prices;
 		var price = parseInt(event.target.value);
 		var index = prices.indexOf(price);
@@ -93,15 +92,17 @@ var Search = React.createClass({
 	render: function () {
 		return (
 			<div className="search">
-				<TagFilter updateTags={this.updateTags} 
-									 updateHoods={this.updateHoods}
-									 updatePrices={this.updatePrices}
-									 searchBusiness={this.searchBusiness}
-									 checkedTags={this.state.tag_ids}
-									 checkedHoods={this.state.hoods} 
-									 checkedPrices={this.state.prices}
-									 clearTags={this.clearTags} 
-									 location={this.props.location.pathname}/>
+				<div className="tag-filter-wrapper">
+					<TagFilter updateTags={this.updateTags} 
+										 updateHoods={this.updateHoods}
+										 updatePrices={this.updatePrices}
+										 searchBusiness={this.searchBusiness}
+										 checkedTags={this.state.tag_ids}
+										 checkedHoods={this.state.hoods} 
+										 checkedPrices={this.state.prices}
+										 clearTags={this.clearTags} 
+										 location={this.props.location.pathname}/>
+				</div>
 				<input className="search-bar" 
 								type="text" 
 								value={this.state.query}

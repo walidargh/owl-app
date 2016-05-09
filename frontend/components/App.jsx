@@ -12,6 +12,15 @@ var BusinessError = require('../components/BusinessError');
 var TagFilter = require('./TagFilter');
 
 var customStyles = {
+  overlay : {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    backgroundColor   : 'rgba(255, 255, 255, 0.75)',
+    zIndex            : 1000
+  },
 
   content : {
     top                   : '50%',
@@ -20,7 +29,7 @@ var customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     borderRadius          : '10px',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
   }
 };
 
@@ -144,7 +153,8 @@ var App = React.createClass({
         <Modal 
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
-          style={customStyles}>
+          style={customStyles}
+          >
           <LoginForm formType={this.state.formType} />
         </Modal>
 

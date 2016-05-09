@@ -84,7 +84,6 @@ var TagFilter = React.createClass({
 
 	priceFilter: function () {
 		var allPrices = [1, 2, 3];
-		debugger
 		var updatePrices = this.props.updatePrices;
 		var prices;
 		var checkedPrices = this.props.checkedPrices;

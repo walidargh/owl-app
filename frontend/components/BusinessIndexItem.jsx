@@ -37,7 +37,7 @@ var BusinessIndexItem = React.createClass({
 					<li className="business-index-hours">{business.hours}</li>
 					<li className="business-index-price">{price}</li>
 					<li className="business-index-address">{business.address}</li>
-					{tags}
+					<ul className="business-index-tags">{tags}</ul>
 				</ul>
 				
 			</div>
