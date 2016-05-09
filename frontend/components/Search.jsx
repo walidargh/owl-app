@@ -71,7 +71,7 @@ var Search = React.createClass({
 	},
 
 	clearTags: function (event) {
-		this.setState({tag_ids: [], hoods: []}, this.searchBusiness);
+		this.setState({tag_ids: [], hoods: [], prices: []}, this.searchBusiness);
 	},
 
 	searchBusiness: function (event, callback) {

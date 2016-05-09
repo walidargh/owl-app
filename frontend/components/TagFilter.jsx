@@ -97,7 +97,7 @@ var TagFilter = React.createClass({
 								 value={price}
 								 checked={checked}
 					/>
-					{price}
+					{Array(price + 1).join("$")}
 				</label>
 			);
 		});
