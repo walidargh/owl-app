@@ -4,8 +4,8 @@ json.array! @businesses do |business|
 	json.address business.address
 	json.hours business.hours
 	json.price business.price
-	if @ratings[business.id]
-		json.rating @ratings[business.id].to_i.round(3)
+	if @ratings && @ratings[business.id]
+		json.rating @ratings[business.id].to_f.round(2)
 	else 
 		json.rating "null"
 	end

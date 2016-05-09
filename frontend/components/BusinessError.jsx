@@ -24,10 +24,10 @@ var BusinessError = React.createClass({
 			return (<li className="business-error-item">{error}</li>);
 		});
 
-		if (this.state.errors.length) {
+		if (!this.state.errors.length) {
 			$('business-error-banner').hide();
 		} else {
-				$('business-error-banner').show();	
+				$('business-error-banner').hide();	
 			}
 		return (
 			<div className="business-error-banner">

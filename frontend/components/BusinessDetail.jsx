@@ -76,6 +76,7 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
+		debugger
 		return (
 			<div className="business-detail">
 
@@ -100,6 +101,10 @@ var BusinessDetail = React.createClass({
 
 						<li className="business-detail-price">
 							{this.price}
+						</li>
+
+						<li className="business-detail-rating">
+							{this.state.business.rating}
 						</li>
 					</div>
 

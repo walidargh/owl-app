@@ -3,6 +3,11 @@ json.name @business.name
 json.address @business.address
 json.hours @business.hours
 json.price @business.price
+if Business.rating[@business.id]
+	json.rating Business.rating[@business.id].to_f.round(2)
+else 
+	json.rating "null"
+end
 
 json.tags do
 	json.array! @business.tags do |tag|
