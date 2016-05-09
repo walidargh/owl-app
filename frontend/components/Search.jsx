@@ -6,7 +6,7 @@ var TagFilter = require('./TagFilter');
 
 var Search = React.createClass({
 	getInitialState: function () {
-		return ({matches: [], query: "", tag_ids: []});
+		return ({matches: [], query: "", tag_ids: [], hoods: []});
 	},
 
 	componentDidMount: function () {
@@ -40,13 +40,25 @@ var Search = React.createClass({
 		if (index === -1) {
 			tag_ids.push(tagId);
 		} else {
-			tag_ids.splice(index, 1);
-		}
+				tag_ids.splice(index, 1);
+			}
 		this.setState({tag_ids: tag_ids});
 	},
 
+	updateHoods: function (event) {
+		var hoods = this.state.hoods;
+		var hood = event.target.value;
+		var index = hoods.index(hood);
+		if (index === -1) {
+			hoods.push(hood);
+		} else {
+				hoods.splice(index, 1);
+			}
+		this.setState({hoods: hoods});
+	},	
+
 	clearTags: function (event) {
-		this.setState({tag_ids: []}, this.searchBusiness);
+		this.setState({tag_ids: [], hoods: []}, this.searchBusiness);
 	},
 
 	searchBusiness: function (event, callback) {
@@ -54,7 +66,7 @@ var Search = React.createClass({
 			event.preventDefault();
 		}
 
-		var search = {query: this.state.query, tag_ids: this.state.tag_ids};
+		var search = {query: this.state.query, tag_ids: this.state.tag_ids, hoods: this.state.hoods};
 		ClientActions.fetchMatches(search);
 		if (callback) {callback.call();}
 	},
@@ -68,7 +80,11 @@ var Search = React.createClass({
 	render: function () {
 		return (
 			<div className="search">
-				<TagFilter updateTags={this.updateTags} searchBusiness={this.searchBusiness} clearTags={this.clearTags}/>
+				<TagFilter updateTags={this.updateTags} 
+									 updateHoods={this.updateHoods}
+									 searchBusiness={this.searchBusiness} 
+									 clearTags={this.clearTags} 
+									 location={this.props.location.pathname}/>
 				<input className="search-bar" 
 								type="text" 
 								value={this.state.query}

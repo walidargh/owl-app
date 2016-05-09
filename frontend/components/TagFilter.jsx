@@ -25,7 +25,20 @@ var TagFilter = React.createClass({
 		this.props.clearTags();
 	},
 
-	render: function() {
+	neighborhoodFilter: function () {
+		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley', ];
+		var updateHoods = this.props.updateHoods;
+			hoods.map(function (hood) {
+				return (	
+					<label>
+						<input type="checkbox" onChange={updateHoods} value={'hood'}/>
+						{'hood'}
+					</label>
+				);
+			});
+	},
+
+	filterForm: function () {
 		var updateTags = this.props.updateTags;
 		var tags;
 		if (this.state.tags.length) {
@@ -43,12 +56,25 @@ var TagFilter = React.createClass({
 		} else {
 			return <div/>;
 		}
+		if (this.props.location === "/businesses/") {
+			return (
+				<div className={"tag-filter-index"}>
+					<h2>Filter</h2>
+					{tags}
+					<button onClick={this.props.searchBusiness}>Filter</button>
+					<button onClick={this.clearTags}>Clear</button>
+				</div>
+			);
+		} else {
+			return <div />;
+		}
+	},
+
+	render: function() {
+
 		return (
-			<div className={"tag-filter-index"}>
-				<h2>Filter</h2>
-				{tags}
-				<button onClick={this.props.searchBusiness}>Filter</button>
-				<button onClick={this.clearTags}>Clear Tags</button>
+			<div className="tags-filter">
+				{this.filterForm()}
 			</div>
 		);
 	}
