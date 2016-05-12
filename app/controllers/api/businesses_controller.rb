@@ -44,7 +44,7 @@ class Api::BusinessesController < ApplicationController
 			if params[:tag_ids].present?
 				tag_ids = params[:tag_ids].map(&:to_i)
 				@businesses = Business.joins(:taggings)
-															.where("taggings.tag_id IN (?) AND businesses.address IN (?) lower(businesses.name) ~ ? AND businesses.price IN (?)", 
+															.where("taggings.tag_id IN (?) AND businesses.address IN (?) AND lower(businesses.name) ~ ? AND businesses.price IN (?)", 
 															tag_ids, hoods, params[:query].downcase, prices)
 			else
 				 @businesses = Business.where("lower(name) ~ ? AND businesses.address IN (?) AND businesses.price IN (?)", params[:query].downcase, hoods, prices)
@@ -63,7 +63,7 @@ class Api::BusinessesController < ApplicationController
 	def filter
 		if params[:tag_ids].present?
 			if params[:query].present?	
-				@businesses = Business.includes(:taggings).where("taggings.tag_id IN ? and params[:tag_ids], lower(name) ~ ?", params[:tag_ids], params[:query].downcase)
+				@businesses = Business.includes(:taggings).where("taggings.tag_id IN ? and params[:tag_ids] AND lower(name) ~ ?", params[:tag_ids], params[:query].downcase)
 			else
 				@businesses = Business.includes(:taggings).where("taggings.tag_id" => params[:tag_ids])
 			end
