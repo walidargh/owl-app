@@ -38,27 +38,29 @@ class Api::BusinessesController < ApplicationController
 
 	def search
 		@ratings = Business.rating
-		hoods = params[:hoods] || ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley']
-		prices = params[:prices] || [1, 2, 3]
-		prices = prices.map(&:to_i)
+
 		if params[:query].present?
-			if params[:tag_ids].present?
-				tag_ids = params[:tag_ids].map(&:to_i)
-				@businesses = Business.joins(:taggings)
-															.where("taggings.tag_id IN (?) AND businesses.address IN (?) AND lower(businesses.name) ~ ? AND businesses.price IN (?)", 
-															tag_ids, hoods, params[:query].downcase, prices)
-			else
-				 @businesses = Business.where("lower(name) ~ ? AND businesses.address IN (?) AND businesses.price IN (?)", params[:query].downcase, hoods, prices)
-			end
-			render :index
+			businesses = Business.where("lower(name) ~ ?", params[:query])
 		else
-			if params[:tag_ids].present?
-				@businesses = Business.joins(:taggings).where("taggings.tag_id IN (?) AND businesses.address IN (?) AND businesses.price IN (?)", params[:tag_ids], hoods, prices)
-			else
-				@businesses = Business.joins(:taggings).where("businesses.address IN (?) AND businesses.price IN (?)", hoods, prices)
-			end
-			render :index
+			businesses = Business
 		end
+
+		if params[:hoods].present?
+			businesses = businesses.where("businesses.address IN (?)", params[:hoods])
+		end
+
+		if params[:prices].present? 
+			prices = params[:prices].map(&:to_i)
+			businesses = businesses.where("businesses.price IN (?)", prices)
+		end
+
+		if params[:tag_ids].present?
+			tag_ids = params[:tag_ids].map(&:to_i)
+			businesses = businesses.joins(:taggings).where("taggings.tag_id IN (?)", tag_ids)
+		end
+
+		@businesses = businesses.all
+		render :index
 	end
 
 	def filter

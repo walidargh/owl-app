@@ -52,67 +52,73 @@ var BusinessForm = React.createClass({
 		ClientActions.createBusiness(business);
 	},
 
+	hoodsForm: function () {
+		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley'];
+		var hoodOptions= hoods.map(function (hood) {
+			return <option value={hood}>{hood}</option>;
+		});
+		console.log(hoodOptions)
+		return (<select>{hoodOptions}</select>);
+	},
+
 	priceForm: function () {
 
 	},
 
 	render: function () {
+
 		return(
-			<form onSubmit={this.handleSubmit}>
-			
-				<label for="business-name">Business Name</label>
-				<input 
-					type="text" 
-					onChange={this.handleName} 
-					value={this.state.name} 
-					id="business-name"
-				/>
+			<form className="business-form" onSubmit={this.handleSubmit}>
+				<div className="business-and-tag-form">
+					<div className="business-form-details">
+						<label for="business-name">Business Name</label>
+						<input 
+							type="text" 
+							onChange={this.handleName} 
+							value={this.state.name} 
+							id="business-name"
+						/>
+						<label for="address">Neighborhood</label>
+							{this.hoodsForm()}
+						
+						<label for="hours">Hours</label>
+						<input 
+							type="text" 
+							onChange={this.handleHours} 
+							value={this.state.hours} 
+							id="hours"
+						/>
 
-				<label for="hours">Address</label>
-				<input 
-					type="text" 
-					onChange={this.handleAddress} 
-					value={this.state.address} 
-					id="address"
-				/>
-				
-				<label for="hours">Hours</label>
-				<input 
-					type="text" 
-					onChange={this.handleHours} 
-					value={this.state.hours} 
-					id="hours"
-				/>
+						<label for="price=1">$</label>				
+						<input 
+							type="radio" 
+							onChange={this.handlePrice} 
+							value={1} 
+							name="price" 
+							id="price=1"
+						/>
 
-				<label for="price=1">$</label>				
-				<input 
-					type="radio" 
-					onChange={this.handlePrice} 
-					value={1} 
-					name="price" 
-					id="price=1"
-				/>
+						<label for="price-2">$$</label>
+						<input 
+							type="radio" 
+							onChange={this.handlePrice} 
+							value={2} 
+							name="price" 
+							id="price-2" 
+						/>
 
-				<label for="price-2">$$</label>
-				<input 
-					type="radio" 
-					onChange={this.handlePrice} 
-					value={2} 
-					name="price" 
-					id="price-2" 
-				/>
-
-			
-				<label for="price-3">$$$</label>
-				<input 
-					type="radio" 
-					onChange={this.handlePrice} 
-					value={3} 
-					name="price" 
-					id="price-3"
-				/>
-
+					
+						<label for="price-3">$$$</label>
+						<input 
+							type="radio" 
+							onChange={this.handlePrice} 
+							value={3} 
+							name="price" 
+							id="price-3"
+						/>
+					</div>
 				<TagForm handleTags={this.handleTags}/>
+				</div>
 				
 				<div className="button-wrapper">
 					<button onClick={this.handleSubmit}>Add Business</button>
@@ -129,3 +135,11 @@ var BusinessForm = React.createClass({
 module.exports = BusinessForm;
 
 // User HP currency as price ratings, spin coin on hover
+
+// <label for="address">Address</label>
+// 				<input 
+// 					type="text" 
+// 					onChange={this.handleAddress} 
+// 					value={this.state.address} 
+// 					id="address"
+// 				/>
