@@ -37,6 +37,7 @@ class Api::BusinessesController < ApplicationController
 	end
 
 	def search
+		@ratings = Business.rating
 		hoods = params[:hoods] || ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley']
 		prices = params[:prices] || [1, 2, 3]
 		prices = prices.map(&:to_i)

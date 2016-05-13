@@ -29,7 +29,7 @@ var Search = React.createClass({
 		if (this.props.location.pathname === "/businesses/") {
 			this.setState({query: query}, this.searchBusiness);
 		} else {
-			this.setState({query: query});
+			this.setState({query: query}, this.searchBusiness);
 		}
 	},
 
@@ -42,7 +42,7 @@ var Search = React.createClass({
 		} else {
 				tag_ids.splice(index, 1);
 			}
-		this.setState({tag_ids: tag_ids});
+		this.setState({tag_ids: tag_ids}, this.searchBusiness);
 	},
 
 	updateHoods: function (event) {
@@ -54,7 +54,7 @@ var Search = React.createClass({
 		} else {
 				hoods.splice(index, 1);
 			}
-		this.setState({hoods: hoods});
+		this.setState({hoods: hoods}, this.searchBusiness);
 	},
 
 	updatePrices: function (event) {
@@ -66,7 +66,7 @@ var Search = React.createClass({
 		} else {
 				prices.splice(index, 1);
 			}
-		this.setState({prices: prices});
+		this.setState({prices: prices}, this.searchBusiness);
 	},
 
 	clearTags: function (event) {

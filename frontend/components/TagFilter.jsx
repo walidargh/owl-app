@@ -21,15 +21,22 @@ var TagFilter = React.createClass({
 	},
 
 	toggleTags: function () {
-		this.setState({tagsOpen: !this.state.tagsOpen});
+		this.setState(
+			{tagsOpen: !this.state.tagsOpen, hoodsOpen: false, pricesOpen: false}
+		);
+
 	},
 
 	toggleHoods: function () {
-		this.setState({hoodsOpen: !this.state.hoodsOpen});
+		this.setState(
+			{hoodsOpen: !this.state.hoodsOpen, tagsOpen: false, pricesOpen: false}
+		);
 	},
 
 	togglePrices: function () {
-		this.setState({pricesOpen: !this.state.pricesOpen});
+		this.setState(
+			{pricesOpen: !this.state.pricesOpen, tagsOpen: false, hoodsOpen: false}
+		);
 	},
 
 	clearTags: function () {
@@ -124,8 +131,7 @@ var TagFilter = React.createClass({
 						<div className="filter-name" onClick={this.togglePrices}>Price {morePrice}</div>
 							{priceFilter}
 					</div>
-					<button onClick={this.props.searchBusiness}>Filter</button>
-					<button onClick={this.clearTags}>Clear</button>
+					<button onClick={this.clearTags}>Clear Filters</button>
 				</div>
 			);
 		} else {
@@ -143,5 +149,7 @@ var TagFilter = React.createClass({
 	}
 
 });
+
+// <button onClick={this.props.searchBusiness}>Filter</button>
 
 module.exports = TagFilter;
