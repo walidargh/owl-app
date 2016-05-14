@@ -63,6 +63,37 @@ var BusinessForm = React.createClass({
 
 	priceForm: function () {
 
+		return (
+			<div className="price-form">
+				<label for="price=1">$</label>				
+				<input 
+					type="radio" 
+					onChange={this.handlePrice} 
+					value={1} 
+					name="price" 
+					id="price=1"
+				/>
+
+				<label for="price-2">$$</label>
+				<input 
+					type="radio" 
+					onChange={this.handlePrice} 
+					value={2} 
+					name="price" 
+					id="price-2" 
+				/>
+
+
+				<label for="price-3">$$$</label>
+				<input 
+					type="radio" 
+					onChange={this.handlePrice} 
+					value={3} 
+					name="price" 
+					id="price-3"
+				/>
+			</div>
+		);
 	},
 
 	render: function () {
@@ -89,33 +120,7 @@ var BusinessForm = React.createClass({
 							id="hours"
 						/>
 
-						<label for="price=1">$</label>				
-						<input 
-							type="radio" 
-							onChange={this.handlePrice} 
-							value={1} 
-							name="price" 
-							id="price=1"
-						/>
-
-						<label for="price-2">$$</label>
-						<input 
-							type="radio" 
-							onChange={this.handlePrice} 
-							value={2} 
-							name="price" 
-							id="price-2" 
-						/>
-
-					
-						<label for="price-3">$$$</label>
-						<input 
-							type="radio" 
-							onChange={this.handlePrice} 
-							value={3} 
-							name="price" 
-							id="price-3"
-						/>
+						{this.priceForm()}
 					</div>
 				<TagForm handleTags={this.handleTags}/>
 				</div>

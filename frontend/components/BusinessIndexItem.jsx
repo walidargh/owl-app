@@ -28,8 +28,8 @@ var BusinessIndexItem = React.createClass({
 		} else {
 			tags = <div></div>;
 		}
-		var rating = "N/A";
-		if (business.rating) {
+		var rating = "No Reviews";
+		if (business.rating !== "null") {
 			rating = business.rating;
 		}
 		return (

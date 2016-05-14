@@ -232,10 +232,16 @@ input {
 
 .business-and-tag-form {
 	display: flex;
+	align-items: column;
 }
 
 .business-form-details {
 	display: flex;
+}
+
+.price-form {
+	display: flex;
+	flex-direction: row;
 }
 
 .business-index-item {
