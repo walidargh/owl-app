@@ -32,7 +32,7 @@ var customStyles = {
 var ReviewForm = React.createClass({
 	getInitialState: function () {
 		return ({
-			body: "", rating: 0, formIsOpen: false, modalIsOpen: false, buttonIsShown: true
+			body: "", rating: 0, formIsOpen: false, modalIsOpen: false, buttonIsShown: true, buttonClicked: false
 		});
 	},
 
@@ -50,7 +50,7 @@ var ReviewForm = React.createClass({
 		if (UserStore.errors().length === 0) {
       this.closeModal();
     } 
-    if (UserStore.currentUser()) {
+    if (UserStore.currentUser() && this.state.buttonClicked) {
     	this.openForm();
     } else {
     	this.closeForm();
@@ -81,7 +81,7 @@ var ReviewForm = React.createClass({
 
 	openForm: function () {
 		this.hideButton();
-		this.setState({formIsOpen: true});
+		this.setState({formIsOpen: true, buttonClicked: false});
 	},
 
 	closeForm: function (callback) {
@@ -161,6 +161,7 @@ var ReviewForm = React.createClass({
 
 	identifyForm: function () {
 		if (UserStore.currentUser()) {
+			this.setState({buttonClicked: true});
 			this.openForm();
 		} else {
 			this.openModal();

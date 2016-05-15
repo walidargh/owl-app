@@ -49,7 +49,6 @@ var BusinessDetail = React.createClass({
 
 	photoForm: function () {
 		if (this.state.business !== "") {
-				this.price = Array(this.state.business.price + 1).join("$");
 				return (
 					<PhotoIndex 
 						photos={this.state.business.photos}
@@ -76,11 +75,16 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
-		debugger
 		var rating = "No Reviews";
 		if (this.state.business.rating !== "null") {
 			rating = this.state.rating;
 		}
+
+		var price;
+		if (this.state.business) {
+			price = Array(this.state.business.price + 1).join("$");
+		}
+
 		return (
 			<div className="business-detail">
 
@@ -104,7 +108,7 @@ var BusinessDetail = React.createClass({
 						</li>
 
 						<li className="business-detail-price">
-							{this.price}
+							{price}
 						</li>
 
 						<li className="business-detail-rating">
