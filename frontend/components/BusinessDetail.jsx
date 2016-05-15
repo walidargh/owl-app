@@ -76,8 +76,9 @@ var BusinessDetail = React.createClass({
 	},
 
 	render: function () {
+		debugger
 		var rating = "No Reviews";
-		if (this.state.rating !== "null") {
+		if (this.state.business.rating !== "null") {
 			rating = this.state.rating;
 		}
 		return (

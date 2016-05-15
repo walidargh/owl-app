@@ -8,7 +8,7 @@ var BusinessForm = React.createClass({
 	getInitialState: function () {
 		return ({
 			name: "", address: "", 
-			hours: "", price: "", tag_ids: []});
+			hours: "", price: "", tagIds: []});
 	},
 
 	handleName: function (event) {
@@ -28,15 +28,15 @@ var BusinessForm = React.createClass({
 	},
 
 	handleTags: function (event) {
-		var tag_ids = this.state.tag_ids;
+		var tagIds = this.state.tagIds;
 		var tagId = parseInt(event.target.value);
-		var index = tag_ids.indexOf(tagId);
+		var index = tagIds.indexOf(tagId);
 		if (index === -1) {
-			tag_ids.push(tagId);
+			tagIds.push(tagId);
 		} else {
-			tag_ids.splice(index, 1);
+			tagIds.splice(index, 1);
 		}
-		this.setState({tag_ids: tag_ids});
+		this.setState({tagIds: tagIds});
 	},
 
 	handleSubmit: function (event) {
@@ -47,7 +47,7 @@ var BusinessForm = React.createClass({
 		 address: this.state.address, 
 		 hours: this.state.hours, 
 		 price: this.state.price,
-		 tag_ids: this.state.tag_ids};
+		 tag_ids: this.state.tagIds};
 
 		ClientActions.createBusiness(business);
 	},
@@ -57,7 +57,6 @@ var BusinessForm = React.createClass({
 		var hoodOptions= hoods.map(function (hood) {
 			return <option value={hood}>{hood}</option>;
 		});
-		console.log(hoodOptions)
 		return (<select>{hoodOptions}</select>);
 	},
 
