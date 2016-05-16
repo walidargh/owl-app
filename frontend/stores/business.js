@@ -25,7 +25,8 @@ BusinessStore.errors = function () {
 var calculateNewRating = function (business, review) {
 	var numReviews = business.reviews.length;
 	var newRating = 
-		((business.rating)*(numReviews) + review.rating) / (numReviews + 1);
+		((business.rating)*(numReviews) + review.rating)/
+		(numReviews + 1).toFixed(2);
 	return newRating;
 };
  
