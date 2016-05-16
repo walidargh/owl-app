@@ -77,7 +77,7 @@ var BusinessDetail = React.createClass({
 	render: function () {
 		var rating = "No Reviews";
 		if (this.state.business.rating !== "null") {
-			rating = this.state.rating;
+			rating = this.state.business.rating;
 		}
 
 		var price;

@@ -47,6 +47,7 @@ var ReviewForm = React.createClass({
 	},
 
 	_onUserChange: function () {
+		debugger
 		if (UserStore.errors().length === 0) {
       this.closeModal();
     } 
@@ -58,6 +59,7 @@ var ReviewForm = React.createClass({
   },
 
   _onBusinessChange: function () {
+  	debugger
     if (BusinessStore.errors().length === 0) {
 			this.closeForm();
 		}
@@ -160,8 +162,8 @@ var ReviewForm = React.createClass({
 	},
 
 	identifyForm: function () {
+		this.setState({buttonClicked: true});
 		if (UserStore.currentUser()) {
-			this.setState({buttonClicked: true});
 			this.openForm();
 		} else {
 			this.openModal();

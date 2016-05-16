@@ -21,6 +21,13 @@ BusinessStore.errors = function () {
 // BusinessStore.currentBusiness = function () {
 // 	return Object.assign({}, _currentBusiness);
 // };
+
+var calculateNewRating = function (business, review) {
+	var numReviews = business.reviews.length;
+	var newRating = 
+		((business.rating)*(numReviews) + review.rating) / (numReviews + 1);
+	return newRating;
+};
  
 var resetBusinesses = function (businesses) {
 	_businesses = {};
@@ -39,7 +46,10 @@ var addBusiness = function (business) {
 };
 
 var addReview = function (review) {
+	var business = _businesses[review.business_id];
+	var newRating = calculateNewRating(business, review);
 	_businesses[review.business_id].reviews.push(review);
+	_businesses[review.business_id].rating = newRating;
 	_errors = [];
 	BusinessStore.__emitChange();
 };
