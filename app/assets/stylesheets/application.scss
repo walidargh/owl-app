@@ -97,9 +97,13 @@ body {
  	overflow: hidden;
  	align-items: center;
  	background-color: #333;
- 	height: 7.5%;
+ 	height: 10%;
  	width: 100%;
  	z-index: 2;
+}
+
+.logo {
+	background: "http://res.cloudinary.com/howler/image/upload/v1463516802/howlerlogo_mvn57k.png";
 }
 
 .tag-filter-wrapper {
@@ -184,7 +188,7 @@ input[type='checkbox'] {
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	font-size: 20px;
+	font-size: 36px;
 	width: 50%;
 	padding: 0;
 	margin: 0;
@@ -263,6 +267,7 @@ input {
 
 .business-index-item:hover {
 	transform: scale(1.03);
+	cursor: pointer; 
   /*-webkit-transition: all 0.2s;*/
 }	
 .business-index-text {
@@ -352,6 +357,7 @@ input {
 }
 
 .business-detail-img img:hover {
+	
 
 }
 
@@ -579,6 +585,7 @@ button:focus {
 }*/
 button:hover {
 	transform: scale(1.03);
+	cursor: pointer; 
   /*-webkit-transition: all 0.2s;*/
 }
 
