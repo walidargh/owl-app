@@ -29,7 +29,7 @@ var Search = React.createClass({
 		if (this.props.location.pathname === "/businesses/") {
 			this.setState({query: query}, this.searchBusiness);
 		} else {
-			this.setState({query: query}, this.searchBusiness);
+			this.setState({query: query});
 		}
 	},
 

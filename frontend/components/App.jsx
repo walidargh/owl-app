@@ -141,7 +141,6 @@ var App = React.createClass({
     return (
       <div className="app">
         <div className="nav-bar">
-          <div className="logo"/>
           <div className="button-wrapper">
             <button onClick={this.showBusiness}>View Businesses</button>
           </div>
