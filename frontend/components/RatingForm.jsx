@@ -32,7 +32,7 @@ var RatingForm = React.createClass({
               onClick={this.handleClick.bind(this, i)}
             />);
         }
-      return (<div>{stars}</div>);
+      return (<div className="stars-index">{stars}</div>);
     }
 });
 

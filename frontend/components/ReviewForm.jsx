@@ -47,7 +47,6 @@ var ReviewForm = React.createClass({
 	},
 
 	_onUserChange: function () {
-		debugger
 		if (UserStore.errors().length === 0) {
       this.closeModal();
     } 
@@ -59,7 +58,6 @@ var ReviewForm = React.createClass({
   },
 
   _onBusinessChange: function () {
-  	debugger
     if (BusinessStore.errors().length === 0) {
 			this.closeForm();
 		}
@@ -153,7 +151,7 @@ var ReviewForm = React.createClass({
 						value={this.state.body} 
 					/>
 					<div className="button-wrapper">
-						<button onClick={this.handleSubmit}>Submit</button>
+						<button className="submit-review" onClick={this.handleSubmit}>Submit</button>
 					</div>
 
 				</form>

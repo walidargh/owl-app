@@ -77,7 +77,7 @@ var BusinessDetail = React.createClass({
 	render: function () {
 		var rating = "No Reviews";
 		if (this.state.business.rating !== "null") {
-			rating = this.state.business.rating;
+			rating =this.state.business.rating;
 		}
 
 		var price;
@@ -110,7 +110,6 @@ var BusinessDetail = React.createClass({
 						<li className="business-detail-price">
 							{price}
 						</li>
-
 						<li className="business-detail-rating">
 							{rating}
 						</li>

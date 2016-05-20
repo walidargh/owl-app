@@ -8,11 +8,11 @@ var ReviewIndexItem = React.createClass({
 	stars: function () {
 		var stars = [];
 		for (var i = 0; i < this.props.review.rating; i++) {
-			stars.push(<i className="fa fa-star" aria-hidden="true"></i>);
+			stars.push(<i key={i} className="fa fa-star" aria-hidden="true"></i>);
 		}
 
-		for (var i = 0; i < (5 - this.props.review.rating); i++) {
-			stars.push(<i className="fa fa-star-o" aria-hidden="true"></i>);
+		for (var j = 0; j < (5 - this.props.review.rating); j++) {
+			stars.push(<i key={j + 20000} className="fa fa-star-o" aria-hidden="true"></i>);
 		}
     return (<div>{stars}</div>);
 	},

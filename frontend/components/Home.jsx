@@ -3,6 +3,7 @@ var hashHistory = require('react-router').hashHistory;
 
 var Home = React.createClass({
 	welcomeHandler: function (event) {
+		debugger
 		hashHistory.push('/businesses/');
 	},
 
@@ -15,7 +16,7 @@ var Home = React.createClass({
 				<h2>Find the best shops and restaurants the Wizarding World has to Offer</h2>
 				<button className="welcome-button" 
 								onClick={this.welcomeHandler}>
-					Get to Exploring, its a hoot!
+					Get to Exploring, its a Hoot!
 				</button>
 
 			</div>
