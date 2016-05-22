@@ -85,7 +85,7 @@ body {
 	display: flex;
 	justify-content: center;
 	font-family: 'HogwartsWizard';
-	margin: 40px 0;
+	margin: 5% 0;
 	width: 100%;
 	border-radius: 5px;
 }
@@ -97,7 +97,11 @@ body {
  	overflow: hidden;
  	align-items: center;
  	background-color: #333;
+<<<<<<< HEAD
  	height: 8%;
+=======
+ 	height: 9%;
+>>>>>>> yelp-layout
  	width: 100%;
  	z-index: 2;
 }
@@ -195,14 +199,20 @@ input[type='checkbox'] {
 
 }
 .search-bar {
-	padding: 3px;
 	width: 50%;
+	padding: 5px;
+	height: 100%;
 }
 
 
+<<<<<<< HEAD
 /*.search-button {
 	margin: 0;
 }*/
+=======
+.search-button {
+}
+>>>>>>> yelp-layout
 
 input {
  	margin: 10px;
@@ -259,8 +269,8 @@ input {
  	color: black;
  	background-color: white;
  	box-shadow: 5px 5px 5px #515151;
-/* 	background: url("http://vignette3.wikia.nocookie.net/harrypotter/images/c/c8/Parchment_bg.jpg/revision/latest?cb=20091120152245");
-*/ 	
+*//* 	background: url("http://vignette3.wikia.nocookie.net/harrypotter/images/c/c8/Parchment_bg.jpg/revision/latest?cb=20091120152245");
+ 	
 	text-shadow: rgba(0,0,0,.15);
  	border-radius: 5px;
 }
@@ -328,12 +338,21 @@ input {
 .business-detail {
 	display: flex;
 	flex-direction: column;
+<<<<<<< HEAD
 	top: 40px;
 	margin: 20px 0;
 	padding: 20px;
 	width: 65%;
 	color: white;
 	background: grey;
+=======
+	align-items: center;
+	/*top: 40px;*/
+	/*margin: 20px 0;*/
+	width: 60%;
+	color:white;
+	background: white;
+>>>>>>> yelp-layout
 }
 
 .business-detail-feature-bar {
@@ -341,9 +360,10 @@ input {
 	align-items: flex-end;*/
 	position: relative;
 	border: 1px solid rgba(0, 0, 0, 0.05);
-	margin: 10px 0;
-	width: 100%;
-	height: 300px;
+	align-self: stretch;
+	/*margin: 10px 0;*/
+	/*width: 100%;*/
+	height: 400px;
 	background-position: center;
 /*	-webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -353,12 +373,21 @@ input {
 }
 
 .business-detail-image {
+<<<<<<< HEAD
 	width: 100%;
 	height: 100%;
 	box-shadow: 2px 2px 2px #3A3A3A;
 	box-sizing: border-box;
 	border: 15px solid white;
 }
+=======
+	width: 90%;
+	height: 90%;
+	margin: auto;
+	margin-top: 20px;
+/*	box-shadow: 15px 10px 20px #3A3A3A;
+*/}
+>>>>>>> yelp-layout
 
 .business-detail-img img:hover {
 
@@ -367,9 +396,15 @@ input {
 
 .business-detail-image img {
 	object-fit: cover;
+<<<<<<< HEAD
 	/*position: absolute;*/
 	width: 100%;
 	height: 100%;
+=======
+	position: absolute;
+	width: 90%;
+	height: 90%;
+>>>>>>> yelp-layout
 	border-radius: 5px;
 	/*-webkit-filter: blur(1px);*/
 	-webkit-filter: brightness(50%);
@@ -381,7 +416,8 @@ input {
 	flex-direction: column;
 	position: absolute;
 	top: 0px;
-	padding: 20px;
+	margin-left: 7%;
+	margin-top: 5%;
 }
 
 .business-detail-title {
@@ -405,6 +441,8 @@ input {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	padding: 0 5px;
+	width: 90%;
 }
 
 .review-index {
@@ -412,19 +450,24 @@ input {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	width: 67%;
+	width: 100%;
+	margin: 15px;
 	color: black;
+/*	border-left: 1px solid #e5e5e1;
+	border-right: 1px solid #e5e5e1;*/
 }
 
 .review-index-item {
 	display: flex;
 	flex-direction: column;
-	margin: 3px;
-	padding: 3px;
+	padding: 10px;
+	/*margin: 3px;*/
 	/*border: 1px solid #F8F9F9;*/
 	background-color: white;
+	border-top: 1px solid #e5e5e1;
 	/*background: url("http://res.cloudinary.com/howler/image/upload/v1462470060/parchment_nhcima.jpg");*/
 	border-radius: 3px;
+<<<<<<< HEAD
 	width: 100%;
 	box-shadow: 2px 2px 2px #6C6C6C
 }
@@ -436,6 +479,11 @@ input {
 .submit-review {
 	align-self: flex-start;
 }
+=======
+	width: 90%;
+/*	box-shadow: 5px 5px 5px #6C6C6C
+*/}
+>>>>>>> yelp-layout
 
 .fa-star::before {
 	font-size: 20px;
@@ -462,6 +510,7 @@ input {
 	flex-direction: column;
 	height: 200px;
 	width: 100%;
+	color: black;
 }
 
 .review-form textarea {
@@ -469,6 +518,7 @@ input {
 	width: 100%;
 	padding: 5px;
 	font-size: 18px;
+	padding: 5px;
 }
 
 .review-form-and-button {
@@ -476,6 +526,7 @@ input {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	height: 100%;
 }
 
 /*.review-button {
@@ -490,6 +541,7 @@ input {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	margin: 10px;
 	top: 100px;
 }
@@ -501,8 +553,12 @@ input {
 	flex-direction: row;
 	justify-content: center;
 	overflow-x:scroll;
+<<<<<<< HEAD
 	background: white;
 	border: 5px solid white;
+=======
+	width: 85%;
+>>>>>>> yelp-layout
 	/*background-color: rgba(0, 0, 0, 0.2);*/
 	/*box-shadow: 5px 5px 5px #6C6C6C*/
 }
@@ -511,8 +567,13 @@ input {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+<<<<<<< HEAD
 	height: 150px;
 	margin: 5px;
+=======
+	height: 100px;
+	margin: 3px;
+>>>>>>> yelp-layout
 }
 
 .photo-index-item img{
