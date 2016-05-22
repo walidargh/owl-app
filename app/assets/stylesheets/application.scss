@@ -85,7 +85,7 @@ body {
 	display: flex;
 	justify-content: center;
 	font-family: 'HogwartsWizard';
-	margin: 40px 0;
+	margin: 9% 0;
 	width: 100%;
 	border-radius: 5px;
 }
@@ -329,8 +329,8 @@ input {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	top: 40px;
-	margin: 20px 0;
+	/*top: 40px;*/
+	/*margin: 20px 0;*/
 	width: 60%;
 	color:white;
 	background: white;
@@ -407,7 +407,7 @@ input {
 	align-items: center;
 	flex-direction: column;
 	padding: 0 5px;
-	width: 100%;
+	width: 90%;
 }
 
 .review-index {
@@ -497,7 +497,7 @@ input {
 	flex-direction: row;
 	justify-content: center;
 	overflow-x:scroll;
-	width: 90%;
+	width: 85%;
 	/*background-color: rgba(0, 0, 0, 0.2);*/
 	/*box-shadow: 5px 5px 5px #6C6C6C*/
 }
