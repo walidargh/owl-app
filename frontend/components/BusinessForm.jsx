@@ -54,8 +54,8 @@ var BusinessForm = React.createClass({
 
 	hoodsForm: function () {
 		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley'];
-		var hoodOptions= hoods.map(function (hood) {
-			return <option value={hood}>{hood}</option>;
+		var hoodOptions= hoods.map(function (i, hood) {
+			return <option key={i} value={hood}>{hood}</option>;
 		});
 		return (<select>{hoodOptions}</select>);
 	},

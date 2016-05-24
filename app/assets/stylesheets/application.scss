@@ -258,15 +258,19 @@ input {
 
 .business-form {
 	display: flex;
+	flex-direction: column;
 }
 
 .business-and-tag-form {
 	display: flex;
+	flex-direction: row;
 	align-items: column;
 }
 
 .business-form-details {
 	display: flex;
+	flex-direction: column;
+	/*align-items: center;*/
 }
 
 .price-form {
