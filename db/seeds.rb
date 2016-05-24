@@ -72,11 +72,11 @@ Review.create(user_id: 1, body: "Got my first wand here!", rating: 5, business_i
 Review.create(user_id: 2, body: "They were all out of elder wands", rating: 1, business_id: 1)
 
 # Ollivanders Images
-Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462574055/wandboxes_webq2z.png")
-Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Ollivanders_bjc4xk.jpg")
-Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384550/props-wand-boxes-in-ollivanders-shops-with-cast-and-crew-member-names-details_pytp3n.jpg")
-Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384550/Wands_display_at_Ollivander_s_Shop_lfsizm.jpg")
-Photo.create(user_id: 1, business_id: 1, url: "http://res.cloudinary.com/howler/image/upload/v1462384552/propwand_ko1hqv.jpg")
+Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/wandboxes.png")
+Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Ollivanders.jpg")
+Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/props-wand-boxes-in-ollivanders-shops-with-cast-and-crew-member-names-details.jpg")
+Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Wands_display_at_Ollivander%27s_Shop.JPG")
+Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/propwand.jpg")
 
 # Quality Quidditch Images
 Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quality-Quidditch-Supplies-19_nyxxag.jpg")

@@ -97,11 +97,7 @@ body {
  	overflow: hidden;
  	align-items: center;
  	background-color: #333;
-<<<<<<< HEAD
- 	height: 8%;
-=======
  	height: 9%;
->>>>>>> yelp-layout
  	width: 100%;
  	z-index: 2;
 }
@@ -204,15 +200,8 @@ input[type='checkbox'] {
 	height: 100%;
 }
 
-
-<<<<<<< HEAD
-/*.search-button {
-	margin: 0;
-}*/
-=======
 .search-button {
 }
->>>>>>> yelp-layout
 
 input {
  	margin: 10px;
@@ -338,21 +327,12 @@ input {
 .business-detail {
 	display: flex;
 	flex-direction: column;
-<<<<<<< HEAD
-	top: 40px;
-	margin: 20px 0;
-	padding: 20px;
-	width: 65%;
-	color: white;
-	background: grey;
-=======
 	align-items: center;
 	/*top: 40px;*/
 	/*margin: 20px 0;*/
 	width: 60%;
 	color:white;
 	background: white;
->>>>>>> yelp-layout
 }
 
 .business-detail-feature-bar {
@@ -373,21 +353,12 @@ input {
 }
 
 .business-detail-image {
-<<<<<<< HEAD
-	width: 100%;
-	height: 100%;
-	box-shadow: 2px 2px 2px #3A3A3A;
-	box-sizing: border-box;
-	border: 15px solid white;
-}
-=======
 	width: 90%;
 	height: 90%;
 	margin: auto;
 	margin-top: 20px;
 /*	box-shadow: 15px 10px 20px #3A3A3A;
 */}
->>>>>>> yelp-layout
 
 .business-detail-img img:hover {
 
@@ -396,15 +367,9 @@ input {
 
 .business-detail-image img {
 	object-fit: cover;
-<<<<<<< HEAD
-	/*position: absolute;*/
-	width: 100%;
-	height: 100%;
-=======
 	position: absolute;
 	width: 90%;
 	height: 90%;
->>>>>>> yelp-layout
 	border-radius: 5px;
 	/*-webkit-filter: blur(1px);*/
 	-webkit-filter: brightness(50%);
@@ -467,23 +432,9 @@ input {
 	border-top: 1px solid #e5e5e1;
 	/*background: url("http://res.cloudinary.com/howler/image/upload/v1462470060/parchment_nhcima.jpg");*/
 	border-radius: 3px;
-<<<<<<< HEAD
-	width: 100%;
-	box-shadow: 2px 2px 2px #6C6C6C
-}
-
-.stars-index {
-	align-self: flex-start;
-}
-
-.submit-review {
-	align-self: flex-start;
-}
-=======
 	width: 90%;
 /*	box-shadow: 5px 5px 5px #6C6C6C
 */}
->>>>>>> yelp-layout
 
 .fa-star::before {
 	font-size: 20px;
@@ -553,12 +504,7 @@ input {
 	flex-direction: row;
 	justify-content: center;
 	overflow-x:scroll;
-<<<<<<< HEAD
-	background: white;
-	border: 5px solid white;
-=======
 	width: 85%;
->>>>>>> yelp-layout
 	/*background-color: rgba(0, 0, 0, 0.2);*/
 	/*box-shadow: 5px 5px 5px #6C6C6C*/
 }
@@ -567,13 +513,8 @@ input {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-<<<<<<< HEAD
-	height: 150px;
-	margin: 5px;
-=======
 	height: 100px;
 	margin: 3px;
->>>>>>> yelp-layout
 }
 
 .photo-index-item img{
