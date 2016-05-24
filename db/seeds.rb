@@ -37,6 +37,10 @@ Business.create(user_id: 2, name: "Honeydukes", address: "Hogsmeade", hours: "8:
 Business.create(user_id: 2, name: "Wands by Gregorovitch", address: "Carkitt", hours: "8:00 AM - 8:00 PM" , price: 2 )
 ### 1 Carkitt Market
 
+Business.create(user_id: 1, name: "Mr Mulpepper's Apothecary", address: "Diagon Alley", hours: "11:00 AM - 9:00PM", price: 2)
+Business.create(user_id: 1, name: "Slugs and Jiggers Apothecary", address: "Diagon Alley", hours: "11:00 AM - 10:00PM", price: 3)
+### More Diagon
+
 #Tags
 Tag.create(name: "Potions")
 Tag.create(name: "Wands")
@@ -48,6 +52,8 @@ Tag.create(name: "Entertainment")
 Tag.create(name: "Pets")
 
 #Taggings
+Tagging.create(tag_id: 1, business_id: 17)
+Tagging.create(tag_id: 1, business_id: 18)
 Tagging.create(tag_id: 2, business_id: 1)
 Tagging.create(tag_id: 2, business_id: 16)
 Tagging.create(tag_id: 3, business_id: 8)
@@ -79,59 +85,71 @@ Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.co
 Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/propwand.jpg")
 
 # Quality Quidditch Images
-Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quality-Quidditch-Supplies-19_nyxxag.jpg")
-Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quidditch4_j5trjl.jpg")
-Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412057/Nimbushandle_eamztd.jpg")
-Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/Quidditch4_j5trjl.jpg")
-Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412058/shop-quidditch_700_zpsdb4e80dc_xcbm2e.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Quality-Quidditch-Supplies-19.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Nimbushandle.jpg")
+# Photo.create(user_id: 1, business_id: 2, url: "http://res.cloudinary.com/howler/image/upload/v1462412057/Nimbushandle_eamztd.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Quidditch4.jpg")
+Photo.create(user_id: 1, business_id: 2, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/shop-quidditch_700_zpsdb4e80dc.jpg")
 
 #Eeylops Images
-Photo.create(user_id: 2, business_id: 3, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/Eeylops_sx9xpg.jpg")
+Photo.create(user_id: 2, business_id: 3, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Eeylops.jpg")
+Photo.create(user_id: 2, business_id: 3, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Eeylops+(1).jpg")
 
 #Weasley Images
-Photo.create(user_id: 1, business_id: 4, url: "http://res.cloudinary.com/howler/image/upload/v1462467905/Exterior_of_Weasleys_Wizards_Wheezes_shop_im7bgy.jpg")
+Photo.create(user_id: 1, business_id: 4, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Exterior_of_Weasleys_Wizards_Wheezes_shop.JPG")
 
 #Flourish and Blotts Images
-Photo.create(user_id: 2, business_id: 5, url: "http://res.cloudinary.com/howler/image/upload/v1462229150/FlourishBlotts_ztk7qi.jpg")
+Photo.create(user_id: 2, business_id: 5, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/FlourishBlotts.jpg")
 
 #Florean Images
-Photo.create(user_id: 1, business_id: 6, url: "http://res.cloudinary.com/howler/image/upload/v1462570897/icecream_t0jcbz.jpg")
-Photo.create(user_id: 1, business_id: 6, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/florean-fortescues-ice-cream-parlor_vjjz6q.jpg")
+Photo.create(user_id: 1, business_id: 6, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/icecream.jpg")
+Photo.create(user_id: 1, business_id: 6, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/florean-fortescues-ice-cream-parlor.jpg")
 
 #Gringotts Images
-Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565388/HP-and-the-Escape-from-Gringotts-lower_m5ltvf.jpg")
-Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565096/friendly_goblin_vsgodq.jpg")
-Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565096/gringotts-goblin_drt8oc.jpg")
-Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565096/harry-key_lil6cv.jpg")
-Photo.create(user_id: 2, business_id: 7, url: "http://res.cloudinary.com/howler/image/upload/v1462565670/dragon_kmqs87.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/HP-and-the-Escape-from-Gringotts-lower.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/friendly+goblin.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/gringotts-goblin.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/harry-key.jpg")
+Photo.create(user_id: 2, business_id: 7, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/dragon.jpg")
 
 #Madam Malkins Images
-Photo.create(user_id: 1, business_id: 8, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/Madam-Malkins-Robes_gx5yoj.jpg")
+Photo.create(user_id: 1, business_id: 8, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Madam-Malkins-Robes.jpg")
 
 #Magical Menagerie Images
-Photo.create(user_id: 1, business_id: 9, url: "http://res.cloudinary.com/howler/image/upload/v1462572480/Magical-Menagerie-2_asnu2v.jpg")
+Photo.create(user_id: 1, business_id: 9, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Magical-Menagerie-2.jpg")
 
 #Wiseacres Wizarding Equipment Images
-Photo.create(user_id: 1, business_id: 10, url: "http://res.cloudinary.com/howler/image/upload/v1462572134/Wiseacres-Wizarding-Equipment_oixote.jpg")
+Photo.create(user_id: 1, business_id: 10, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Wiseacres-Wizarding-Equipment.jpg")
 
 #Leaky Cauldron Images
-Photo.create(user_id: 1, business_id: 11, url: "http://res.cloudinary.com/howler/image/upload/v1462571883/Leaky-Cauldron-11-oi_dnw4l6.jpg")
+Photo.create(user_id: 1, business_id: 11, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Leaky-Cauldron-11-oi.jpg")
 
 #Boring and Burkes Images
-Photo.create(user_id: 1, business_id: 12, url: "http://res.cloudinary.com/howler/image/upload/v1462572624/Borgin1_trpq2d.jpg")
+Photo.create(user_id: 1, business_id: 12, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Borgin1.jpg")
 
 #Three Broomsticks Images
-Photo.create(user_id: 2, business_id: 13, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/three-broom-sticks_oth7z7.jpg")
+Photo.create(user_id: 2, business_id: 13, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/three-broom-sticks.jpg")
 
 #HogsHead Images
-Photo.create(user_id: 1, business_id: 14, url: "http://res.cloudinary.com/howler/image/upload/v1462383030/hogshead_za7ttq.jpg")
+Photo.create(user_id: 1, business_id: 14, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/hogshead.JPG")
 
 #Honeydukes Images
-Photo.create(user_id: 2, business_id: 15, url: "http://res.cloudinary.com/howler/image/upload/v1462565973/honeydukescool_lkg4fp.jpg")
-Photo.create(user_id: 2, business_id: 15, url: "http://res.cloudinary.com/howler/image/upload/v1462383031/Honeydukes_uhzxmb.jpg")
+Photo.create(user_id: 2, business_id: 15, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/honeydukescool.jpg")
+Photo.create(user_id: 2, business_id: 15, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Honeydukes.jpg")
 
 #Wands By Greg Images
-Photo.create(user_id: 2, business_id: 16, url: "http://res.cloudinary.com/howler/image/upload/v1462573723/wandsbygreg_udah8t.jpg")
+Photo.create(user_id: 2, business_id: 16, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/wandsbygreg.jpg")
+
+#Mr Mulpeppers Apothecary Images
+Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmul.jpg") 
+Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmulpepers.jpg")
+
+#Slugs and Jiggers Apothecary Images
+Photo.create(user_id: 1, business_id: 18, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/slug_jig_sign.jpg")
+Photo.create(user_id: 1, business_id: 18, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Slug+and+Jiggers+037.JPG")
+Photo.create(user_id: 1, business_id: 18, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/slug_jig_bottle.jpg")
+Photo.create(user_id: 1, business_id: 18, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/slugs_jig_stairs.jpg")
+
 
 
 

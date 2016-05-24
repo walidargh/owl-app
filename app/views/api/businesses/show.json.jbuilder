@@ -17,7 +17,7 @@ json.tags do
 end
 
 json.reviews do
- json.array! @business.reviews do |review|
+ json.array! @business.reviews.order('updated_at DESC') do |review|
 		json.id review.id
 		json.business_id review.business_id
 		json.body review.body
