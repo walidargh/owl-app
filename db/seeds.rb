@@ -141,7 +141,7 @@ Photo.create(user_id: 2, business_id: 15, url: "https://s3-us-west-1.amazonaws.c
 Photo.create(user_id: 2, business_id: 16, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/wandsbygreg.jpg")
 
 #Mr Mulpeppers Apothecary Images
-Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmul.jpg") 
+Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmul_sign.jpg") 
 Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmulpepers.jpg")
 
 #Slugs and Jiggers Apothecary Images
