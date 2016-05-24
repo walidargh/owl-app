@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
 	def index
-		@reviews = Reviews.find_by({business_id: review_params[:business_id]})
+		@reviews = Reviews.find_by({business_id: review_params[:business_id]}).order('updated_at DESC')
 	end
 
 	def create

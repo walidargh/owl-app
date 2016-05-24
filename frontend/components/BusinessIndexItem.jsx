@@ -5,14 +5,11 @@ var ClientActions = require('../actions/ClientActions');
 
 var BusinessIndexItem = React.createClass({
 	showDetail: function () {
-		debugger
 		ClientActions.fetchSingleBusiness(this.props.business.id);
 		hashHistory.push('/businesses/' + this.props.business.id);
-		$(".wrapper").fadeTo("slow", 0, function () {});
 	}, 
 
  	render: function () {
- 		debugger
 		var business = this.props.business;
 		var photo;
 		var featured = business.photos ? business.photos[0] : business.featured;

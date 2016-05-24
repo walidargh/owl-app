@@ -30,8 +30,8 @@ var removeCurrentUser = function () {
 };
 
 var setErrors = function (error) {
-	_authErrors = error;
 	removeCurrentUser();
+	_authErrors = error;
 	UserStore.__emitChange();
 };
 

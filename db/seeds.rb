@@ -76,6 +76,11 @@ Review.create(user_id: 1, body: "This place is awesome 10/10 would recommend", r
 Review.create(user_id: 2, body: "This place is terrible 1/10 would recommend", rating: 1, business_id: 1)
 Review.create(user_id: 1, body: "Got my first wand here!", rating: 5, business_id: 1)
 Review.create(user_id: 2, body: "They were all out of elder wands", rating: 1, business_id: 1)
+# Quality Quidditch Reviews
+Review.create(user_id: 1, body: "Got my first Nimbus 2000 from here and I loved it. Highly reccommended", rating: 5, business_id: 2)
+Review.create(user_id: 2, body: "Kind of useless when you can fly around and apparate everywhere", rating: 2, business_id: 2)
+Review.create(user_id: 1, body: "Tons of brooms available, just got a Firebolt from here!", rating: 5, business_id: 1)
+Review.create(user_id: 1, body: "Again I can literally teleport anywhere in the world, what is the point of a broom. Voldie does not approve.", rating: 2, business_id: 1)
 
 # Ollivanders Images
 Photo.create(user_id: 1, business_id: 1, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/wandboxes.png")
