@@ -160,15 +160,15 @@ Review.create(user_id: 2, body: "They claimed to have Elder Wands here, and I wa
 Review.create(user_id: 3, body: "Greg is kind of a grouch! But his wants are pretty good for playing fetch.", rating: 3, business_id: 16)
 Review.create(user_id: 4, body: "Not very friendly and extremely overpriced! I would rather just save up and go to Ollivanders", rating: 3, business_id: 16)
 # Mr Mulpepper's Apothecary
-Review.create(user_id: 1, body: "Cool place to go if you like potions! A lot of interesting things can be found here", rating: 4, business_id: 16)
-Review.create(user_id: 2, body: "They were all out of bezoars!", rating: 2, business_id: 16)
-Review.create(user_id: 3, body: "An old friend used to love this place", rating: 5, business_id: 16)
-Review.create(user_id: 4, body: "Potions are not my thing, but they seem to be well stocked", rating: 3, business_id: 16)
+Review.create(user_id: 1, body: "Cool place to go if you like potions! A lot of interesting things can be found here", rating: 4, business_id: 17)
+Review.create(user_id: 2, body: "They were all out of bezoars!", rating: 2, business_id: 17)
+Review.create(user_id: 3, body: "An old friend used to love this place", rating: 5, business_id: 17)
+Review.create(user_id: 4, body: "Potions are not my thing, but they seem to be well stocked", rating: 3, business_id: 17)
 # Slugs and Jiggers Apothecary
-Review.create(user_id: 1, body: "Way to expensive!", rating: 3, business_id: 16)
-Review.create(user_id: 2, body: "High quality ingredients and I don't pay a dime! Gotta love Diagon Alley shop owners", rating: 5, business_id: 16)
-Review.create(user_id: 3, body: "Kind of a mess, but the owner doesn't mind dogs!", rating: 5, business_id: 16)
-Review.create(user_id: 4, body: "They have potions stuff. Thats all I can really offer.", rating: 5, business_id: 16)
+Review.create(user_id: 1, body: "Way to expensive!", rating: 3, business_id: 18)
+Review.create(user_id: 2, body: "High quality ingredients and I don't pay a dime! Gotta love Diagon Alley shop owners", rating: 5, business_id: 18)
+Review.create(user_id: 3, body: "Kind of a mess, but the owner doesn't mind dogs!", rating: 5, business_id: 18)
+Review.create(user_id: 4, body: "They have potions stuff. Thats all I can really offer.", rating: 5, business_id: 18)
 
 
 # Ollivanders Images
