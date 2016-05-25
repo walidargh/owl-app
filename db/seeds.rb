@@ -121,7 +121,7 @@ Review.create(user_id: 3, body: "She was nice enough to put in a custom pocket i
 Review.create(user_id: 4, body: "I've been growing pretty quickly so thank goodness Madam Malkin is flexible with her tailoring fee!", rating: 5, business_id: 8)
 # Magical Menagerie
 Review.create(user_id: 1, body: "Really cool animals, but the snakes would not stop talking to me!", rating: 4, business_id: 9)
-Review.create(user_id: 2, body: "So many beautiful snakes. Finally I was able to have a conversation with someone who spoke my language", rating: 5, business_id: 9
+Review.create(user_id: 2, body: "So many beautiful snakes. Finally I was able to have a conversation with someone who spoke my language", rating: 5, business_id: 9)
 Review.create(user_id: 3, body: "There was a giant dog in there! Just kidding that was me.", rating: 4, business_id: 9)
 Review.create(user_id: 4, body: "Cool place, I think my friend Hagrid would love it here!", rating: 5, business_id: 9)
 # Wiseacre’s Wizarding Equipment
@@ -277,6 +277,9 @@ Photo.create(user_id: 2, business_id: 16, url: "https://s3-us-west-1.amazonaws.c
 #Mr Mulpeppers Apothecary Images
 Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmul_sign.jpg") 
 Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmulpepers.jpg")
+Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmul.jpg")
+Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmulApothecary_counter.jpg")
+Photo.create(user_id: 1, business_id: 17, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/mrmul_display.jpg")
 
 #Slugs and Jiggers Apothecary Images
 Photo.create(user_id: 1, business_id: 18, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/slug_jig_sign.jpg")
