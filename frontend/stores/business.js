@@ -18,9 +18,6 @@ BusinessStore.find = function (id) {
 BusinessStore.errors = function () {
 	return _errors;
 };
-// BusinessStore.currentBusiness = function () {
-// 	return Object.assign({}, _currentBusiness);
-// };
 
 var calculateNewRating = function (business, review) {
 	var numReviews = business.reviews.length;

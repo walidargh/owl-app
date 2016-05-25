@@ -7,7 +7,7 @@ var TagForm = require('./TagForm');
 var BusinessForm = React.createClass({
 	getInitialState: function () {
 		return ({
-			name: "", address: "", 
+			name: "", address: "Diagon Alley", 
 			hours: "", price: "", tagIds: []});
 	},
 
@@ -16,6 +16,7 @@ var BusinessForm = React.createClass({
 	},
 
 	handleAddress: function (event) {
+		console.log(event.target.value);
 		this.setState({address: event.target.value});
 	},
 
@@ -54,10 +55,11 @@ var BusinessForm = React.createClass({
 
 	hoodsForm: function () {
 		var hoods = ['Diagon Alley', 'Carkitt', 'Knockturn Alley', 'Hogsmeade', 'Horizont Alley'];
-		var hoodOptions= hoods.map(function (i, hood) {
-			return <option key={i} value={hood}>{hood}</option>;
+		var self = this;
+		var hoodOptions= hoods.map(function (hood) {
+			return <option value={hood}>{hood}</option>;
 		});
-		return (<select>{hoodOptions}</select>);
+		return (<select onChange={self.handleAddress} >{hoodOptions}</select>);
 	},
 
 	priceForm: function () {

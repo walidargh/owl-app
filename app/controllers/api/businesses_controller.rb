@@ -1,7 +1,7 @@
 class Api::BusinessesController < ApplicationController
 	def index
 		@ratings = Business.rating
-		@businesses = Business.all
+		@businesses = Business.order('updated_at DESC')
 	end
 
 	def create
@@ -59,23 +59,23 @@ class Api::BusinessesController < ApplicationController
 			businesses = businesses.joins(:taggings).where("taggings.tag_id IN (?)", tag_ids)
 		end
 
-		@businesses = businesses.all
+		@businesses = businesses.order('updated_at DESC')
 		render :index
 	end
 
 	def filter
 		if params[:tag_ids].present?
 			if params[:query].present?	
-				@businesses = Business.includes(:taggings).where("taggings.tag_id IN ? and params[:tag_ids] AND lower(name) ~ ?", params[:tag_ids], params[:query].downcase)
+				@businesses = Business.includes(:taggings).where("taggings.tag_id IN ? and params[:tag_ids] AND lower(name) ~ ?", params[:tag_ids], params[:query].downcase).order('updated_at DESC')
 			else
-				@businesses = Business.includes(:taggings).where("taggings.tag_id" => params[:tag_ids])
+				@businesses = Business.includes(:taggings).where("taggings.tag_id" => params[:tag_ids]).order('updated_at DESC')
 			end
 			render :index
 		else
 			if params[:query].present?
-				@businesses = Business.where("lower(name) ~ ?", params[:query].downcase)
+				@businesses = Business.where("lower(name) ~ ?", params[:query].downcase).order('updated_at DESC')
 			else
-				@businesses = Business.all
+				@businesses = Business.order('updated_at DESC')
 			end
 			render :index
 		end

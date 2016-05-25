@@ -117,9 +117,8 @@ var TagFilter = React.createClass({
 		var moreHood = this.state.hoodsOpen ? '-' : '+';
 		var moreTag = this.state.tagsOpen ? '-' : '+';
 		var morePrice = this.state.pricesOpen ? '-' : '+';
-
-
-		if (this.props.location === "/businesses/") {
+		
+		if (this.props.location === "/businesses/" || this.props.location === "/businesses") {
 			return (
 				<div className={"tag-filter-index"}>
 					<div className="filter-index-title">Filter</div>
