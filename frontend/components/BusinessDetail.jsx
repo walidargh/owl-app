@@ -113,7 +113,7 @@ var BusinessDetail = React.createClass({
 						</div>
 
 					<div className="business-detail-rating">
-						{rating + "  "} <i className={'fa fa-star'}/>
+						{rating + "      "} <i className={'fa fa-star'}/>
 					</div>
 
 			</div>
