@@ -111,7 +111,7 @@ body {
 	display: flex;
 	justify-content: center;
 	font-family: 'HogwartsWizard';
-	margin: 5% 0;
+	margin: 60px 0;
 	width: 100%;
 	border-radius: 5px;
 }
@@ -123,7 +123,7 @@ body {
  	overflow: hidden;
  	align-items: center;
  	background-color: #333;
- 	height: 9%;
+ 	height: 60px;
  	width: 100%;
  	z-index: 2;
 }
@@ -191,7 +191,7 @@ input[type='checkbox'] {
 }
 
 select {
-	margin: 3px;
+	margin: 4px;
 	padding: 5em;
 	vertical-align: middle;
 	font-family: 'HogwartsWizard';
@@ -200,6 +200,7 @@ select {
 
 option {
 	font-family: 'HogwartsWizard';
+	height: 35px;
 }
 
 
@@ -272,6 +273,7 @@ input {
 .business-form {
 	display: flex;
 	flex-direction: column;
+	width: 290px;
 }
 
 .business-and-tag-form {
@@ -285,26 +287,20 @@ input {
 	/*align-items: center;*/
 }
 
-.business-form-name {
-
+.business-form-details label {
+	margin-bottom: 0.2em;
+	margin-top: 0.3em;
 }
 
-.business-form-hours {
-
+.business-form-details input {
+	margin: 4px;
+	padding: 4px;
+	font-size: 18px;
 }
 
-.business-name {
-	margin: 5px;
-	padding: 2px;
-	font-size: 20px;
-}
+#business-name {
 
-#hours {
-	margin: 5px;
-	padding: 2px;
-	font-size: 16px;
 }
-
 
 .price-form {
 	display: flex;
@@ -381,6 +377,8 @@ input {
 .tag-index {
 	display: flex;
 	flex-direction: column;
+	flex-flow: column wrap;
+	height: 150px;
 }
 .not-loggedin {
 	display: flex;
@@ -393,7 +391,7 @@ input {
 	flex-direction: column;
 	align-items: center;
 	/*top: 40px;*/
-	/*margin: 20px 0;*/
+	margin: 30px 0;
 	width: 60%;
 	color:white;
 	background: white;
