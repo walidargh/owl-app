@@ -79,26 +79,43 @@ body {
  	color: red;
  }
 
+ .log-form {
+ 	height: 320px;
+ }
+
  .log-form form {
  	display: flex;
  	align-items: center;
  	flex-direction: column;
  }
 
+ .log-title {
+ 	font-size: 36px;
+ 	font-weight: bold;
+ 	padding: 7px;
+ }
+
 .log-form section {
 	padding-top: 5px;
  }
-/* .log-form input {
- 	padding: 5px;
- }*/
+
+ .log-form input {
+ 	padding: 10px;
+ }
 
  .log-form label {
  	padding-left: 10px;
  }
 
+.log-buttons {
+	padding: 5px;
+}
+
  .log-form button {
  	width: 150px;
+ 	margin: 5px;
  }
+
 
  .wrapper img {
  	height: 100%;
@@ -282,6 +299,7 @@ input {
 	border: 1px solid grey;
 	border-radius: 4px;
 	margin: 2px;
+	font-size: 16px;
 }
 
 .business-index-rating{
@@ -334,7 +352,7 @@ input {
  	height: 90%;
  	color: black;
  	background-color: white;
- 	box-shadow: 5px 5px 5px #515151;
+ 	box-shadow: 3px 3px 5px #515151;
 *//* 	background: url("http://vignette3.wikia.nocookie.net/harrypotter/images/c/c8/Parchment_bg.jpg/revision/latest?cb=20091120152245");
  	
 	text-shadow: rgba(0,0,0,.15);

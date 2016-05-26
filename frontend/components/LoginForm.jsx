@@ -46,29 +46,30 @@ var LoginForm = React.createClass({
 	form: function () {
 		return (
 			<form>
-				<h2>{this.props.formType}</h2>
+				<div className="log-title">{this.props.formType}</div>
 				<AuthError />
 				<section>
-					<label>Username<br/>
 						<input type="text"
+							placeholder="Username"
 							onChange={this.handleUsername}
 							value={this.state.username}
 						/>
-					</label>
 					<br/>
-					<label>Password<br/>
 						<input type="password"
+						placeholder="Password"
 							onChange={this.handlePassword}
 							value={this.state.password}
 						/>
-					</label>
 				</section>
-				<div className="button-wrapper">
-					<button onClick={this.handleSubmit}>{this.props.formType}</button>
-				</div>
+				
+				<div className="log-buttons">
+					<div className="button-wrapper">
+						<button onClick={this.handleSubmit}>{this.props.formType}</button>
+					</div>
 
-				<div className="button-wrapper">
-					<button onClick={this.demoUser}>Guest Login</button>
+					<div className="button-wrapper">
+						<button onClick={this.demoUser}>Guest Login</button>
+					</div>
 				</div>
 
 			</form>
