@@ -200,6 +200,7 @@ select {
 
 option {
 	font-family: 'HogwartsWizard';
+	padding: 3px;
 }
 
 
@@ -273,7 +274,7 @@ input {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 67%;
+	width: 75%;
 
 }
 .business-index-tag {
@@ -283,14 +284,19 @@ input {
 	margin: 2px;
 }
 
+.business-index-rating{
+	padding: 0 3px;
+}
+
 .business-form {
 	display: flex;
 	flex-direction: column;
+	width: 290px;
 }
 
 .business-and-tag-form {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: column;
 }
 
@@ -389,6 +395,8 @@ input {
 .tag-index {
 	display: flex;
 	flex-direction: column;
+	flex-flow: column wrap;
+	height: 150px;
 }
 .not-loggedin {
 	display: flex;
@@ -559,6 +567,10 @@ input {
 .review-form-body {
 	border: 1px solid black;
 	font-size: 18px
+}
+
+label {
+	padding: 2px;
 }
 
 .photos {
