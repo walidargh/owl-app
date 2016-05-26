@@ -63,7 +63,7 @@ var BusinessDetail = React.createClass({
 
 	featureImage: function () {
 		var business = this.state.business;
-		var featureImage = "http://res.cloudinary.com/howler/image/upload/v1462405523/default_background_jiasdl.jpg";
+		var featureImage = "https://s3-us-west-1.amazonaws.com/owlhowler/howler/default_background.jpg";
 		if (business !== "") {
 			if (business.featured || business.photos.length > 0) {
 				featureImage = business.featured ? 
@@ -94,28 +94,29 @@ var BusinessDetail = React.createClass({
 						<img src={this.featureImage()} />
 					</div>
 
-					<div className="business-detail-feature-text">
-						<li className="business-detail-title">
-							{this.state.business.name}
-						</li>
+						<div className="business-detail-feature-text">
+							<li className="business-detail-title">
+								{this.state.business.name}
+							</li>
 
-						<li className="business-detail-address">
-							{this.state.business.address}
-						</li>
+							<li className="business-detail-address">
+								{this.state.business.address}
+							</li>
 
-						<li className="business-detail-hours">
-							{this.state.business.hours}
-						</li>
+							<li className="business-detail-hours">
+								{this.state.business.hours}
+							</li>
 
-						<li className="business-detail-price">
-							{price}
-						</li>
-						<li className="business-detail-rating">
-							{rating}
-						</li>
+							<li className="business-detail-price">
+								{price}
+							</li>
+						</div>
+
+					<div className="business-detail-rating">
+						{rating + "  "} <i className={'fa fa-star'}/>
 					</div>
 
-				</div>
+			</div>
 
 				{this.photoForm()}
 				{this.reviewForm()}
