@@ -25,7 +25,7 @@
 	font-style: normal;
 }
 
-/*@font-face {
+@font-face {
     font-family: 'HogwartsWizard';
     src: font-url('harrp____2-webfont.eot');
     src: font-url('harrp____2-webfont.eot?#iefix') format('embedded-opentype'),
@@ -35,7 +35,7 @@
          font-url('harrp____2-webfont.svg#harry_potterregular') format('svg');
     font-weight: bold;
     font-style: normal;
-}*/
+}
 
 body {
  	font-family: 'HogwartsWizard';
@@ -269,6 +269,13 @@ input {
 /*	background-color: rgba(243, 243, 243, 0.76);*/
 }
 
+.business-index-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 67%;
+
+}
 .business-index-tag {
 	padding: 2px;
 	border: 1px solid grey;
@@ -334,7 +341,7 @@ input {
   /*-webkit-transition: all 0.2s;*/
 }	
 .business-index-text {
-
+	width: 85%;
 }
 
 .business-index-image {
@@ -342,13 +349,14 @@ input {
 	align-items: center;
 	overflow: hidden;
 	height: 100px;
-	width: 150px;
+	width: 25%;
 	margin: 3px;
 }
 
 .business-index-image img {
-	max-width: 100%;
-	height: auto;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	border-radius: 5px;
 }
 
@@ -394,7 +402,7 @@ input {
 	align-items: center;
 	/*top: 40px;*/
 	/*margin: 20px 0;*/
-	width: 60%;
+	width: 75%;
 	color:white;
 	background: white;
 }
@@ -511,8 +519,9 @@ input {
 }
 
 .review-username {
-	font-weight: bold;
-	padding: 5px 2px;
+	/*font-weight: bold;*/
+	padding: 5px 0 2px;
+	text-shadow: 0.8px 0px 0px black;
 }
 
 .review-body {
@@ -568,7 +577,6 @@ input {
 	flex-direction: row;
 	justify-content: center;
 	overflow-x:scroll;
-	width: 85%;
 	/*background-color: rgba(0, 0, 0, 0.2);*/
 	/*box-shadow: 5px 5px 5px #6C6C6C*/
 }

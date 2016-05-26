@@ -10,7 +10,7 @@
 User.create(user_name: "theboywholived", password: "hedwig")
 User.create(user_name: "thedarklord", password: "nagini")
 User.create(user_name: "padfoot", password: "sirius")
-User.create(user_name: "redheadedchessmaster", password: "scabbers")
+User.create(user_name: "gingerchessmaster", password: "scabbers")
 
 
 # Businesses

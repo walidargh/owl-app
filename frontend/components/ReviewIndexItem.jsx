@@ -22,7 +22,7 @@ var ReviewIndexItem = React.createClass({
 		var username = review.username ? review.username : UserStore.currentUser().user_name;
 		return (
 			<div className="review-index-item">
-				<li className="review-username"><strong>{username}</strong></li>
+				<li className="review-username">{username}</li>
 				<li className="review-body">{review.body}</li>
 				{this.stars()}
 			</div>

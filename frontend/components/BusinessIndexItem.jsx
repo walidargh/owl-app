@@ -36,14 +36,17 @@ var BusinessIndexItem = React.createClass({
 			<div className="business-index-item" onClick={this.showDetail}>
 				<div className="business-index-image">{photo}</div>
 
-				<ul className="business-index-text" onClick={this.showDetail}>
-					<li className="business-index-title">{business.name}</li>
-					<li className="business-index-hours">{business.hours}</li>
-					<li className="business-index-price">{price}</li>
-					<li className="business-index-address">{business.address}</li>
-					<ul className="business-index-tags">{tags}</ul>
-					<li className="business-index-rating">{rating}</li>
-				</ul>
+				<div className="business-index-details">
+					<ul className="business-index-text">
+						<li className="business-index-title">{business.name}</li>
+						<li className="business-index-hours">{business.hours}</li>
+						<li className="business-index-price">{price}</li>
+						<li className="business-index-address">{business.address}</li>
+						<ul className="business-index-tags">{tags}</ul>
+					</ul>
+
+					<div className="business-index-rating">{rating + " "}<i className={'fa fa-star'}/></div>
+				</div>
 				
 			</div>
 		);
