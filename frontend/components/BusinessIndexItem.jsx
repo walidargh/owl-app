@@ -23,7 +23,7 @@ var BusinessIndexItem = React.createClass({
 		var tags;
 		if (business.tags.length) {
 			tags = business.tags.map(function (tag) {
-				return <li key={tag.id}>{tag.name}</li>;
+				return <li className="business-index-tag" key={tag.id}>{tag.name}</li>;
 			});
 		} else {
 			tags = <div></div>;

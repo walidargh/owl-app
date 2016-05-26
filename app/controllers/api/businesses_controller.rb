@@ -40,7 +40,7 @@ class Api::BusinessesController < ApplicationController
 		@ratings = Business.rating
 
 		if params[:query].present?
-			businesses = Business.where("lower(name) ~ ?", params[:query])
+			businesses = Business.where("lower(name) ~ ?", params[:query].downcase)
 		else
 			businesses = Business
 		end
