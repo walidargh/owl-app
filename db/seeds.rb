@@ -232,7 +232,7 @@ Photo.create(user_id: 1, business_id: 9, url: "https://s3-us-west-1.amazonaws.co
 #Wiseacres Wizarding Equipment Images
 Photo.create(user_id: 1, business_id: 10, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/Wiseacres-Wizarding-Equipment.jpg")
 Photo.create(user_id: 1, business_id: 10, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/wiseacres_store_front.jpg")
-Photo.create(user_id: 1, business_id: 10, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/telescopes.jpgs")
+Photo.create(user_id: 1, business_id: 10, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/telescopes.jpg")
 Photo.create(user_id: 1, business_id: 10, url: "https://s3-us-west-1.amazonaws.com/owlhowler/howler/wiseacres_disco.jpg")
 
 #Leaky Cauldron Images
