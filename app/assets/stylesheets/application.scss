@@ -276,8 +276,7 @@ input {
 
 .business-and-tag-form {
 	display: flex;
-	flex-direction: row;
-	align-items: column;
+	flex-direction: column;
 }
 
 .business-form-details {
@@ -286,10 +285,18 @@ input {
 	/*align-items: center;*/
 }
 
-#business-name {
+.business-form-name {
+
+}
+
+.business-form-hours {
+
+}
+
+.business-name {
 	margin: 5px;
 	padding: 2px;
-	font-size: 16px;
+	font-size: 20px;
 }
 
 #hours {

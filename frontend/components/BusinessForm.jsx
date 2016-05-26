@@ -102,33 +102,45 @@ var BusinessForm = React.createClass({
 		return(
 			<form className="business-form" onSubmit={this.handleSubmit}>
 				<div className="business-and-tag-form">
+
 					<div className="business-form-details">
-						<label for="business-name">Business Name</label>
-						<input 
-							type="text" 
-							onChange={this.handleName} 
-							value={this.state.name} 
-							id="business-name"
-						/>
-						<label for="address">Neighborhood</label>
-							{this.hoodsForm()}
+					
+						<div className="business-form-name">
+							<label for="business-name">Business Name</label>
+							<input 
+								type="text" 
+								onChange={this.handleName} 
+								value={this.state.name} 
+								id="business-name"
+							/>
+						</div>
+
+						<div className="business-form-neighborhood">
+							<label for="address">Neighborhood</label>
+								{this.hoodsForm()}
+						</div>
 						
-						<label for="hours">Hours</label>
-						<input 
-							type="text" 
-							onChange={this.handleHours} 
-							value={this.state.hours} 
-							id="hours"
-						/>
+						<div className="business-form-hours">	
+							<label for="hours">Hours</label>
+							<input 
+								type="text" 
+								onChange={this.handleHours} 
+								value={this.state.hours} 
+								id="hours"
+							/>
+						</div>
 
 						{this.priceForm()}
-					</div>
+
+				</div>
+
 				<TagForm handleTags={this.handleTags}/>
-				</div>
+
+			</div>
 				
-				<div className="button-wrapper">
-					<button onClick={this.handleSubmit}>Add Business</button>
-				</div>
+			<div className="button-wrapper">
+				<button onClick={this.handleSubmit}>Add Business</button>
+			</div>
 
 			</form>
 
