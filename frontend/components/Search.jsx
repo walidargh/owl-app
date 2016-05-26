@@ -86,10 +86,14 @@ var Search = React.createClass({
 	showBusiness: function (event) {
 		event.preventDefault();
 		this.searchBusiness(hashHistory.push('/businesses/'));
-		
 	},
 
 	render: function () {
+		if (this.props.clearSearch) {
+			this.state.tag_ids = [];
+			console.log('clear search is true');
+		}
+
 		return (
 			<div className="search">
 				<div className="tag-filter-wrapper">
@@ -100,8 +104,11 @@ var Search = React.createClass({
 										 checkedTags={this.state.tag_ids}
 										 checkedHoods={this.state.hoods} 
 										 checkedPrices={this.state.prices}
+										 unClear={this.props.unClear}
 										 clearTags={this.clearTags} 
-										 location={this.props.location.pathname}/>
+										 clearSearch={this.props.clearSearch}
+										 location={this.props.location.pathname}
+					/>
 				</div>
 				<input className="search-bar" 
 								type="text" 

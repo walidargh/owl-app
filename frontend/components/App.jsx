@@ -37,7 +37,7 @@ var App = React.createClass({
 
   getInitialState: function() {
     var formType =  (UserStore.currentUser()) ? "Log Out" : "Log In";
-    return { modalIsOpen: false, formType: formType, modalFormType:"" };
+    return { modalIsOpen: false, formType: formType, modalFormType:"", clearSearch: false};
   },
 
   componentWillMount: function () {
@@ -88,9 +88,14 @@ var App = React.createClass({
     UserActions.logout();
   },
 
+  unClear: function () {
+    this.setState({clearSearch: false});
+    console.log('unclearing')
+  },
+
   showBusiness: function () {
     ClientActions.fetchBusinesses();
-    hashHistory.push('/businesses/');
+    this.setState({clearSearch: true}, hashHistory.push('/businesses/'));
   },
 
   updateTags: function (event) {
@@ -145,7 +150,11 @@ var App = React.createClass({
             <button onClick={this.showBusiness}>View Businesses</button>
           </div>
   
-          <Search location={this.props.location} updateTags={this.updateTags}/>
+          <Search location={this.props.location} 
+                  updateTags={this.updateTags} 
+                  clearSearch={this.state.clearSearch}
+                  unClear={this.unClear}
+          />
           {this.logButton()}
         </div>
 

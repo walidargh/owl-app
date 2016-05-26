@@ -190,6 +190,19 @@ input[type='checkbox'] {
 	vertical-align: middle;
 }
 
+select {
+	margin: 3px;
+	padding: 5em;
+	vertical-align: middle;
+	font-family: 'HogwartsWizard';
+	font-size: 18px;
+}
+
+option {
+	font-family: 'HogwartsWizard';
+}
+
+
 .splash {
 	display: flex;
 	flex-direction: column;
@@ -272,6 +285,19 @@ input {
 	flex-direction: column;
 	/*align-items: center;*/
 }
+
+#business-name {
+	margin: 5px;
+	padding: 2px;
+	font-size: 16px;
+}
+
+#hours {
+	margin: 5px;
+	padding: 2px;
+	font-size: 16px;
+}
+
 
 .price-form {
 	display: flex;

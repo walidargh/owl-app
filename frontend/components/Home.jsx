@@ -3,7 +3,6 @@ var hashHistory = require('react-router').hashHistory;
 
 var Home = React.createClass({
 	welcomeHandler: function (event) {
-		debugger
 		hashHistory.push('/businesses/');
 	},
 

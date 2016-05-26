@@ -12,7 +12,16 @@ var TagFilter = React.createClass({
 		this.tagListener = TagStore.addListener(this._onChange);
 	},
 
+
+	componentWillReceiveProps: function (props) {
+		if (props.clearSearch) {
+			props.unClear();
+			console.log('uncleared!');
+		}
+	},
+
 	componentWillUnmount: function () {
+		console.log('unmounting')
 		this.tagListener.remove();
 	},
 
@@ -117,7 +126,7 @@ var TagFilter = React.createClass({
 		var moreHood = this.state.hoodsOpen ? '-' : '+';
 		var moreTag = this.state.tagsOpen ? '-' : '+';
 		var morePrice = this.state.pricesOpen ? '-' : '+';
-		
+
 		if (this.props.location === "/businesses/" || this.props.location === "/businesses") {
 			return (
 				<div className={"tag-filter-index"}>
