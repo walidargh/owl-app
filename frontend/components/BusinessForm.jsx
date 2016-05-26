@@ -69,7 +69,7 @@ var BusinessForm = React.createClass({
 				<label for="price=1">$</label>				
 				<input 
 					type="radio" 
-					onChange={this.handlePrice} 
+					onChange={this.handlePrice}
 					value={1} 
 					name="price" 
 					id="price=1"
@@ -109,6 +109,7 @@ var BusinessForm = React.createClass({
 							onChange={this.handleName} 
 							value={this.state.name} 
 							id="business-name"
+							placeholder="e.g. Ollivanders Wands"
 						/>
 						<label for="address">Neighborhood</label>
 							{this.hoodsForm()}
@@ -119,6 +120,7 @@ var BusinessForm = React.createClass({
 							onChange={this.handleHours} 
 							value={this.state.hours} 
 							id="hours"
+							placeholder="e.g. All Day Every Day!, 8PM - 9PM"
 						/>
 
 						{this.priceForm()}
