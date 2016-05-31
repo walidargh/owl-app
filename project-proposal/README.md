@@ -1,8 +1,8 @@
 # Owl
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Live Site][registered] **NB:** This should be a link to your production site
 
-[heroku]: https://owlhowler.herokuapp.com/
+[registed]: https://www.howler.tech
 
 ## Minimum Viable Product
 

@@ -107,7 +107,7 @@ Review.create(user_id: 4, body: "I have to agree with other reviewers about thei
 #Florean Fortescue’s Ice Cream Parlour
 Review.create(user_id: 1, body: "Everyone loves ice cream and they have the best!", rating: 5, business_id: 6)
 Review.create(user_id: 2, body: "No complaints here! Would be cool if they got some more flavors like garlic. My sense of taste isn't as strong since I lost my nose.", rating: 5, business_id: 6)
-Review.create(user_id: 3, body: "Be careful if you're here on the night of full moon! Beware Mooney!", rating: 5, business_id: 6)
+Review.create(user_id: 3, body: "Be careful if you're here on the night of full moon! Beware Moony!", rating: 5, business_id: 6)
 Review.create(user_id: 4, body: "Best ice cream around! Love all their flavors!", rating: 5, business_id: 6)
 # Gringotts Wizarding Bank
 Review.create(user_id: 1, body: "A little intimidating to walk into but I just found out that my parents left me an enormous fortune! No more living under the cupboard for me!", rating: 5, business_id: 7)
